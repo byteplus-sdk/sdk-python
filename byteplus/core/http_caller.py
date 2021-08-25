@@ -44,6 +44,7 @@ class HttpCaller(object):
         req_bytes: bytes = gzip.compress(req_bytes)
         options: _Options = Option.conv_to_options(opts)
         headers: dict = self._build_headers(options, req_bytes, contextType)
+        url = self._build_url_with_queries(options, url)
         rsp_bytes = self._do_http_request(url, headers, req_bytes, options.timeout)
         if rsp_bytes is not None:
             try:
@@ -64,6 +65,23 @@ class HttpCaller(object):
         self._with_options_headers(headers, options)
         self._with_auth_headers(headers, req_bytes)
         return headers
+
+    @staticmethod
+    def _build_url_with_queries(options: _Options, url: str):
+        queries = {}
+        if options.stage is not None:
+            queries["stage"] = options.stage
+        if options.queries is not None:
+            queries.update(options.queries)
+        if len(queries) == 0:
+            return url
+        query_parts = []
+        for query_name in queries.keys():
+            query_parts.append(query_name + "=" + queries[query_name])
+        query_string = "&".join(query_parts)
+        if "?" in url:
+            return url + "&" + query_string
+        return url + "?" + query_string
 
     @staticmethod
     def _with_options_headers(headers: dict, options: _Options):

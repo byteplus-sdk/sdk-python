@@ -63,3 +63,19 @@ class Option(object):
                 options.server_timeout = timeout
 
         return OptionImpl()
+
+    @staticmethod
+    def with_queries(queries: dict):
+        class OptionImpl(Option):
+            def fill(self, options: _Options) -> None:
+                options.queries = queries
+
+        return OptionImpl()
+
+    @staticmethod
+    def with_stage(stage: str):
+        class OptionImpl(Option):
+            def fill(self, options: _Options) -> None:
+                options.stage = stage
+
+        return OptionImpl()

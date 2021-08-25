@@ -4,4 +4,7 @@ from enum import Enum
 class Region(Enum):
     UNKNOWN = 0
     CN = 1
-    OTHER = 2
+    US = 2
+    SG = 3
+    AIR = 4
+    OTHER = 5

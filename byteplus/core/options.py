@@ -10,3 +10,5 @@ class _Options(object):
         self.data_date: Optional[datetime] = None
         self.date_end: Optional[bool] = None
         self.server_timeout: Optional[datetime.timedelta] = None
+        self.queries: Optional[dict] = None
+        self.stage: Optional[str] = None

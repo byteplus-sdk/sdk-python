@@ -6,6 +6,10 @@ _CN_HOSTS: list = ["rec-b.volcengineapi.com", "rec.volcengineapi.com"]
 
 _SG_HOSTS: list = ["tob.sgsnssdk.com"]
 
+_US_HOSTS: list = ["rec-us-east-1.byteplusapi.com"]
+
+_AIR_HOSTS: list = ["byteair-api-cn1.snssdk.com"]
+
 # All requests will have a XXXResponse corresponding to them,
 # and a‘ll XXXResponses will contain a 'Status' field.
 # The status of this request can be determined by the value of `Status.Code`

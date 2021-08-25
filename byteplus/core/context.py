@@ -1,4 +1,4 @@
-from byteplus.core.constant import _CN_HOSTS, _SG_HOSTS
+from byteplus.core.constant import _CN_HOSTS, _SG_HOSTS, _US_HOSTS, _AIR_HOSTS
 from byteplus.core.region import Region
 
 
@@ -22,7 +22,7 @@ class Context(object):
         self.token: str = param.token
         self.customer_headers: dict = param.headers
         self.schema: str = param.schema
-        self.hosts: list = _SG_HOSTS
+        self.hosts: list = []
         self._adjust_hosts(param)
 
     @staticmethod
@@ -43,3 +43,8 @@ class Context(object):
         if param.region == Region.CN:
             self.hosts = _CN_HOSTS
             return
+        if param.region == Region.US:
+            self.hosts = _US_HOSTS
+            return
+        if param.region == Region.AIR:
+            self.hosts = _AIR_HOSTS
