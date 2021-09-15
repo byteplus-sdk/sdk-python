@@ -43,6 +43,9 @@ class Context(object):
         if param.region == Region.CN:
             self.hosts = _CN_HOSTS
             return
+        if param.region == Region.SG:
+            self.hosts = _SG_HOSTS
+            return
         if param.region == Region.US:
             self.hosts = _US_HOSTS
             return

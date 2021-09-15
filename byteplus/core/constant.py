@@ -4,7 +4,7 @@ MAX_IMPORT_ITEM_COUNT: int = 10000
 
 _CN_HOSTS: list = ["rec-b.volcengineapi.com", "rec.volcengineapi.com"]
 
-_SG_HOSTS: list = ["tob.sgsnssdk.com"]
+_SG_HOSTS: list = ["rec-ap-singapore-1.byteplusapi.com"]
 
 _US_HOSTS: list = ["rec-us-east-1.byteplusapi.com"]
 

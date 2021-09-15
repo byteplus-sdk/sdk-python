@@ -156,9 +156,9 @@ class HttpCaller(object):
     def _log_rsp(url: str, rsp: Response) -> None:
         rsp_bytes = rsp.content
         if rsp_bytes is not None and len(rsp.content) > 0:
-            log.error("[ByteplusSDK] http status not 200, url:%s code:%d msg:%s body:%s",
-                      url, rsp.status_code, rsp.reason, str(rsp_bytes))
+            log.error("[ByteplusSDK] http status not 200, url:%s code:%d msg:%s headers:\n%s body:\n%s",
+                      url, rsp.status_code, rsp.reason, str(rsp.headers), str(rsp_bytes))
         else:
-            log.error("[ByteplusSDK] http status not 200, url:%s code:%d msg:%s",
-                      url, rsp.status_code, rsp.reason)
+            log.error("[ByteplusSDK] http status not 200, url:%s code:%d msg:%s headers:\n%s",
+                      url, rsp.status_code, rsp.reason, str(rsp.headers))
         return
