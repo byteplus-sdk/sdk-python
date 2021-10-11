@@ -12,8 +12,8 @@ from byteplus.retail.url import _RetailURL
 
 log = logging.getLogger(__name__)
 
-_TOO_MANY_WRITE_ITEMS_ERR_MSG = "Only can receive %d items in one write request".format(MAX_WRITE_ITEM_COUNT)
-_TOO_MANY_IMPORT_ITEMS_ERR_MSG = "Only can receive %d items in one import request".format(MAX_IMPORT_ITEM_COUNT)
+_TOO_MANY_WRITE_ITEMS_ERR_MSG = "Only can receive {} items in one write request".format(MAX_WRITE_ITEM_COUNT)
+_TOO_MANY_IMPORT_ITEMS_ERR_MSG = "Only can receive {} items in one import request".format(MAX_IMPORT_ITEM_COUNT)
 
 
 class Client(CommonClient):

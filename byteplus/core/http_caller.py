@@ -149,7 +149,7 @@ class HttpCaller(object):
         # log.debug("[ByteplusSDK][HTTPCaller] URL:%s Response Headers:\n%s", url, str(rsp.headers))
         if rsp.status_code != _SUCCESS_HTTP_CODE:
             self._log_rsp(url, rsp)
-            raise BizException("code:%d msg:%s".format(rsp.status_code, rsp.reason))
+            raise BizException("code:{} msg:{}".format(rsp.status_code, rsp.reason))
         return rsp.content
 
     @staticmethod

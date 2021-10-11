@@ -15,7 +15,7 @@ from byteplus.general.protocol import *
 
 log = logging.getLogger(__name__)
 
-_ERR_MSG_TOO_MANY_ITEMS = "Only can receive max to %d items in one request".format(MAX_IMPORT_ITEM_COUNT)
+_ERR_MSG_TOO_MANY_ITEMS = "Only can receive max to {} items in one request".format(MAX_IMPORT_ITEM_COUNT)
 
 
 class Client(CommonClient):

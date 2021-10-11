@@ -3,7 +3,7 @@ from byteplus.core.url_center import URLCenter
 
 # The URL format of operation information
 # Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/operation?method=get
-_OPERATION_URL_FORMAT = "{}://{}/data/api/retail/{}/operation?method={}"
+_OPERATION_URL_FORMAT = "{}://{}/data/api/{}/operation?method={}"
 
 
 class CommonURL(URLCenter):
