@@ -138,10 +138,10 @@ class HttpCaller(object):
             else:
                 rsp: Response = requests.post(url=url, headers=headers, data=req_bytes)
         except BaseException as e:
-            if "timeout" in str(e).lower():
-                log.error("[ByteplusSDK] do http request timeout, msg:%s", e)
+            if self._is_timeout_exception(e):
+                log.error("[ByteplusSDK] do http request timeout, url:%s msg:%s", url, e)
                 raise NetException(str(e))
-            log.error("[ByteplusSDK] do http request occur io exception, msg:%s", e)
+            log.error("[ByteplusSDK] do http request occur io exception, url:%s msg:%s", url, e)
             raise BizException(str(e))
         finally:
             cost = int((time.time() - start) * 1000)
@@ -151,6 +151,13 @@ class HttpCaller(object):
             self._log_rsp(url, rsp)
             raise BizException("code:%d msg:%s".format(rsp.status_code, rsp.reason))
         return rsp.content
+
+    @staticmethod
+    def _is_timeout_exception(e):
+        lower_err_msg = str(e).lower()
+        if "time" in lower_err_msg and "out" in lower_err_msg:
+            return True
+        return False
 
     @staticmethod
     def _log_rsp(url: str, rsp: Response) -> None:
