@@ -2803,7 +2803,6 @@ _sym_db.RegisterMessage(UserError)
 
 WriteUsersResponse = _reflection.GeneratedProtocolMessageType('WriteUsersResponse', (_message.Message,), {
   'DESCRIPTOR' : _WRITEUSERSRESPONSE,
-  '__module__' : 'byteplus_retail_pb2'
   # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.WriteUsersResponse)
   })
 _sym_db.RegisterMessage(WriteUsersResponse)
