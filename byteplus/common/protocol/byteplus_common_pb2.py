@@ -16,11 +16,11 @@ from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='byteplus_common.proto',
-  package='bytedance.byteplus',
+  package='bytedance.byteplus.common',
   syntax='proto3',
   serialized_options=b'\n\034byteplus.sdk.common.protocolZ.github.com/byteplus-sdk/sdk-go/common/protocol',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x15\x62yteplus_common.proto\x12\x12\x62ytedance.byteplus\x1a\x19google/protobuf/any.proto\"\'\n\x06Status\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x85\x01\n\x08Metadata\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x13\n\x0btotal_count\x18\x02 \x01(\x03\x12\x15\n\rsuccess_count\x18\x03 \x01(\x03\x12\x15\n\rfailure_count\x18\x04 \x01(\x03\x12\x13\n\x0bsubmit_time\x18\x05 \x01(\t\x12\x13\n\x0bupdate_time\x18\x06 \x01(\t\"\x7f\n\tOperation\x12\x0c\n\x04name\x18\x01 \x01(\t\x12.\n\x08metadata\x18\x02 \x01(\x0b\x32\x1c.bytedance.byteplus.Metadata\x12\x0c\n\x04\x64one\x18\x03 \x01(\x08\x12&\n\x08response\x18\x04 \x01(\x0b\x32\x14.google.protobuf.Any\"q\n\x11OperationResponse\x12*\n\x06status\x18\x01 \x01(\x0b\x32\x1a.bytedance.byteplus.Status\x12\x30\n\toperation\x18\x02 \x01(\x0b\x32\x1d.bytedance.byteplus.Operation\"#\n\x13GetOperationRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"N\n\x15ListOperationsRequest\x12\x0e\n\x06\x66ilter\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x90\x01\n\x16ListOperationsResponse\x12*\n\x06status\x18\x01 \x01(\x0b\x32\x1a.bytedance.byteplus.Status\x12\x31\n\noperations\x18\x02 \x03(\x0b\x32\x1d.bytedance.byteplus.Operation\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\t2\xe0\x01\n\x15\x42yteplusCommonService\x12^\n\x0cGetOperation\x12\'.bytedance.byteplus.GetOperationRequest\x1a%.bytedance.byteplus.OperationResponse\x12g\n\x0eListOperations\x12).bytedance.byteplus.ListOperationsRequest\x1a*.bytedance.byteplus.ListOperationsResponseBN\n\x1c\x62yteplus.sdk.common.protocolZ.github.com/byteplus-sdk/sdk-go/common/protocolb\x06proto3'
+  serialized_pb=b'\n\x15\x62yteplus_common.proto\x12\x19\x62ytedance.byteplus.common\x1a\x19google/protobuf/any.proto\"\'\n\x06Status\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x85\x01\n\x08Metadata\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x13\n\x0btotal_count\x18\x02 \x01(\x03\x12\x15\n\rsuccess_count\x18\x03 \x01(\x03\x12\x15\n\rfailure_count\x18\x04 \x01(\x03\x12\x13\n\x0bsubmit_time\x18\x05 \x01(\t\x12\x13\n\x0bupdate_time\x18\x06 \x01(\t\"\x86\x01\n\tOperation\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x35\n\x08metadata\x18\x02 \x01(\x0b\x32#.bytedance.byteplus.common.Metadata\x12\x0c\n\x04\x64one\x18\x03 \x01(\x08\x12&\n\x08response\x18\x04 \x01(\x0b\x32\x14.google.protobuf.Any\"\x7f\n\x11OperationResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x37\n\toperation\x18\x02 \x01(\x0b\x32$.bytedance.byteplus.common.Operation\"#\n\x13GetOperationRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"N\n\x15ListOperationsRequest\x12\x0e\n\x06\x66ilter\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x9e\x01\n\x16ListOperationsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x38\n\noperations\x18\x02 \x03(\x0b\x32$.bytedance.byteplus.common.Operation\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\t\"0\n\x04\x44\x61te\x12\x0c\n\x04year\x18\x01 \x01(\x05\x12\r\n\x05month\x18\x02 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\x05\"B\n\x0b\x44oneRequest\x12\x33\n\ndata_dates\x18\x01 \x03(\x0b\x32\x1f.bytedance.byteplus.common.Date\"=\n\x08Response\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status2\xd1\x02\n\x15\x42yteplusCommonService\x12l\n\x0cGetOperation\x12..bytedance.byteplus.common.GetOperationRequest\x1a,.bytedance.byteplus.common.OperationResponse\x12u\n\x0eListOperations\x12\x30.bytedance.byteplus.common.ListOperationsRequest\x1a\x31.bytedance.byteplus.common.ListOperationsResponse\x12S\n\x04\x44one\x12&.bytedance.byteplus.common.DoneRequest\x1a#.bytedance.byteplus.common.ResponseBN\n\x1c\x62yteplus.sdk.common.protocolZ.github.com/byteplus-sdk/sdk-go/common/protocolb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_any__pb2.DESCRIPTOR,])
 
@@ -29,21 +29,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _STATUS = _descriptor.Descriptor(
   name='Status',
-  full_name='bytedance.byteplus.Status',
+  full_name='bytedance.byteplus.common.Status',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='code', full_name='bytedance.byteplus.Status.code', index=0,
+      name='code', full_name='bytedance.byteplus.common.Status.code', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='message', full_name='bytedance.byteplus.Status.message', index=1,
+      name='message', full_name='bytedance.byteplus.common.Status.message', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -61,56 +61,56 @@ _STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=72,
-  serialized_end=111,
+  serialized_start=79,
+  serialized_end=118,
 )
 
 
 _METADATA = _descriptor.Descriptor(
   name='Metadata',
-  full_name='bytedance.byteplus.Metadata',
+  full_name='bytedance.byteplus.common.Metadata',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='date', full_name='bytedance.byteplus.Metadata.date', index=0,
+      name='date', full_name='bytedance.byteplus.common.Metadata.date', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='total_count', full_name='bytedance.byteplus.Metadata.total_count', index=1,
+      name='total_count', full_name='bytedance.byteplus.common.Metadata.total_count', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='success_count', full_name='bytedance.byteplus.Metadata.success_count', index=2,
+      name='success_count', full_name='bytedance.byteplus.common.Metadata.success_count', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='failure_count', full_name='bytedance.byteplus.Metadata.failure_count', index=3,
+      name='failure_count', full_name='bytedance.byteplus.common.Metadata.failure_count', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='submit_time', full_name='bytedance.byteplus.Metadata.submit_time', index=4,
+      name='submit_time', full_name='bytedance.byteplus.common.Metadata.submit_time', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='update_time', full_name='bytedance.byteplus.Metadata.update_time', index=5,
+      name='update_time', full_name='bytedance.byteplus.common.Metadata.update_time', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -128,42 +128,42 @@ _METADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=114,
-  serialized_end=247,
+  serialized_start=121,
+  serialized_end=254,
 )
 
 
 _OPERATION = _descriptor.Descriptor(
   name='Operation',
-  full_name='bytedance.byteplus.Operation',
+  full_name='bytedance.byteplus.common.Operation',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='bytedance.byteplus.Operation.name', index=0,
+      name='name', full_name='bytedance.byteplus.common.Operation.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='metadata', full_name='bytedance.byteplus.Operation.metadata', index=1,
+      name='metadata', full_name='bytedance.byteplus.common.Operation.metadata', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='done', full_name='bytedance.byteplus.Operation.done', index=2,
+      name='done', full_name='bytedance.byteplus.common.Operation.done', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='response', full_name='bytedance.byteplus.Operation.response', index=3,
+      name='response', full_name='bytedance.byteplus.common.Operation.response', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -181,28 +181,28 @@ _OPERATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=249,
-  serialized_end=376,
+  serialized_start=257,
+  serialized_end=391,
 )
 
 
 _OPERATIONRESPONSE = _descriptor.Descriptor(
   name='OperationResponse',
-  full_name='bytedance.byteplus.OperationResponse',
+  full_name='bytedance.byteplus.common.OperationResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='bytedance.byteplus.OperationResponse.status', index=0,
+      name='status', full_name='bytedance.byteplus.common.OperationResponse.status', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='operation', full_name='bytedance.byteplus.OperationResponse.operation', index=1,
+      name='operation', full_name='bytedance.byteplus.common.OperationResponse.operation', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -220,21 +220,21 @@ _OPERATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=378,
-  serialized_end=491,
+  serialized_start=393,
+  serialized_end=520,
 )
 
 
 _GETOPERATIONREQUEST = _descriptor.Descriptor(
   name='GetOperationRequest',
-  full_name='bytedance.byteplus.GetOperationRequest',
+  full_name='bytedance.byteplus.common.GetOperationRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='bytedance.byteplus.GetOperationRequest.name', index=0,
+      name='name', full_name='bytedance.byteplus.common.GetOperationRequest.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -252,35 +252,35 @@ _GETOPERATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=493,
-  serialized_end=528,
+  serialized_start=522,
+  serialized_end=557,
 )
 
 
 _LISTOPERATIONSREQUEST = _descriptor.Descriptor(
   name='ListOperationsRequest',
-  full_name='bytedance.byteplus.ListOperationsRequest',
+  full_name='bytedance.byteplus.common.ListOperationsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='filter', full_name='bytedance.byteplus.ListOperationsRequest.filter', index=0,
+      name='filter', full_name='bytedance.byteplus.common.ListOperationsRequest.filter', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='page_size', full_name='bytedance.byteplus.ListOperationsRequest.page_size', index=1,
+      name='page_size', full_name='bytedance.byteplus.common.ListOperationsRequest.page_size', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='page_token', full_name='bytedance.byteplus.ListOperationsRequest.page_token', index=2,
+      name='page_token', full_name='bytedance.byteplus.common.ListOperationsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -298,35 +298,35 @@ _LISTOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=530,
-  serialized_end=608,
+  serialized_start=559,
+  serialized_end=637,
 )
 
 
 _LISTOPERATIONSRESPONSE = _descriptor.Descriptor(
   name='ListOperationsResponse',
-  full_name='bytedance.byteplus.ListOperationsResponse',
+  full_name='bytedance.byteplus.common.ListOperationsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='bytedance.byteplus.ListOperationsResponse.status', index=0,
+      name='status', full_name='bytedance.byteplus.common.ListOperationsResponse.status', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='operations', full_name='bytedance.byteplus.ListOperationsResponse.operations', index=1,
+      name='operations', full_name='bytedance.byteplus.common.ListOperationsResponse.operations', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='bytedance.byteplus.ListOperationsResponse.next_page_token', index=2,
+      name='next_page_token', full_name='bytedance.byteplus.common.ListOperationsResponse.next_page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -344,8 +344,118 @@ _LISTOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=611,
-  serialized_end=755,
+  serialized_start=640,
+  serialized_end=798,
+)
+
+
+_DATE = _descriptor.Descriptor(
+  name='Date',
+  full_name='bytedance.byteplus.common.Date',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='year', full_name='bytedance.byteplus.common.Date.year', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='month', full_name='bytedance.byteplus.common.Date.month', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='day', full_name='bytedance.byteplus.common.Date.day', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=800,
+  serialized_end=848,
+)
+
+
+_DONEREQUEST = _descriptor.Descriptor(
+  name='DoneRequest',
+  full_name='bytedance.byteplus.common.DoneRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='data_dates', full_name='bytedance.byteplus.common.DoneRequest.data_dates', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=850,
+  serialized_end=916,
+)
+
+
+_RESPONSE = _descriptor.Descriptor(
+  name='Response',
+  full_name='bytedance.byteplus.common.Response',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='bytedance.byteplus.common.Response.status', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=918,
+  serialized_end=979,
 )
 
 _OPERATION.fields_by_name['metadata'].message_type = _METADATA
@@ -354,6 +464,8 @@ _OPERATIONRESPONSE.fields_by_name['status'].message_type = _STATUS
 _OPERATIONRESPONSE.fields_by_name['operation'].message_type = _OPERATION
 _LISTOPERATIONSRESPONSE.fields_by_name['status'].message_type = _STATUS
 _LISTOPERATIONSRESPONSE.fields_by_name['operations'].message_type = _OPERATION
+_DONEREQUEST.fields_by_name['data_dates'].message_type = _DATE
+_RESPONSE.fields_by_name['status'].message_type = _STATUS
 DESCRIPTOR.message_types_by_name['Status'] = _STATUS
 DESCRIPTOR.message_types_by_name['Metadata'] = _METADATA
 DESCRIPTOR.message_types_by_name['Operation'] = _OPERATION
@@ -361,73 +473,97 @@ DESCRIPTOR.message_types_by_name['OperationResponse'] = _OPERATIONRESPONSE
 DESCRIPTOR.message_types_by_name['GetOperationRequest'] = _GETOPERATIONREQUEST
 DESCRIPTOR.message_types_by_name['ListOperationsRequest'] = _LISTOPERATIONSREQUEST
 DESCRIPTOR.message_types_by_name['ListOperationsResponse'] = _LISTOPERATIONSRESPONSE
+DESCRIPTOR.message_types_by_name['Date'] = _DATE
+DESCRIPTOR.message_types_by_name['DoneRequest'] = _DONEREQUEST
+DESCRIPTOR.message_types_by_name['Response'] = _RESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,), {
   'DESCRIPTOR' : _STATUS,
   '__module__' : 'byteplus_common_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.Status)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.common.Status)
   })
 _sym_db.RegisterMessage(Status)
 
 Metadata = _reflection.GeneratedProtocolMessageType('Metadata', (_message.Message,), {
   'DESCRIPTOR' : _METADATA,
   '__module__' : 'byteplus_common_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.Metadata)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.common.Metadata)
   })
 _sym_db.RegisterMessage(Metadata)
 
 Operation = _reflection.GeneratedProtocolMessageType('Operation', (_message.Message,), {
   'DESCRIPTOR' : _OPERATION,
   '__module__' : 'byteplus_common_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.Operation)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.common.Operation)
   })
 _sym_db.RegisterMessage(Operation)
 
 OperationResponse = _reflection.GeneratedProtocolMessageType('OperationResponse', (_message.Message,), {
   'DESCRIPTOR' : _OPERATIONRESPONSE,
   '__module__' : 'byteplus_common_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.OperationResponse)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.common.OperationResponse)
   })
 _sym_db.RegisterMessage(OperationResponse)
 
 GetOperationRequest = _reflection.GeneratedProtocolMessageType('GetOperationRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETOPERATIONREQUEST,
   '__module__' : 'byteplus_common_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.GetOperationRequest)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.common.GetOperationRequest)
   })
 _sym_db.RegisterMessage(GetOperationRequest)
 
 ListOperationsRequest = _reflection.GeneratedProtocolMessageType('ListOperationsRequest', (_message.Message,), {
   'DESCRIPTOR' : _LISTOPERATIONSREQUEST,
   '__module__' : 'byteplus_common_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.ListOperationsRequest)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.common.ListOperationsRequest)
   })
 _sym_db.RegisterMessage(ListOperationsRequest)
 
 ListOperationsResponse = _reflection.GeneratedProtocolMessageType('ListOperationsResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTOPERATIONSRESPONSE,
   '__module__' : 'byteplus_common_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.ListOperationsResponse)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.common.ListOperationsResponse)
   })
 _sym_db.RegisterMessage(ListOperationsResponse)
+
+Date = _reflection.GeneratedProtocolMessageType('Date', (_message.Message,), {
+  'DESCRIPTOR' : _DATE,
+  '__module__' : 'byteplus_common_pb2'
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.common.Date)
+  })
+_sym_db.RegisterMessage(Date)
+
+DoneRequest = _reflection.GeneratedProtocolMessageType('DoneRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DONEREQUEST,
+  '__module__' : 'byteplus_common_pb2'
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.common.DoneRequest)
+  })
+_sym_db.RegisterMessage(DoneRequest)
+
+Response = _reflection.GeneratedProtocolMessageType('Response', (_message.Message,), {
+  'DESCRIPTOR' : _RESPONSE,
+  '__module__' : 'byteplus_common_pb2'
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.common.Response)
+  })
+_sym_db.RegisterMessage(Response)
 
 
 DESCRIPTOR._options = None
 
 _BYTEPLUSCOMMONSERVICE = _descriptor.ServiceDescriptor(
   name='ByteplusCommonService',
-  full_name='bytedance.byteplus.ByteplusCommonService',
+  full_name='bytedance.byteplus.common.ByteplusCommonService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=758,
-  serialized_end=982,
+  serialized_start=982,
+  serialized_end=1319,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetOperation',
-    full_name='bytedance.byteplus.ByteplusCommonService.GetOperation',
+    full_name='bytedance.byteplus.common.ByteplusCommonService.GetOperation',
     index=0,
     containing_service=None,
     input_type=_GETOPERATIONREQUEST,
@@ -437,11 +573,21 @@ _BYTEPLUSCOMMONSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='ListOperations',
-    full_name='bytedance.byteplus.ByteplusCommonService.ListOperations',
+    full_name='bytedance.byteplus.common.ByteplusCommonService.ListOperations',
     index=1,
     containing_service=None,
     input_type=_LISTOPERATIONSREQUEST,
     output_type=_LISTOPERATIONSRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Done',
+    full_name='bytedance.byteplus.common.ByteplusCommonService.Done',
+    index=2,
+    containing_service=None,
+    input_type=_DONEREQUEST,
+    output_type=_RESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
