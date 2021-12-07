@@ -41,7 +41,7 @@ class Option(object):
         return OptionImpl()
 
     @staticmethod
-    def with_data_date(date: datetime):
+    def with_data_date(date: datetime.datetime):
         class OptionImpl(Option):
             def fill(self, options: _Options) -> None:
                 options.data_date = date

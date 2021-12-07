@@ -12,6 +12,8 @@ class Param(object):
         self.hosts: list = []
         self.headers: dict = {}
         self.region: Region = Region.UNKNOWN
+        self.ak: str = ""
+        self.sk: str = ""
 
 
 class Context(object):
@@ -23,6 +25,7 @@ class Context(object):
         self.customer_headers: dict = param.headers
         self.schema: str = param.schema
         self.hosts: list = []
+        self.volc_auth_conf: VolcAuthConf = VolcAuthConf(param)
         self._adjust_hosts(param)
 
     @staticmethod
@@ -31,10 +34,17 @@ class Context(object):
             raise Exception("Tenant is empty")
         if len(param.tenant_id) == 0:
             raise Exception("Tenant id is emtpy")
-        if len(param.token) == 0:
-            raise Exception("Token is empty")
         if param.region == Region.UNKNOWN:
             raise Exception("Region is empty")
+        Context._check_auth_required_field(param)
+
+    @staticmethod
+    def _check_auth_required_field(param: Param) -> None:
+        if param.token == "" and param.ak == "" :
+            return Exception("Token and ak are empty")
+        
+        if param.ak != "" and param.sk == "" :
+            return Exception("sk is empty")
 
     def _adjust_hosts(self, param: Param) -> None:
         if len(param.hosts) > 0:
@@ -51,3 +61,17 @@ class Context(object):
             return
         if param.region == Region.AIR:
             self.hosts = _AIR_HOSTS
+
+
+class VolcAuthConf(object):
+    def __init__(self, param: Param):
+        self.ak: str = param.ak
+        self.sk: str = param.sk
+        self.region: str = self._parse_region(param)
+    
+    def _parse_region(self, param: Param):
+        if param.region == Region.SG:
+            return "ap-singapore-1"
+        if param.region == Region.US:
+            return "us-east-1"
+        return "cn-north-1"
