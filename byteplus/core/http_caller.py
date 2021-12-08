@@ -128,6 +128,7 @@ class HttpCaller(object):
         req.headers['Tenant-Ts'] = ts
         req.headers['Tenant-Nonce'] = nonce
         req.headers['Tenant-Signature'] = signature
+        return req
 
     def _cal_signature(self, req_bytes: bytes, ts: str, nonce: str) -> str:
         # 按照token、httpBody、tenantId、ts、nonce的顺序拼接，顺序不能搞错
