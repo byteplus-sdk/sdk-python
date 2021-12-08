@@ -21,6 +21,11 @@ from byteplus.core.option import Option
 from byteplus.core.options import _Options
 from byteplus.core.time_hlper import rfc3339_format, milliseconds
 from byteplus.volcauth.volcauth import VolcAuth
+try:
+    from urllib.parse import urlparse, parse_qs, quote, unquote, unquote_plus
+except ImportError:
+    from urlparse import urlparse, parse_qs
+    from urllib import quote, unquote, unquote_plus
 
 log = logging.getLogger(__name__)
 
@@ -141,6 +146,7 @@ class HttpCaller(object):
                          req_bytes: bytes, timeout: Optional[datetime.timedelta], auth: Optional[AuthBase]) -> Optional[bytes]:
         start = time.time()
         # log.debug("[ByteplusSDK][HTTPCaller] URL:%s Request Headers:\n%s", url, str(headers))
+        self._set_host(url, headers)
         try:
             if timeout is not None:
                 timeout_secs = timeout.total_seconds()
@@ -162,6 +168,12 @@ class HttpCaller(object):
             raise BizException("code:{} msg:{}".format(rsp.status_code, rsp.reason))
         return rsp.content
 
+    def _set_host(self, url:str, headers:dict):
+        host = urlparse(url).netloc
+        if host.split(":")[-1] == "80":
+            host = host[0]
+        headers['Host'] = host
+
     @staticmethod
     def _is_timeout_exception(e):
         lower_err_msg = str(e).lower()
@@ -179,3 +191,4 @@ class HttpCaller(object):
             log.error("[ByteplusSDK] http status not 200, url:%s code:%d msg:%s headers:\n%s",
                       url, rsp.status_code, rsp.reason, str(rsp.headers))
         return
+
