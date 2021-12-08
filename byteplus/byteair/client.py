@@ -92,12 +92,12 @@ class ClientBuilder(object):
     def __init__(self):
         self._param = Param()
 
-    def tenant(self, tenant: str):
-        self._param.tenant = tenant
-        return self
-
     def tenant_id(self, tenant_id: str):
         self._param.tenant_id = tenant_id
+        return self
+
+    def project_id(self, project_id: str):
+        self._param.tenant = project_id
         return self
 
     def token(self, token: str):
@@ -120,5 +120,13 @@ class ClientBuilder(object):
         self._param.region = region
         return self
 
+    def ak(self, ak: str):
+        self._param.ak = ak
+        return self
+
+    def sk(self, sk: str):
+        self._param.sk = sk
+        return self
+        
     def build(self) -> Client:
         return Client(self._param)
