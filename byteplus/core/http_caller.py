@@ -16,7 +16,7 @@ from requests import Response
 from byteplus.core.context import Context
 from byteplus.core.exception import NetException, BizException
 from byteplus.core.option import Option
-from byteplus.core.options import _Options
+from byteplus.core.options import Options
 from byteplus.core.time_hlper import rfc3339_format, milliseconds
 
 log = logging.getLogger(__name__)
@@ -42,7 +42,7 @@ class HttpCaller(object):
 
     def do_request(self, url, req_bytes, response, contextType, *opts: Option):
         req_bytes: bytes = gzip.compress(req_bytes)
-        options: _Options = Option.conv_to_options(opts)
+        options: Options = Option.conv_to_options(opts)
         headers: dict = self._build_headers(options, req_bytes, contextType)
         url = self._build_url_with_queries(options, url)
         rsp_bytes = self._do_http_request(url, headers, req_bytes, options.timeout)
@@ -53,7 +53,7 @@ class HttpCaller(object):
                 log.error("[ByteplusSDK] parse response fail, err:%s url:%s", e, url)
                 raise BizException("parse response fail")
 
-    def _build_headers(self, options: _Options, req_bytes: bytes, contentType: str) -> dict:
+    def _build_headers(self, options: Options, req_bytes: bytes, contentType: str) -> dict:
         headers = {
             "Content-Encoding": "gzip",
             # The 'requests' lib support '"Content-Encoding": "gzip"' header,
@@ -67,7 +67,7 @@ class HttpCaller(object):
         return headers
 
     @staticmethod
-    def _build_url_with_queries(options: _Options, url: str):
+    def _build_url_with_queries(options: Options, url: str):
         queries = {}
         if options.stage is not None:
             queries["stage"] = options.stage
@@ -84,7 +84,7 @@ class HttpCaller(object):
         return url + "?" + query_string
 
     @staticmethod
-    def _with_options_headers(headers: dict, options: _Options):
+    def _with_options_headers(headers: dict, options: Options):
         if options.headers is not None:
             headers.update(options.headers)
         if options.request_id is not None and len(options.request_id) > 0:
