@@ -44,3 +44,11 @@ class CommonClient(URLCenter):
         self._http_caller.do_pb_request(url, request, response, *opts)
         log.debug("[ByteplusSDK][ListOperations] rsp:\n%s", response)
         return response
+
+    def done(self, request: DoneRequest, topic: str, *opts: Option) -> Response:
+        url_format: str = self._common_url.done_url_format
+        url: str = url_format.replace("#", topic)
+        response: Response = Response()
+        self._http_caller.do_pb_request(url, request, response, *opts)
+        log.debug("[ByteplusSDK][Done] rsp:\n%s", response)
+        return response
