@@ -16,11 +16,11 @@ from byteplus.common.protocol import byteplus_common_pb2 as byteplus__common__pb
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='byteplus_retailv2.proto',
-  package='bytedance.byteplus.retail',
+  package='bytedance.byteplus.retailv2',
   syntax='proto3',
   serialized_options=b'\n\036byteplus.sdk.retailv2.protocolZ0github.com/byteplus-sdk/sdk-go/retailv2/protocol',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x17\x62yteplus_retailv2.proto\x12\x19\x62ytedance.byteplus.retail\x1a\x15\x62yteplus_common.proto\"\x94\x03\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0e\n\x06gender\x18\x02 \x01(\t\x12\x0b\n\x03\x61ge\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x1a\n\x12\x61\x63tivation_channel\x18\x05 \x01(\t\x12\x18\n\x10membership_level\x18\x06 \x01(\t\x12\x1e\n\x16registration_timestamp\x18\x07 \x01(\x03\x12:\n\x08location\x18\x08 \x01(\x0b\x32(.bytedance.byteplus.retail.User.Location\x12\x39\n\x05\x65xtra\x18\x64 \x03(\x0b\x32*.bytedance.byteplus.retail.User.ExtraEntry\x1aU\n\x08Location\x12\x0f\n\x07\x63ountry\x18\x01 \x01(\t\x12\x0c\n\x04\x63ity\x18\x02 \x01(\t\x12\x18\n\x10\x64istrict_or_area\x18\x03 \x01(\t\x12\x10\n\x08postcode\x18\x04 \x01(\t\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb9\x01\n\x11WriteUsersRequest\x12.\n\x05users\x18\x01 \x03(\x0b\x32\x1f.bytedance.byteplus.retail.User\x12\x46\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x37.bytedance.byteplus.retail.WriteUsersRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"K\n\tUserError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12-\n\x04user\x18\x02 \x01(\x0b\x32\x1f.bytedance.byteplus.retail.User\"v\n\x12WriteUsersResponse\x12*\n\x06status\x18\x01 \x01(\x0b\x32\x1a.bytedance.byteplus.Status\x12\x34\n\x06\x65rrors\x18\x02 \x03(\x0b\x32$.bytedance.byteplus.retail.UserError\"\xa1\t\n\x07Product\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12?\n\ncategories\x18\x02 \x03(\x0b\x32+.bytedance.byteplus.retail.Product.Category\x12\x38\n\x06\x62rands\x18\x03 \x03(\x0b\x32(.bytedance.byteplus.retail.Product.Brand\x12\x37\n\x05price\x18\x04 \x01(\x0b\x32(.bytedance.byteplus.retail.Product.Price\x12\x18\n\x10is_recommendable\x18\x05 \x01(\x08\x12\r\n\x05title\x18\x06 \x01(\t\x12\x15\n\rquality_score\x18\x07 \x01(\x01\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12;\n\x07\x64isplay\x18\t \x01(\x0b\x32*.bytedance.byteplus.retail.Product.Display\x12\x44\n\x0cproduct_spec\x18\n \x01(\x0b\x32..bytedance.byteplus.retail.Product.ProductSpec\x12\x39\n\x06seller\x18\x0b \x01(\x0b\x32).bytedance.byteplus.retail.Product.Seller\x12<\n\x05\x65xtra\x18\x64 \x03(\x0b\x32-.bytedance.byteplus.retail.Product.ExtraEntry\x1a\x98\x01\n\x08\x43\x61tegory\x12\x16\n\x0e\x63\x61tegory_depth\x18\x01 \x01(\x05\x12P\n\x0e\x63\x61tegory_nodes\x18\x02 \x03(\x0b\x32\x38.bytedance.byteplus.retail.Product.Category.CategoryNode\x1a\"\n\x0c\x43\x61tegoryNode\x12\x12\n\nid_or_name\x18\x01 \x01(\t\x1a\x30\n\x05\x42rand\x12\x13\n\x0b\x62rand_depth\x18\x01 \x01(\x05\x12\x12\n\nid_or_name\x18\x02 \x01(\t\x1a\x34\n\x05Price\x12\x15\n\rcurrent_price\x18\x01 \x01(\x03\x12\x14\n\x0corigin_price\x18\x02 \x01(\x03\x1a\x8f\x01\n\x07\x44isplay\x12!\n\x19listing_page_display_tags\x18\x01 \x03(\t\x12 \n\x18\x64\x65tail_page_display_tags\x18\x02 \x03(\t\x12!\n\x19listing_page_display_type\x18\x03 \x01(\t\x12\x1c\n\x14\x63over_multimedia_url\x18\x04 \x01(\t\x1a~\n\x0bProductSpec\x12\x18\n\x10product_group_id\x18\x01 \x01(\t\x12\x13\n\x0buser_rating\x18\x02 \x01(\x01\x12\x15\n\rcomment_count\x18\x03 \x01(\x05\x12\x0e\n\x06source\x18\x04 \x01(\t\x12\x19\n\x11publish_timestamp\x18\x05 \x01(\x03\x1a\x41\n\x06Seller\x12\n\n\x02id\x18\x01 \x01(\t\x12\x14\n\x0cseller_level\x18\x02 \x01(\t\x12\x15\n\rseller_rating\x18\x03 \x01(\x01\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc5\x01\n\x14WriteProductsRequest\x12\x34\n\x08products\x18\x01 \x03(\x0b\x32\".bytedance.byteplus.retail.Product\x12I\n\x05\x65xtra\x18\x64 \x03(\x0b\x32:.bytedance.byteplus.retail.WriteProductsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"T\n\x0cProductError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x33\n\x07product\x18\x02 \x01(\x0b\x32\".bytedance.byteplus.retail.Product\"|\n\x15WriteProductsResponse\x12*\n\x06status\x18\x01 \x01(\x0b\x32\x1a.bytedance.byteplus.Status\x12\x37\n\x06\x65rrors\x18\x02 \x03(\x0b\x32\'.bytedance.byteplus.retail.ProductError\"\xb1\x06\n\tUserEvent\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x12\n\nevent_type\x18\x02 \x01(\t\x12\x17\n\x0f\x65vent_timestamp\x18\x03 \x01(\x03\x12\x39\n\x05scene\x18\x04 \x01(\x0b\x32*.bytedance.byteplus.retail.UserEvent.Scene\x12\x12\n\nproduct_id\x18\x05 \x01(\t\x12;\n\x06\x64\x65vice\x18\x06 \x01(\x0b\x32+.bytedance.byteplus.retail.UserEvent.Device\x12=\n\x07\x63ontext\x18\x07 \x01(\x0b\x32,.bytedance.byteplus.retail.UserEvent.Context\x12\x19\n\x11\x61ttribution_token\x18\x08 \x01(\t\x12\x10\n\x08rec_info\x18\t \x01(\t\x12\x16\n\x0etraffic_source\x18\n \x01(\t\x12\x16\n\x0epurchase_count\x18\x0b \x01(\x05\x12\x1d\n\x15\x64\x65tail_page_stay_time\x18\x0c \x01(\x05\x12>\n\x05\x65xtra\x18\x64 \x03(\x0b\x32/.bytedance.byteplus.retail.UserEvent.ExtraEntry\x1a@\n\x05Scene\x12\x12\n\nscene_name\x18\x01 \x01(\t\x12\x13\n\x0bpage_number\x18\x02 \x01(\x05\x12\x0e\n\x06offset\x18\x03 \x01(\x05\x1a\xbb\x01\n\x06\x44\x65vice\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x0f\n\x07os_type\x18\x02 \x01(\t\x12\x13\n\x0b\x61pp_version\x18\x03 \x01(\t\x12\x14\n\x0c\x64\x65vice_model\x18\x04 \x01(\t\x12\x14\n\x0c\x64\x65vice_brand\x18\x05 \x01(\t\x12\x12\n\nos_version\x18\x06 \x01(\t\x12\x14\n\x0c\x62rowser_type\x18\x07 \x01(\t\x12\x12\n\nuser_agent\x18\x08 \x01(\t\x12\x0f\n\x07network\x18\t \x01(\t\x1a\x31\n\x07\x43ontext\x12\r\n\x05query\x18\x01 \x01(\t\x12\x17\n\x0froot_product_id\x18\x02 \x01(\t\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xce\x01\n\x16WriteUserEventsRequest\x12\x39\n\x0buser_events\x18\x01 \x03(\x0b\x32$.bytedance.byteplus.retail.UserEvent\x12K\n\x05\x65xtra\x18\x64 \x03(\x0b\x32<.bytedance.byteplus.retail.WriteUserEventsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"[\n\x0eUserEventError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x38\n\nuser_event\x18\x02 \x01(\x0b\x32$.bytedance.byteplus.retail.UserEvent\"\x80\x01\n\x17WriteUserEventsResponse\x12*\n\x06status\x18\x01 \x01(\x0b\x32\x1a.bytedance.byteplus.Status\x12\x39\n\x06\x65rrors\x18\x02 \x03(\x0b\x32).bytedance.byteplus.retail.UserEventError\"\xc3\x03\n\x0ePredictRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04size\x18\x02 \x01(\x05\x12\x39\n\x05scene\x18\x03 \x01(\x0b\x32*.bytedance.byteplus.retail.UserEvent.Scene\x12\x42\n\x07\x63ontext\x18\x04 \x01(\x0b\x32\x31.bytedance.byteplus.retail.PredictRequest.Context\x12\x43\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x34.bytedance.byteplus.retail.PredictRequest.ExtraEntry\x1a\x9f\x01\n\x07\x43ontext\x12\x38\n\x0croot_product\x18\x01 \x01(\x0b\x32\".bytedance.byteplus.retail.Product\x12;\n\x06\x64\x65vice\x18\x02 \x01(\x0b\x32+.bytedance.byteplus.retail.UserEvent.Device\x12\x1d\n\x15\x63\x61ndidate_product_ids\x18\x03 \x03(\t\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xbc\x03\n\rPredictResult\x12S\n\x11response_products\x18\x01 \x03(\x0b\x32\x38.bytedance.byteplus.retail.PredictResult.ResponseProduct\x12\x42\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x33.bytedance.byteplus.retail.PredictResult.ExtraEntry\x1a\xe3\x01\n\x0fResponseProduct\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x0c\n\x04rank\x18\x02 \x01(\x05\x12\x0c\n\x04pctr\x18\x03 \x01(\x01\x12\x0c\n\x04pcvr\x18\x04 \x01(\x01\x12\x10\n\x08rec_info\x18\x05 \x01(\t\x12R\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x43.bytedance.byteplus.retail.PredictResult.ResponseProduct.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8a\x01\n\x0fPredictResponse\x12*\n\x06status\x18\x01 \x01(\x0b\x32\x1a.bytedance.byteplus.Status\x12\x12\n\nrequest_id\x18\x02 \x01(\t\x12\x37\n\x05value\x18\x03 \x01(\x0b\x32(.bytedance.byteplus.retail.PredictResult\"\xca\x02\n\x1b\x41\x63kServerImpressionsRequest\x12\x1a\n\x12predict_request_id\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12\x16\n\x0etraffic_source\x18\x03 \x01(\t\x12\x39\n\x05scene\x18\x04 \x01(\x0b\x32*.bytedance.byteplus.retail.UserEvent.Scene\x12_\n\x10\x61ltered_products\x18\x05 \x03(\x0b\x32\x45.bytedance.byteplus.retail.AckServerImpressionsRequest.AlteredProduct\x1aJ\n\x0e\x41lteredProduct\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x16\n\x0e\x61ltered_reason\x18\x02 \x01(\t\x12\x0c\n\x04rank\x18\x03 \x01(\x05\"J\n\x1c\x41\x63kServerImpressionsResponse\x12*\n\x06status\x18\x01 \x01(\x0b\x32\x1a.bytedance.byteplus.Status2\xdc\x04\n\x15\x42yteplusRetailService\x12i\n\nWriteUsers\x12,.bytedance.byteplus.retail.WriteUsersRequest\x1a-.bytedance.byteplus.retail.WriteUsersResponse\x12r\n\rWriteProducts\x12/.bytedance.byteplus.retail.WriteProductsRequest\x1a\x30.bytedance.byteplus.retail.WriteProductsResponse\x12x\n\x0fWriteUserEvents\x12\x31.bytedance.byteplus.retail.WriteUserEventsRequest\x1a\x32.bytedance.byteplus.retail.WriteUserEventsResponse\x12`\n\x07Predict\x12).bytedance.byteplus.retail.PredictRequest\x1a*.bytedance.byteplus.retail.PredictResponse\x12\x87\x01\n\x14\x41\x63kServerImpressions\x12\x36.bytedance.byteplus.retail.AckServerImpressionsRequest\x1a\x37.bytedance.byteplus.retail.AckServerImpressionsResponseBR\n\x1e\x62yteplus.sdk.retailv2.protocolZ0github.com/byteplus-sdk/sdk-go/retailv2/protocolb\x06proto3'
+  serialized_pb=b'\n\x17\x62yteplus_retailv2.proto\x12\x1b\x62ytedance.byteplus.retailv2\x1a\x15\x62yteplus_common.proto\"\x98\x03\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0e\n\x06gender\x18\x02 \x01(\t\x12\x0b\n\x03\x61ge\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x1a\n\x12\x61\x63tivation_channel\x18\x05 \x01(\t\x12\x18\n\x10membership_level\x18\x06 \x01(\t\x12\x1e\n\x16registration_timestamp\x18\x07 \x01(\x03\x12<\n\x08location\x18\x08 \x01(\x0b\x32*.bytedance.byteplus.retailv2.User.Location\x12;\n\x05\x65xtra\x18\x64 \x03(\x0b\x32,.bytedance.byteplus.retailv2.User.ExtraEntry\x1aU\n\x08Location\x12\x0f\n\x07\x63ountry\x18\x01 \x01(\t\x12\x0c\n\x04\x63ity\x18\x02 \x01(\t\x12\x18\n\x10\x64istrict_or_area\x18\x03 \x01(\t\x12\x10\n\x08postcode\x18\x04 \x01(\t\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xbd\x01\n\x11WriteUsersRequest\x12\x30\n\x05users\x18\x01 \x03(\x0b\x32!.bytedance.byteplus.retailv2.User\x12H\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x39.bytedance.byteplus.retailv2.WriteUsersRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"M\n\tUserError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12/\n\x04user\x18\x02 \x01(\x0b\x32!.bytedance.byteplus.retailv2.User\"\x7f\n\x12WriteUsersResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x36\n\x06\x65rrors\x18\x02 \x03(\x0b\x32&.bytedance.byteplus.retailv2.UserError\"\xb1\t\n\x07Product\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x41\n\ncategories\x18\x02 \x03(\x0b\x32-.bytedance.byteplus.retailv2.Product.Category\x12:\n\x06\x62rands\x18\x03 \x03(\x0b\x32*.bytedance.byteplus.retailv2.Product.Brand\x12\x39\n\x05price\x18\x04 \x01(\x0b\x32*.bytedance.byteplus.retailv2.Product.Price\x12\x18\n\x10is_recommendable\x18\x05 \x01(\x08\x12\r\n\x05title\x18\x06 \x01(\t\x12\x15\n\rquality_score\x18\x07 \x01(\x01\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12=\n\x07\x64isplay\x18\t \x01(\x0b\x32,.bytedance.byteplus.retailv2.Product.Display\x12\x46\n\x0cproduct_spec\x18\n \x01(\x0b\x32\x30.bytedance.byteplus.retailv2.Product.ProductSpec\x12;\n\x06seller\x18\x0b \x01(\x0b\x32+.bytedance.byteplus.retailv2.Product.Seller\x12>\n\x05\x65xtra\x18\x64 \x03(\x0b\x32/.bytedance.byteplus.retailv2.Product.ExtraEntry\x1a\x9a\x01\n\x08\x43\x61tegory\x12\x16\n\x0e\x63\x61tegory_depth\x18\x01 \x01(\x05\x12R\n\x0e\x63\x61tegory_nodes\x18\x02 \x03(\x0b\x32:.bytedance.byteplus.retailv2.Product.Category.CategoryNode\x1a\"\n\x0c\x43\x61tegoryNode\x12\x12\n\nid_or_name\x18\x01 \x01(\t\x1a\x30\n\x05\x42rand\x12\x13\n\x0b\x62rand_depth\x18\x01 \x01(\x05\x12\x12\n\nid_or_name\x18\x02 \x01(\t\x1a\x34\n\x05Price\x12\x15\n\rcurrent_price\x18\x01 \x01(\x03\x12\x14\n\x0corigin_price\x18\x02 \x01(\x03\x1a\x8f\x01\n\x07\x44isplay\x12!\n\x19listing_page_display_tags\x18\x01 \x03(\t\x12 \n\x18\x64\x65tail_page_display_tags\x18\x02 \x03(\t\x12!\n\x19listing_page_display_type\x18\x03 \x01(\t\x12\x1c\n\x14\x63over_multimedia_url\x18\x04 \x01(\t\x1a~\n\x0bProductSpec\x12\x18\n\x10product_group_id\x18\x01 \x01(\t\x12\x13\n\x0buser_rating\x18\x02 \x01(\x01\x12\x15\n\rcomment_count\x18\x03 \x01(\x05\x12\x0e\n\x06source\x18\x04 \x01(\t\x12\x19\n\x11publish_timestamp\x18\x05 \x01(\x03\x1a\x41\n\x06Seller\x12\n\n\x02id\x18\x01 \x01(\t\x12\x14\n\x0cseller_level\x18\x02 \x01(\t\x12\x15\n\rseller_rating\x18\x03 \x01(\x01\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc9\x01\n\x14WriteProductsRequest\x12\x36\n\x08products\x18\x01 \x03(\x0b\x32$.bytedance.byteplus.retailv2.Product\x12K\n\x05\x65xtra\x18\x64 \x03(\x0b\x32<.bytedance.byteplus.retailv2.WriteProductsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"V\n\x0cProductError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x35\n\x07product\x18\x02 \x01(\x0b\x32$.bytedance.byteplus.retailv2.Product\"\x85\x01\n\x15WriteProductsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x39\n\x06\x65rrors\x18\x02 \x03(\x0b\x32).bytedance.byteplus.retailv2.ProductError\"\xb9\x06\n\tUserEvent\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x12\n\nevent_type\x18\x02 \x01(\t\x12\x17\n\x0f\x65vent_timestamp\x18\x03 \x01(\x03\x12;\n\x05scene\x18\x04 \x01(\x0b\x32,.bytedance.byteplus.retailv2.UserEvent.Scene\x12\x12\n\nproduct_id\x18\x05 \x01(\t\x12=\n\x06\x64\x65vice\x18\x06 \x01(\x0b\x32-.bytedance.byteplus.retailv2.UserEvent.Device\x12?\n\x07\x63ontext\x18\x07 \x01(\x0b\x32..bytedance.byteplus.retailv2.UserEvent.Context\x12\x19\n\x11\x61ttribution_token\x18\x08 \x01(\t\x12\x10\n\x08rec_info\x18\t \x01(\t\x12\x16\n\x0etraffic_source\x18\n \x01(\t\x12\x16\n\x0epurchase_count\x18\x0b \x01(\x05\x12\x1d\n\x15\x64\x65tail_page_stay_time\x18\x0c \x01(\x05\x12@\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x31.bytedance.byteplus.retailv2.UserEvent.ExtraEntry\x1a@\n\x05Scene\x12\x12\n\nscene_name\x18\x01 \x01(\t\x12\x13\n\x0bpage_number\x18\x02 \x01(\x05\x12\x0e\n\x06offset\x18\x03 \x01(\x05\x1a\xbb\x01\n\x06\x44\x65vice\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x0f\n\x07os_type\x18\x02 \x01(\t\x12\x13\n\x0b\x61pp_version\x18\x03 \x01(\t\x12\x14\n\x0c\x64\x65vice_model\x18\x04 \x01(\t\x12\x14\n\x0c\x64\x65vice_brand\x18\x05 \x01(\t\x12\x12\n\nos_version\x18\x06 \x01(\t\x12\x14\n\x0c\x62rowser_type\x18\x07 \x01(\t\x12\x12\n\nuser_agent\x18\x08 \x01(\t\x12\x0f\n\x07network\x18\t \x01(\t\x1a\x31\n\x07\x43ontext\x12\r\n\x05query\x18\x01 \x01(\t\x12\x17\n\x0froot_product_id\x18\x02 \x01(\t\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd2\x01\n\x16WriteUserEventsRequest\x12;\n\x0buser_events\x18\x01 \x03(\x0b\x32&.bytedance.byteplus.retailv2.UserEvent\x12M\n\x05\x65xtra\x18\x64 \x03(\x0b\x32>.bytedance.byteplus.retailv2.WriteUserEventsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"]\n\x0eUserEventError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12:\n\nuser_event\x18\x02 \x01(\x0b\x32&.bytedance.byteplus.retailv2.UserEvent\"\x89\x01\n\x17WriteUserEventsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12;\n\x06\x65rrors\x18\x02 \x03(\x0b\x32+.bytedance.byteplus.retailv2.UserEventError\"\xcd\x03\n\x0ePredictRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04size\x18\x02 \x01(\x05\x12;\n\x05scene\x18\x03 \x01(\x0b\x32,.bytedance.byteplus.retailv2.UserEvent.Scene\x12\x44\n\x07\x63ontext\x18\x04 \x01(\x0b\x32\x33.bytedance.byteplus.retailv2.PredictRequest.Context\x12\x45\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x36.bytedance.byteplus.retailv2.PredictRequest.ExtraEntry\x1a\xa3\x01\n\x07\x43ontext\x12:\n\x0croot_product\x18\x01 \x01(\x0b\x32$.bytedance.byteplus.retailv2.Product\x12=\n\x06\x64\x65vice\x18\x02 \x01(\x0b\x32-.bytedance.byteplus.retailv2.UserEvent.Device\x12\x1d\n\x15\x63\x61ndidate_product_ids\x18\x03 \x03(\t\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc2\x03\n\rPredictResult\x12U\n\x11response_products\x18\x01 \x03(\x0b\x32:.bytedance.byteplus.retailv2.PredictResult.ResponseProduct\x12\x44\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x35.bytedance.byteplus.retailv2.PredictResult.ExtraEntry\x1a\xe5\x01\n\x0fResponseProduct\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x0c\n\x04rank\x18\x02 \x01(\x05\x12\x0c\n\x04pctr\x18\x03 \x01(\x01\x12\x0c\n\x04pcvr\x18\x04 \x01(\x01\x12\x10\n\x08rec_info\x18\x05 \x01(\t\x12T\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x45.bytedance.byteplus.retailv2.PredictResult.ResponseProduct.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x93\x01\n\x0fPredictResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x12\n\nrequest_id\x18\x02 \x01(\t\x12\x39\n\x05value\x18\x03 \x01(\x0b\x32*.bytedance.byteplus.retailv2.PredictResult\"\xce\x02\n\x1b\x41\x63kServerImpressionsRequest\x12\x1a\n\x12predict_request_id\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12\x16\n\x0etraffic_source\x18\x03 \x01(\t\x12;\n\x05scene\x18\x04 \x01(\x0b\x32,.bytedance.byteplus.retailv2.UserEvent.Scene\x12\x61\n\x10\x61ltered_products\x18\x05 \x03(\x0b\x32G.bytedance.byteplus.retailv2.AckServerImpressionsRequest.AlteredProduct\x1aJ\n\x0e\x41lteredProduct\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x16\n\x0e\x61ltered_reason\x18\x02 \x01(\t\x12\x0c\n\x04rank\x18\x03 \x01(\x05\"Q\n\x1c\x41\x63kServerImpressionsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status2\xf0\x04\n\x15\x42yteplusRetailService\x12m\n\nWriteUsers\x12..bytedance.byteplus.retailv2.WriteUsersRequest\x1a/.bytedance.byteplus.retailv2.WriteUsersResponse\x12v\n\rWriteProducts\x12\x31.bytedance.byteplus.retailv2.WriteProductsRequest\x1a\x32.bytedance.byteplus.retailv2.WriteProductsResponse\x12|\n\x0fWriteUserEvents\x12\x33.bytedance.byteplus.retailv2.WriteUserEventsRequest\x1a\x34.bytedance.byteplus.retailv2.WriteUserEventsResponse\x12\x64\n\x07Predict\x12+.bytedance.byteplus.retailv2.PredictRequest\x1a,.bytedance.byteplus.retailv2.PredictResponse\x12\x8b\x01\n\x14\x41\x63kServerImpressions\x12\x38.bytedance.byteplus.retailv2.AckServerImpressionsRequest\x1a\x39.bytedance.byteplus.retailv2.AckServerImpressionsResponseBR\n\x1e\x62yteplus.sdk.retailv2.protocolZ0github.com/byteplus-sdk/sdk-go/retailv2/protocolb\x06proto3'
   ,
   dependencies=[byteplus__common__pb2.DESCRIPTOR,])
 
@@ -29,35 +29,35 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _USER_LOCATION = _descriptor.Descriptor(
   name='Location',
-  full_name='bytedance.byteplus.retail.User.Location',
+  full_name='bytedance.byteplus.retailv2.User.Location',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='country', full_name='bytedance.byteplus.retail.User.Location.country', index=0,
+      name='country', full_name='bytedance.byteplus.retailv2.User.Location.country', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='city', full_name='bytedance.byteplus.retail.User.Location.city', index=1,
+      name='city', full_name='bytedance.byteplus.retailv2.User.Location.city', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='district_or_area', full_name='bytedance.byteplus.retail.User.Location.district_or_area', index=2,
+      name='district_or_area', full_name='bytedance.byteplus.retailv2.User.Location.district_or_area', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='postcode', full_name='bytedance.byteplus.retail.User.Location.postcode', index=3,
+      name='postcode', full_name='bytedance.byteplus.retailv2.User.Location.postcode', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -75,27 +75,27 @@ _USER_LOCATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=351,
-  serialized_end=436,
+  serialized_start=357,
+  serialized_end=442,
 )
 
 _USER_EXTRAENTRY = _descriptor.Descriptor(
   name='ExtraEntry',
-  full_name='bytedance.byteplus.retail.User.ExtraEntry',
+  full_name='bytedance.byteplus.retailv2.User.ExtraEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='bytedance.byteplus.retail.User.ExtraEntry.key', index=0,
+      name='key', full_name='bytedance.byteplus.retailv2.User.ExtraEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='bytedance.byteplus.retail.User.ExtraEntry.value', index=1,
+      name='value', full_name='bytedance.byteplus.retailv2.User.ExtraEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -113,76 +113,76 @@ _USER_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=438,
-  serialized_end=482,
+  serialized_start=444,
+  serialized_end=488,
 )
 
 _USER = _descriptor.Descriptor(
   name='User',
-  full_name='bytedance.byteplus.retail.User',
+  full_name='bytedance.byteplus.retailv2.User',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='user_id', full_name='bytedance.byteplus.retail.User.user_id', index=0,
+      name='user_id', full_name='bytedance.byteplus.retailv2.User.user_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='gender', full_name='bytedance.byteplus.retail.User.gender', index=1,
+      name='gender', full_name='bytedance.byteplus.retailv2.User.gender', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='age', full_name='bytedance.byteplus.retail.User.age', index=2,
+      name='age', full_name='bytedance.byteplus.retailv2.User.age', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='tags', full_name='bytedance.byteplus.retail.User.tags', index=3,
+      name='tags', full_name='bytedance.byteplus.retailv2.User.tags', index=3,
       number=4, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='activation_channel', full_name='bytedance.byteplus.retail.User.activation_channel', index=4,
+      name='activation_channel', full_name='bytedance.byteplus.retailv2.User.activation_channel', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='membership_level', full_name='bytedance.byteplus.retail.User.membership_level', index=5,
+      name='membership_level', full_name='bytedance.byteplus.retailv2.User.membership_level', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='registration_timestamp', full_name='bytedance.byteplus.retail.User.registration_timestamp', index=6,
+      name='registration_timestamp', full_name='bytedance.byteplus.retailv2.User.registration_timestamp', index=6,
       number=7, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='location', full_name='bytedance.byteplus.retail.User.location', index=7,
+      name='location', full_name='bytedance.byteplus.retailv2.User.location', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='extra', full_name='bytedance.byteplus.retail.User.extra', index=8,
+      name='extra', full_name='bytedance.byteplus.retailv2.User.extra', index=8,
       number=100, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -200,28 +200,28 @@ _USER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=78,
-  serialized_end=482,
+  serialized_start=80,
+  serialized_end=488,
 )
 
 
 _WRITEUSERSREQUEST_EXTRAENTRY = _descriptor.Descriptor(
   name='ExtraEntry',
-  full_name='bytedance.byteplus.retail.WriteUsersRequest.ExtraEntry',
+  full_name='bytedance.byteplus.retailv2.WriteUsersRequest.ExtraEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='bytedance.byteplus.retail.WriteUsersRequest.ExtraEntry.key', index=0,
+      name='key', full_name='bytedance.byteplus.retailv2.WriteUsersRequest.ExtraEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='bytedance.byteplus.retail.WriteUsersRequest.ExtraEntry.value', index=1,
+      name='value', full_name='bytedance.byteplus.retailv2.WriteUsersRequest.ExtraEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -239,27 +239,27 @@ _WRITEUSERSREQUEST_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=438,
-  serialized_end=482,
+  serialized_start=444,
+  serialized_end=488,
 )
 
 _WRITEUSERSREQUEST = _descriptor.Descriptor(
   name='WriteUsersRequest',
-  full_name='bytedance.byteplus.retail.WriteUsersRequest',
+  full_name='bytedance.byteplus.retailv2.WriteUsersRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='users', full_name='bytedance.byteplus.retail.WriteUsersRequest.users', index=0,
+      name='users', full_name='bytedance.byteplus.retailv2.WriteUsersRequest.users', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='extra', full_name='bytedance.byteplus.retail.WriteUsersRequest.extra', index=1,
+      name='extra', full_name='bytedance.byteplus.retailv2.WriteUsersRequest.extra', index=1,
       number=100, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -277,28 +277,28 @@ _WRITEUSERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=485,
-  serialized_end=670,
+  serialized_start=491,
+  serialized_end=680,
 )
 
 
 _USERERROR = _descriptor.Descriptor(
   name='UserError',
-  full_name='bytedance.byteplus.retail.UserError',
+  full_name='bytedance.byteplus.retailv2.UserError',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='message', full_name='bytedance.byteplus.retail.UserError.message', index=0,
+      name='message', full_name='bytedance.byteplus.retailv2.UserError.message', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='user', full_name='bytedance.byteplus.retail.UserError.user', index=1,
+      name='user', full_name='bytedance.byteplus.retailv2.UserError.user', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -316,28 +316,28 @@ _USERERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=672,
-  serialized_end=747,
+  serialized_start=682,
+  serialized_end=759,
 )
 
 
 _WRITEUSERSRESPONSE = _descriptor.Descriptor(
   name='WriteUsersResponse',
-  full_name='bytedance.byteplus.retail.WriteUsersResponse',
+  full_name='bytedance.byteplus.retailv2.WriteUsersResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='bytedance.byteplus.retail.WriteUsersResponse.status', index=0,
+      name='status', full_name='bytedance.byteplus.retailv2.WriteUsersResponse.status', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='errors', full_name='bytedance.byteplus.retail.WriteUsersResponse.errors', index=1,
+      name='errors', full_name='bytedance.byteplus.retailv2.WriteUsersResponse.errors', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -355,21 +355,21 @@ _WRITEUSERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=749,
-  serialized_end=867,
+  serialized_start=761,
+  serialized_end=888,
 )
 
 
 _PRODUCT_CATEGORY_CATEGORYNODE = _descriptor.Descriptor(
   name='CategoryNode',
-  full_name='bytedance.byteplus.retail.Product.Category.CategoryNode',
+  full_name='bytedance.byteplus.retailv2.Product.Category.CategoryNode',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id_or_name', full_name='bytedance.byteplus.retail.Product.Category.CategoryNode.id_or_name', index=0,
+      name='id_or_name', full_name='bytedance.byteplus.retailv2.Product.Category.CategoryNode.id_or_name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -387,27 +387,27 @@ _PRODUCT_CATEGORY_CATEGORYNODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1530,
-  serialized_end=1564,
+  serialized_start=1567,
+  serialized_end=1601,
 )
 
 _PRODUCT_CATEGORY = _descriptor.Descriptor(
   name='Category',
-  full_name='bytedance.byteplus.retail.Product.Category',
+  full_name='bytedance.byteplus.retailv2.Product.Category',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='category_depth', full_name='bytedance.byteplus.retail.Product.Category.category_depth', index=0,
+      name='category_depth', full_name='bytedance.byteplus.retailv2.Product.Category.category_depth', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='category_nodes', full_name='bytedance.byteplus.retail.Product.Category.category_nodes', index=1,
+      name='category_nodes', full_name='bytedance.byteplus.retailv2.Product.Category.category_nodes', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -425,27 +425,27 @@ _PRODUCT_CATEGORY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1412,
-  serialized_end=1564,
+  serialized_start=1447,
+  serialized_end=1601,
 )
 
 _PRODUCT_BRAND = _descriptor.Descriptor(
   name='Brand',
-  full_name='bytedance.byteplus.retail.Product.Brand',
+  full_name='bytedance.byteplus.retailv2.Product.Brand',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='brand_depth', full_name='bytedance.byteplus.retail.Product.Brand.brand_depth', index=0,
+      name='brand_depth', full_name='bytedance.byteplus.retailv2.Product.Brand.brand_depth', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id_or_name', full_name='bytedance.byteplus.retail.Product.Brand.id_or_name', index=1,
+      name='id_or_name', full_name='bytedance.byteplus.retailv2.Product.Brand.id_or_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -463,27 +463,27 @@ _PRODUCT_BRAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1566,
-  serialized_end=1614,
+  serialized_start=1603,
+  serialized_end=1651,
 )
 
 _PRODUCT_PRICE = _descriptor.Descriptor(
   name='Price',
-  full_name='bytedance.byteplus.retail.Product.Price',
+  full_name='bytedance.byteplus.retailv2.Product.Price',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='current_price', full_name='bytedance.byteplus.retail.Product.Price.current_price', index=0,
+      name='current_price', full_name='bytedance.byteplus.retailv2.Product.Price.current_price', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='origin_price', full_name='bytedance.byteplus.retail.Product.Price.origin_price', index=1,
+      name='origin_price', full_name='bytedance.byteplus.retailv2.Product.Price.origin_price', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -501,41 +501,41 @@ _PRODUCT_PRICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1616,
-  serialized_end=1668,
+  serialized_start=1653,
+  serialized_end=1705,
 )
 
 _PRODUCT_DISPLAY = _descriptor.Descriptor(
   name='Display',
-  full_name='bytedance.byteplus.retail.Product.Display',
+  full_name='bytedance.byteplus.retailv2.Product.Display',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='listing_page_display_tags', full_name='bytedance.byteplus.retail.Product.Display.listing_page_display_tags', index=0,
+      name='listing_page_display_tags', full_name='bytedance.byteplus.retailv2.Product.Display.listing_page_display_tags', index=0,
       number=1, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='detail_page_display_tags', full_name='bytedance.byteplus.retail.Product.Display.detail_page_display_tags', index=1,
+      name='detail_page_display_tags', full_name='bytedance.byteplus.retailv2.Product.Display.detail_page_display_tags', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='listing_page_display_type', full_name='bytedance.byteplus.retail.Product.Display.listing_page_display_type', index=2,
+      name='listing_page_display_type', full_name='bytedance.byteplus.retailv2.Product.Display.listing_page_display_type', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cover_multimedia_url', full_name='bytedance.byteplus.retail.Product.Display.cover_multimedia_url', index=3,
+      name='cover_multimedia_url', full_name='bytedance.byteplus.retailv2.Product.Display.cover_multimedia_url', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -553,48 +553,48 @@ _PRODUCT_DISPLAY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1671,
-  serialized_end=1814,
+  serialized_start=1708,
+  serialized_end=1851,
 )
 
 _PRODUCT_PRODUCTSPEC = _descriptor.Descriptor(
   name='ProductSpec',
-  full_name='bytedance.byteplus.retail.Product.ProductSpec',
+  full_name='bytedance.byteplus.retailv2.Product.ProductSpec',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='product_group_id', full_name='bytedance.byteplus.retail.Product.ProductSpec.product_group_id', index=0,
+      name='product_group_id', full_name='bytedance.byteplus.retailv2.Product.ProductSpec.product_group_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='user_rating', full_name='bytedance.byteplus.retail.Product.ProductSpec.user_rating', index=1,
+      name='user_rating', full_name='bytedance.byteplus.retailv2.Product.ProductSpec.user_rating', index=1,
       number=2, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='comment_count', full_name='bytedance.byteplus.retail.Product.ProductSpec.comment_count', index=2,
+      name='comment_count', full_name='bytedance.byteplus.retailv2.Product.ProductSpec.comment_count', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='source', full_name='bytedance.byteplus.retail.Product.ProductSpec.source', index=3,
+      name='source', full_name='bytedance.byteplus.retailv2.Product.ProductSpec.source', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='publish_timestamp', full_name='bytedance.byteplus.retail.Product.ProductSpec.publish_timestamp', index=4,
+      name='publish_timestamp', full_name='bytedance.byteplus.retailv2.Product.ProductSpec.publish_timestamp', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -612,34 +612,34 @@ _PRODUCT_PRODUCTSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1816,
-  serialized_end=1942,
+  serialized_start=1853,
+  serialized_end=1979,
 )
 
 _PRODUCT_SELLER = _descriptor.Descriptor(
   name='Seller',
-  full_name='bytedance.byteplus.retail.Product.Seller',
+  full_name='bytedance.byteplus.retailv2.Product.Seller',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='bytedance.byteplus.retail.Product.Seller.id', index=0,
+      name='id', full_name='bytedance.byteplus.retailv2.Product.Seller.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='seller_level', full_name='bytedance.byteplus.retail.Product.Seller.seller_level', index=1,
+      name='seller_level', full_name='bytedance.byteplus.retailv2.Product.Seller.seller_level', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='seller_rating', full_name='bytedance.byteplus.retail.Product.Seller.seller_rating', index=2,
+      name='seller_rating', full_name='bytedance.byteplus.retailv2.Product.Seller.seller_rating', index=2,
       number=3, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -657,27 +657,27 @@ _PRODUCT_SELLER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1944,
-  serialized_end=2009,
+  serialized_start=1981,
+  serialized_end=2046,
 )
 
 _PRODUCT_EXTRAENTRY = _descriptor.Descriptor(
   name='ExtraEntry',
-  full_name='bytedance.byteplus.retail.Product.ExtraEntry',
+  full_name='bytedance.byteplus.retailv2.Product.ExtraEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='bytedance.byteplus.retail.Product.ExtraEntry.key', index=0,
+      name='key', full_name='bytedance.byteplus.retailv2.Product.ExtraEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='bytedance.byteplus.retail.Product.ExtraEntry.value', index=1,
+      name='value', full_name='bytedance.byteplus.retailv2.Product.ExtraEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -695,97 +695,97 @@ _PRODUCT_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=438,
-  serialized_end=482,
+  serialized_start=444,
+  serialized_end=488,
 )
 
 _PRODUCT = _descriptor.Descriptor(
   name='Product',
-  full_name='bytedance.byteplus.retail.Product',
+  full_name='bytedance.byteplus.retailv2.Product',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='product_id', full_name='bytedance.byteplus.retail.Product.product_id', index=0,
+      name='product_id', full_name='bytedance.byteplus.retailv2.Product.product_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='categories', full_name='bytedance.byteplus.retail.Product.categories', index=1,
+      name='categories', full_name='bytedance.byteplus.retailv2.Product.categories', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='brands', full_name='bytedance.byteplus.retail.Product.brands', index=2,
+      name='brands', full_name='bytedance.byteplus.retailv2.Product.brands', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='price', full_name='bytedance.byteplus.retail.Product.price', index=3,
+      name='price', full_name='bytedance.byteplus.retailv2.Product.price', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='is_recommendable', full_name='bytedance.byteplus.retail.Product.is_recommendable', index=4,
+      name='is_recommendable', full_name='bytedance.byteplus.retailv2.Product.is_recommendable', index=4,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='title', full_name='bytedance.byteplus.retail.Product.title', index=5,
+      name='title', full_name='bytedance.byteplus.retailv2.Product.title', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='quality_score', full_name='bytedance.byteplus.retail.Product.quality_score', index=6,
+      name='quality_score', full_name='bytedance.byteplus.retailv2.Product.quality_score', index=6,
       number=7, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='tags', full_name='bytedance.byteplus.retail.Product.tags', index=7,
+      name='tags', full_name='bytedance.byteplus.retailv2.Product.tags', index=7,
       number=8, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='display', full_name='bytedance.byteplus.retail.Product.display', index=8,
+      name='display', full_name='bytedance.byteplus.retailv2.Product.display', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='product_spec', full_name='bytedance.byteplus.retail.Product.product_spec', index=9,
+      name='product_spec', full_name='bytedance.byteplus.retailv2.Product.product_spec', index=9,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='seller', full_name='bytedance.byteplus.retail.Product.seller', index=10,
+      name='seller', full_name='bytedance.byteplus.retailv2.Product.seller', index=10,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='extra', full_name='bytedance.byteplus.retail.Product.extra', index=11,
+      name='extra', full_name='bytedance.byteplus.retailv2.Product.extra', index=11,
       number=100, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -803,28 +803,28 @@ _PRODUCT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=870,
-  serialized_end=2055,
+  serialized_start=891,
+  serialized_end=2092,
 )
 
 
 _WRITEPRODUCTSREQUEST_EXTRAENTRY = _descriptor.Descriptor(
   name='ExtraEntry',
-  full_name='bytedance.byteplus.retail.WriteProductsRequest.ExtraEntry',
+  full_name='bytedance.byteplus.retailv2.WriteProductsRequest.ExtraEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='bytedance.byteplus.retail.WriteProductsRequest.ExtraEntry.key', index=0,
+      name='key', full_name='bytedance.byteplus.retailv2.WriteProductsRequest.ExtraEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='bytedance.byteplus.retail.WriteProductsRequest.ExtraEntry.value', index=1,
+      name='value', full_name='bytedance.byteplus.retailv2.WriteProductsRequest.ExtraEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -842,27 +842,27 @@ _WRITEPRODUCTSREQUEST_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=438,
-  serialized_end=482,
+  serialized_start=444,
+  serialized_end=488,
 )
 
 _WRITEPRODUCTSREQUEST = _descriptor.Descriptor(
   name='WriteProductsRequest',
-  full_name='bytedance.byteplus.retail.WriteProductsRequest',
+  full_name='bytedance.byteplus.retailv2.WriteProductsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='products', full_name='bytedance.byteplus.retail.WriteProductsRequest.products', index=0,
+      name='products', full_name='bytedance.byteplus.retailv2.WriteProductsRequest.products', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='extra', full_name='bytedance.byteplus.retail.WriteProductsRequest.extra', index=1,
+      name='extra', full_name='bytedance.byteplus.retailv2.WriteProductsRequest.extra', index=1,
       number=100, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -880,28 +880,28 @@ _WRITEPRODUCTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2058,
-  serialized_end=2255,
+  serialized_start=2095,
+  serialized_end=2296,
 )
 
 
 _PRODUCTERROR = _descriptor.Descriptor(
   name='ProductError',
-  full_name='bytedance.byteplus.retail.ProductError',
+  full_name='bytedance.byteplus.retailv2.ProductError',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='message', full_name='bytedance.byteplus.retail.ProductError.message', index=0,
+      name='message', full_name='bytedance.byteplus.retailv2.ProductError.message', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='product', full_name='bytedance.byteplus.retail.ProductError.product', index=1,
+      name='product', full_name='bytedance.byteplus.retailv2.ProductError.product', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -919,28 +919,28 @@ _PRODUCTERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2257,
-  serialized_end=2341,
+  serialized_start=2298,
+  serialized_end=2384,
 )
 
 
 _WRITEPRODUCTSRESPONSE = _descriptor.Descriptor(
   name='WriteProductsResponse',
-  full_name='bytedance.byteplus.retail.WriteProductsResponse',
+  full_name='bytedance.byteplus.retailv2.WriteProductsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='bytedance.byteplus.retail.WriteProductsResponse.status', index=0,
+      name='status', full_name='bytedance.byteplus.retailv2.WriteProductsResponse.status', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='errors', full_name='bytedance.byteplus.retail.WriteProductsResponse.errors', index=1,
+      name='errors', full_name='bytedance.byteplus.retailv2.WriteProductsResponse.errors', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -958,35 +958,35 @@ _WRITEPRODUCTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2343,
-  serialized_end=2467,
+  serialized_start=2387,
+  serialized_end=2520,
 )
 
 
 _USEREVENT_SCENE = _descriptor.Descriptor(
   name='Scene',
-  full_name='bytedance.byteplus.retail.UserEvent.Scene',
+  full_name='bytedance.byteplus.retailv2.UserEvent.Scene',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='scene_name', full_name='bytedance.byteplus.retail.UserEvent.Scene.scene_name', index=0,
+      name='scene_name', full_name='bytedance.byteplus.retailv2.UserEvent.Scene.scene_name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='page_number', full_name='bytedance.byteplus.retail.UserEvent.Scene.page_number', index=1,
+      name='page_number', full_name='bytedance.byteplus.retailv2.UserEvent.Scene.page_number', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='offset', full_name='bytedance.byteplus.retail.UserEvent.Scene.offset', index=2,
+      name='offset', full_name='bytedance.byteplus.retailv2.UserEvent.Scene.offset', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1004,76 +1004,76 @@ _USEREVENT_SCENE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2936,
-  serialized_end=3000,
+  serialized_start=2997,
+  serialized_end=3061,
 )
 
 _USEREVENT_DEVICE = _descriptor.Descriptor(
   name='Device',
-  full_name='bytedance.byteplus.retail.UserEvent.Device',
+  full_name='bytedance.byteplus.retailv2.UserEvent.Device',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='platform', full_name='bytedance.byteplus.retail.UserEvent.Device.platform', index=0,
+      name='platform', full_name='bytedance.byteplus.retailv2.UserEvent.Device.platform', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='os_type', full_name='bytedance.byteplus.retail.UserEvent.Device.os_type', index=1,
+      name='os_type', full_name='bytedance.byteplus.retailv2.UserEvent.Device.os_type', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='app_version', full_name='bytedance.byteplus.retail.UserEvent.Device.app_version', index=2,
+      name='app_version', full_name='bytedance.byteplus.retailv2.UserEvent.Device.app_version', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='device_model', full_name='bytedance.byteplus.retail.UserEvent.Device.device_model', index=3,
+      name='device_model', full_name='bytedance.byteplus.retailv2.UserEvent.Device.device_model', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='device_brand', full_name='bytedance.byteplus.retail.UserEvent.Device.device_brand', index=4,
+      name='device_brand', full_name='bytedance.byteplus.retailv2.UserEvent.Device.device_brand', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='os_version', full_name='bytedance.byteplus.retail.UserEvent.Device.os_version', index=5,
+      name='os_version', full_name='bytedance.byteplus.retailv2.UserEvent.Device.os_version', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='browser_type', full_name='bytedance.byteplus.retail.UserEvent.Device.browser_type', index=6,
+      name='browser_type', full_name='bytedance.byteplus.retailv2.UserEvent.Device.browser_type', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='user_agent', full_name='bytedance.byteplus.retail.UserEvent.Device.user_agent', index=7,
+      name='user_agent', full_name='bytedance.byteplus.retailv2.UserEvent.Device.user_agent', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='network', full_name='bytedance.byteplus.retail.UserEvent.Device.network', index=8,
+      name='network', full_name='bytedance.byteplus.retailv2.UserEvent.Device.network', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1091,27 +1091,27 @@ _USEREVENT_DEVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3003,
-  serialized_end=3190,
+  serialized_start=3064,
+  serialized_end=3251,
 )
 
 _USEREVENT_CONTEXT = _descriptor.Descriptor(
   name='Context',
-  full_name='bytedance.byteplus.retail.UserEvent.Context',
+  full_name='bytedance.byteplus.retailv2.UserEvent.Context',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='query', full_name='bytedance.byteplus.retail.UserEvent.Context.query', index=0,
+      name='query', full_name='bytedance.byteplus.retailv2.UserEvent.Context.query', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='root_product_id', full_name='bytedance.byteplus.retail.UserEvent.Context.root_product_id', index=1,
+      name='root_product_id', full_name='bytedance.byteplus.retailv2.UserEvent.Context.root_product_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1129,27 +1129,27 @@ _USEREVENT_CONTEXT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3192,
-  serialized_end=3241,
+  serialized_start=3253,
+  serialized_end=3302,
 )
 
 _USEREVENT_EXTRAENTRY = _descriptor.Descriptor(
   name='ExtraEntry',
-  full_name='bytedance.byteplus.retail.UserEvent.ExtraEntry',
+  full_name='bytedance.byteplus.retailv2.UserEvent.ExtraEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='bytedance.byteplus.retail.UserEvent.ExtraEntry.key', index=0,
+      name='key', full_name='bytedance.byteplus.retailv2.UserEvent.ExtraEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='bytedance.byteplus.retail.UserEvent.ExtraEntry.value', index=1,
+      name='value', full_name='bytedance.byteplus.retailv2.UserEvent.ExtraEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1167,104 +1167,104 @@ _USEREVENT_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=438,
-  serialized_end=482,
+  serialized_start=444,
+  serialized_end=488,
 )
 
 _USEREVENT = _descriptor.Descriptor(
   name='UserEvent',
-  full_name='bytedance.byteplus.retail.UserEvent',
+  full_name='bytedance.byteplus.retailv2.UserEvent',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='user_id', full_name='bytedance.byteplus.retail.UserEvent.user_id', index=0,
+      name='user_id', full_name='bytedance.byteplus.retailv2.UserEvent.user_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='event_type', full_name='bytedance.byteplus.retail.UserEvent.event_type', index=1,
+      name='event_type', full_name='bytedance.byteplus.retailv2.UserEvent.event_type', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='event_timestamp', full_name='bytedance.byteplus.retail.UserEvent.event_timestamp', index=2,
+      name='event_timestamp', full_name='bytedance.byteplus.retailv2.UserEvent.event_timestamp', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='scene', full_name='bytedance.byteplus.retail.UserEvent.scene', index=3,
+      name='scene', full_name='bytedance.byteplus.retailv2.UserEvent.scene', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='product_id', full_name='bytedance.byteplus.retail.UserEvent.product_id', index=4,
+      name='product_id', full_name='bytedance.byteplus.retailv2.UserEvent.product_id', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='device', full_name='bytedance.byteplus.retail.UserEvent.device', index=5,
+      name='device', full_name='bytedance.byteplus.retailv2.UserEvent.device', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='context', full_name='bytedance.byteplus.retail.UserEvent.context', index=6,
+      name='context', full_name='bytedance.byteplus.retailv2.UserEvent.context', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='attribution_token', full_name='bytedance.byteplus.retail.UserEvent.attribution_token', index=7,
+      name='attribution_token', full_name='bytedance.byteplus.retailv2.UserEvent.attribution_token', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='rec_info', full_name='bytedance.byteplus.retail.UserEvent.rec_info', index=8,
+      name='rec_info', full_name='bytedance.byteplus.retailv2.UserEvent.rec_info', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='traffic_source', full_name='bytedance.byteplus.retail.UserEvent.traffic_source', index=9,
+      name='traffic_source', full_name='bytedance.byteplus.retailv2.UserEvent.traffic_source', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='purchase_count', full_name='bytedance.byteplus.retail.UserEvent.purchase_count', index=10,
+      name='purchase_count', full_name='bytedance.byteplus.retailv2.UserEvent.purchase_count', index=10,
       number=11, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='detail_page_stay_time', full_name='bytedance.byteplus.retail.UserEvent.detail_page_stay_time', index=11,
+      name='detail_page_stay_time', full_name='bytedance.byteplus.retailv2.UserEvent.detail_page_stay_time', index=11,
       number=12, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='extra', full_name='bytedance.byteplus.retail.UserEvent.extra', index=12,
+      name='extra', full_name='bytedance.byteplus.retailv2.UserEvent.extra', index=12,
       number=100, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1282,28 +1282,28 @@ _USEREVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2470,
-  serialized_end=3287,
+  serialized_start=2523,
+  serialized_end=3348,
 )
 
 
 _WRITEUSEREVENTSREQUEST_EXTRAENTRY = _descriptor.Descriptor(
   name='ExtraEntry',
-  full_name='bytedance.byteplus.retail.WriteUserEventsRequest.ExtraEntry',
+  full_name='bytedance.byteplus.retailv2.WriteUserEventsRequest.ExtraEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='bytedance.byteplus.retail.WriteUserEventsRequest.ExtraEntry.key', index=0,
+      name='key', full_name='bytedance.byteplus.retailv2.WriteUserEventsRequest.ExtraEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='bytedance.byteplus.retail.WriteUserEventsRequest.ExtraEntry.value', index=1,
+      name='value', full_name='bytedance.byteplus.retailv2.WriteUserEventsRequest.ExtraEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1321,27 +1321,27 @@ _WRITEUSEREVENTSREQUEST_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=438,
-  serialized_end=482,
+  serialized_start=444,
+  serialized_end=488,
 )
 
 _WRITEUSEREVENTSREQUEST = _descriptor.Descriptor(
   name='WriteUserEventsRequest',
-  full_name='bytedance.byteplus.retail.WriteUserEventsRequest',
+  full_name='bytedance.byteplus.retailv2.WriteUserEventsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='user_events', full_name='bytedance.byteplus.retail.WriteUserEventsRequest.user_events', index=0,
+      name='user_events', full_name='bytedance.byteplus.retailv2.WriteUserEventsRequest.user_events', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='extra', full_name='bytedance.byteplus.retail.WriteUserEventsRequest.extra', index=1,
+      name='extra', full_name='bytedance.byteplus.retailv2.WriteUserEventsRequest.extra', index=1,
       number=100, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1359,28 +1359,28 @@ _WRITEUSEREVENTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3290,
-  serialized_end=3496,
+  serialized_start=3351,
+  serialized_end=3561,
 )
 
 
 _USEREVENTERROR = _descriptor.Descriptor(
   name='UserEventError',
-  full_name='bytedance.byteplus.retail.UserEventError',
+  full_name='bytedance.byteplus.retailv2.UserEventError',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='message', full_name='bytedance.byteplus.retail.UserEventError.message', index=0,
+      name='message', full_name='bytedance.byteplus.retailv2.UserEventError.message', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='user_event', full_name='bytedance.byteplus.retail.UserEventError.user_event', index=1,
+      name='user_event', full_name='bytedance.byteplus.retailv2.UserEventError.user_event', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1398,28 +1398,28 @@ _USEREVENTERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3498,
-  serialized_end=3589,
+  serialized_start=3563,
+  serialized_end=3656,
 )
 
 
 _WRITEUSEREVENTSRESPONSE = _descriptor.Descriptor(
   name='WriteUserEventsResponse',
-  full_name='bytedance.byteplus.retail.WriteUserEventsResponse',
+  full_name='bytedance.byteplus.retailv2.WriteUserEventsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='bytedance.byteplus.retail.WriteUserEventsResponse.status', index=0,
+      name='status', full_name='bytedance.byteplus.retailv2.WriteUserEventsResponse.status', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='errors', full_name='bytedance.byteplus.retail.WriteUserEventsResponse.errors', index=1,
+      name='errors', full_name='bytedance.byteplus.retailv2.WriteUserEventsResponse.errors', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1437,35 +1437,35 @@ _WRITEUSEREVENTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3592,
-  serialized_end=3720,
+  serialized_start=3659,
+  serialized_end=3796,
 )
 
 
 _PREDICTREQUEST_CONTEXT = _descriptor.Descriptor(
   name='Context',
-  full_name='bytedance.byteplus.retail.PredictRequest.Context',
+  full_name='bytedance.byteplus.retailv2.PredictRequest.Context',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='root_product', full_name='bytedance.byteplus.retail.PredictRequest.Context.root_product', index=0,
+      name='root_product', full_name='bytedance.byteplus.retailv2.PredictRequest.Context.root_product', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='device', full_name='bytedance.byteplus.retail.PredictRequest.Context.device', index=1,
+      name='device', full_name='bytedance.byteplus.retailv2.PredictRequest.Context.device', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='candidate_product_ids', full_name='bytedance.byteplus.retail.PredictRequest.Context.candidate_product_ids', index=2,
+      name='candidate_product_ids', full_name='bytedance.byteplus.retailv2.PredictRequest.Context.candidate_product_ids', index=2,
       number=3, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1483,27 +1483,27 @@ _PREDICTREQUEST_CONTEXT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3969,
-  serialized_end=4128,
+  serialized_start=4051,
+  serialized_end=4214,
 )
 
 _PREDICTREQUEST_EXTRAENTRY = _descriptor.Descriptor(
   name='ExtraEntry',
-  full_name='bytedance.byteplus.retail.PredictRequest.ExtraEntry',
+  full_name='bytedance.byteplus.retailv2.PredictRequest.ExtraEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='bytedance.byteplus.retail.PredictRequest.ExtraEntry.key', index=0,
+      name='key', full_name='bytedance.byteplus.retailv2.PredictRequest.ExtraEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='bytedance.byteplus.retail.PredictRequest.ExtraEntry.value', index=1,
+      name='value', full_name='bytedance.byteplus.retailv2.PredictRequest.ExtraEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1521,48 +1521,48 @@ _PREDICTREQUEST_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=438,
-  serialized_end=482,
+  serialized_start=444,
+  serialized_end=488,
 )
 
 _PREDICTREQUEST = _descriptor.Descriptor(
   name='PredictRequest',
-  full_name='bytedance.byteplus.retail.PredictRequest',
+  full_name='bytedance.byteplus.retailv2.PredictRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='user_id', full_name='bytedance.byteplus.retail.PredictRequest.user_id', index=0,
+      name='user_id', full_name='bytedance.byteplus.retailv2.PredictRequest.user_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='size', full_name='bytedance.byteplus.retail.PredictRequest.size', index=1,
+      name='size', full_name='bytedance.byteplus.retailv2.PredictRequest.size', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='scene', full_name='bytedance.byteplus.retail.PredictRequest.scene', index=2,
+      name='scene', full_name='bytedance.byteplus.retailv2.PredictRequest.scene', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='context', full_name='bytedance.byteplus.retail.PredictRequest.context', index=3,
+      name='context', full_name='bytedance.byteplus.retailv2.PredictRequest.context', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='extra', full_name='bytedance.byteplus.retail.PredictRequest.extra', index=4,
+      name='extra', full_name='bytedance.byteplus.retailv2.PredictRequest.extra', index=4,
       number=100, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1580,28 +1580,28 @@ _PREDICTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3723,
-  serialized_end=4174,
+  serialized_start=3799,
+  serialized_end=4260,
 )
 
 
 _PREDICTRESULT_RESPONSEPRODUCT_EXTRAENTRY = _descriptor.Descriptor(
   name='ExtraEntry',
-  full_name='bytedance.byteplus.retail.PredictResult.ResponseProduct.ExtraEntry',
+  full_name='bytedance.byteplus.retailv2.PredictResult.ResponseProduct.ExtraEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='bytedance.byteplus.retail.PredictResult.ResponseProduct.ExtraEntry.key', index=0,
+      name='key', full_name='bytedance.byteplus.retailv2.PredictResult.ResponseProduct.ExtraEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='bytedance.byteplus.retail.PredictResult.ResponseProduct.ExtraEntry.value', index=1,
+      name='value', full_name='bytedance.byteplus.retailv2.PredictResult.ResponseProduct.ExtraEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1619,55 +1619,55 @@ _PREDICTRESULT_RESPONSEPRODUCT_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=438,
-  serialized_end=482,
+  serialized_start=444,
+  serialized_end=488,
 )
 
 _PREDICTRESULT_RESPONSEPRODUCT = _descriptor.Descriptor(
   name='ResponseProduct',
-  full_name='bytedance.byteplus.retail.PredictResult.ResponseProduct',
+  full_name='bytedance.byteplus.retailv2.PredictResult.ResponseProduct',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='product_id', full_name='bytedance.byteplus.retail.PredictResult.ResponseProduct.product_id', index=0,
+      name='product_id', full_name='bytedance.byteplus.retailv2.PredictResult.ResponseProduct.product_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='rank', full_name='bytedance.byteplus.retail.PredictResult.ResponseProduct.rank', index=1,
+      name='rank', full_name='bytedance.byteplus.retailv2.PredictResult.ResponseProduct.rank', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pctr', full_name='bytedance.byteplus.retail.PredictResult.ResponseProduct.pctr', index=2,
+      name='pctr', full_name='bytedance.byteplus.retailv2.PredictResult.ResponseProduct.pctr', index=2,
       number=3, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pcvr', full_name='bytedance.byteplus.retail.PredictResult.ResponseProduct.pcvr', index=3,
+      name='pcvr', full_name='bytedance.byteplus.retailv2.PredictResult.ResponseProduct.pcvr', index=3,
       number=4, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='rec_info', full_name='bytedance.byteplus.retail.PredictResult.ResponseProduct.rec_info', index=4,
+      name='rec_info', full_name='bytedance.byteplus.retailv2.PredictResult.ResponseProduct.rec_info', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='extra', full_name='bytedance.byteplus.retail.PredictResult.ResponseProduct.extra', index=5,
+      name='extra', full_name='bytedance.byteplus.retailv2.PredictResult.ResponseProduct.extra', index=5,
       number=100, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1685,27 +1685,27 @@ _PREDICTRESULT_RESPONSEPRODUCT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4348,
-  serialized_end=4575,
+  serialized_start=4438,
+  serialized_end=4667,
 )
 
 _PREDICTRESULT_EXTRAENTRY = _descriptor.Descriptor(
   name='ExtraEntry',
-  full_name='bytedance.byteplus.retail.PredictResult.ExtraEntry',
+  full_name='bytedance.byteplus.retailv2.PredictResult.ExtraEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='bytedance.byteplus.retail.PredictResult.ExtraEntry.key', index=0,
+      name='key', full_name='bytedance.byteplus.retailv2.PredictResult.ExtraEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='bytedance.byteplus.retail.PredictResult.ExtraEntry.value', index=1,
+      name='value', full_name='bytedance.byteplus.retailv2.PredictResult.ExtraEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1723,27 +1723,27 @@ _PREDICTRESULT_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=438,
-  serialized_end=482,
+  serialized_start=444,
+  serialized_end=488,
 )
 
 _PREDICTRESULT = _descriptor.Descriptor(
   name='PredictResult',
-  full_name='bytedance.byteplus.retail.PredictResult',
+  full_name='bytedance.byteplus.retailv2.PredictResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='response_products', full_name='bytedance.byteplus.retail.PredictResult.response_products', index=0,
+      name='response_products', full_name='bytedance.byteplus.retailv2.PredictResult.response_products', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='extra', full_name='bytedance.byteplus.retail.PredictResult.extra', index=1,
+      name='extra', full_name='bytedance.byteplus.retailv2.PredictResult.extra', index=1,
       number=100, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1761,35 +1761,35 @@ _PREDICTRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4177,
-  serialized_end=4621,
+  serialized_start=4263,
+  serialized_end=4713,
 )
 
 
 _PREDICTRESPONSE = _descriptor.Descriptor(
   name='PredictResponse',
-  full_name='bytedance.byteplus.retail.PredictResponse',
+  full_name='bytedance.byteplus.retailv2.PredictResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='bytedance.byteplus.retail.PredictResponse.status', index=0,
+      name='status', full_name='bytedance.byteplus.retailv2.PredictResponse.status', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='request_id', full_name='bytedance.byteplus.retail.PredictResponse.request_id', index=1,
+      name='request_id', full_name='bytedance.byteplus.retailv2.PredictResponse.request_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='bytedance.byteplus.retail.PredictResponse.value', index=2,
+      name='value', full_name='bytedance.byteplus.retailv2.PredictResponse.value', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1807,35 +1807,35 @@ _PREDICTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4624,
-  serialized_end=4762,
+  serialized_start=4716,
+  serialized_end=4863,
 )
 
 
 _ACKSERVERIMPRESSIONSREQUEST_ALTEREDPRODUCT = _descriptor.Descriptor(
   name='AlteredProduct',
-  full_name='bytedance.byteplus.retail.AckServerImpressionsRequest.AlteredProduct',
+  full_name='bytedance.byteplus.retailv2.AckServerImpressionsRequest.AlteredProduct',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='product_id', full_name='bytedance.byteplus.retail.AckServerImpressionsRequest.AlteredProduct.product_id', index=0,
+      name='product_id', full_name='bytedance.byteplus.retailv2.AckServerImpressionsRequest.AlteredProduct.product_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='altered_reason', full_name='bytedance.byteplus.retail.AckServerImpressionsRequest.AlteredProduct.altered_reason', index=1,
+      name='altered_reason', full_name='bytedance.byteplus.retailv2.AckServerImpressionsRequest.AlteredProduct.altered_reason', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='rank', full_name='bytedance.byteplus.retail.AckServerImpressionsRequest.AlteredProduct.rank', index=2,
+      name='rank', full_name='bytedance.byteplus.retailv2.AckServerImpressionsRequest.AlteredProduct.rank', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1853,48 +1853,48 @@ _ACKSERVERIMPRESSIONSREQUEST_ALTEREDPRODUCT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5021,
-  serialized_end=5095,
+  serialized_start=5126,
+  serialized_end=5200,
 )
 
 _ACKSERVERIMPRESSIONSREQUEST = _descriptor.Descriptor(
   name='AckServerImpressionsRequest',
-  full_name='bytedance.byteplus.retail.AckServerImpressionsRequest',
+  full_name='bytedance.byteplus.retailv2.AckServerImpressionsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='predict_request_id', full_name='bytedance.byteplus.retail.AckServerImpressionsRequest.predict_request_id', index=0,
+      name='predict_request_id', full_name='bytedance.byteplus.retailv2.AckServerImpressionsRequest.predict_request_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='user_id', full_name='bytedance.byteplus.retail.AckServerImpressionsRequest.user_id', index=1,
+      name='user_id', full_name='bytedance.byteplus.retailv2.AckServerImpressionsRequest.user_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='traffic_source', full_name='bytedance.byteplus.retail.AckServerImpressionsRequest.traffic_source', index=2,
+      name='traffic_source', full_name='bytedance.byteplus.retailv2.AckServerImpressionsRequest.traffic_source', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='scene', full_name='bytedance.byteplus.retail.AckServerImpressionsRequest.scene', index=3,
+      name='scene', full_name='bytedance.byteplus.retailv2.AckServerImpressionsRequest.scene', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='altered_products', full_name='bytedance.byteplus.retail.AckServerImpressionsRequest.altered_products', index=4,
+      name='altered_products', full_name='bytedance.byteplus.retailv2.AckServerImpressionsRequest.altered_products', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1912,21 +1912,21 @@ _ACKSERVERIMPRESSIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4765,
-  serialized_end=5095,
+  serialized_start=4866,
+  serialized_end=5200,
 )
 
 
 _ACKSERVERIMPRESSIONSRESPONSE = _descriptor.Descriptor(
   name='AckServerImpressionsResponse',
-  full_name='bytedance.byteplus.retail.AckServerImpressionsResponse',
+  full_name='bytedance.byteplus.retailv2.AckServerImpressionsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='bytedance.byteplus.retail.AckServerImpressionsResponse.status', index=0,
+      name='status', full_name='bytedance.byteplus.retailv2.AckServerImpressionsResponse.status', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1944,8 +1944,8 @@ _ACKSERVERIMPRESSIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5097,
-  serialized_end=5171,
+  serialized_start=5202,
+  serialized_end=5283,
 )
 
 _USER_LOCATION.containing_type = _USER
@@ -2037,19 +2037,19 @@ User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), {
   'Location' : _reflection.GeneratedProtocolMessageType('Location', (_message.Message,), {
     'DESCRIPTOR' : _USER_LOCATION,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.User.Location)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.User.Location)
     })
   ,
 
   'ExtraEntry' : _reflection.GeneratedProtocolMessageType('ExtraEntry', (_message.Message,), {
     'DESCRIPTOR' : _USER_EXTRAENTRY,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.User.ExtraEntry)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.User.ExtraEntry)
     })
   ,
   'DESCRIPTOR' : _USER,
   '__module__' : 'byteplus_retailv2_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.User)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.User)
   })
 _sym_db.RegisterMessage(User)
 _sym_db.RegisterMessage(User.Location)
@@ -2060,12 +2060,12 @@ WriteUsersRequest = _reflection.GeneratedProtocolMessageType('WriteUsersRequest'
   'ExtraEntry' : _reflection.GeneratedProtocolMessageType('ExtraEntry', (_message.Message,), {
     'DESCRIPTOR' : _WRITEUSERSREQUEST_EXTRAENTRY,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.WriteUsersRequest.ExtraEntry)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.WriteUsersRequest.ExtraEntry)
     })
   ,
   'DESCRIPTOR' : _WRITEUSERSREQUEST,
   '__module__' : 'byteplus_retailv2_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.WriteUsersRequest)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.WriteUsersRequest)
   })
 _sym_db.RegisterMessage(WriteUsersRequest)
 _sym_db.RegisterMessage(WriteUsersRequest.ExtraEntry)
@@ -2073,14 +2073,14 @@ _sym_db.RegisterMessage(WriteUsersRequest.ExtraEntry)
 UserError = _reflection.GeneratedProtocolMessageType('UserError', (_message.Message,), {
   'DESCRIPTOR' : _USERERROR,
   '__module__' : 'byteplus_retailv2_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.UserError)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.UserError)
   })
 _sym_db.RegisterMessage(UserError)
 
 WriteUsersResponse = _reflection.GeneratedProtocolMessageType('WriteUsersResponse', (_message.Message,), {
   'DESCRIPTOR' : _WRITEUSERSRESPONSE,
   '__module__' : 'byteplus_retailv2_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.WriteUsersResponse)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.WriteUsersResponse)
   })
 _sym_db.RegisterMessage(WriteUsersResponse)
 
@@ -2091,59 +2091,59 @@ Product = _reflection.GeneratedProtocolMessageType('Product', (_message.Message,
     'CategoryNode' : _reflection.GeneratedProtocolMessageType('CategoryNode', (_message.Message,), {
       'DESCRIPTOR' : _PRODUCT_CATEGORY_CATEGORYNODE,
       '__module__' : 'byteplus_retailv2_pb2'
-      # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.Product.Category.CategoryNode)
+      # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.Product.Category.CategoryNode)
       })
     ,
     'DESCRIPTOR' : _PRODUCT_CATEGORY,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.Product.Category)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.Product.Category)
     })
   ,
 
   'Brand' : _reflection.GeneratedProtocolMessageType('Brand', (_message.Message,), {
     'DESCRIPTOR' : _PRODUCT_BRAND,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.Product.Brand)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.Product.Brand)
     })
   ,
 
   'Price' : _reflection.GeneratedProtocolMessageType('Price', (_message.Message,), {
     'DESCRIPTOR' : _PRODUCT_PRICE,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.Product.Price)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.Product.Price)
     })
   ,
 
   'Display' : _reflection.GeneratedProtocolMessageType('Display', (_message.Message,), {
     'DESCRIPTOR' : _PRODUCT_DISPLAY,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.Product.Display)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.Product.Display)
     })
   ,
 
   'ProductSpec' : _reflection.GeneratedProtocolMessageType('ProductSpec', (_message.Message,), {
     'DESCRIPTOR' : _PRODUCT_PRODUCTSPEC,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.Product.ProductSpec)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.Product.ProductSpec)
     })
   ,
 
   'Seller' : _reflection.GeneratedProtocolMessageType('Seller', (_message.Message,), {
     'DESCRIPTOR' : _PRODUCT_SELLER,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.Product.Seller)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.Product.Seller)
     })
   ,
 
   'ExtraEntry' : _reflection.GeneratedProtocolMessageType('ExtraEntry', (_message.Message,), {
     'DESCRIPTOR' : _PRODUCT_EXTRAENTRY,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.Product.ExtraEntry)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.Product.ExtraEntry)
     })
   ,
   'DESCRIPTOR' : _PRODUCT,
   '__module__' : 'byteplus_retailv2_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.Product)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.Product)
   })
 _sym_db.RegisterMessage(Product)
 _sym_db.RegisterMessage(Product.Category)
@@ -2160,12 +2160,12 @@ WriteProductsRequest = _reflection.GeneratedProtocolMessageType('WriteProductsRe
   'ExtraEntry' : _reflection.GeneratedProtocolMessageType('ExtraEntry', (_message.Message,), {
     'DESCRIPTOR' : _WRITEPRODUCTSREQUEST_EXTRAENTRY,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.WriteProductsRequest.ExtraEntry)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.WriteProductsRequest.ExtraEntry)
     })
   ,
   'DESCRIPTOR' : _WRITEPRODUCTSREQUEST,
   '__module__' : 'byteplus_retailv2_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.WriteProductsRequest)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.WriteProductsRequest)
   })
 _sym_db.RegisterMessage(WriteProductsRequest)
 _sym_db.RegisterMessage(WriteProductsRequest.ExtraEntry)
@@ -2173,14 +2173,14 @@ _sym_db.RegisterMessage(WriteProductsRequest.ExtraEntry)
 ProductError = _reflection.GeneratedProtocolMessageType('ProductError', (_message.Message,), {
   'DESCRIPTOR' : _PRODUCTERROR,
   '__module__' : 'byteplus_retailv2_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.ProductError)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.ProductError)
   })
 _sym_db.RegisterMessage(ProductError)
 
 WriteProductsResponse = _reflection.GeneratedProtocolMessageType('WriteProductsResponse', (_message.Message,), {
   'DESCRIPTOR' : _WRITEPRODUCTSRESPONSE,
   '__module__' : 'byteplus_retailv2_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.WriteProductsResponse)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.WriteProductsResponse)
   })
 _sym_db.RegisterMessage(WriteProductsResponse)
 
@@ -2189,33 +2189,33 @@ UserEvent = _reflection.GeneratedProtocolMessageType('UserEvent', (_message.Mess
   'Scene' : _reflection.GeneratedProtocolMessageType('Scene', (_message.Message,), {
     'DESCRIPTOR' : _USEREVENT_SCENE,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.UserEvent.Scene)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.UserEvent.Scene)
     })
   ,
 
   'Device' : _reflection.GeneratedProtocolMessageType('Device', (_message.Message,), {
     'DESCRIPTOR' : _USEREVENT_DEVICE,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.UserEvent.Device)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.UserEvent.Device)
     })
   ,
 
   'Context' : _reflection.GeneratedProtocolMessageType('Context', (_message.Message,), {
     'DESCRIPTOR' : _USEREVENT_CONTEXT,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.UserEvent.Context)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.UserEvent.Context)
     })
   ,
 
   'ExtraEntry' : _reflection.GeneratedProtocolMessageType('ExtraEntry', (_message.Message,), {
     'DESCRIPTOR' : _USEREVENT_EXTRAENTRY,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.UserEvent.ExtraEntry)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.UserEvent.ExtraEntry)
     })
   ,
   'DESCRIPTOR' : _USEREVENT,
   '__module__' : 'byteplus_retailv2_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.UserEvent)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.UserEvent)
   })
 _sym_db.RegisterMessage(UserEvent)
 _sym_db.RegisterMessage(UserEvent.Scene)
@@ -2228,12 +2228,12 @@ WriteUserEventsRequest = _reflection.GeneratedProtocolMessageType('WriteUserEven
   'ExtraEntry' : _reflection.GeneratedProtocolMessageType('ExtraEntry', (_message.Message,), {
     'DESCRIPTOR' : _WRITEUSEREVENTSREQUEST_EXTRAENTRY,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.WriteUserEventsRequest.ExtraEntry)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.WriteUserEventsRequest.ExtraEntry)
     })
   ,
   'DESCRIPTOR' : _WRITEUSEREVENTSREQUEST,
   '__module__' : 'byteplus_retailv2_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.WriteUserEventsRequest)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.WriteUserEventsRequest)
   })
 _sym_db.RegisterMessage(WriteUserEventsRequest)
 _sym_db.RegisterMessage(WriteUserEventsRequest.ExtraEntry)
@@ -2241,14 +2241,14 @@ _sym_db.RegisterMessage(WriteUserEventsRequest.ExtraEntry)
 UserEventError = _reflection.GeneratedProtocolMessageType('UserEventError', (_message.Message,), {
   'DESCRIPTOR' : _USEREVENTERROR,
   '__module__' : 'byteplus_retailv2_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.UserEventError)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.UserEventError)
   })
 _sym_db.RegisterMessage(UserEventError)
 
 WriteUserEventsResponse = _reflection.GeneratedProtocolMessageType('WriteUserEventsResponse', (_message.Message,), {
   'DESCRIPTOR' : _WRITEUSEREVENTSRESPONSE,
   '__module__' : 'byteplus_retailv2_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.WriteUserEventsResponse)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.WriteUserEventsResponse)
   })
 _sym_db.RegisterMessage(WriteUserEventsResponse)
 
@@ -2257,19 +2257,19 @@ PredictRequest = _reflection.GeneratedProtocolMessageType('PredictRequest', (_me
   'Context' : _reflection.GeneratedProtocolMessageType('Context', (_message.Message,), {
     'DESCRIPTOR' : _PREDICTREQUEST_CONTEXT,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.PredictRequest.Context)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.PredictRequest.Context)
     })
   ,
 
   'ExtraEntry' : _reflection.GeneratedProtocolMessageType('ExtraEntry', (_message.Message,), {
     'DESCRIPTOR' : _PREDICTREQUEST_EXTRAENTRY,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.PredictRequest.ExtraEntry)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.PredictRequest.ExtraEntry)
     })
   ,
   'DESCRIPTOR' : _PREDICTREQUEST,
   '__module__' : 'byteplus_retailv2_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.PredictRequest)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.PredictRequest)
   })
 _sym_db.RegisterMessage(PredictRequest)
 _sym_db.RegisterMessage(PredictRequest.Context)
@@ -2282,24 +2282,24 @@ PredictResult = _reflection.GeneratedProtocolMessageType('PredictResult', (_mess
     'ExtraEntry' : _reflection.GeneratedProtocolMessageType('ExtraEntry', (_message.Message,), {
       'DESCRIPTOR' : _PREDICTRESULT_RESPONSEPRODUCT_EXTRAENTRY,
       '__module__' : 'byteplus_retailv2_pb2'
-      # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.PredictResult.ResponseProduct.ExtraEntry)
+      # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.PredictResult.ResponseProduct.ExtraEntry)
       })
     ,
     'DESCRIPTOR' : _PREDICTRESULT_RESPONSEPRODUCT,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.PredictResult.ResponseProduct)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.PredictResult.ResponseProduct)
     })
   ,
 
   'ExtraEntry' : _reflection.GeneratedProtocolMessageType('ExtraEntry', (_message.Message,), {
     'DESCRIPTOR' : _PREDICTRESULT_EXTRAENTRY,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.PredictResult.ExtraEntry)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.PredictResult.ExtraEntry)
     })
   ,
   'DESCRIPTOR' : _PREDICTRESULT,
   '__module__' : 'byteplus_retailv2_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.PredictResult)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.PredictResult)
   })
 _sym_db.RegisterMessage(PredictResult)
 _sym_db.RegisterMessage(PredictResult.ResponseProduct)
@@ -2309,7 +2309,7 @@ _sym_db.RegisterMessage(PredictResult.ExtraEntry)
 PredictResponse = _reflection.GeneratedProtocolMessageType('PredictResponse', (_message.Message,), {
   'DESCRIPTOR' : _PREDICTRESPONSE,
   '__module__' : 'byteplus_retailv2_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.PredictResponse)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.PredictResponse)
   })
 _sym_db.RegisterMessage(PredictResponse)
 
@@ -2318,12 +2318,12 @@ AckServerImpressionsRequest = _reflection.GeneratedProtocolMessageType('AckServe
   'AlteredProduct' : _reflection.GeneratedProtocolMessageType('AlteredProduct', (_message.Message,), {
     'DESCRIPTOR' : _ACKSERVERIMPRESSIONSREQUEST_ALTEREDPRODUCT,
     '__module__' : 'byteplus_retailv2_pb2'
-    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.AckServerImpressionsRequest.AlteredProduct)
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.AckServerImpressionsRequest.AlteredProduct)
     })
   ,
   'DESCRIPTOR' : _ACKSERVERIMPRESSIONSREQUEST,
   '__module__' : 'byteplus_retailv2_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.AckServerImpressionsRequest)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.AckServerImpressionsRequest)
   })
 _sym_db.RegisterMessage(AckServerImpressionsRequest)
 _sym_db.RegisterMessage(AckServerImpressionsRequest.AlteredProduct)
@@ -2331,7 +2331,7 @@ _sym_db.RegisterMessage(AckServerImpressionsRequest.AlteredProduct)
 AckServerImpressionsResponse = _reflection.GeneratedProtocolMessageType('AckServerImpressionsResponse', (_message.Message,), {
   'DESCRIPTOR' : _ACKSERVERIMPRESSIONSRESPONSE,
   '__module__' : 'byteplus_retailv2_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.AckServerImpressionsResponse)
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retailv2.AckServerImpressionsResponse)
   })
 _sym_db.RegisterMessage(AckServerImpressionsResponse)
 
@@ -2349,17 +2349,17 @@ _PREDICTRESULT_EXTRAENTRY._options = None
 
 _BYTEPLUSRETAILSERVICE = _descriptor.ServiceDescriptor(
   name='ByteplusRetailService',
-  full_name='bytedance.byteplus.retail.ByteplusRetailService',
+  full_name='bytedance.byteplus.retailv2.ByteplusRetailService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=5174,
-  serialized_end=5778,
+  serialized_start=5286,
+  serialized_end=5910,
   methods=[
   _descriptor.MethodDescriptor(
     name='WriteUsers',
-    full_name='bytedance.byteplus.retail.ByteplusRetailService.WriteUsers',
+    full_name='bytedance.byteplus.retailv2.ByteplusRetailService.WriteUsers',
     index=0,
     containing_service=None,
     input_type=_WRITEUSERSREQUEST,
@@ -2369,7 +2369,7 @@ _BYTEPLUSRETAILSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='WriteProducts',
-    full_name='bytedance.byteplus.retail.ByteplusRetailService.WriteProducts',
+    full_name='bytedance.byteplus.retailv2.ByteplusRetailService.WriteProducts',
     index=1,
     containing_service=None,
     input_type=_WRITEPRODUCTSREQUEST,
@@ -2379,7 +2379,7 @@ _BYTEPLUSRETAILSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='WriteUserEvents',
-    full_name='bytedance.byteplus.retail.ByteplusRetailService.WriteUserEvents',
+    full_name='bytedance.byteplus.retailv2.ByteplusRetailService.WriteUserEvents',
     index=2,
     containing_service=None,
     input_type=_WRITEUSEREVENTSREQUEST,
@@ -2389,7 +2389,7 @@ _BYTEPLUSRETAILSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Predict',
-    full_name='bytedance.byteplus.retail.ByteplusRetailService.Predict',
+    full_name='bytedance.byteplus.retailv2.ByteplusRetailService.Predict',
     index=3,
     containing_service=None,
     input_type=_PREDICTREQUEST,
@@ -2399,7 +2399,7 @@ _BYTEPLUSRETAILSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='AckServerImpressions',
-    full_name='bytedance.byteplus.retail.ByteplusRetailService.AckServerImpressions',
+    full_name='bytedance.byteplus.retailv2.ByteplusRetailService.AckServerImpressions',
     index=4,
     containing_service=None,
     input_type=_ACKSERVERIMPRESSIONSREQUEST,

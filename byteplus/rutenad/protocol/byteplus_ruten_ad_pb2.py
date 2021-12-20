@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\036byteplus.sdk.ruten_ad.protocolZ0github.com/byteplus-sdk/sdk-go/ruten_ad/protocol',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x17\x62yteplus_ruten_ad.proto\x12\x1b\x62ytedance.byteplus.ruten_ad\x1a\x15\x62yteplus_common.proto\":\n\x08\x43\x61tegory\x12\x16\n\x0e\x63\x61tegory_depth\x18\x01 \x01(\x05\x12\x16\n\x0e\x63\x61tegory_nodes\x18\x02 \x03(\t\"\xaa\x03\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0e\n\x06gender\x18\x02 \x01(\t\x12\x0b\n\x03\x61ge\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x1a\n\x12\x61\x63tivation_channel\x18\x05 \x01(\t\x12\x18\n\x10membership_level\x18\x06 \x01(\t\x12\x1e\n\x16registration_timestamp\x18\x07 \x01(\x03\x12<\n\x08location\x18\x08 \x01(\x0b\x32*.bytedance.byteplus.ruten_ad.User.Location\x12\x10\n\x08\x61pp_list\x18\t \x03(\t\x12;\n\x05\x65xtra\x18\x64 \x03(\x0b\x32,.bytedance.byteplus.ruten_ad.User.ExtraEntry\x1aU\n\x08Location\x12\x0f\n\x07\x63ountry\x18\x01 \x01(\t\x12\x0c\n\x04\x63ity\x18\x02 \x01(\t\x12\x18\n\x10\x64istrict_or_area\x18\x03 \x01(\t\x12\x10\n\x08postcode\x18\x04 \x01(\t\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xbd\x01\n\x11WriteUsersRequest\x12\x30\n\x05users\x18\x01 \x03(\x0b\x32!.bytedance.byteplus.ruten_ad.User\x12H\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x39.bytedance.byteplus.ruten_ad.WriteUsersRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"M\n\tUserError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12/\n\x04user\x18\x02 \x01(\x0b\x32!.bytedance.byteplus.ruten_ad.User\"x\n\x12WriteUsersResponse\x12*\n\x06status\x18\x01 \x01(\x0b\x32\x1a.bytedance.byteplus.Status\x12\x36\n\x06\x65rrors\x18\x02 \x03(\x0b\x32&.bytedance.byteplus.ruten_ad.UserError\"\x8c\x08\n\x07Product\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x18\n\x10is_recommendable\x18\x02 \x01(\x08\x12\r\n\x05title\x18\x03 \x01(\t\x12\x15\n\rquality_score\x18\x04 \x01(\x01\x12\x0c\n\x04tags\x18\x05 \x03(\t\x12\x39\n\ncategories\x18\x06 \x03(\x0b\x32%.bytedance.byteplus.ruten_ad.Category\x12:\n\x06\x62rands\x18\x07 \x03(\x0b\x32*.bytedance.byteplus.ruten_ad.Product.Brand\x12\x39\n\x05price\x18\x08 \x01(\x0b\x32*.bytedance.byteplus.ruten_ad.Product.Price\x12=\n\x07\x64isplay\x18\t \x01(\x0b\x32,.bytedance.byteplus.ruten_ad.Product.Display\x12\x46\n\x0cproduct_spec\x18\n \x01(\x0b\x32\x30.bytedance.byteplus.ruten_ad.Product.ProductSpec\x12;\n\x06seller\x18\x0b \x01(\x0b\x32+.bytedance.byteplus.ruten_ad.Product.Seller\x12>\n\x05\x65xtra\x18\x64 \x03(\x0b\x32/.bytedance.byteplus.ruten_ad.Product.ExtraEntry\x1a\x30\n\x05\x42rand\x12\x13\n\x0b\x62rand_depth\x18\x01 \x01(\x05\x12\x12\n\nid_or_name\x18\x02 \x01(\t\x1a\x34\n\x05Price\x12\x15\n\rcurrent_price\x18\x01 \x01(\x03\x12\x14\n\x0corigin_price\x18\x02 \x01(\x03\x1a\x8f\x01\n\x07\x44isplay\x12!\n\x19listing_page_display_tags\x18\x01 \x03(\t\x12 \n\x18\x64\x65tail_page_display_tags\x18\x02 \x03(\t\x12!\n\x19listing_page_display_type\x18\x03 \x01(\t\x12\x1c\n\x14\x63over_multimedia_url\x18\x04 \x01(\t\x1a~\n\x0bProductSpec\x12\x18\n\x10product_group_id\x18\x01 \x01(\t\x12\x13\n\x0buser_rating\x18\x02 \x01(\x01\x12\x15\n\rcomment_count\x18\x03 \x01(\x05\x12\x0e\n\x06source\x18\x04 \x01(\t\x12\x19\n\x11publish_timestamp\x18\x05 \x01(\x03\x1a\x41\n\x06Seller\x12\n\n\x02id\x18\x01 \x01(\t\x12\x14\n\x0cseller_level\x18\x02 \x01(\t\x12\x15\n\rseller_rating\x18\x03 \x01(\x01\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc9\x01\n\x14WriteProductsRequest\x12\x36\n\x08products\x18\x01 \x03(\x0b\x32$.bytedance.byteplus.ruten_ad.Product\x12K\n\x05\x65xtra\x18\x64 \x03(\x0b\x32<.bytedance.byteplus.ruten_ad.WriteProductsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"V\n\x0cProductError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x35\n\x07product\x18\x02 \x01(\x0b\x32$.bytedance.byteplus.ruten_ad.Product\"~\n\x15WriteProductsResponse\x12*\n\x06status\x18\x01 \x01(\x0b\x32\x1a.bytedance.byteplus.Status\x12\x39\n\x06\x65rrors\x18\x02 \x03(\x0b\x32).bytedance.byteplus.ruten_ad.ProductError\"\xb9\x06\n\tUserEvent\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x12\n\nevent_type\x18\x02 \x01(\t\x12\x17\n\x0f\x65vent_timestamp\x18\x03 \x01(\x03\x12\x12\n\nproduct_id\x18\x04 \x01(\t\x12\x19\n\x11\x61ttribution_token\x18\x05 \x01(\t\x12\x10\n\x08rec_info\x18\x06 \x01(\t\x12\x16\n\x0etraffic_source\x18\x07 \x01(\t\x12\x16\n\x0epurchase_count\x18\x08 \x01(\x05\x12\x1d\n\x15\x64\x65tail_page_stay_time\x18\t \x01(\x05\x12;\n\x05scene\x18\n \x01(\x0b\x32,.bytedance.byteplus.ruten_ad.UserEvent.Scene\x12?\n\x07\x63ontext\x18\x0b \x01(\x0b\x32..bytedance.byteplus.ruten_ad.UserEvent.Context\x12=\n\x06\x64\x65vice\x18\x0c \x01(\x0b\x32-.bytedance.byteplus.ruten_ad.UserEvent.Device\x12@\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x31.bytedance.byteplus.ruten_ad.UserEvent.ExtraEntry\x1a@\n\x05Scene\x12\x12\n\nscene_name\x18\x01 \x01(\t\x12\x13\n\x0bpage_number\x18\x02 \x01(\x05\x12\x0e\n\x06offset\x18\x03 \x01(\x05\x1a\x31\n\x07\x43ontext\x12\r\n\x05query\x18\x01 \x01(\t\x12\x17\n\x0froot_product_id\x18\x02 \x01(\t\x1a\xbb\x01\n\x06\x44\x65vice\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x0f\n\x07os_type\x18\x02 \x01(\t\x12\x13\n\x0b\x61pp_version\x18\x03 \x01(\t\x12\x14\n\x0c\x64\x65vice_model\x18\x04 \x01(\t\x12\x14\n\x0c\x64\x65vice_brand\x18\x05 \x01(\t\x12\x12\n\nos_version\x18\x06 \x01(\t\x12\x14\n\x0c\x62rowser_type\x18\x07 \x01(\t\x12\x12\n\nuser_agent\x18\x08 \x01(\t\x12\x0f\n\x07network\x18\t \x01(\t\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd2\x01\n\x16WriteUserEventsRequest\x12;\n\x0buser_events\x18\x01 \x03(\x0b\x32&.bytedance.byteplus.ruten_ad.UserEvent\x12M\n\x05\x65xtra\x18\x64 \x03(\x0b\x32>.bytedance.byteplus.ruten_ad.WriteUserEventsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"]\n\x0eUserEventError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12:\n\nuser_event\x18\x02 \x01(\x0b\x32&.bytedance.byteplus.ruten_ad.UserEvent\"\x82\x01\n\x17WriteUserEventsResponse\x12*\n\x06status\x18\x01 \x01(\x0b\x32\x1a.bytedance.byteplus.Status\x12;\n\x06\x65rrors\x18\x02 \x03(\x0b\x32+.bytedance.byteplus.ruten_ad.UserEventError\"\x8e\x08\n\rAdvertisement\x12\x18\n\x10\x61\x64vertisement_id\x18\x01 \x01(\t\x12\x1d\n\x15\x61\x64vertiser_id_or_name\x18\x02 \x01(\t\x12\x11\n\tcost_type\x18\x03 \x01(\t\x12\x14\n\x0c\x63onvert_type\x18\x04 \x01(\t\x12\r\n\x05scene\x18\x05 \x01(\t\x12\x11\n\tbid_price\x18\x06 \x01(\x03\x12\x0e\n\x06status\x18\x07 \x01(\t\x12\x17\n\x0fstart_timestamp\x18\x08 \x01(\x03\x12\x15\n\rend_timestamp\x18\t \x01(\x03\x12\x42\n\x07targets\x18\n \x03(\x0b\x32\x31.bytedance.byteplus.ruten_ad.Advertisement.Target\x12\x45\n\tbid_words\x18\x0b \x03(\x0b\x32\x32.bytedance.byteplus.ruten_ad.Advertisement.BidWord\x12\x0e\n\x06source\x18\x0c \x01(\t\x12\x13\n\x0b\x63\x61mpaign_id\x18\r \x01(\t\x12\x14\n\x0c\x63ontent_type\x18\x0e \x01(\t\x12\r\n\x05title\x18\x0f \x01(\t\x12\x12\n\nimage_mode\x18\x10 \x01(\t\x12\x11\n\timage_url\x18\x11 \x01(\t\x12\x11\n\tvideo_md5\x18\x12 \x01(\t\x12\x0c\n\x04tags\x18\x13 \x03(\t\x12\x39\n\ncategories\x18\x14 \x03(\x0b\x32%.bytedance.byteplus.ruten_ad.Category\x12\x44\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x35.bytedance.byteplus.ruten_ad.Advertisement.ExtraEntry\x1a\xb2\x01\n\x06Target\x12\x0b\n\x03\x61ge\x18\x01 \x01(\t\x12\x0e\n\x06gender\x18\x02 \x01(\t\x12\x10\n\x08platform\x18\x03 \x01(\t\x12K\n\x05\x65xtra\x18\x64 \x03(\x0b\x32<.bytedance.byteplus.ruten_ad.Advertisement.Target.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\xb7\x01\n\x07\x42idWord\x12\r\n\x05query\x18\x01 \x01(\t\x12\r\n\x05price\x18\x02 \x01(\t\x12\x12\n\nmatch_type\x18\x03 \x01(\t\x12L\n\x05\x65xtra\x18\x64 \x03(\x0b\x32=.bytedance.byteplus.ruten_ad.Advertisement.BidWord.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xe1\x01\n\x1aWriteAdvertisementsRequest\x12\x42\n\x0e\x61\x64vertisements\x18\x01 \x03(\x0b\x32*.bytedance.byteplus.ruten_ad.Advertisement\x12Q\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x42.bytedance.byteplus.ruten_ad.WriteAdvertisementsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"h\n\x12\x41\x64vertisementError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x41\n\radvertisement\x18\x02 \x01(\x0b\x32*.bytedance.byteplus.ruten_ad.Advertisement\"\x8a\x01\n\x1bWriteAdvertisementsResponse\x12*\n\x06status\x18\x01 \x01(\x0b\x32\x1a.bytedance.byteplus.Status\x12?\n\x06\x65rrors\x18\x02 \x03(\x0b\x32/.bytedance.byteplus.ruten_ad.AdvertisementError2\x8e\x04\n\x1c\x42ytePlusAdvertisementService\x12m\n\nWriteUsers\x12..bytedance.byteplus.ruten_ad.WriteUsersRequest\x1a/.bytedance.byteplus.ruten_ad.WriteUsersResponse\x12v\n\rWriteProducts\x12\x31.bytedance.byteplus.ruten_ad.WriteProductsRequest\x1a\x32.bytedance.byteplus.ruten_ad.WriteProductsResponse\x12\x88\x01\n\x13WriteAdvertisements\x12\x37.bytedance.byteplus.ruten_ad.WriteAdvertisementsRequest\x1a\x38.bytedance.byteplus.ruten_ad.WriteAdvertisementsResponse\x12|\n\x0fWriteUserEvents\x12\x33.bytedance.byteplus.ruten_ad.WriteUserEventsRequest\x1a\x34.bytedance.byteplus.ruten_ad.WriteUserEventsResponseBR\n\x1e\x62yteplus.sdk.ruten_ad.protocolZ0github.com/byteplus-sdk/sdk-go/ruten_ad/protocolb\x06proto3'
+  serialized_pb=b'\n\x17\x62yteplus_ruten_ad.proto\x12\x1b\x62ytedance.byteplus.ruten_ad\x1a\x15\x62yteplus_common.proto\":\n\x08\x43\x61tegory\x12\x16\n\x0e\x63\x61tegory_depth\x18\x01 \x01(\x05\x12\x16\n\x0e\x63\x61tegory_nodes\x18\x02 \x03(\t\"\xaa\x03\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0e\n\x06gender\x18\x02 \x01(\t\x12\x0b\n\x03\x61ge\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x1a\n\x12\x61\x63tivation_channel\x18\x05 \x01(\t\x12\x18\n\x10membership_level\x18\x06 \x01(\t\x12\x1e\n\x16registration_timestamp\x18\x07 \x01(\x03\x12<\n\x08location\x18\x08 \x01(\x0b\x32*.bytedance.byteplus.ruten_ad.User.Location\x12\x10\n\x08\x61pp_list\x18\t \x03(\t\x12;\n\x05\x65xtra\x18\x64 \x03(\x0b\x32,.bytedance.byteplus.ruten_ad.User.ExtraEntry\x1aU\n\x08Location\x12\x0f\n\x07\x63ountry\x18\x01 \x01(\t\x12\x0c\n\x04\x63ity\x18\x02 \x01(\t\x12\x18\n\x10\x64istrict_or_area\x18\x03 \x01(\t\x12\x10\n\x08postcode\x18\x04 \x01(\t\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xbd\x01\n\x11WriteUsersRequest\x12\x30\n\x05users\x18\x01 \x03(\x0b\x32!.bytedance.byteplus.ruten_ad.User\x12H\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x39.bytedance.byteplus.ruten_ad.WriteUsersRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"M\n\tUserError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12/\n\x04user\x18\x02 \x01(\x0b\x32!.bytedance.byteplus.ruten_ad.User\"\x7f\n\x12WriteUsersResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x36\n\x06\x65rrors\x18\x02 \x03(\x0b\x32&.bytedance.byteplus.ruten_ad.UserError\"\x8c\x08\n\x07Product\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x18\n\x10is_recommendable\x18\x02 \x01(\x08\x12\r\n\x05title\x18\x03 \x01(\t\x12\x15\n\rquality_score\x18\x04 \x01(\x01\x12\x0c\n\x04tags\x18\x05 \x03(\t\x12\x39\n\ncategories\x18\x06 \x03(\x0b\x32%.bytedance.byteplus.ruten_ad.Category\x12:\n\x06\x62rands\x18\x07 \x03(\x0b\x32*.bytedance.byteplus.ruten_ad.Product.Brand\x12\x39\n\x05price\x18\x08 \x01(\x0b\x32*.bytedance.byteplus.ruten_ad.Product.Price\x12=\n\x07\x64isplay\x18\t \x01(\x0b\x32,.bytedance.byteplus.ruten_ad.Product.Display\x12\x46\n\x0cproduct_spec\x18\n \x01(\x0b\x32\x30.bytedance.byteplus.ruten_ad.Product.ProductSpec\x12;\n\x06seller\x18\x0b \x01(\x0b\x32+.bytedance.byteplus.ruten_ad.Product.Seller\x12>\n\x05\x65xtra\x18\x64 \x03(\x0b\x32/.bytedance.byteplus.ruten_ad.Product.ExtraEntry\x1a\x30\n\x05\x42rand\x12\x13\n\x0b\x62rand_depth\x18\x01 \x01(\x05\x12\x12\n\nid_or_name\x18\x02 \x01(\t\x1a\x34\n\x05Price\x12\x15\n\rcurrent_price\x18\x01 \x01(\x03\x12\x14\n\x0corigin_price\x18\x02 \x01(\x03\x1a\x8f\x01\n\x07\x44isplay\x12!\n\x19listing_page_display_tags\x18\x01 \x03(\t\x12 \n\x18\x64\x65tail_page_display_tags\x18\x02 \x03(\t\x12!\n\x19listing_page_display_type\x18\x03 \x01(\t\x12\x1c\n\x14\x63over_multimedia_url\x18\x04 \x01(\t\x1a~\n\x0bProductSpec\x12\x18\n\x10product_group_id\x18\x01 \x01(\t\x12\x13\n\x0buser_rating\x18\x02 \x01(\x01\x12\x15\n\rcomment_count\x18\x03 \x01(\x05\x12\x0e\n\x06source\x18\x04 \x01(\t\x12\x19\n\x11publish_timestamp\x18\x05 \x01(\x03\x1a\x41\n\x06Seller\x12\n\n\x02id\x18\x01 \x01(\t\x12\x14\n\x0cseller_level\x18\x02 \x01(\t\x12\x15\n\rseller_rating\x18\x03 \x01(\x01\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc9\x01\n\x14WriteProductsRequest\x12\x36\n\x08products\x18\x01 \x03(\x0b\x32$.bytedance.byteplus.ruten_ad.Product\x12K\n\x05\x65xtra\x18\x64 \x03(\x0b\x32<.bytedance.byteplus.ruten_ad.WriteProductsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"V\n\x0cProductError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x35\n\x07product\x18\x02 \x01(\x0b\x32$.bytedance.byteplus.ruten_ad.Product\"\x85\x01\n\x15WriteProductsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x39\n\x06\x65rrors\x18\x02 \x03(\x0b\x32).bytedance.byteplus.ruten_ad.ProductError\"\xb9\x06\n\tUserEvent\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x12\n\nevent_type\x18\x02 \x01(\t\x12\x17\n\x0f\x65vent_timestamp\x18\x03 \x01(\x03\x12\x12\n\nproduct_id\x18\x04 \x01(\t\x12\x19\n\x11\x61ttribution_token\x18\x05 \x01(\t\x12\x10\n\x08rec_info\x18\x06 \x01(\t\x12\x16\n\x0etraffic_source\x18\x07 \x01(\t\x12\x16\n\x0epurchase_count\x18\x08 \x01(\x05\x12\x1d\n\x15\x64\x65tail_page_stay_time\x18\t \x01(\x05\x12;\n\x05scene\x18\n \x01(\x0b\x32,.bytedance.byteplus.ruten_ad.UserEvent.Scene\x12?\n\x07\x63ontext\x18\x0b \x01(\x0b\x32..bytedance.byteplus.ruten_ad.UserEvent.Context\x12=\n\x06\x64\x65vice\x18\x0c \x01(\x0b\x32-.bytedance.byteplus.ruten_ad.UserEvent.Device\x12@\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x31.bytedance.byteplus.ruten_ad.UserEvent.ExtraEntry\x1a@\n\x05Scene\x12\x12\n\nscene_name\x18\x01 \x01(\t\x12\x13\n\x0bpage_number\x18\x02 \x01(\x05\x12\x0e\n\x06offset\x18\x03 \x01(\x05\x1a\x31\n\x07\x43ontext\x12\r\n\x05query\x18\x01 \x01(\t\x12\x17\n\x0froot_product_id\x18\x02 \x01(\t\x1a\xbb\x01\n\x06\x44\x65vice\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x0f\n\x07os_type\x18\x02 \x01(\t\x12\x13\n\x0b\x61pp_version\x18\x03 \x01(\t\x12\x14\n\x0c\x64\x65vice_model\x18\x04 \x01(\t\x12\x14\n\x0c\x64\x65vice_brand\x18\x05 \x01(\t\x12\x12\n\nos_version\x18\x06 \x01(\t\x12\x14\n\x0c\x62rowser_type\x18\x07 \x01(\t\x12\x12\n\nuser_agent\x18\x08 \x01(\t\x12\x0f\n\x07network\x18\t \x01(\t\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd2\x01\n\x16WriteUserEventsRequest\x12;\n\x0buser_events\x18\x01 \x03(\x0b\x32&.bytedance.byteplus.ruten_ad.UserEvent\x12M\n\x05\x65xtra\x18\x64 \x03(\x0b\x32>.bytedance.byteplus.ruten_ad.WriteUserEventsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"]\n\x0eUserEventError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12:\n\nuser_event\x18\x02 \x01(\x0b\x32&.bytedance.byteplus.ruten_ad.UserEvent\"\x89\x01\n\x17WriteUserEventsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12;\n\x06\x65rrors\x18\x02 \x03(\x0b\x32+.bytedance.byteplus.ruten_ad.UserEventError\"\x8e\x08\n\rAdvertisement\x12\x18\n\x10\x61\x64vertisement_id\x18\x01 \x01(\t\x12\x1d\n\x15\x61\x64vertiser_id_or_name\x18\x02 \x01(\t\x12\x11\n\tcost_type\x18\x03 \x01(\t\x12\x14\n\x0c\x63onvert_type\x18\x04 \x01(\t\x12\r\n\x05scene\x18\x05 \x01(\t\x12\x11\n\tbid_price\x18\x06 \x01(\x03\x12\x0e\n\x06status\x18\x07 \x01(\t\x12\x17\n\x0fstart_timestamp\x18\x08 \x01(\x03\x12\x15\n\rend_timestamp\x18\t \x01(\x03\x12\x42\n\x07targets\x18\n \x03(\x0b\x32\x31.bytedance.byteplus.ruten_ad.Advertisement.Target\x12\x45\n\tbid_words\x18\x0b \x03(\x0b\x32\x32.bytedance.byteplus.ruten_ad.Advertisement.BidWord\x12\x0e\n\x06source\x18\x0c \x01(\t\x12\x13\n\x0b\x63\x61mpaign_id\x18\r \x01(\t\x12\x14\n\x0c\x63ontent_type\x18\x0e \x01(\t\x12\r\n\x05title\x18\x0f \x01(\t\x12\x12\n\nimage_mode\x18\x10 \x01(\t\x12\x11\n\timage_url\x18\x11 \x01(\t\x12\x11\n\tvideo_md5\x18\x12 \x01(\t\x12\x0c\n\x04tags\x18\x13 \x03(\t\x12\x39\n\ncategories\x18\x14 \x03(\x0b\x32%.bytedance.byteplus.ruten_ad.Category\x12\x44\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x35.bytedance.byteplus.ruten_ad.Advertisement.ExtraEntry\x1a\xb2\x01\n\x06Target\x12\x0b\n\x03\x61ge\x18\x01 \x01(\t\x12\x0e\n\x06gender\x18\x02 \x01(\t\x12\x10\n\x08platform\x18\x03 \x01(\t\x12K\n\x05\x65xtra\x18\x64 \x03(\x0b\x32<.bytedance.byteplus.ruten_ad.Advertisement.Target.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\xb7\x01\n\x07\x42idWord\x12\r\n\x05query\x18\x01 \x01(\t\x12\r\n\x05price\x18\x02 \x01(\t\x12\x12\n\nmatch_type\x18\x03 \x01(\t\x12L\n\x05\x65xtra\x18\x64 \x03(\x0b\x32=.bytedance.byteplus.ruten_ad.Advertisement.BidWord.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xe1\x01\n\x1aWriteAdvertisementsRequest\x12\x42\n\x0e\x61\x64vertisements\x18\x01 \x03(\x0b\x32*.bytedance.byteplus.ruten_ad.Advertisement\x12Q\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x42.bytedance.byteplus.ruten_ad.WriteAdvertisementsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"h\n\x12\x41\x64vertisementError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x41\n\radvertisement\x18\x02 \x01(\x0b\x32*.bytedance.byteplus.ruten_ad.Advertisement\"\x91\x01\n\x1bWriteAdvertisementsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12?\n\x06\x65rrors\x18\x02 \x03(\x0b\x32/.bytedance.byteplus.ruten_ad.AdvertisementError2\x8e\x04\n\x1c\x42ytePlusAdvertisementService\x12m\n\nWriteUsers\x12..bytedance.byteplus.ruten_ad.WriteUsersRequest\x1a/.bytedance.byteplus.ruten_ad.WriteUsersResponse\x12v\n\rWriteProducts\x12\x31.bytedance.byteplus.ruten_ad.WriteProductsRequest\x1a\x32.bytedance.byteplus.ruten_ad.WriteProductsResponse\x12\x88\x01\n\x13WriteAdvertisements\x12\x37.bytedance.byteplus.ruten_ad.WriteAdvertisementsRequest\x1a\x38.bytedance.byteplus.ruten_ad.WriteAdvertisementsResponse\x12|\n\x0fWriteUserEvents\x12\x33.bytedance.byteplus.ruten_ad.WriteUserEventsRequest\x1a\x34.bytedance.byteplus.ruten_ad.WriteUserEventsResponseBR\n\x1e\x62yteplus.sdk.ruten_ad.protocolZ0github.com/byteplus-sdk/sdk-go/ruten_ad/protocolb\x06proto3'
   ,
   dependencies=[byteplus__common__pb2.DESCRIPTOR,])
 
@@ -402,7 +402,7 @@ _WRITEUSERSRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=839,
-  serialized_end=959,
+  serialized_end=966,
 )
 
 
@@ -440,8 +440,8 @@ _PRODUCT_BRAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1509,
-  serialized_end=1557,
+  serialized_start=1516,
+  serialized_end=1564,
 )
 
 _PRODUCT_PRICE = _descriptor.Descriptor(
@@ -478,8 +478,8 @@ _PRODUCT_PRICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1559,
-  serialized_end=1611,
+  serialized_start=1566,
+  serialized_end=1618,
 )
 
 _PRODUCT_DISPLAY = _descriptor.Descriptor(
@@ -530,8 +530,8 @@ _PRODUCT_DISPLAY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1614,
-  serialized_end=1757,
+  serialized_start=1621,
+  serialized_end=1764,
 )
 
 _PRODUCT_PRODUCTSPEC = _descriptor.Descriptor(
@@ -589,8 +589,8 @@ _PRODUCT_PRODUCTSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1759,
-  serialized_end=1885,
+  serialized_start=1766,
+  serialized_end=1892,
 )
 
 _PRODUCT_SELLER = _descriptor.Descriptor(
@@ -634,8 +634,8 @@ _PRODUCT_SELLER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1887,
-  serialized_end=1952,
+  serialized_start=1894,
+  serialized_end=1959,
 )
 
 _PRODUCT_EXTRAENTRY = _descriptor.Descriptor(
@@ -780,8 +780,8 @@ _PRODUCT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=962,
-  serialized_end=1998,
+  serialized_start=969,
+  serialized_end=2005,
 )
 
 
@@ -857,8 +857,8 @@ _WRITEPRODUCTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2001,
-  serialized_end=2202,
+  serialized_start=2008,
+  serialized_end=2209,
 )
 
 
@@ -896,8 +896,8 @@ _PRODUCTERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2204,
-  serialized_end=2290,
+  serialized_start=2211,
+  serialized_end=2297,
 )
 
 
@@ -935,8 +935,8 @@ _WRITEPRODUCTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2292,
-  serialized_end=2418,
+  serialized_start=2300,
+  serialized_end=2433,
 )
 
 
@@ -981,8 +981,8 @@ _USEREVENT_SCENE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2895,
-  serialized_end=2959,
+  serialized_start=2910,
+  serialized_end=2974,
 )
 
 _USEREVENT_CONTEXT = _descriptor.Descriptor(
@@ -1019,8 +1019,8 @@ _USEREVENT_CONTEXT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2961,
-  serialized_end=3010,
+  serialized_start=2976,
+  serialized_end=3025,
 )
 
 _USEREVENT_DEVICE = _descriptor.Descriptor(
@@ -1106,8 +1106,8 @@ _USEREVENT_DEVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3013,
-  serialized_end=3200,
+  serialized_start=3028,
+  serialized_end=3215,
 )
 
 _USEREVENT_EXTRAENTRY = _descriptor.Descriptor(
@@ -1259,8 +1259,8 @@ _USEREVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2421,
-  serialized_end=3246,
+  serialized_start=2436,
+  serialized_end=3261,
 )
 
 
@@ -1336,8 +1336,8 @@ _WRITEUSEREVENTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3249,
-  serialized_end=3459,
+  serialized_start=3264,
+  serialized_end=3474,
 )
 
 
@@ -1375,8 +1375,8 @@ _USEREVENTERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3461,
-  serialized_end=3554,
+  serialized_start=3476,
+  serialized_end=3569,
 )
 
 
@@ -1414,8 +1414,8 @@ _WRITEUSEREVENTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3557,
-  serialized_end=3687,
+  serialized_start=3572,
+  serialized_end=3709,
 )
 
 
@@ -1505,8 +1505,8 @@ _ADVERTISEMENT_TARGET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4318,
-  serialized_end=4496,
+  serialized_start=4340,
+  serialized_end=4518,
 )
 
 _ADVERTISEMENT_BIDWORD_EXTRAENTRY = _descriptor.Descriptor(
@@ -1595,8 +1595,8 @@ _ADVERTISEMENT_BIDWORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4499,
-  serialized_end=4682,
+  serialized_start=4521,
+  serialized_end=4704,
 )
 
 _ADVERTISEMENT_EXTRAENTRY = _descriptor.Descriptor(
@@ -1804,8 +1804,8 @@ _ADVERTISEMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3690,
-  serialized_end=4728,
+  serialized_start=3712,
+  serialized_end=4750,
 )
 
 
@@ -1881,8 +1881,8 @@ _WRITEADVERTISEMENTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4731,
-  serialized_end=4956,
+  serialized_start=4753,
+  serialized_end=4978,
 )
 
 
@@ -1920,8 +1920,8 @@ _ADVERTISEMENTERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4958,
-  serialized_end=5062,
+  serialized_start=4980,
+  serialized_end=5084,
 )
 
 
@@ -1959,8 +1959,8 @@ _WRITEADVERTISEMENTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5065,
-  serialized_end=5203,
+  serialized_start=5087,
+  serialized_end=5232,
 )
 
 _USER_LOCATION.containing_type = _USER
@@ -2349,8 +2349,8 @@ _BYTEPLUSADVERTISEMENTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=5206,
-  serialized_end=5732,
+  serialized_start=5235,
+  serialized_end=5761,
   methods=[
   _descriptor.MethodDescriptor(
     name='WriteUsers',
