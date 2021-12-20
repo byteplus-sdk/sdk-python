@@ -1,5 +1,8 @@
 syntax = "proto3";
 package bytedance.byteplus.retailv2;
+
+import "byteplus_common.proto";
+
 option java_package = "byteplus.sdk.retailv2.protocol";
 option go_package="github.com/byteplus-sdk/sdk-go/retailv2/protocol";
 
@@ -9,8 +12,6 @@ option go_package="github.com/byteplus-sdk/sdk-go/retailv2/protocol";
 ////   All comments start with "//" will be kept for English version
 ////   All comments start with "///" will be kept for Chinese version
 ////   All comments start with "////" will be filtered
-
-import "byteplus_common.proto";
 
 // The user proto.
 message User {
@@ -153,7 +154,7 @@ message WriteUsersResponse {
   // When `status.code` is 0, all payload are successfully written.
   // If `status.code` is 1001, `errors` is populated.
   // Other non-zero values indicate all payload failed.
-  Status status = 1;
+  common.Status status = 1;
 
   // Output only.
   // This field is populated when `status.code` is 1001.
@@ -420,7 +421,7 @@ message WriteProductsResponse {
   // When `status.code` is 0, all payload are successfully written.
   // If `status.code` is 1001, `errors` is populated.
   // Other non-zero values indicate all payload failed.
-  Status status = 1;
+  common.Status status = 1;
 
   // Output only.
   // This field is populated when `status.code` is 1001.
@@ -673,7 +674,7 @@ message WriteUserEventsResponse {
   // When `status.code` is 0, all payload are successfully written.
   // If `status.code` is 1001, `errors` is populated.
   // Other non-zero values indicate all payload failed.
-  Status status = 1;
+  common.Status status = 1;
 
   // Output only.
   // This field is populated when `status.code` is 1001.
@@ -769,7 +770,7 @@ message PredictResult {
 message PredictResponse {
   // Output only.
   // The status of the call.
-  Status status = 1;
+  common.Status status = 1;
 
   // Output only.
   // This is same as the request id of request.
@@ -830,7 +831,7 @@ message AckServerImpressionsRequest {
 message AckServerImpressionsResponse {
   // Output only.
   // The status of this response.
-  Status status = 1;
+  common.Status status = 1;
 }
 
 // The Byteplus Retail service.
