@@ -162,7 +162,7 @@ message WriteUsersResponse {
     // When `status.code` is 0, all payload are successfully written.
     // If `status.code` is 1001, `errors` is populated.
     // Other non-zero values indicate all payload failed.
-    bytedance.byteplus.Status status = 1;
+    common.Status status = 1;
 
     // Output only.
     // This field is populated when `status.code` is 1001.
@@ -404,7 +404,7 @@ message WriteProductsResponse {
     // When `status.code` is 0, all payload are successfully written.
     // If `status.code` is 1001, `errors` is populated.
     // Other non-zero values indicate all payload failed.
-    bytedance.byteplus.Status status = 1;
+    common.Status status = 1;
 
     // Output only.
     // This field is populated when `status.code` is 1001.
@@ -657,7 +657,7 @@ message WriteUserEventsResponse {
     // When `status.code` is 0, all payload are successfully written.
     // If `status.code` is 1001, `errors` is populated.
     // Other non-zero values indicate all payload failed.
-    bytedance.byteplus.Status status = 1;
+    common.Status status = 1;
 
     // Output only.
     // This field is populated when `status.code` is 1001.
@@ -800,7 +800,7 @@ message WriteAdvertisementsResponse {
     // When `status.code` is 0, all payload are successfully written.
     // If `status.code` is 1001, `errors` is populated.
     // Other non-zero values indicate all payload failed.
-    bytedance.byteplus.Status status = 1;
+    common.Status status = 1;
 
     // Output only.
     // This field is populated when `status.code` is 1001.
