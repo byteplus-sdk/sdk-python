@@ -5,6 +5,10 @@ from byteplus.core.context import Context
 # Example: https://tob.sgsnssdk.com/predict/api/retail/demo/home
 _PREDICT_URL_FORMAT = "{}://{}/predict/api/retail/{}/#"
 
+# The URL format of done information
+# Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/done?topic=user
+_DONE_URL_FORMAT = "{}://{}/data/api/{}/done?topic=#"
+
 # The URL format of reporting the real exposure list
 # Example: https://tob.sgsnssdk.com/predict/api/retail/demo/ack_impression
 _ACK_IMPRESSION_URL_FORMAT = "{}://{}/predict/api/retail/{}/ack_server_impressions"
@@ -33,6 +37,9 @@ class _RetailURL(CommonURL):
         # The URL of uploading real-time user event data
         # Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/user_event?method=write
         self.write_user_events_url: str = ""
+        # The URL of mark certain days that data synchronization is complete
+        # Example: https://tob.sgsnssdk.com/data/api/retail_demo/done?topic=user
+        self.done_url_format: str = ""
         self.refresh(context.hosts[0])
 
     def refresh(self, host: str) -> None:
@@ -42,6 +49,7 @@ class _RetailURL(CommonURL):
         self.write_users_url: str = self._generate_upload_url(host, "user", "write")
         self.write_products_url: str = self._generate_upload_url(host, "product", "write")
         self.write_user_events_url: str = self._generate_upload_url(host, "user_event", "write")
+        self.done_url_format: str = self._generate_done_url(host)
 
     def _generate_predict_url(self, host) -> str:
         return _PREDICT_URL_FORMAT.format(self.schema, host, self.tenant)
@@ -51,3 +59,6 @@ class _RetailURL(CommonURL):
 
     def _generate_upload_url(self, host, topic, method) -> str:
         return _UPLOAD_URL_FORMAT.format(self.schema, host, self.tenant, topic, method)
+
+    def _generate_done_url(self, host) -> str:
+        return _DONE_URL_FORMAT.format(self.schema, host, self.tenant)

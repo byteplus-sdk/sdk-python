@@ -1,5 +1,7 @@
 import logging
+from datetime import datetime, timedelta
 from optparse import Option
+from typing import Optional
 
 from byteplus.common.client import CommonClient
 from byteplus.core import BizException
@@ -50,6 +52,29 @@ class Client(CommonClient):
         self._http_caller.do_pb_request(url, request, response, *opts)
         log.debug("[ByteplusSDK][WriteUserEvents] rsp:\n %s", response)
         return response
+
+    def done(self, date_list: Optional[list], topic: str, *opts: Option) -> DoneResponse:
+        request: DoneRequest = DoneRequest()
+        if date_list is None or len(date_list) == 0:
+            previous_day = datetime.now() - timedelta(days=1)
+            self.append_done_date(request, previous_day)
+        else:
+            for date in date_list:
+                self.append_done_date(request, date)
+        url_format = self._retail_url.done_url_format
+        url = url_format.replace("#", topic)
+        response = DoneResponse()
+        self._http_caller.do_json_request(url, request, response, *opts)
+        log.debug("[ByteplusSDK][Done] rsp:\n%s", response)
+        return response
+
+    @staticmethod
+    def append_done_date(request: DoneRequest, date: datetime):
+        protoDate: Date = Date()
+        protoDate.year = date.year
+        protoDate.month = date.month
+        protoDate.day = date.day
+        request.data_date.append(protoDate)
 
     def predict(self, request: PredictRequest, scene: str, *opts: Option) -> PredictResponse:
         url_format: str = self._retail_url.predict_url_format
