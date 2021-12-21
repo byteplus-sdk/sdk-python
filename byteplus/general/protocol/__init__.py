@@ -2,7 +2,6 @@ from .byteplus_general_pb2 import (
     DataError,
     WriteResponse,
     ImportResponse,
-    DoneResponse,
     PredictDevice,
     PredictUser,
     PredictContext,
