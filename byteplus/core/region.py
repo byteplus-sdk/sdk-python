@@ -7,4 +7,3 @@ class Region(Enum):
     US = 2
     SG = 3
     AIR = 4
-    SAAS = 5
