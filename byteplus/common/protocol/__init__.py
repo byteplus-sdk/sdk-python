@@ -8,5 +8,5 @@ from .byteplus_common_pb2 import (
     ListOperationsResponse,
     Date,
     DoneRequest,
-    Response
+    DoneResponse,
 )

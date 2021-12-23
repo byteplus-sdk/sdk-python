@@ -35,3 +35,4 @@ class CommonURL(URLCenter):
 
     def _generate_done_url(self, host) -> str:
         return _DONE_URL_FORMAT.format(self.schema, host, self.tenant)
+
