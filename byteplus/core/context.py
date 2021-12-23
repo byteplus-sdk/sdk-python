@@ -1,4 +1,4 @@
-from byteplus.core.constant import _CN_HOSTS, _SG_HOSTS, _US_HOSTS, _AIR_HOSTS, _SAAS_HOSTS
+from byteplus.core.constant import _CN_HOSTS, _SG_HOSTS, _US_HOSTS, _AIR_HOSTS, _SAAS_SG_HOSTS
 from byteplus.core.region import Region
 
 
@@ -52,6 +52,6 @@ class Context(object):
         if param.region == Region.AIR:
             self.hosts = _AIR_HOSTS
             return
-        if param.region == Region.SAAS:
-            self.hosts = _SAAS_HOSTS
+        if param.region == Region.SAAS_SG:
+            self.hosts = _SAAS_SG_HOSTS
             return
