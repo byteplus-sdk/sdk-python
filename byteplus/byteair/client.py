@@ -12,11 +12,15 @@ from byteplus.core import Region
 from byteplus.core.context import Param
 from byteplus.general.url import _GeneralURL
 from byteplus.general.protocol import *
+from byteplus.core.option import Option as CoreOption
+from byteplus.core.options import Options
 
 log = logging.getLogger(__name__)
 
 _ERR_MSG_TOO_MANY_ITEMS = "Only can receive max to {} items in one request".format(MAX_IMPORT_ITEM_COUNT)
 
+_DEFAULT_PREDICT_SCENE = "default"
+_DEFAULT_CALLBACK_SCENE = "default"
 
 class Client(CommonClient):
 
@@ -72,18 +76,26 @@ class Client(CommonClient):
         date_map: dict = {"partition_date": formatted_date}
         date_map_list.append(date_map)
 
-    def predict(self, request: PredictRequest, scene: str, *opts: Option) -> PredictResponse:
+    def predict(self, request: PredictRequest, *opts: CoreOption) -> PredictResponse:
         url_format: str = self._general_url.predict_url_format
+        options: Options = CoreOption.conv_to_options(opts)
+        scene: str = _DEFAULT_PREDICT_SCENE
+        if options.scene:
+            scene = options.scene
         url: str = url_format.replace("#", scene)
         response: PredictResponse = PredictResponse()
-        self._http_caller.do_pb_request(url, request, response, *opts)
+        self._http_caller.do_pb_request_with_opts_object(url, request, response, options)
         log.debug("[ByteplusSDK][Predict] rsp:\n%s", response)
         return response
 
-    def callback(self, request: CallbackRequest, *opts: Option) -> CallbackResponse:
+    def callback(self, request: CallbackRequest, *opts: CoreOption) -> CallbackResponse:
         url: str = self._general_url.callback_url
+        options: Options = CoreOption.conv_to_options(opts)
+        if not options.scene:
+            options.scene = _DEFAULT_CALLBACK_SCENE
+        request.scene = options.scene
         response: CallbackResponse = CallbackResponse()
-        self._http_caller.do_pb_request(url, request, response, *opts)
+        self._http_caller.do_pb_request_with_opts_object(url, request, response, options)
         log.debug("[ByteplusSDK][Callback] rsp:\n%s", response)
         return response
 
@@ -126,6 +138,10 @@ class ClientBuilder(object):
 
     def sk(self, sk: str):
         self._param.sk = sk
+        return self
+
+    def use_air_auth(self):
+        self._param.use_air_auth = True
         return self
         
     def build(self) -> Client:

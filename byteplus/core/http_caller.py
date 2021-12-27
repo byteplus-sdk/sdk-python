@@ -18,7 +18,7 @@ from byteplus.core.constant import VOLC_AUTH_SERVICE
 from byteplus.core.context import Context
 from byteplus.core.exception import NetException, BizException
 from byteplus.core.option import Option
-from byteplus.core.options import _Options
+from byteplus.core.options import Options
 from byteplus.core.time_hlper import rfc3339_format, milliseconds
 from byteplus.volcauth.volcauth import VolcAuth
 try:
@@ -41,19 +41,26 @@ class HttpCaller(object):
             self._volc_auth = VolcAuth(context.volc_auth_conf.ak, context.volc_auth_conf.sk, context.volc_auth_conf.region, VOLC_AUTH_SERVICE)
 
     def do_json_request(self, url: str, request, response: Message, *opts: Option):
+        options: Options = Option.conv_to_options(opts)
+        self.do_json_request_with_opts_object(url, request, response, options)
+
+    def do_pb_request(self, url: str, request: Message, response: Message, *opts: Option):
+        options: Options = Option.conv_to_options(opts)
+        self.do_pb_request_with_opts_object(url, request, response, options)
+
+    def do_json_request_with_opts_object(self, url: str, request, response: Message, options: Options):
         req_str: str = json.dumps(request)
         req_bytes: bytes = req_str.encode("utf-8")
         content_type: str = "application/json"
-        self.do_request(url, req_bytes, response, content_type, *opts)
+        self.do_request(url, req_bytes, response, content_type, options)
 
-    def do_pb_request(self, url: str, request: Message, response: Message, *opts: Option):
+    def do_pb_request_with_opts_object(self, url: str, request: Message, response: Message, options: Options):
         req_bytes: bytes = request.SerializeToString()
         content_type: str = "application/x-protobuf"
-        self.do_request(url, req_bytes, response, content_type, *opts)
+        self.do_request(url, req_bytes, response, content_type, options)
 
-    def do_request(self, url, req_bytes, response, contextType, *opts: Option):
+    def do_request(self, url, req_bytes, response, contextType, options: Options):
         req_bytes: bytes = gzip.compress(req_bytes)
-        options: _Options = Option.conv_to_options(opts)
         headers: dict = self._build_headers(options, contextType)
         url = self._build_url_with_queries(options, url)
         auth_func = self._build_auth(req_bytes)
@@ -65,7 +72,7 @@ class HttpCaller(object):
                 log.error("[ByteplusSDK] parse response fail, err:%s url:%s", e, url)
                 raise BizException("parse response fail")
 
-    def _build_headers(self, options: _Options, contentType: str) -> dict:
+    def _build_headers(self, options: Options, contentType: str) -> dict:
         headers = {
             "Content-Encoding": "gzip",
             # The 'requests' lib support '"Content-Encoding": "gzip"' header,
@@ -79,7 +86,7 @@ class HttpCaller(object):
         return headers
 
     @staticmethod
-    def _build_url_with_queries(options: _Options, url: str):
+    def _build_url_with_queries(options: Options, url: str):
         queries = {}
         if options.stage is not None:
             queries["stage"] = options.stage
@@ -96,7 +103,7 @@ class HttpCaller(object):
         return url + "?" + query_string
 
     @staticmethod
-    def _with_options_headers(headers: dict, options: _Options):
+    def _with_options_headers(headers: dict, options: Options):
         if options.headers is not None:
             headers.update(options.headers)
         if options.request_id is not None and len(options.request_id) > 0:
@@ -113,9 +120,9 @@ class HttpCaller(object):
             headers["Timeout-Millis"] = str(milliseconds(options.server_timeout))
 
     def _build_auth(self, req_bytes: bytes) -> Callable:
-        if self._volc_auth is not None:
-            return self._volc_auth
-        return lambda req: self._with_air_auth_headers(req, req_bytes)
+        if self._context.use_air_auth:
+            return lambda req: self._with_air_auth_headers(req, req_bytes)
+        return self._volc_auth
 
     def _with_air_auth_headers(self, req, req_bytes: bytes) -> None:
         # 获取当前时间不带小数的秒级时间戳

@@ -14,6 +14,7 @@ class Param(object):
         self.region: Region = Region.UNKNOWN
         self.ak: str = ""
         self.sk: str = ""
+        self.use_air_auth: bool = False
 
 
 class Context(object):
@@ -24,6 +25,7 @@ class Context(object):
         self.token: str = param.token
         self.customer_headers: dict = param.headers
         self.schema: str = param.schema
+        self.use_air_auth: bool = param.use_air_auth
         self.hosts: list = []
         self.volc_auth_conf: VolcAuthConf = VolcAuthConf(param)
         self._adjust_hosts(param)
