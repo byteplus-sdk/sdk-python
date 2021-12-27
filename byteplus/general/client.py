@@ -53,12 +53,8 @@ class Client(CommonClient):
 
     def done(self, date_list: Optional[list], topic: str, *opts: Option) -> DoneResponse:
         date_map_list: list = []
-        if date_list is None or len(date_list) == 0:
-            previous_day = datetime.now() - timedelta(days=1)
-            self.append_done_date(date_map_list, previous_day)
-        else:
-            for date in date_list:
-                self.append_done_date(date_map_list, date)
+        for date in date_list:
+            self.append_done_date(date_map_list, date)
         url_format = self._general_url.done_url_format
         url = url_format.replace("#", topic)
         response = DoneResponse()

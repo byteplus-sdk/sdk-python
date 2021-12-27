@@ -1,4 +1,4 @@
-from byteplus.core.constant import _CN_HOSTS, _SG_HOSTS, _US_HOSTS, _AIR_HOSTS
+from byteplus.core.constant import _CN_HOSTS, _SG_HOSTS, _US_HOSTS, _AIR_HOSTS, _SAAS_SG_HOSTS
 from byteplus.core.region import Region
 
 
@@ -44,7 +44,7 @@ class Context(object):
     def _check_auth_required_field(param: Param) -> None:
         if param.token == "" and param.ak == "" :
             return Exception("Token and ak are empty")
-        
+
         if param.ak != "" and param.sk == "" :
             return Exception("sk is empty")
 
@@ -63,6 +63,10 @@ class Context(object):
             return
         if param.region == Region.AIR:
             self.hosts = _AIR_HOSTS
+            return
+        if param.region == Region.SAAS_SG:
+            self.hosts = _SAAS_SG_HOSTS
+            return
 
 
 class VolcAuthConf(object):
@@ -70,7 +74,7 @@ class VolcAuthConf(object):
         self.ak: str = param.ak
         self.sk: str = param.sk
         self.region: str = self._parse_region(param)
-    
+
     def _parse_region(self, param: Param):
         if param.region == Region.SG:
             return "ap-singapore-1"
