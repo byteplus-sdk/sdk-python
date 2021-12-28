@@ -43,33 +43,6 @@ class Client(CommonClient):
         log.debug("[ByteplusSDK][WriteData] rsp:\n %s", response)
         return response
 
-    def import_data(self, data_list: Optional[list], topic: str, *opts: Option) -> OperationResponse:
-        if data_list is None:
-            data_list = []
-        if len(data_list) > MAX_IMPORT_ITEM_COUNT:
-            raise BizException(_ERR_MSG_TOO_MANY_ITEMS)
-        url_format: str = self._general_url.import_data_url_format
-        url: str = url_format.replace("#", topic)
-        response: OperationResponse = OperationResponse()
-        self._http_caller.do_json_request(url, data_list, response, *opts)
-        log.debug("[ByteplusSDK][ImportData] rsp:\n%s", response)
-        return response
-
-    def done(self, date_list: Optional[list], topic: str, *opts: Option) -> DoneResponse:
-        date_map_list: list = []
-        if date_list is None or len(date_list) == 0:
-            previous_day = datetime.now() - timedelta(days=1)
-            self.append_done_date(date_map_list, previous_day)
-        else:
-            for date in date_list:
-                self.append_done_date(date_map_list, date)
-        url_format = self._general_url.done_url_format
-        url = url_format.replace("#", topic)
-        response = DoneResponse()
-        self._http_caller.do_json_request(url, date_map_list, response, *opts)
-        log.debug("[ByteplusSDK][Done] rsp:\n%s", response)
-        return response
-
     @staticmethod
     def append_done_date(date_map_list: list, date: datetime):
         formatted_date: str = date.strftime("%Y%m%d")
