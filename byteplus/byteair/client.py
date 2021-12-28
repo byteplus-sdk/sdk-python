@@ -10,8 +10,8 @@ from byteplus.core import BizException
 from byteplus.core import MAX_WRITE_ITEM_COUNT, MAX_IMPORT_ITEM_COUNT
 from byteplus.core import Region
 from byteplus.core.context import Param
-from byteplus.general.url import _GeneralURL
-from byteplus.general.protocol import *
+from byteplus.byteair.url import _GeneralURL
+from byteplus.byteair.protocol import *
 from byteplus.core.option import Option as CoreOption
 from byteplus.core.options import Options
 
