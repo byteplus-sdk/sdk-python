@@ -10,13 +10,17 @@ from byteplus.core import BizException
 from byteplus.core import MAX_WRITE_ITEM_COUNT, MAX_IMPORT_ITEM_COUNT
 from byteplus.core import Region
 from byteplus.core.context import Param
-from byteplus.general.url import _GeneralURL
-from byteplus.general.protocol import *
+from byteplus.byteair.url import _GeneralURL
+from byteplus.byteair.protocol import *
+from byteplus.core.option import Option as CoreOption
+from byteplus.core.options import Options
 
 log = logging.getLogger(__name__)
 
 _ERR_MSG_TOO_MANY_ITEMS = "Only can receive max to {} items in one request".format(MAX_IMPORT_ITEM_COUNT)
 
+_DEFAULT_PREDICT_SCENE = "default"
+_DEFAULT_CALLBACK_SCENE = "default"
 
 class Client(CommonClient):
 
@@ -39,47 +43,32 @@ class Client(CommonClient):
         log.debug("[ByteplusSDK][WriteData] rsp:\n %s", response)
         return response
 
-    def import_data(self, data_list: Optional[list], topic: str, *opts: Option) -> OperationResponse:
-        if data_list is None:
-            data_list = []
-        if len(data_list) > MAX_IMPORT_ITEM_COUNT:
-            raise BizException(_ERR_MSG_TOO_MANY_ITEMS)
-        url_format: str = self._general_url.import_data_url_format
-        url: str = url_format.replace("#", topic)
-        response: OperationResponse = OperationResponse()
-        self._http_caller.do_json_request(url, data_list, response, *opts)
-        log.debug("[ByteplusSDK][ImportData] rsp:\n%s", response)
-        return response
-
-    def done(self, date_list: Optional[list], topic: str, *opts: Option) -> DoneResponse:
-        date_map_list: list = []
-        for date in date_list:
-            self.append_done_date(date_map_list, date)
-        url_format = self._general_url.done_url_format
-        url = url_format.replace("#", topic)
-        response = DoneResponse()
-        self._http_caller.do_json_request(url, date_map_list, response, *opts)
-        log.debug("[ByteplusSDK][Done] rsp:\n%s", response)
-        return response
-
     @staticmethod
     def append_done_date(date_map_list: list, date: datetime):
         formatted_date: str = date.strftime("%Y%m%d")
         date_map: dict = {"partition_date": formatted_date}
         date_map_list.append(date_map)
 
-    def predict(self, request: PredictRequest, scene: str, *opts: Option) -> PredictResponse:
+    def predict(self, request: PredictRequest, *opts: CoreOption) -> PredictResponse:
         url_format: str = self._general_url.predict_url_format
+        options: Options = CoreOption.conv_to_options(opts)
+        scene: str = _DEFAULT_PREDICT_SCENE
+        if options.scene:
+            scene = options.scene
         url: str = url_format.replace("#", scene)
         response: PredictResponse = PredictResponse()
-        self._http_caller.do_pb_request(url, request, response, *opts)
+        self._http_caller.do_pb_request_with_opts_object(url, request, response, options)
         log.debug("[ByteplusSDK][Predict] rsp:\n%s", response)
         return response
 
-    def callback(self, request: CallbackRequest, *opts: Option) -> CallbackResponse:
+    def callback(self, request: CallbackRequest, *opts: CoreOption) -> CallbackResponse:
         url: str = self._general_url.callback_url
+        options: Options = CoreOption.conv_to_options(opts)
+        if not options.scene:
+            options.scene = _DEFAULT_CALLBACK_SCENE
+        request.scene = options.scene
         response: CallbackResponse = CallbackResponse()
-        self._http_caller.do_pb_request(url, request, response, *opts)
+        self._http_caller.do_pb_request_with_opts_object(url, request, response, options)
         log.debug("[ByteplusSDK][Callback] rsp:\n%s", response)
         return response
 
@@ -88,12 +77,12 @@ class ClientBuilder(object):
     def __init__(self):
         self._param = Param()
 
-    def tenant(self, tenant: str):
-        self._param.tenant = tenant
-        return self
-
     def tenant_id(self, tenant_id: str):
         self._param.tenant_id = tenant_id
+        return self
+
+    def project_id(self, project_id: str):
+        self._param.tenant = project_id
         return self
 
     def token(self, token: str):
@@ -116,6 +105,17 @@ class ClientBuilder(object):
         self._param.region = region
         return self
 
-    def build(self) -> Client:
+    def ak(self, ak: str):
+        self._param.ak = ak
+        return self
+
+    def sk(self, sk: str):
+        self._param.sk = sk
+        return self
+
+    def use_air_auth(self):
         self._param.use_air_auth = True
+        return self
+        
+    def build(self) -> Client:
         return Client(self._param)

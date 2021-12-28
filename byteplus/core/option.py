@@ -41,7 +41,7 @@ class Option(object):
         return OptionImpl()
 
     @staticmethod
-    def with_data_date(date: datetime):
+    def with_data_date(date: datetime.datetime):
         class OptionImpl(Option):
             def fill(self, options: Options) -> None:
                 options.data_date = date
@@ -77,5 +77,13 @@ class Option(object):
         class OptionImpl(Option):
             def fill(self, options: Options) -> None:
                 options.stage = stage
+
+        return OptionImpl()
+
+    @staticmethod
+    def with_scene(scene: str):
+        class OptionImpl(Option):
+            def fill(self, options: Options) -> None:
+                options.scene = scene
 
         return OptionImpl()

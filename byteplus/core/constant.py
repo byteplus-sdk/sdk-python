@@ -27,3 +27,5 @@ STATUS_CODE_IDEMPOTENT: int = 409
 STATUS_CODE_OPERATION_LOSS: int = 410
 # The server hope slow down request frequency, and this request was rejected
 STATUS_CODE_TOO_MANY_REQUEST: int = 429
+
+VOLC_AUTH_SERVICE = "air"
