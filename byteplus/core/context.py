@@ -42,11 +42,11 @@ class Context(object):
 
     @staticmethod
     def _check_auth_required_field(param: Param) -> None:
-        if param.token == "" and param.ak == "" :
-            return Exception("Token and ak are empty")
+        if param.use_air_auth and param.token == "":
+            return Exception("Token is empty")
 
-        if param.ak != "" and param.sk == "" :
-            return Exception("sk is empty")
+        if not param.use_air_auth and (param.sk == "" or param.ak == ""):
+            return Exception("Ak or sk is empty")
 
     def _adjust_hosts(self, param: Param) -> None:
         if len(param.hosts) > 0:
