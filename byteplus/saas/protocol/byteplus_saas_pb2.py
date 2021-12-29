@@ -11,7 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import byteplus_common_pb2 as byteplus__common__pb2
+from byteplus.common.protocol import byteplus_common_pb2 as byteplus__common__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
