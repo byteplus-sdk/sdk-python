@@ -103,4 +103,5 @@ class ClientBuilder(object):
         return self
 
     def build(self) -> Client:
+        self._param.use_air_auth = True
         return Client(self._param)
