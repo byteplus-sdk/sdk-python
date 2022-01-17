@@ -22,6 +22,7 @@ _ERR_MSG_TOO_MANY_ITEMS = "Only can receive max to {} items in one request".form
 _DEFAULT_PREDICT_SCENE = "default"
 _DEFAULT_CALLBACK_SCENE = "default"
 
+
 class Client(CommonClient):
 
     def __init__(self, param: Param):
@@ -32,10 +33,9 @@ class Client(CommonClient):
         self._general_url.refresh(host)
 
     def write_data(self, data_list: list, topic: str, *opts: Option) -> WriteResponse:
-        if len(data_list) > MAX_WRITE_ITEM_COUNT:
-            log.warning("[ByteplusSDK][WriteData] item count more than '%d'", MAX_WRITE_ITEM_COUNT)
-            if len(data_list) > MAX_IMPORT_ITEM_COUNT:
-                raise BizException(_ERR_MSG_TOO_MANY_ITEMS)
+        if len(data_list) > MAX_IMPORT_ITEM_COUNT:
+            raise BizException(_ERR_MSG_TOO_MANY_ITEMS)
+
         url_format: str = self._general_url.write_data_url_format
         url: str = url_format.replace("#", topic)
         response: WriteResponse = WriteResponse()
@@ -110,6 +110,6 @@ class ClientBuilder(object):
     def use_air_auth(self):
         self._param.use_air_auth = True
         return self
-        
+
     def build(self) -> Client:
         return Client(self._param)

@@ -48,12 +48,6 @@ class Client(CommonClient):
         log.debug("[ByteplusSDK][Done] rsp:\n%s", response)
         return response
 
-    @staticmethod
-    def append_done_date(date_map_list: list, date: datetime):
-        formatted_date: str = date.strftime("%Y%m%d")
-        date_map: dict = {"partition_date": formatted_date}
-        date_map_list.append(date_map)
-
     def predict(self, request: PredictRequest, scene: str, *opts: Option) -> PredictResponse:
         url_format: str = self._general_url.predict_url_format
         url: str = url_format.replace("#", scene)
