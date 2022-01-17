@@ -1,5 +1,5 @@
 from datetime import datetime
-from datetime import timedelta
+
 import logging
 from optparse import Option
 from typing import Optional
@@ -7,7 +7,7 @@ from typing import Optional
 from byteplus.common.client import CommonClient
 from byteplus.common.protocol import *
 from byteplus.core import BizException
-from byteplus.core import MAX_WRITE_ITEM_COUNT, MAX_IMPORT_ITEM_COUNT
+from byteplus.core import MAX_IMPORT_ITEM_COUNT
 from byteplus.core import Region
 from byteplus.core.context import Param
 from byteplus.general.url import _GeneralURL
@@ -28,27 +28,13 @@ class Client(CommonClient):
         self._general_url.refresh(host)
 
     def write_data(self, data_list: list, topic: str, *opts: Option) -> WriteResponse:
-        if len(data_list) > MAX_WRITE_ITEM_COUNT:
-            log.warning("[ByteplusSDK][WriteData] item count more than '%d'", MAX_WRITE_ITEM_COUNT)
-            if len(data_list) > MAX_IMPORT_ITEM_COUNT:
-                raise BizException(_ERR_MSG_TOO_MANY_ITEMS)
+        if len(data_list) > MAX_IMPORT_ITEM_COUNT:
+            raise BizException(_ERR_MSG_TOO_MANY_ITEMS)
         url_format: str = self._general_url.write_data_url_format
         url: str = url_format.replace("#", topic)
         response: WriteResponse = WriteResponse()
         self._http_caller.do_json_request(url, data_list, response, *opts)
         log.debug("[ByteplusSDK][WriteData] rsp:\n %s", response)
-        return response
-
-    def import_data(self, data_list: Optional[list], topic: str, *opts: Option) -> OperationResponse:
-        if data_list is None:
-            data_list = []
-        if len(data_list) > MAX_IMPORT_ITEM_COUNT:
-            raise BizException(_ERR_MSG_TOO_MANY_ITEMS)
-        url_format: str = self._general_url.import_data_url_format
-        url: str = url_format.replace("#", topic)
-        response: OperationResponse = OperationResponse()
-        self._http_caller.do_json_request(url, data_list, response, *opts)
-        log.debug("[ByteplusSDK][ImportData] rsp:\n%s", response)
         return response
 
     def done(self, date_list: Optional[list], topic: str, *opts: Option) -> DoneResponse:
