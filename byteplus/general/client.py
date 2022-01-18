@@ -37,17 +37,6 @@ class Client(CommonClient):
         log.debug("[ByteplusSDK][WriteData] rsp:\n %s", response)
         return response
 
-    def done(self, date_list: Optional[list], topic: str, *opts: Option) -> DoneResponse:
-        date_map_list: list = []
-        for date in date_list:
-            self.append_done_date(date_map_list, date)
-        url_format = self._general_url.done_url_format
-        url = url_format.replace("#", topic)
-        response = DoneResponse()
-        self._http_caller.do_json_request(url, date_map_list, response, *opts)
-        log.debug("[ByteplusSDK][Done] rsp:\n%s", response)
-        return response
-
     def predict(self, request: PredictRequest, scene: str, *opts: Option) -> PredictResponse:
         url_format: str = self._general_url.predict_url_format
         url: str = url_format.replace("#", scene)
