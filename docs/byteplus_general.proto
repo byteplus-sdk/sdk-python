@@ -1,7 +1,7 @@
 syntax = "proto3";
 package bytedance.byteplus.general;
 option java_package = "byteplus.sdk.general.protocol";
-option go_package="github.com/byteplus-sdk/sdk-go/general/protocol";
+option go_package = "github.com/byteplus-sdk/sdk-go/general/protocol";
 
 import "byteplus_common.proto";
 import "google/protobuf/any.proto";
@@ -388,6 +388,10 @@ message CallbackRequest {
   // Required.
   // This should be same as `PredictResponse.request_id`.
   string predict_request_id = 4;
+
+  // optional.
+  // All the callback extra info here.
+  map<string, string> extra = 100;
 }
 
 message CallbackResponse {

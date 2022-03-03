@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\035byteplus.sdk.general.protocolZ/github.com/byteplus-sdk/sdk-go/general/protocol',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x16\x62yteplus_general.proto\x12\x1a\x62ytedance.byteplus.general\x1a\x15\x62yteplus_common.proto\x1a\x19google/protobuf/any.proto\"*\n\tDataError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\t\"y\n\rWriteResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x35\n\x06\x65rrors\x18\x02 \x03(\x0b\x32%.bytedance.byteplus.general.DataError\"\x81\x01\n\x0eImportResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12<\n\rerror_samples\x18\x02 \x03(\x0b\x32%.bytedance.byteplus.general.DataError\"\xcf\x01\n\rPredictDevice\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\x10\n\x08platform\x18\x02 \x01(\t\x12\x15\n\rdevice_vendor\x18\x03 \x01(\t\x12\x14\n\x0c\x64\x65vice_model\x18\x04 \x01(\t\x12\x19\n\x11\x64\x65vice_resolution\x18\x05 \x01(\t\x12\x16\n\x0e\x63lient_version\x18\x06 \x01(\t\x12\x12\n\nos_version\x18\x07 \x01(\t\x12\x14\n\x0cnetwork_type\x18\x08 \x01(\t\x12\x0f\n\x07\x63\x61rrier\x18\t \x01(\t\"\xce\x02\n\x0bPredictUser\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12\x39\n\x06\x64\x65vice\x18\x02 \x01(\x0b\x32).bytedance.byteplus.general.PredictDevice\x12\x0b\n\x03\x61ge\x18\x03 \x01(\t\x12\x0e\n\x06gender\x18\x04 \x01(\t\x12\x10\n\x08province\x18\x05 \x01(\t\x12\x0c\n\x04\x63ity\x18\x06 \x01(\t\x12\x10\n\x08\x64istrict\x18\x07 \x01(\t\x12\x12\n\napp_market\x18\x08 \x01(\t\x12\x12\n\nlogin_mode\x18\t \x01(\t\x12\x0f\n\x07\x63ountry\x18\n \x01(\t\x12\x41\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x32.bytedance.byteplus.general.PredictUser.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x91\x01\n\x0ePredictContext\x12\x0b\n\x03spm\x18\x01 \x01(\t\x12\x44\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x35.bytedance.byteplus.general.PredictContext.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xce\x01\n\x14PredictCandidateItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x01\x12\r\n\x05price\x18\x03 \x01(\x01\x12\x12\n\nboost_coef\x18\x04 \x01(\x01\x12J\n\x05\x65xtra\x18\x64 \x03(\x0b\x32;.bytedance.byteplus.general.PredictCandidateItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x80\x01\n\x0cPredictExtra\x12\x42\n\x05\x65xtra\x18\x65 \x03(\x0b\x32\x33.bytedance.byteplus.general.PredictExtra.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x98\x01\n\x12PredictRelatedItem\x12\n\n\x02id\x18\x01 \x01(\t\x12H\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x39.bytedance.byteplus.general.PredictRelatedItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"B\n\x0bSearchItems\x12\x10\n\x08goods_id\x18\x02 \x01(\t\x12\r\n\x05price\x18\x03 \x01(\x02\x12\x12\n\nboost_ceof\x18\x04 \x01(\x02\"\x1d\n\x0bStringArray\x12\x0e\n\x06values\x18\x01 \x03(\t\"\x82\x04\n\x0fSearchCondition\x12\r\n\x05start\x18\x01 \x01(\x05\x12\x13\n\x0bsearch_type\x18\x02 \x01(\x05\x12\x11\n\tsort_mode\x18\x03 \x01(\x05\x12\x11\n\tsort_type\x18\x04 \x01(\x05\x12\x0f\n\x07\x63ontent\x18\x05 \x01(\t\x12\r\n\x05query\x18\x06 \x01(\t\x12I\n\x07\x66ilters\x18\x07 \x03(\x0b\x32\x38.bytedance.byteplus.general.SearchCondition.FiltersEntry\x12N\n\nfilter_out\x18\x08 \x03(\x0b\x32:.bytedance.byteplus.general.SearchCondition.FilterOutEntry\x12\x36\n\x05items\x18\t \x03(\x0b\x32\'.bytedance.byteplus.general.SearchItems\x1aW\n\x0c\x46iltersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.general.StringArray:\x02\x38\x01\x1aY\n\x0e\x46ilterOutEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.general.StringArray:\x02\x38\x01\"\xa3\x03\n\x0ePredictRequest\x12\x35\n\x04user\x18\x01 \x01(\x0b\x32\'.bytedance.byteplus.general.PredictUser\x12;\n\x07\x63ontext\x18\x02 \x01(\x0b\x32*.bytedance.byteplus.general.PredictContext\x12\x0c\n\x04size\x18\x03 \x01(\x05\x12I\n\x0f\x63\x61ndidate_items\x18\x04 \x03(\x0b\x32\x30.bytedance.byteplus.general.PredictCandidateItem\x12\x37\n\x05\x65xtra\x18\x05 \x01(\x0b\x32(.bytedance.byteplus.general.PredictExtra\x12\x44\n\x0crelated_item\x18\x06 \x01(\x0b\x32..bytedance.byteplus.general.PredictRelatedItem\x12\x45\n\x10search_condition\x18\x07 \x01(\x0b\x32+.bytedance.byteplus.general.SearchCondition\"\xb8\x01\n\x11PredictResultItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04rank\x18\x03 \x01(\x05\x12\x12\n\ntrans_data\x18\x04 \x01(\t\x12G\n\x05\x65xtra\x18\x05 \x03(\x0b\x32\x38.bytedance.byteplus.general.PredictResultItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd5\x01\n\rPredictResult\x12<\n\x05items\x18\x01 \x03(\x0b\x32-.bytedance.byteplus.general.PredictResultItem\x12\x43\n\x05\x65xtra\x18\x02 \x03(\x0b\x32\x34.bytedance.byteplus.general.PredictResult.ExtraEntry\x12\x13\n\x0btotal_count\x18\x03 \x01(\x05\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x0fPredictResponse\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x38\n\x05value\x18\x03 \x01(\x0b\x32).bytedance.byteplus.general.PredictResult\x12\x12\n\nrequest_id\x18\x04 \x01(\t\"6\n\x0c\x43\x61llbackItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03pos\x18\x02 \x01(\t\x12\r\n\x05\x65xtra\x18\x03 \x01(\t\"\x82\x01\n\x0f\x43\x61llbackRequest\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12\r\n\x05scene\x18\x02 \x01(\t\x12\x37\n\x05items\x18\x03 \x03(\x0b\x32(.bytedance.byteplus.general.CallbackItem\x12\x1a\n\x12predict_request_id\x18\x04 \x01(\t\"1\n\x10\x43\x61llbackResponse\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t2\xca\x03\n\x16\x42yteplusGeneralService\x12L\n\tWriteData\x12\x14.google.protobuf.Any\x1a).bytedance.byteplus.general.WriteResponse\x12P\n\nImportData\x12\x14.google.protobuf.Any\x1a,.bytedance.byteplus.common.OperationResponse\x12\x45\n\x04\x44one\x12\x14.google.protobuf.Any\x1a\'.bytedance.byteplus.common.DoneResponse\x12\x62\n\x07Predict\x12*.bytedance.byteplus.general.PredictRequest\x1a+.bytedance.byteplus.general.PredictResponse\x12\x65\n\x08\x43\x61llback\x12+.bytedance.byteplus.general.CallbackRequest\x1a,.bytedance.byteplus.general.CallbackResponseBP\n\x1d\x62yteplus.sdk.general.protocolZ/github.com/byteplus-sdk/sdk-go/general/protocolb\x06proto3'
+  serialized_pb=b'\n\x16\x62yteplus_general.proto\x12\x1a\x62ytedance.byteplus.general\x1a\x15\x62yteplus_common.proto\x1a\x19google/protobuf/any.proto\"*\n\tDataError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\t\"y\n\rWriteResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x35\n\x06\x65rrors\x18\x02 \x03(\x0b\x32%.bytedance.byteplus.general.DataError\"\x81\x01\n\x0eImportResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12<\n\rerror_samples\x18\x02 \x03(\x0b\x32%.bytedance.byteplus.general.DataError\"\xcf\x01\n\rPredictDevice\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\x10\n\x08platform\x18\x02 \x01(\t\x12\x15\n\rdevice_vendor\x18\x03 \x01(\t\x12\x14\n\x0c\x64\x65vice_model\x18\x04 \x01(\t\x12\x19\n\x11\x64\x65vice_resolution\x18\x05 \x01(\t\x12\x16\n\x0e\x63lient_version\x18\x06 \x01(\t\x12\x12\n\nos_version\x18\x07 \x01(\t\x12\x14\n\x0cnetwork_type\x18\x08 \x01(\t\x12\x0f\n\x07\x63\x61rrier\x18\t \x01(\t\"\xce\x02\n\x0bPredictUser\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12\x39\n\x06\x64\x65vice\x18\x02 \x01(\x0b\x32).bytedance.byteplus.general.PredictDevice\x12\x0b\n\x03\x61ge\x18\x03 \x01(\t\x12\x0e\n\x06gender\x18\x04 \x01(\t\x12\x10\n\x08province\x18\x05 \x01(\t\x12\x0c\n\x04\x63ity\x18\x06 \x01(\t\x12\x10\n\x08\x64istrict\x18\x07 \x01(\t\x12\x12\n\napp_market\x18\x08 \x01(\t\x12\x12\n\nlogin_mode\x18\t \x01(\t\x12\x0f\n\x07\x63ountry\x18\n \x01(\t\x12\x41\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x32.bytedance.byteplus.general.PredictUser.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x91\x01\n\x0ePredictContext\x12\x0b\n\x03spm\x18\x01 \x01(\t\x12\x44\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x35.bytedance.byteplus.general.PredictContext.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xce\x01\n\x14PredictCandidateItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x01\x12\r\n\x05price\x18\x03 \x01(\x01\x12\x12\n\nboost_coef\x18\x04 \x01(\x01\x12J\n\x05\x65xtra\x18\x64 \x03(\x0b\x32;.bytedance.byteplus.general.PredictCandidateItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x80\x01\n\x0cPredictExtra\x12\x42\n\x05\x65xtra\x18\x65 \x03(\x0b\x32\x33.bytedance.byteplus.general.PredictExtra.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x98\x01\n\x12PredictRelatedItem\x12\n\n\x02id\x18\x01 \x01(\t\x12H\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x39.bytedance.byteplus.general.PredictRelatedItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"B\n\x0bSearchItems\x12\x10\n\x08goods_id\x18\x02 \x01(\t\x12\r\n\x05price\x18\x03 \x01(\x02\x12\x12\n\nboost_ceof\x18\x04 \x01(\x02\"\x1d\n\x0bStringArray\x12\x0e\n\x06values\x18\x01 \x03(\t\"\x82\x04\n\x0fSearchCondition\x12\r\n\x05start\x18\x01 \x01(\x05\x12\x13\n\x0bsearch_type\x18\x02 \x01(\x05\x12\x11\n\tsort_mode\x18\x03 \x01(\x05\x12\x11\n\tsort_type\x18\x04 \x01(\x05\x12\x0f\n\x07\x63ontent\x18\x05 \x01(\t\x12\r\n\x05query\x18\x06 \x01(\t\x12I\n\x07\x66ilters\x18\x07 \x03(\x0b\x32\x38.bytedance.byteplus.general.SearchCondition.FiltersEntry\x12N\n\nfilter_out\x18\x08 \x03(\x0b\x32:.bytedance.byteplus.general.SearchCondition.FilterOutEntry\x12\x36\n\x05items\x18\t \x03(\x0b\x32\'.bytedance.byteplus.general.SearchItems\x1aW\n\x0c\x46iltersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.general.StringArray:\x02\x38\x01\x1aY\n\x0e\x46ilterOutEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.general.StringArray:\x02\x38\x01\"\xa3\x03\n\x0ePredictRequest\x12\x35\n\x04user\x18\x01 \x01(\x0b\x32\'.bytedance.byteplus.general.PredictUser\x12;\n\x07\x63ontext\x18\x02 \x01(\x0b\x32*.bytedance.byteplus.general.PredictContext\x12\x0c\n\x04size\x18\x03 \x01(\x05\x12I\n\x0f\x63\x61ndidate_items\x18\x04 \x03(\x0b\x32\x30.bytedance.byteplus.general.PredictCandidateItem\x12\x37\n\x05\x65xtra\x18\x05 \x01(\x0b\x32(.bytedance.byteplus.general.PredictExtra\x12\x44\n\x0crelated_item\x18\x06 \x01(\x0b\x32..bytedance.byteplus.general.PredictRelatedItem\x12\x45\n\x10search_condition\x18\x07 \x01(\x0b\x32+.bytedance.byteplus.general.SearchCondition\"\xb8\x01\n\x11PredictResultItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04rank\x18\x03 \x01(\x05\x12\x12\n\ntrans_data\x18\x04 \x01(\t\x12G\n\x05\x65xtra\x18\x05 \x03(\x0b\x32\x38.bytedance.byteplus.general.PredictResultItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd5\x01\n\rPredictResult\x12<\n\x05items\x18\x01 \x03(\x0b\x32-.bytedance.byteplus.general.PredictResultItem\x12\x43\n\x05\x65xtra\x18\x02 \x03(\x0b\x32\x34.bytedance.byteplus.general.PredictResult.ExtraEntry\x12\x13\n\x0btotal_count\x18\x03 \x01(\x05\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x0fPredictResponse\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x38\n\x05value\x18\x03 \x01(\x0b\x32).bytedance.byteplus.general.PredictResult\x12\x12\n\nrequest_id\x18\x04 \x01(\t\"6\n\x0c\x43\x61llbackItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03pos\x18\x02 \x01(\t\x12\r\n\x05\x65xtra\x18\x03 \x01(\t\"\xf7\x01\n\x0f\x43\x61llbackRequest\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12\r\n\x05scene\x18\x02 \x01(\t\x12\x37\n\x05items\x18\x03 \x03(\x0b\x32(.bytedance.byteplus.general.CallbackItem\x12\x1a\n\x12predict_request_id\x18\x04 \x01(\t\x12\x45\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x36.bytedance.byteplus.general.CallbackRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x10\x43\x61llbackResponse\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t2\xca\x03\n\x16\x42yteplusGeneralService\x12L\n\tWriteData\x12\x14.google.protobuf.Any\x1a).bytedance.byteplus.general.WriteResponse\x12P\n\nImportData\x12\x14.google.protobuf.Any\x1a,.bytedance.byteplus.common.OperationResponse\x12\x45\n\x04\x44one\x12\x14.google.protobuf.Any\x1a\'.bytedance.byteplus.common.DoneResponse\x12\x62\n\x07Predict\x12*.bytedance.byteplus.general.PredictRequest\x1a+.bytedance.byteplus.general.PredictResponse\x12\x65\n\x08\x43\x61llback\x12+.bytedance.byteplus.general.CallbackRequest\x1a,.bytedance.byteplus.general.CallbackResponseBP\n\x1d\x62yteplus.sdk.general.protocolZ/github.com/byteplus-sdk/sdk-go/general/protocolb\x06proto3'
   ,
   dependencies=[byteplus__common__pb2.DESCRIPTOR,google_dot_protobuf_dot_any__pb2.DESCRIPTOR,])
 
@@ -1285,6 +1285,44 @@ _CALLBACKITEM = _descriptor.Descriptor(
 )
 
 
+_CALLBACKREQUEST_EXTRAENTRY = _descriptor.Descriptor(
+  name='ExtraEntry',
+  full_name='bytedance.byteplus.general.CallbackRequest.ExtraEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.general.CallbackRequest.ExtraEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.general.CallbackRequest.ExtraEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=904,
+  serialized_end=948,
+)
+
 _CALLBACKREQUEST = _descriptor.Descriptor(
   name='CallbackRequest',
   full_name='bytedance.byteplus.general.CallbackRequest',
@@ -1321,10 +1359,17 @@ _CALLBACKREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='extra', full_name='bytedance.byteplus.general.CallbackRequest.extra', index=4,
+      number=100, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_CALLBACKREQUEST_EXTRAENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -1334,7 +1379,7 @@ _CALLBACKREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=3219,
-  serialized_end=3349,
+  serialized_end=3466,
 )
 
 
@@ -1372,8 +1417,8 @@ _CALLBACKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3351,
-  serialized_end=3400,
+  serialized_start=3468,
+  serialized_end=3517,
 )
 
 _WRITERESPONSE.fields_by_name['status'].message_type = byteplus__common__pb2._STATUS
@@ -1410,7 +1455,9 @@ _PREDICTRESULT_EXTRAENTRY.containing_type = _PREDICTRESULT
 _PREDICTRESULT.fields_by_name['items'].message_type = _PREDICTRESULTITEM
 _PREDICTRESULT.fields_by_name['extra'].message_type = _PREDICTRESULT_EXTRAENTRY
 _PREDICTRESPONSE.fields_by_name['value'].message_type = _PREDICTRESULT
+_CALLBACKREQUEST_EXTRAENTRY.containing_type = _CALLBACKREQUEST
 _CALLBACKREQUEST.fields_by_name['items'].message_type = _CALLBACKITEM
+_CALLBACKREQUEST.fields_by_name['extra'].message_type = _CALLBACKREQUEST_EXTRAENTRY
 DESCRIPTOR.message_types_by_name['DataError'] = _DATAERROR
 DESCRIPTOR.message_types_by_name['WriteResponse'] = _WRITERESPONSE
 DESCRIPTOR.message_types_by_name['ImportResponse'] = _IMPORTRESPONSE
@@ -1624,11 +1671,19 @@ CallbackItem = _reflection.GeneratedProtocolMessageType('CallbackItem', (_messag
 _sym_db.RegisterMessage(CallbackItem)
 
 CallbackRequest = _reflection.GeneratedProtocolMessageType('CallbackRequest', (_message.Message,), {
+
+  'ExtraEntry' : _reflection.GeneratedProtocolMessageType('ExtraEntry', (_message.Message,), {
+    'DESCRIPTOR' : _CALLBACKREQUEST_EXTRAENTRY,
+    '__module__' : 'byteplus_general_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.CallbackRequest.ExtraEntry)
+    })
+  ,
   'DESCRIPTOR' : _CALLBACKREQUEST,
   '__module__' : 'byteplus_general_pb2'
   # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.CallbackRequest)
   })
 _sym_db.RegisterMessage(CallbackRequest)
+_sym_db.RegisterMessage(CallbackRequest.ExtraEntry)
 
 CallbackResponse = _reflection.GeneratedProtocolMessageType('CallbackResponse', (_message.Message,), {
   'DESCRIPTOR' : _CALLBACKRESPONSE,
@@ -1648,6 +1703,7 @@ _SEARCHCONDITION_FILTERSENTRY._options = None
 _SEARCHCONDITION_FILTEROUTENTRY._options = None
 _PREDICTRESULTITEM_EXTRAENTRY._options = None
 _PREDICTRESULT_EXTRAENTRY._options = None
+_CALLBACKREQUEST_EXTRAENTRY._options = None
 
 _BYTEPLUSGENERALSERVICE = _descriptor.ServiceDescriptor(
   name='ByteplusGeneralService',
@@ -1656,8 +1712,8 @@ _BYTEPLUSGENERALSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3403,
-  serialized_end=3861,
+  serialized_start=3520,
+  serialized_end=3978,
   methods=[
   _descriptor.MethodDescriptor(
     name='WriteData',
