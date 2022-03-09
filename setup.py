@@ -4,14 +4,15 @@ import os
 
 from codecs import open
 
+import pkg_resources
 from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
 
-requires = [
-    'requests',
-    'protobuf',
-]
+with open('requirements.txt') as f:
+    install_requires = [str(req) for req in pkg_resources.parse_requirements(f)]
+
+print(install_requires)
 
 about = {}
 with open(os.path.join(here, 'byteplus', '__version__.py'), 'r', 'utf-8') as f:
@@ -34,8 +35,9 @@ setup(
     author_email=about['__author_email__'],
     url=about['__url__'],
     packages=find_packages(),
+    include_package_data=True,
     python_requires=">=3",
-    install_requires=requires,
+    install_requires=install_requires,
     license=about['__license__'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',

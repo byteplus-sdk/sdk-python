@@ -10,5 +10,5 @@ gen_retail:
 gen_rutenad:
 	protoc --python_out=byteplus/rutenad/protocol -I=docs docs/byteplus_rutenad.proto
 
-gen_saas:
-	protoc --python_out=byteplus/saas/protocol -I=docs docs/byteplus_saas.proto
+gen_retailv2:
+	protoc --python_out=byteplus/retailv2/protocol -I=docs docs/byteplus_retailv2.proto
