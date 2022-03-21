@@ -1,10 +1,12 @@
-sdk for byteplus
+## sdk for byteplus
 
 
-# Install
-
-Run:
+#### Install the client library
 ```shell
-pip install byteplus
+pip install --upgrade byteplus
 ```
+#### Example projects
+* [example](https://github.com/byteplus-sdk/example-python)
 
+#### For more details
+* [code sample](https://docs.byteplus.com/recommend/docs/code-sample)
