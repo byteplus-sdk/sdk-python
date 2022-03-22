@@ -11,7 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from byteplus.common.protocol import byteplus_common_pb2 as byteplus__common__pb2
+import byteplus_common_pb2 as byteplus__common__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\033byteplus.sdk.media.protocolZ-github.com/byteplus-sdk/sdk-go/media/protocol',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x14\x62yteplus_media.proto\x12\x18\x62ytedance.byteplus.media\x1a\x15\x62yteplus_common.proto\"\xaf\x03\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0e\n\x06gender\x18\x02 \x01(\t\x12\x0b\n\x03\x61ge\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x11\n\tdevice_id\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65vice_type\x18\x06 \x01(\t\x12\x17\n\x0fsubscriber_type\x18\x07 \x01(\t\x12\x10\n\x08language\x18\x08 \x01(\t\x12\x0f\n\x07history\x18\t \x03(\t\x12\x1a\n\x12\x61\x63tivation_channel\x18\n \x01(\t\x12\x18\n\x10membership_level\x18\x0b \x01(\t\x12\x1e\n\x16registration_timestamp\x18\x0c \x01(\x03\x12\x0f\n\x07\x63ountry\x18\r \x01(\t\x12\x0c\n\x04\x63ity\x18\x0e \x01(\t\x12\x18\n\x10\x64istrict_or_area\x18\x0f \x01(\t\x12\x10\n\x08postcode\x18\x10 \x01(\t\x12\x38\n\x05\x65xtra\x18\x64 \x03(\x0b\x32).bytedance.byteplus.media.User.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb7\x01\n\x11WriteUsersRequest\x12-\n\x05users\x18\x01 \x03(\x0b\x32\x1e.bytedance.byteplus.media.User\x12\x45\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x36.bytedance.byteplus.media.WriteUsersRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"J\n\tUserError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12,\n\x04user\x18\x02 \x01(\x0b\x32\x1e.bytedance.byteplus.media.User\"|\n\x12WriteUsersResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x33\n\x06\x65rrors\x18\x02 \x03(\x0b\x32#.bytedance.byteplus.media.UserError\"\x91\x08\n\x07\x43ontent\x12\x12\n\ncontent_id\x18\x01 \x01(\t\x12\x18\n\x10is_recommendable\x18\x02 \x01(\x05\x12\x12\n\ncategories\x18\x03 \x01(\t\x12\x15\n\rcontent_title\x18\x04 \x01(\t\x12\x14\n\x0c\x63ontent_type\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x15\n\rcontent_owner\x18\x07 \x01(\t\x12\x10\n\x08language\x18\x08 \x01(\t\x12\x0c\n\x04tags\x18\t \x03(\t\x12!\n\x19listing_page_display_tags\x18\n \x03(\t\x12 \n\x18\x64\x65tail_page_display_tags\x18\x0b \x03(\t\x12!\n\x19listing_page_display_type\x18\x0c \x01(\t\x12\x1c\n\x14\x63over_multimedia_url\x18\r \x01(\t\x12\x13\n\x0buser_rating\x18\x0e \x01(\x01\x12\x13\n\x0bviews_count\x18\x0f \x01(\x05\x12\x16\n\x0e\x63omments_count\x18\x10 \x01(\x05\x12\x13\n\x0blikes_count\x18\x11 \x01(\x05\x12\x14\n\x0cshares_count\x18\x12 \x01(\x05\x12\x17\n\x0fis_paid_content\x18\x13 \x01(\x05\x12\x14\n\x0corigin_price\x18\x14 \x01(\x03\x12\x15\n\rcurrent_price\x18\x15 \x01(\x03\x12\x16\n\x0epublish_region\x18\x16 \x01(\t\x12\x18\n\x10\x61vailable_region\x18\x17 \x03(\t\x12\x11\n\tentity_id\x18\x18 \x01(\t\x12\x13\n\x0b\x65ntity_name\x18\x19 \x01(\t\x12\x11\n\tseries_id\x18\x1a \x01(\t\x12\x14\n\x0cseries_index\x18\x1b \x01(\x05\x12\x13\n\x0bseries_name\x18\x1c \x01(\t\x12\x14\n\x0cseries_count\x18\x1d \x01(\x05\x12\x10\n\x08video_id\x18\x1e \x01(\t\x12\x13\n\x0bvideo_index\x18\x1f \x01(\x05\x12\x12\n\nvideo_name\x18  \x01(\t\x12\x13\n\x0bvideo_count\x18! \x01(\x05\x12\x12\n\nvideo_type\x18\" \x01(\t\x12\x16\n\x0evideo_duration\x18# \x01(\x03\x12\x19\n\x11publish_timestamp\x18$ \x01(\x03\x12!\n\x19\x63opyright_start_timestamp\x18% \x01(\x03\x12\x1f\n\x17\x63opyright_end_timestamp\x18& \x01(\x03\x12\x0e\n\x06\x61\x63tors\x18\' \x03(\t\x12\x0e\n\x06source\x18( \x01(\t\x12;\n\x05\x65xtra\x18\x64 \x03(\x0b\x32,.bytedance.byteplus.media.Content.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc3\x01\n\x14WriteContentsRequest\x12\x33\n\x08\x63ontents\x18\x01 \x03(\x0b\x32!.bytedance.byteplus.media.Content\x12H\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x39.bytedance.byteplus.media.WriteContentsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"S\n\x0c\x43ontentError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x32\n\x07\x63ontent\x18\x02 \x01(\x0b\x32!.bytedance.byteplus.media.Content\"\x82\x01\n\x15WriteContentsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x36\n\x06\x65rrors\x18\x02 \x03(\x0b\x32&.bytedance.byteplus.media.ContentError\"\xd9\x05\n\tUserEvent\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x12\n\nevent_type\x18\x02 \x01(\t\x12\x17\n\x0f\x65vent_timestamp\x18\x03 \x01(\x03\x12\x12\n\ncontent_id\x18\x04 \x01(\t\x12\x16\n\x0etraffic_source\x18\x05 \x01(\t\x12\x12\n\nrequest_id\x18\x06 \x01(\t\x12\x10\n\x08rec_info\x18\x07 \x01(\t\x12\x19\n\x11\x61ttribution_token\x18\x08 \x01(\t\x12\x12\n\nscene_name\x18\t \x01(\t\x12\x13\n\x0bpage_number\x18\n \x01(\x05\x12\x0e\n\x06offset\x18\x0b \x01(\x05\x12\x11\n\tplay_type\x18\x0c \x01(\t\x12\x15\n\rplay_duration\x18\r \x01(\x03\x12\x12\n\nstart_time\x18\x0e \x01(\x05\x12\x10\n\x08\x65nd_time\x18\x0f \x01(\x05\x12\x11\n\tentity_id\x18\x10 \x01(\t\x12\x11\n\tseries_id\x18\x11 \x01(\t\x12\x10\n\x08video_id\x18\x12 \x01(\t\x12\x19\n\x11parent_content_id\x18\x13 \x01(\t\x12\x18\n\x10\x64\x65tail_stay_time\x18\x14 \x01(\x05\x12\r\n\x05query\x18\x15 \x01(\t\x12\x0e\n\x06\x64\x65vice\x18\x16 \x01(\t\x12\x0f\n\x07os_type\x18\x17 \x01(\t\x12\x13\n\x0b\x61pp_version\x18\x18 \x01(\t\x12\x14\n\x0c\x64\x65vice_model\x18\x19 \x01(\t\x12\x14\n\x0c\x64\x65vice_brand\x18\x1a \x01(\t\x12\x12\n\nos_version\x18\x1b \x01(\t\x12\x14\n\x0c\x62rowser_type\x18\x1c \x01(\t\x12\x12\n\nuser_agent\x18\x1d \x01(\t\x12\x0f\n\x07network\x18\x1e \x01(\t\x12=\n\x05\x65xtra\x18\x64 \x03(\x0b\x32..bytedance.byteplus.media.UserEvent.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xcc\x01\n\x16WriteUserEventsRequest\x12\x38\n\x0buser_events\x18\x01 \x03(\x0b\x32#.bytedance.byteplus.media.UserEvent\x12J\n\x05\x65xtra\x18\x64 \x03(\x0b\x32;.bytedance.byteplus.media.WriteUserEventsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Z\n\x0eUserEventError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x37\n\nuser_event\x18\x02 \x01(\x0b\x32#.bytedance.byteplus.media.UserEvent\"\x86\x01\n\x17WriteUserEventsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x38\n\x06\x65rrors\x18\x02 \x03(\x0b\x32(.bytedance.byteplus.media.UserEventError2\xe9\x02\n\x14\x42ytePlusMediaService\x12g\n\nWriteUsers\x12+.bytedance.byteplus.media.WriteUsersRequest\x1a,.bytedance.byteplus.media.WriteUsersResponse\x12p\n\rWriteContents\x12..bytedance.byteplus.media.WriteContentsRequest\x1a/.bytedance.byteplus.media.WriteContentsResponse\x12v\n\x0fWriteUserEvents\x12\x30.bytedance.byteplus.media.WriteUserEventsRequest\x1a\x31.bytedance.byteplus.media.WriteUserEventsResponseBL\n\x1b\x62yteplus.sdk.media.protocolZ-github.com/byteplus-sdk/sdk-go/media/protocolb\x06proto3'
+  serialized_pb=b'\n\x14\x62yteplus_media.proto\x12\x18\x62ytedance.byteplus.media\x1a\x15\x62yteplus_common.proto\"\xb4\x03\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0e\n\x06gender\x18\x02 \x01(\t\x12\x0b\n\x03\x61ge\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x11\n\tdevice_id\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65vice_type\x18\x06 \x01(\t\x12\x17\n\x0fsubscriber_type\x18\x07 \x01(\t\x12\x10\n\x08language\x18\x08 \x01(\t\x12\x14\n\x0cview_history\x18\t \x03(\t\x12\x1a\n\x12\x61\x63tivation_channel\x18\n \x01(\t\x12\x18\n\x10membership_level\x18\x0b \x01(\t\x12\x1e\n\x16registration_timestamp\x18\x0c \x01(\x03\x12\x0f\n\x07\x63ountry\x18\r \x01(\t\x12\x0c\n\x04\x63ity\x18\x0e \x01(\t\x12\x18\n\x10\x64istrict_or_area\x18\x0f \x01(\t\x12\x10\n\x08postcode\x18\x10 \x01(\t\x12\x38\n\x05\x65xtra\x18\x64 \x03(\x0b\x32).bytedance.byteplus.media.User.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb7\x01\n\x11WriteUsersRequest\x12-\n\x05users\x18\x01 \x03(\x0b\x32\x1e.bytedance.byteplus.media.User\x12\x45\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x36.bytedance.byteplus.media.WriteUsersRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"J\n\tUserError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12,\n\x04user\x18\x02 \x01(\x0b\x32\x1e.bytedance.byteplus.media.User\"|\n\x12WriteUsersResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x33\n\x06\x65rrors\x18\x02 \x03(\x0b\x32#.bytedance.byteplus.media.UserError\"\x91\x08\n\x07\x43ontent\x12\x12\n\ncontent_id\x18\x01 \x01(\t\x12\x18\n\x10is_recommendable\x18\x02 \x01(\x05\x12\x12\n\ncategories\x18\x03 \x01(\t\x12\x15\n\rcontent_title\x18\x04 \x01(\t\x12\x14\n\x0c\x63ontent_type\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x15\n\rcontent_owner\x18\x07 \x01(\t\x12\x10\n\x08language\x18\x08 \x01(\t\x12\x0c\n\x04tags\x18\t \x03(\t\x12!\n\x19listing_page_display_tags\x18\n \x03(\t\x12 \n\x18\x64\x65tail_page_display_tags\x18\x0b \x03(\t\x12!\n\x19listing_page_display_type\x18\x0c \x01(\t\x12\x1c\n\x14\x63over_multimedia_url\x18\r \x01(\t\x12\x13\n\x0buser_rating\x18\x0e \x01(\x01\x12\x13\n\x0bviews_count\x18\x0f \x01(\x05\x12\x16\n\x0e\x63omments_count\x18\x10 \x01(\x05\x12\x13\n\x0blikes_count\x18\x11 \x01(\x05\x12\x14\n\x0cshares_count\x18\x12 \x01(\x05\x12\x17\n\x0fis_paid_content\x18\x13 \x01(\x05\x12\x14\n\x0corigin_price\x18\x14 \x01(\x03\x12\x15\n\rcurrent_price\x18\x15 \x01(\x03\x12\x16\n\x0epublish_region\x18\x16 \x01(\t\x12\x18\n\x10\x61vailable_region\x18\x17 \x03(\t\x12\x11\n\tentity_id\x18\x18 \x01(\t\x12\x13\n\x0b\x65ntity_name\x18\x19 \x01(\t\x12\x11\n\tseries_id\x18\x1a \x01(\t\x12\x14\n\x0cseries_index\x18\x1b \x01(\x05\x12\x13\n\x0bseries_name\x18\x1c \x01(\t\x12\x14\n\x0cseries_count\x18\x1d \x01(\x05\x12\x10\n\x08video_id\x18\x1e \x01(\t\x12\x13\n\x0bvideo_index\x18\x1f \x01(\x05\x12\x12\n\nvideo_name\x18  \x01(\t\x12\x13\n\x0bvideo_count\x18! \x01(\x05\x12\x12\n\nvideo_type\x18\" \x01(\t\x12\x16\n\x0evideo_duration\x18# \x01(\x03\x12\x19\n\x11publish_timestamp\x18$ \x01(\x03\x12!\n\x19\x63opyright_start_timestamp\x18% \x01(\x03\x12\x1f\n\x17\x63opyright_end_timestamp\x18& \x01(\x03\x12\x0e\n\x06\x61\x63tors\x18\' \x03(\t\x12\x0e\n\x06source\x18( \x01(\t\x12;\n\x05\x65xtra\x18\x64 \x03(\x0b\x32,.bytedance.byteplus.media.Content.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc3\x01\n\x14WriteContentsRequest\x12\x33\n\x08\x63ontents\x18\x01 \x03(\x0b\x32!.bytedance.byteplus.media.Content\x12H\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x39.bytedance.byteplus.media.WriteContentsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"S\n\x0c\x43ontentError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x32\n\x07\x63ontent\x18\x02 \x01(\x0b\x32!.bytedance.byteplus.media.Content\"\x82\x01\n\x15WriteContentsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x36\n\x06\x65rrors\x18\x02 \x03(\x0b\x32&.bytedance.byteplus.media.ContentError\"\xd9\x05\n\tUserEvent\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x12\n\nevent_type\x18\x02 \x01(\t\x12\x17\n\x0f\x65vent_timestamp\x18\x03 \x01(\x03\x12\x12\n\ncontent_id\x18\x04 \x01(\t\x12\x16\n\x0etraffic_source\x18\x05 \x01(\t\x12\x12\n\nrequest_id\x18\x06 \x01(\t\x12\x10\n\x08rec_info\x18\x07 \x01(\t\x12\x19\n\x11\x61ttribution_token\x18\x08 \x01(\t\x12\x12\n\nscene_name\x18\t \x01(\t\x12\x13\n\x0bpage_number\x18\n \x01(\x05\x12\x0e\n\x06offset\x18\x0b \x01(\x05\x12\x11\n\tplay_type\x18\x0c \x01(\t\x12\x15\n\rplay_duration\x18\r \x01(\x03\x12\x12\n\nstart_time\x18\x0e \x01(\x05\x12\x10\n\x08\x65nd_time\x18\x0f \x01(\x05\x12\x11\n\tentity_id\x18\x10 \x01(\t\x12\x11\n\tseries_id\x18\x11 \x01(\t\x12\x10\n\x08video_id\x18\x12 \x01(\t\x12\x19\n\x11parent_content_id\x18\x13 \x01(\t\x12\x18\n\x10\x64\x65tail_stay_time\x18\x14 \x01(\x05\x12\r\n\x05query\x18\x15 \x01(\t\x12\x0e\n\x06\x64\x65vice\x18\x16 \x01(\t\x12\x0f\n\x07os_type\x18\x17 \x01(\t\x12\x13\n\x0b\x61pp_version\x18\x18 \x01(\t\x12\x14\n\x0c\x64\x65vice_model\x18\x19 \x01(\t\x12\x14\n\x0c\x64\x65vice_brand\x18\x1a \x01(\t\x12\x12\n\nos_version\x18\x1b \x01(\t\x12\x14\n\x0c\x62rowser_type\x18\x1c \x01(\t\x12\x12\n\nuser_agent\x18\x1d \x01(\t\x12\x0f\n\x07network\x18\x1e \x01(\t\x12=\n\x05\x65xtra\x18\x64 \x03(\x0b\x32..bytedance.byteplus.media.UserEvent.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xcc\x01\n\x16WriteUserEventsRequest\x12\x38\n\x0buser_events\x18\x01 \x03(\x0b\x32#.bytedance.byteplus.media.UserEvent\x12J\n\x05\x65xtra\x18\x64 \x03(\x0b\x32;.bytedance.byteplus.media.WriteUserEventsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Z\n\x0eUserEventError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x37\n\nuser_event\x18\x02 \x01(\x0b\x32#.bytedance.byteplus.media.UserEvent\"\x86\x01\n\x17WriteUserEventsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x38\n\x06\x65rrors\x18\x02 \x03(\x0b\x32(.bytedance.byteplus.media.UserEventError2\xe9\x02\n\x14\x42ytePlusMediaService\x12g\n\nWriteUsers\x12+.bytedance.byteplus.media.WriteUsersRequest\x1a,.bytedance.byteplus.media.WriteUsersResponse\x12p\n\rWriteContents\x12..bytedance.byteplus.media.WriteContentsRequest\x1a/.bytedance.byteplus.media.WriteContentsResponse\x12v\n\x0fWriteUserEvents\x12\x30.bytedance.byteplus.media.WriteUserEventsRequest\x1a\x31.bytedance.byteplus.media.WriteUserEventsResponseBL\n\x1b\x62yteplus.sdk.media.protocolZ-github.com/byteplus-sdk/sdk-go/media/protocolb\x06proto3'
   ,
   dependencies=[byteplus__common__pb2.DESCRIPTOR,])
 
@@ -61,8 +61,8 @@ _USER_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=461,
-  serialized_end=505,
+  serialized_start=466,
+  serialized_end=510,
 )
 
 _USER = _descriptor.Descriptor(
@@ -130,7 +130,7 @@ _USER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='history', full_name='bytedance.byteplus.media.User.history', index=8,
+      name='view_history', full_name='bytedance.byteplus.media.User.view_history', index=8,
       number=9, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -205,7 +205,7 @@ _USER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=74,
-  serialized_end=505,
+  serialized_end=510,
 )
 
 
@@ -243,8 +243,8 @@ _WRITEUSERSREQUEST_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=461,
-  serialized_end=505,
+  serialized_start=466,
+  serialized_end=510,
 )
 
 _WRITEUSERSREQUEST = _descriptor.Descriptor(
@@ -281,8 +281,8 @@ _WRITEUSERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=508,
-  serialized_end=691,
+  serialized_start=513,
+  serialized_end=696,
 )
 
 
@@ -320,8 +320,8 @@ _USERERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=693,
-  serialized_end=767,
+  serialized_start=698,
+  serialized_end=772,
 )
 
 
@@ -359,8 +359,8 @@ _WRITEUSERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=769,
-  serialized_end=893,
+  serialized_start=774,
+  serialized_end=898,
 )
 
 
@@ -398,8 +398,8 @@ _CONTENT_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=461,
-  serialized_end=505,
+  serialized_start=466,
+  serialized_end=510,
 )
 
 _CONTENT = _descriptor.Descriptor(
@@ -709,8 +709,8 @@ _CONTENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=896,
-  serialized_end=1937,
+  serialized_start=901,
+  serialized_end=1942,
 )
 
 
@@ -748,8 +748,8 @@ _WRITECONTENTSREQUEST_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=461,
-  serialized_end=505,
+  serialized_start=466,
+  serialized_end=510,
 )
 
 _WRITECONTENTSREQUEST = _descriptor.Descriptor(
@@ -786,8 +786,8 @@ _WRITECONTENTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1940,
-  serialized_end=2135,
+  serialized_start=1945,
+  serialized_end=2140,
 )
 
 
@@ -825,8 +825,8 @@ _CONTENTERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2137,
-  serialized_end=2220,
+  serialized_start=2142,
+  serialized_end=2225,
 )
 
 
@@ -864,8 +864,8 @@ _WRITECONTENTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2223,
-  serialized_end=2353,
+  serialized_start=2228,
+  serialized_end=2358,
 )
 
 
@@ -903,8 +903,8 @@ _USEREVENT_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=461,
-  serialized_end=505,
+  serialized_start=466,
+  serialized_end=510,
 )
 
 _USEREVENT = _descriptor.Descriptor(
@@ -1144,8 +1144,8 @@ _USEREVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2356,
-  serialized_end=3085,
+  serialized_start=2361,
+  serialized_end=3090,
 )
 
 
@@ -1183,8 +1183,8 @@ _WRITEUSEREVENTSREQUEST_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=461,
-  serialized_end=505,
+  serialized_start=466,
+  serialized_end=510,
 )
 
 _WRITEUSEREVENTSREQUEST = _descriptor.Descriptor(
@@ -1221,8 +1221,8 @@ _WRITEUSEREVENTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3088,
-  serialized_end=3292,
+  serialized_start=3093,
+  serialized_end=3297,
 )
 
 
@@ -1260,8 +1260,8 @@ _USEREVENTERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3294,
-  serialized_end=3384,
+  serialized_start=3299,
+  serialized_end=3389,
 )
 
 
@@ -1299,8 +1299,8 @@ _WRITEUSEREVENTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3387,
-  serialized_end=3521,
+  serialized_start=3392,
+  serialized_end=3526,
 )
 
 _USER_EXTRAENTRY.containing_type = _USER
@@ -1489,8 +1489,8 @@ _BYTEPLUSMEDIASERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3524,
-  serialized_end=3885,
+  serialized_start=3529,
+  serialized_end=3890,
   methods=[
   _descriptor.MethodDescriptor(
     name='WriteUsers',
