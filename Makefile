@@ -1,3 +1,6 @@
+gen_byteair:
+	protoc --python_out=byteplus/byteair/protocol -I=docs docs/byteplus_byteair.proto
+
 gen_common:
 	protoc --python_out=byteplus/common/protocol -I=docs docs/byteplus_common.proto
 
