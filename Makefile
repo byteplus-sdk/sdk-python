@@ -15,3 +15,6 @@ gen_rutenad:
 
 gen_retailv2:
 	protoc --python_out=byteplus/retailv2/protocol -I=docs docs/byteplus_retailv2.proto
+
+gen_media:
+	protoc --python_out=byteplus/media/protocol -I=docs docs/byteplus_media.proto
