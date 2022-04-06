@@ -10,7 +10,7 @@ _PREDICT_URL_FORMAT = "{}://{}/predict/api/retail/{}/#"
 _ACK_IMPRESSION_URL_FORMAT = "{}://{}/predict/api/retail/{}/ack_server_impressions"
 
 # The URL format of data uploading
-# Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/user?method=write
+# Example: https://tob.sgsnssdk.com/data/api/retail/v2/retail_demo/user?method=write
 _UPLOAD_URL_FORMAT = "{}://{}/data/api/retail/v2/{}/{}?method={}"
 
 
@@ -25,13 +25,13 @@ class _RetailURL(CommonURL):
         # Example: https://tob.sgsnssdk.com/predict/api/retail/demo/ack_server_impression
         self.ack_impression_url: str = ""
         # The URL of uploading real-time user data
-        # Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/user?method=write
+        # Example: https://tob.sgsnssdk.com/data/api/retail/v2/retail_demo/user?method=write
         self.write_users_url: str = ""
         # The URL of uploading real-time product data
-        # Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/product?method=write
+        # Example: https://tob.sgsnssdk.com/data/api/retail/v2/retail_demo/product?method=write
         self.write_products_url: str = ""
         # The URL of uploading real-time user event data
-        # Example: https://tob.sgsnssdk.com/data/api/retail/retail_demo/user_event?method=write
+        # Example: https://tob.sgsnssdk.com/data/api/retail/v2/retail_demo/user_event?method=write
         self.write_user_events_url: str = ""
         self.refresh(context.hosts[0])
 

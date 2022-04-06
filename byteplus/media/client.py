@@ -1,13 +1,11 @@
 import logging
-from optparse import Option
 
 from byteplus.common.client import CommonClient
-from byteplus.core import BizException
-from byteplus.core import MAX_WRITE_ITEM_COUNT, MAX_IMPORT_ITEM_COUNT
-from byteplus.core import Region
+from byteplus.core import Region, Option, MAX_WRITE_ITEM_COUNT, BizException
 from byteplus.core.context import Param
-from byteplus.retailv2.protocol import *
-from byteplus.retailv2.url import _RetailURL
+from byteplus.media.protocol import WriteUsersRequest, WriteUsersResponse, WriteContentsRequest, WriteContentsResponse, \
+    WriteUserEventsRequest, WriteUserEventsResponse
+from byteplus.media.url import _MediaURL
 
 log = logging.getLogger(__name__)
 
@@ -18,52 +16,36 @@ class Client(CommonClient):
 
     def __init__(self, param: Param):
         super().__init__(param)
-        self._retail_url: _RetailURL = _RetailURL(self._context)
+        self._media_url: _MediaURL = _MediaURL(self._context)
 
     def do_refresh(self, host: str):
-        self._retail_url.refresh(host)
+        self._media_url.refresh(host)
 
     def write_users(self, request: WriteUsersRequest, *opts: Option) -> WriteUsersResponse:
         if len(request.users) > MAX_WRITE_ITEM_COUNT:
             raise BizException(_TOO_MANY_WRITE_ITEMS_ERR_MSG)
-        url: str = self._retail_url.write_users_url
+        url: str = self._media_url.write_users_url
         response: WriteUsersResponse = WriteUsersResponse()
         self._http_caller.do_pb_request(url, request, response, *opts)
         log.debug("[ByteplusSDK][WriteUsers] rsp:\n %s", response)
         return response
 
-    def write_products(self, request: WriteProductsRequest, *opts: Option) -> WriteProductsResponse:
-        if len(request.products) > MAX_WRITE_ITEM_COUNT:
+    def write_contents(self, request: WriteContentsRequest, *opts: Option) -> WriteContentsResponse:
+        if len(request.contents) > MAX_WRITE_ITEM_COUNT:
             raise BizException(_TOO_MANY_WRITE_ITEMS_ERR_MSG)
-        url: str = self._retail_url.write_products_url
-        response: WriteProductsResponse = WriteProductsResponse()
+        url: str = self._media_url.write_contents_url
+        response: WriteContentsResponse = WriteContentsResponse()
         self._http_caller.do_pb_request(url, request, response, *opts)
-        log.debug("[ByteplusSDK][WriteProducts] rsp:\n %s", response)
+        log.debug("[ByteplusSDK][WriteContents] rsp:\n %s", response)
         return response
 
     def write_user_events(self, request: WriteUserEventsRequest, *opts: Option) -> WriteUserEventsResponse:
         if len(request.user_events) > MAX_WRITE_ITEM_COUNT:
             raise BizException(_TOO_MANY_WRITE_ITEMS_ERR_MSG)
-        url: str = self._retail_url.write_user_events_url
+        url: str = self._media_url.write_user_events_url
         response: WriteUserEventsResponse = WriteUserEventsResponse()
         self._http_caller.do_pb_request(url, request, response, *opts)
         log.debug("[ByteplusSDK][WriteUserEvents] rsp:\n %s", response)
-        return response
-
-    def predict(self, request: PredictRequest, scene: str, *opts: Option) -> PredictResponse:
-        url_format: str = self._retail_url.predict_url_format
-        url: str = url_format.replace("#", scene)
-        response: PredictResponse = PredictResponse()
-        self._http_caller.do_pb_request(url, request, response, *opts)
-        log.debug("[ByteplusSDK][Predict] rsp:\n%s", response)
-        return response
-
-    def ack_server_impressions(self, request: AckServerImpressionsRequest,
-                               *opts: Option) -> AckServerImpressionsResponse:
-        url: str = self._retail_url.ack_impression_url
-        response: AckServerImpressionsResponse = AckServerImpressionsResponse()
-        self._http_caller.do_pb_request(url, request, response, *opts)
-        log.debug("[ByteplusSDK][AckImpressions] rsp:\n%s", response)
         return response
 
 
