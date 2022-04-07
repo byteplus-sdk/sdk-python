@@ -47,7 +47,7 @@ class MetricsOption(object):
     def with_flush_interval(flush_interval_ms: int):
         class OptionImpl(MetricsOption):
             def fill(self, cfg: MetricsCfg) -> None:
-                if flush_interval_ms > DEFAULT_FLUSH_INTERVAL_MS:
+                if flush_interval_ms > 500:
                     cfg.flush_interval_ms = flush_interval_ms
 
         return OptionImpl()

@@ -179,7 +179,7 @@ class HttpCaller(object):
         # log.debug("[ByteplusSDK][HTTPCaller] URL:%s Response Headers:\n%s", url, str(rsp.headers))
         if rsp.status_code != _SUCCESS_HTTP_CODE:
             self._log_rsp(url, rsp)
-            report_request_error(METRICS_KEY_INVOKE_ERROR, url, start * 1000, "invoke-fail")
+            report_request_error(METRICS_KEY_INVOKE_ERROR, url, start * 1000, rsp.status_code, "invoke-fail")
             raise BizException("code:{} msg:{}".format(rsp.status_code, rsp.reason))
         report_request_success(METRICS_KEY_INVOKE_SUCCESS, url, start * 1000)
         return rsp.content
