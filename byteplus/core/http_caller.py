@@ -19,8 +19,11 @@ from byteplus.core.context import Context
 from byteplus.core.exception import NetException, BizException
 from byteplus.core.option import Option
 from byteplus.core.options import Options
-from byteplus.core.time_hlper import rfc3339_format, milliseconds
+from byteplus.core.time_helper import rfc3339_format, milliseconds
 from byteplus.volcauth.volcauth import VolcAuth
+from byteplus.core.metrics_helper import report_request_success, report_request_error, report_request_exception
+from byteplus.core.constant import METRICS_KEY_INVOKE_ERROR, METRICS_KEY_INVOKE_SUCCESS
+
 try:
     from urllib.parse import urlparse, parse_qs, quote, unquote, unquote_plus
 except ImportError:
@@ -38,7 +41,8 @@ class HttpCaller(object):
         self._context = context
         self._volc_auth: VolcAuth = None
         if len(context.volc_auth_conf.ak) > 0:
-            self._volc_auth = VolcAuth(context.volc_auth_conf.ak, context.volc_auth_conf.sk, context.volc_auth_conf.region, VOLC_AUTH_SERVICE)
+            self._volc_auth = VolcAuth(context.volc_auth_conf.ak, context.volc_auth_conf.sk,
+                                       context.volc_auth_conf.region, VOLC_AUTH_SERVICE)
 
     def do_json_request(self, url: str, request, response: Message, *opts: Option):
         options: Options = Option.conv_to_options(opts)
@@ -151,7 +155,8 @@ class HttpCaller(object):
         return sha256.hexdigest()
 
     def _do_http_request(self, url: str, headers: dict,
-                         req_bytes: bytes, timeout: Optional[datetime.timedelta], auth: Optional[AuthBase]) -> Optional[bytes]:
+                         req_bytes: bytes, timeout: Optional[datetime.timedelta], auth: Optional[AuthBase]) -> Optional[
+        bytes]:
         start = time.time()
         # log.debug("[ByteplusSDK][HTTPCaller] URL:%s Request Headers:\n%s", url, str(headers))
         self._set_host(url, headers)
@@ -162,6 +167,7 @@ class HttpCaller(object):
             else:
                 rsp: Response = requests.post(url=url, headers=headers, data=req_bytes, auth=auth)
         except BaseException as e:
+            report_request_exception(METRICS_KEY_INVOKE_ERROR, url, start * 1000, e)
             if self._is_timeout_exception(e):
                 log.error("[ByteplusSDK] do http request timeout, url:%s msg:%s", url, e)
                 raise NetException(str(e))
@@ -173,10 +179,12 @@ class HttpCaller(object):
         # log.debug("[ByteplusSDK][HTTPCaller] URL:%s Response Headers:\n%s", url, str(rsp.headers))
         if rsp.status_code != _SUCCESS_HTTP_CODE:
             self._log_rsp(url, rsp)
+            report_request_error(METRICS_KEY_INVOKE_ERROR, url, start * 1000, "invoke-fail")
             raise BizException("code:{} msg:{}".format(rsp.status_code, rsp.reason))
+        report_request_success(METRICS_KEY_INVOKE_SUCCESS, url, start * 1000)
         return rsp.content
 
-    def _set_host(self, url:str, headers:dict):
+    def _set_host(self, url: str, headers: dict):
         host = urlparse(url).netloc
         if host.split(":")[-1] == "80":
             host = host[0]
@@ -199,4 +207,3 @@ class HttpCaller(object):
             log.error("[ByteplusSDK] http status not 200, url:%s code:%d msg:%s headers:\n%s",
                       url, rsp.status_code, rsp.reason, str(rsp.headers))
         return
-

@@ -7,6 +7,8 @@ from requests import Response
 
 from byteplus.core.context import Context
 from byteplus.core.url_center import URLCenter
+from byteplus.core.metrics_helper import report_request_success, report_request_error, report_request_exception
+from byteplus.core.constant import METRICS_KEY_PING_ERROR, METRICS_KEY_PING_SUCCESS
 
 log = logging.getLogger(__name__)
 
@@ -71,11 +73,17 @@ class HostAvailabler(object):
         try:
             rsp: Response = requests.get(url, headers=headers, timeout=_PING_TIMEOUT_SECONDS)
         except BaseException as e:
+            report_request_exception(METRICS_KEY_PING_ERROR, url, start * 1000, e)
             log.warning("[ByteplusSDK] ping find err, host:'%s' err:'%s'", host, e)
             return False
         finally:
             cost = int((time.time() - start) * 1000)
             log.debug("[ByteplusSDK] http path:%s, cost:%dms", url, cost)
+
+        if rsp.status_code != _PING_SUCCESS_HTTP_CODE:
+            report_request_error(METRICS_KEY_PING_ERROR, url, start * 1000, rsp.status_code, "ping-fail")
+        else:
+            report_request_success(METRICS_KEY_PING_SUCCESS, url, start * 1000)
         return rsp.status_code == _PING_SUCCESS_HTTP_CODE
 
     def _switch_host(self) -> None:

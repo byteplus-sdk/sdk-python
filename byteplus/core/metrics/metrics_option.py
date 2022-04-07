@@ -1,5 +1,5 @@
 from abc import abstractmethod
-from constant import *
+from .constant import *
 
 
 class MetricsCfg(object):
@@ -9,6 +9,7 @@ class MetricsCfg(object):
         self.prefix: str = DEFAULT_METRICS_PREFIX
         self.flush_interval_ms = DEFAULT_FLUSH_INTERVAL_MS
         self.print_log: bool = False
+        self.http_timeout_ms = DEFAULT_HTTP_TIMEOUT_MS
 
 
 class MetricsOption(object):
@@ -20,7 +21,8 @@ class MetricsOption(object):
     def with_metrics_domain(domain: str):
         class OptionImpl(MetricsOption):
             def fill(self, cfg: MetricsCfg) -> None:
-                cfg.domain = domain
+                if domain is not None and domain != "":
+                    cfg.domain = domain
 
         return OptionImpl()
 
@@ -28,7 +30,8 @@ class MetricsOption(object):
     def with_metrics_prefix(prefix: str):
         class OptionImpl(MetricsOption):
             def fill(self, cfg: MetricsCfg) -> None:
-                cfg.prefix = prefix
+                if prefix is not None and prefix != "":
+                    cfg.prefix = prefix
 
         return OptionImpl()
 
@@ -44,6 +47,16 @@ class MetricsOption(object):
     def with_flush_interval(flush_interval_ms: int):
         class OptionImpl(MetricsOption):
             def fill(self, cfg: MetricsCfg) -> None:
-                cfg.flush_interval_ms = flush_interval_ms
+                if flush_interval_ms > DEFAULT_FLUSH_INTERVAL_MS:
+                    cfg.flush_interval_ms = flush_interval_ms
+
+        return OptionImpl()
+
+    @staticmethod
+    def with_metrics_timeout(timeout_ms: int):
+        class OptionImpl(MetricsOption):
+            def fill(self, cfg: MetricsCfg) -> None:
+                if timeout_ms > DEFAULT_HTTP_TIMEOUT_MS:
+                    cfg.http_timeout_ms = timeout_ms
 
         return OptionImpl()

@@ -1,5 +1,5 @@
 from helper import *
-import collector as mc
+import metrics_collector as mc
 from metrics_option import MetricsOption as mo
 import time
 import logging

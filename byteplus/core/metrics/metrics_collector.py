@@ -1,10 +1,10 @@
 import threading
 
-from metrics_option import *
-from constant import *
-import helper
-from sample import *
-from metrics_pb2 import *
+from .metrics_option import *
+from .constant import *
+from .helper import _build_collect_key, _parse_name_and_tags, _is_timeout_exception
+from .sample import *
+from .metrics_pb2 import *
 import requests
 import time
 import logging
@@ -18,6 +18,74 @@ metrics_cfg = MetricsCfg()
 metrics_collector: map = {}
 metrics_locks: map = {}
 timer_stat_metrics = ["max", "min", "avg", "pct75", "pct90", "pct95", "pct99", "pct999"]
+
+"""
+Parameters:
+  key - metrics name
+  value - metrics value
+  tag_kvs - tag_key and tag_value list, 
+    should be formatted as ["tag_key_1:tag_value_1","tag_key_2:tag_value_2",...]
+Example:
+  store("goroutine.count", 400, ["ip:127.0.0.1"])
+"""
+
+
+def store(name: str, value: float, tag_kvs: list):
+    if not _is_enable_metrics():
+        return
+    collect_key = _build_collect_key(name, tag_kvs)
+    _update_metric(MetricsType.metrics_type_store, collect_key, value)
+
+
+"""
+Parameters:
+  key - metrics name
+  value - metrics value
+  tag_kvs - tag_key and tag_value list, 
+    should be formatted as ["tag_key_1:tag_value_1","tag_key_2:tag_value_2",...]
+Example:
+  counter("request.qp", 1, ["method:user", "type:upload"])
+"""
+
+
+def counter(name: str, value: float, tag_kvs: list):
+    if not _is_enable_metrics():
+        return
+    collect_key = _build_collect_key(name, tag_kvs)
+    _update_metric(MetricsType.metrics_type_counter, collect_key, value)
+
+
+"""
+Parameters:
+  key - metrics name
+  value - metrics value
+  tag_kvs - tag_key and tag_value list, 
+    should be formatted as ["tag_key_1:tag_value_1","tag_key_2:tag_value_2",...]
+Example:
+  timer("request.cost", 100, ["method:user", "type:upload"])
+"""
+
+
+def timer(name: str, value: float, tag_kvs: list):
+    if not _is_enable_metrics():
+        return
+    collect_key = _build_collect_key(name, tag_kvs)
+    _update_metric(MetricsType.metrics_type_timer, collect_key, value)
+
+
+"""
+Parameters:
+  key - metrics name
+  begin - the unit of `begin` is milliseconds
+  tag_kvs - tag_key and tag_value list, 
+    should be formatted as ["tag_key_1:tag_value_1","tag_key_2:tag_value_2",...]
+Example:
+  latency("request.latency", start_time_ms, ["method:user", "type:upload"])
+"""
+
+
+def latency(key: str, begin: float, tag_kvs: list):
+    timer(key, time.time_ns() / 1e6 - begin, tag_kvs)
 
 
 class MetricValue(object):
@@ -44,28 +112,28 @@ def init(metrics_opts: tuple):
     global initialed
     if not initialed:
         initialed = True
-        threading.Thread(target=report()).start()
+        threading.Thread(target=_report()).start()
 
 
-def report():
-    if not is_enable_metrics():
+def _report():
+    if not _is_enable_metrics():
         return
-    flushTimer()
-    flushCounter()
-    flushStore()
+    _flushTimer()
+    _flushCounter()
+    _flushStore()
 
     # a timer only execute once after spec duration
-    threading.Timer(metrics_cfg.flush_interval_ms / 1000, report).start()
+    threading.Timer(metrics_cfg.flush_interval_ms / 1000, _report).start()
     return
 
 
-def flushStore():
+def _flushStore():
     metrics_requests = []
     with metrics_locks.get(MetricsType.metrics_type_store):
         for collect_key, metric in metrics_collector.get(MetricsType.metrics_type_store).items():
             if metric.updated:
                 metric.updated = False
-                name, tag_kvs, ok = helper.parse_name_and_tags(collect_key)
+                name, tag_kvs, ok = _parse_name_and_tags(collect_key)
                 if not ok:
                     continue
                 metrics_request: Metric = Metric()
@@ -76,28 +144,16 @@ def flushStore():
                 metrics_requests.append(metrics_request)
     if len(metrics_requests) > 0:
         url = OTHER_URL_FORMAT.replace("{}", metrics_cfg.domain)
-        metric_message: MetricMessage = MetricMessage()
-        metric_message.metrics.extend(metrics_requests)
-        try:
-            send(metric_message, url)
-            if enable_print_log():
-                # print("[Metrics] exec store success, url:{}, metrics_requests:{}".format(url, metrics_requests))
-                log.debug("[Metrics] exec store success, url:{}, metrics_requests:{}".format(url, metrics_requests))
-        except BaseException as e:
-            if enable_print_log():
-                print("[Metrics] exec store exception, msg:{}, url:{}, metricsRequests:{}".format(str(e), url,
-                                                                                                  metrics_requests))
-                log.error("[Metrics] exec store exception, msg:{}, url:{}, metricsRequests:{}".format(str(e), url,
-                                                                                                      metrics_requests))
+        _send_metrics(metrics_requests, url)
 
 
-def flushCounter():
+def _flushCounter():
     metrics_requests = []
     with metrics_locks.get(MetricsType.metrics_type_counter):
         for collect_key, metric in metrics_collector.get(MetricsType.metrics_type_counter).items():
             if metric.updated:
                 metric.updated = False
-                name, tag_kvs, ok = helper.parse_name_and_tags(collect_key)
+                name, tag_kvs, ok = _parse_name_and_tags(collect_key)
                 if not ok:
                     continue
                 # metric.value may not be the latest, the case is acceptable
@@ -116,46 +172,40 @@ def flushCounter():
 
     if len(metrics_requests) > 0:
         url = COUNTER_URL_FORMAT.replace("{}", metrics_cfg.domain)
-        metric_message: MetricMessage = MetricMessage()
-        metric_message.metrics.extend(metrics_requests)
-        try:
-            send(metric_message, url)
-            if enable_print_log():
-                log.debug("[Metrics] exec counter success, url:{}, metrics_requests:{}".format(url, metrics_requests))
-        except BaseException as e:
-            if enable_print_log():
-                log.error("[Metrics] exec counter exception, msg:{}, url:{}, metricsRequests:{}".format(str(e), url,
-                                                                                                        metrics_requests))
+        _send_metrics(metrics_requests, url)
 
 
-def flushTimer():
+def _flushTimer():
     metrics_requests = []
     with metrics_locks.get(MetricsType.metrics_type_timer):
         for collect_key, metric in metrics_collector.get(MetricsType.metrics_type_timer).items():
             if metric.updated:
                 metric.updated = False
-                name, tag_kvs, ok = helper.parse_name_and_tags(collect_key)
+                name, tag_kvs, ok = _parse_name_and_tags(collect_key)
                 if not ok:
                     continue
                 snapshot = metric.value.snapshot()
                 metric.value.clear()
-                metrics_requests.extend(build_stat_metrics(snapshot, name, tag_kvs))
+                metrics_requests.extend(_build_stat_metrics(snapshot, name, tag_kvs))
 
     if len(metrics_requests) > 0:
         url = OTHER_URL_FORMAT.replace("{}", metrics_cfg.domain)
-        metric_message: MetricMessage = MetricMessage()
-        metric_message.metrics.extend(metrics_requests)
-        try:
-            send(metric_message, url)
-            if enable_print_log():
-                log.debug("[Metrics] exec timer success, url:{}, metrics_requests:{}".format(url, metrics_requests))
-        except BaseException as e:
-            if enable_print_log():
-                log.error("[Metrics] exec timer exception, msg:{}, url:{}, metricsRequests:{}".format(str(e), url,
-                                                                                                      metrics_requests))
+        _send_metrics(metrics_requests, url)
 
 
-def build_stat_metrics(sample: SampleSnapshot, name: str, tag_kvs: map):
+def _send_metrics(metrics_requests: list, url: str):
+    metric_message: MetricMessage = MetricMessage()
+    metric_message.metrics.extend(metrics_requests)
+    try:
+        _send(metric_message, url)
+        if _enable_print_log():
+            log.debug("[BytePlusSDK][Metrics] send metrics success, url:{}, metrics_requests:{}".format(url, metrics_requests))
+    except BaseException as e:
+            log.error("[BytePlusSDK][Metrics] send metrics exception, msg:{}, url:{}, metricsRequests:{}".format(str(e), url,
+                                                                                                  metrics_requests))
+
+
+def _build_stat_metrics(sample: SampleSnapshot, name: str, tag_kvs: map):
     timestamp = int(time.time())
     metrics_requests = []
     for stat_name in timer_stat_metrics:
@@ -171,41 +221,20 @@ def build_stat_metrics(sample: SampleSnapshot, name: str, tag_kvs: map):
     return metrics_requests
 
 
-def is_enable_metrics() -> bool:
+def _is_enable_metrics() -> bool:
     if metrics_cfg is None:
         return False
     return metrics_cfg.enable_metrics
 
 
-def enable_print_log() -> bool:
+def _enable_print_log() -> bool:
     if metrics_cfg is None:
         return False
     return metrics_cfg.print_log
 
 
-def emit_store(name: str, value: float, tag_kvs: list):
-    if not is_enable_metrics():
-        return
-    collect_key = helper.build_collect_key(name, tag_kvs)
-    update_metric(MetricsType.metrics_type_store, collect_key, value)
-
-
-def emit_counter(name: str, value: float, tag_kvs: list):
-    if not is_enable_metrics():
-        return
-    collect_key = helper.build_collect_key(name, tag_kvs)
-    update_metric(MetricsType.metrics_type_counter, collect_key, value)
-
-
-def emit_timer(name: str, value: float, tag_kvs: list):
-    if not is_enable_metrics():
-        return
-    collect_key = helper.build_collect_key(name, tag_kvs)
-    update_metric(MetricsType.metrics_type_timer, collect_key, value)
-
-
-def update_metric(metrics_type: MetricsType, collect_key: str, value: float):
-    metric: MetricValue = get_or_create_metric(metrics_type, collect_key)
+def _update_metric(metrics_type: MetricsType, collect_key: str, value: float):
+    metric: MetricValue = _get_or_create_metric(metrics_type, collect_key)
     if metrics_type == MetricsType.metrics_type_store:
         metric.value = value
     if metrics_type == MetricsType.metrics_type_counter:
@@ -216,16 +245,16 @@ def update_metric(metrics_type: MetricsType, collect_key: str, value: float):
     metric.updated = True
 
 
-def get_or_create_metric(metrics_type: MetricsType, collect_key: str):
+def _get_or_create_metric(metrics_type: MetricsType, collect_key: str):
     if metrics_collector.get(metrics_type).get(collect_key) is not None:
         return metrics_collector.get(metrics_type).get(collect_key)
     with metrics_locks.get(metrics_type):
         if metrics_collector.get(metrics_type).get(collect_key) is None:
-            metrics_collector.get(metrics_type)[collect_key] = build_default_metric(metrics_type)
+            metrics_collector.get(metrics_type)[collect_key] = _build_default_metric(metrics_type)
             return metrics_collector.get(metrics_type).get(collect_key)
 
 
-def build_default_metric(metrics_type: MetricsType):
+def _build_default_metric(metrics_type: MetricsType):
     if metrics_type == MetricsType.metrics_type_timer:
         return MetricValue(Sample(RESERVOIR_SIZE))
     if metrics_type == MetricsType.metrics_type_counter:
@@ -234,13 +263,13 @@ def build_default_metric(metrics_type: MetricsType):
 
 
 # send httpRequest to metrics server
-def send(metric_requests: MetricMessage, url: str):
+def _send(metric_requests: MetricMessage, url: str):
     headers = {"Content-Type": "application/protobuf", "Accept": "application/json"}
     req_bytes: bytes = metric_requests.SerializeToString()
     for i in range(MAX_TRY_TIMES):
         try:
             response = requests.post(url=url, headers=headers, data=req_bytes,
-                                     timeout=DEFAULT_HTTP_TIMEOUT_MS / 1000)
+                                     timeout=metrics_cfg.http_timeout_ms / 1000)
             if response.status_code == SUCCESS_HTTP_CODE:
                 return
             if response.content is None:
@@ -248,13 +277,6 @@ def send(metric_requests: MetricMessage, url: str):
             raise BizException("do http request fail, url:{}， rsp:{}".format(url, response.content))
 
         except BaseException as e:
-            if is_timeout_exception(e) and i < MAX_TRY_TIMES - 1:
+            if _is_timeout_exception(e) and i < MAX_TRY_TIMES - 1:
                 continue
             raise BizException(str(e))
-
-
-def is_timeout_exception(e):
-    lower_err_msg = str(e).lower()
-    if "time" in lower_err_msg and "out" in lower_err_msg:
-        return True
-    return False
