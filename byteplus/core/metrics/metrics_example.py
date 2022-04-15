@@ -19,16 +19,16 @@ def metrics_init():
 
 def store_report():
     for i in range(send_times):
-        store("request.store", 200, ["type:test_metrics1", "other_tag:xxx"])
-        store("request.store", 100, ["type:test_metrics2", "other_tag:xxx"])
+        mc.store("request.store", 200, ["type:test_metrics1", "other_tag:xxx"])
+        mc.store("request.store", 100, ["type:test_metrics2", "other_tag:xxx"])
         time.sleep(0.1)
     print("stop store reporting")
 
 
 def count_report():
     for i in range(send_times):
-        counter("request.counter", 200, ["type:test_metrics1", "other_tag:xxx"])
-        counter("request.counter", 100, ["type:test_metrics2", "other_tag:xxx"])
+        mc.counter("request.counter", 200, ["type:test_metrics1", "other_tag:xxx"])
+        mc.counter("request.counter", 100, ["type:test_metrics2", "other_tag:xxx"])
         time.sleep(0.2)
     print("stop counter reporting")
 
@@ -37,10 +37,10 @@ def timer_report():
     for i in range(send_times):
         begin = time.time_ns() / 1e6
         time.sleep(0.1)
-        latency("request.timer", begin, ["type:test_metrics1", "other_tag:xxx"])
+        mc.latency("request.timer", begin, ["type:test_metrics1", "other_tag:xxx"])
         begin = time.time_ns() / 1e6
         time.sleep(0.2)
-        latency("request.timer", begin, ["type:test_metrics2", "other_tag:xxx"])
+        mc.latency("request.timer", begin, ["type:test_metrics2", "other_tag:xxx"])
 
     print("stop timer reporting")
 

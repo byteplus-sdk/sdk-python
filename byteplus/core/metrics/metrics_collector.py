@@ -14,7 +14,7 @@ from byteplus.core.exception import NetException, BizException
 log = logging.getLogger(__name__)
 
 initialed = False  # init func should exec once
-metrics_cfg = MetricsCfg()
+metrics_cfg = None
 metrics_collector: map = {}
 metrics_locks: map = {}
 timer_stat_metrics = ["max", "min", "avg", "pct75", "pct90", "pct95", "pct99", "pct999"]
@@ -98,6 +98,8 @@ class MetricValue(object):
 
 # As long as the init function is called, the metrics are enabled
 def init(metrics_opts: tuple):
+    global metrics_cfg
+    MetricsCfg()
     for opt in metrics_opts:
         opt.fill(metrics_cfg)
 

@@ -4,7 +4,8 @@ from byteplus.common.client import CommonClient
 from byteplus.core import Region, Option, MAX_WRITE_ITEM_COUNT, BizException
 from byteplus.core.context import Param
 from byteplus.media.protocol import WriteUsersRequest, WriteUsersResponse, WriteContentsRequest, WriteContentsResponse, \
-    WriteUserEventsRequest, WriteUserEventsResponse
+    WriteUserEventsRequest, WriteUserEventsResponse, PredictRequest, PredictResponse, AckServerImpressionsRequest, \
+    AckServerImpressionsResponse
 from byteplus.media.url import _MediaURL
 
 log = logging.getLogger(__name__)
@@ -46,6 +47,22 @@ class Client(CommonClient):
         response: WriteUserEventsResponse = WriteUserEventsResponse()
         self._http_caller.do_pb_request(url, request, response, *opts)
         log.debug("[ByteplusSDK][WriteUserEvents] rsp:\n %s", response)
+        return response
+
+    def predict(self, request: PredictRequest, scene: str, *opts: Option) -> PredictResponse:
+        url_format: str = self._media_url.predict_url_format
+        url: str = url_format.replace("#", scene)
+        response: PredictResponse = PredictResponse()
+        self._http_caller.do_pb_request(url, request, response, *opts)
+        log.debug("[ByteplusSDK][Predict] rsp:\n%s", response)
+        return response
+
+    def ack_server_impressions(self, request: AckServerImpressionsRequest,
+                               *opts: Option) -> AckServerImpressionsResponse:
+        url: str = self._media_url.ack_impression_url
+        response: AckServerImpressionsResponse = AckServerImpressionsResponse()
+        self._http_caller.do_pb_request(url, request, response, *opts)
+        log.debug("[ByteplusSDK][AckImpressions] rsp:\n%s", response)
         return response
 
 
