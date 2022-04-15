@@ -11,7 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import byteplus_common_pb2 as byteplus__common__pb2
+from byteplus.common.protocol import byteplus_common_pb2 as byteplus__common__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\033byteplus.sdk.media.protocolZ-github.com/byteplus-sdk/sdk-go/media/protocol',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x14\x62yteplus_media.proto\x12\x18\x62ytedance.byteplus.media\x1a\x15\x62yteplus_common.proto\"\xb4\x03\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0e\n\x06gender\x18\x02 \x01(\t\x12\x0b\n\x03\x61ge\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x11\n\tdevice_id\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65vice_type\x18\x06 \x01(\t\x12\x17\n\x0fsubscriber_type\x18\x07 \x01(\t\x12\x10\n\x08language\x18\x08 \x01(\t\x12\x14\n\x0cview_history\x18\t \x03(\t\x12\x1a\n\x12\x61\x63tivation_channel\x18\n \x01(\t\x12\x18\n\x10membership_level\x18\x0b \x01(\t\x12\x1e\n\x16registration_timestamp\x18\x0c \x01(\x03\x12\x0f\n\x07\x63ountry\x18\r \x01(\t\x12\x0c\n\x04\x63ity\x18\x0e \x01(\t\x12\x18\n\x10\x64istrict_or_area\x18\x0f \x01(\t\x12\x10\n\x08postcode\x18\x10 \x01(\t\x12\x38\n\x05\x65xtra\x18\x64 \x03(\x0b\x32).bytedance.byteplus.media.User.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb7\x01\n\x11WriteUsersRequest\x12-\n\x05users\x18\x01 \x03(\x0b\x32\x1e.bytedance.byteplus.media.User\x12\x45\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x36.bytedance.byteplus.media.WriteUsersRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"J\n\tUserError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12,\n\x04user\x18\x02 \x01(\x0b\x32\x1e.bytedance.byteplus.media.User\"|\n\x12WriteUsersResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x33\n\x06\x65rrors\x18\x02 \x03(\x0b\x32#.bytedance.byteplus.media.UserError\"\x91\x08\n\x07\x43ontent\x12\x12\n\ncontent_id\x18\x01 \x01(\t\x12\x18\n\x10is_recommendable\x18\x02 \x01(\x05\x12\x12\n\ncategories\x18\x03 \x01(\t\x12\x15\n\rcontent_title\x18\x04 \x01(\t\x12\x14\n\x0c\x63ontent_type\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x15\n\rcontent_owner\x18\x07 \x01(\t\x12\x10\n\x08language\x18\x08 \x01(\t\x12\x0c\n\x04tags\x18\t \x03(\t\x12!\n\x19listing_page_display_tags\x18\n \x03(\t\x12 \n\x18\x64\x65tail_page_display_tags\x18\x0b \x03(\t\x12!\n\x19listing_page_display_type\x18\x0c \x01(\t\x12\x1c\n\x14\x63over_multimedia_url\x18\r \x01(\t\x12\x13\n\x0buser_rating\x18\x0e \x01(\x01\x12\x13\n\x0bviews_count\x18\x0f \x01(\x05\x12\x16\n\x0e\x63omments_count\x18\x10 \x01(\x05\x12\x13\n\x0blikes_count\x18\x11 \x01(\x05\x12\x14\n\x0cshares_count\x18\x12 \x01(\x05\x12\x17\n\x0fis_paid_content\x18\x13 \x01(\x05\x12\x14\n\x0corigin_price\x18\x14 \x01(\x03\x12\x15\n\rcurrent_price\x18\x15 \x01(\x03\x12\x16\n\x0epublish_region\x18\x16 \x01(\t\x12\x18\n\x10\x61vailable_region\x18\x17 \x03(\t\x12\x11\n\tentity_id\x18\x18 \x01(\t\x12\x13\n\x0b\x65ntity_name\x18\x19 \x01(\t\x12\x11\n\tseries_id\x18\x1a \x01(\t\x12\x14\n\x0cseries_index\x18\x1b \x01(\x05\x12\x13\n\x0bseries_name\x18\x1c \x01(\t\x12\x14\n\x0cseries_count\x18\x1d \x01(\x05\x12\x10\n\x08video_id\x18\x1e \x01(\t\x12\x13\n\x0bvideo_index\x18\x1f \x01(\x05\x12\x12\n\nvideo_name\x18  \x01(\t\x12\x13\n\x0bvideo_count\x18! \x01(\x05\x12\x12\n\nvideo_type\x18\" \x01(\t\x12\x16\n\x0evideo_duration\x18# \x01(\x03\x12\x19\n\x11publish_timestamp\x18$ \x01(\x03\x12!\n\x19\x63opyright_start_timestamp\x18% \x01(\x03\x12\x1f\n\x17\x63opyright_end_timestamp\x18& \x01(\x03\x12\x0e\n\x06\x61\x63tors\x18\' \x03(\t\x12\x0e\n\x06source\x18( \x01(\t\x12;\n\x05\x65xtra\x18\x64 \x03(\x0b\x32,.bytedance.byteplus.media.Content.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc3\x01\n\x14WriteContentsRequest\x12\x33\n\x08\x63ontents\x18\x01 \x03(\x0b\x32!.bytedance.byteplus.media.Content\x12H\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x39.bytedance.byteplus.media.WriteContentsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"S\n\x0c\x43ontentError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x32\n\x07\x63ontent\x18\x02 \x01(\x0b\x32!.bytedance.byteplus.media.Content\"\x82\x01\n\x15WriteContentsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x36\n\x06\x65rrors\x18\x02 \x03(\x0b\x32&.bytedance.byteplus.media.ContentError\"\xd9\x05\n\tUserEvent\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x12\n\nevent_type\x18\x02 \x01(\t\x12\x17\n\x0f\x65vent_timestamp\x18\x03 \x01(\x03\x12\x12\n\ncontent_id\x18\x04 \x01(\t\x12\x16\n\x0etraffic_source\x18\x05 \x01(\t\x12\x12\n\nrequest_id\x18\x06 \x01(\t\x12\x10\n\x08rec_info\x18\x07 \x01(\t\x12\x19\n\x11\x61ttribution_token\x18\x08 \x01(\t\x12\x12\n\nscene_name\x18\t \x01(\t\x12\x13\n\x0bpage_number\x18\n \x01(\x05\x12\x0e\n\x06offset\x18\x0b \x01(\x05\x12\x11\n\tplay_type\x18\x0c \x01(\t\x12\x15\n\rplay_duration\x18\r \x01(\x03\x12\x12\n\nstart_time\x18\x0e \x01(\x05\x12\x10\n\x08\x65nd_time\x18\x0f \x01(\x05\x12\x11\n\tentity_id\x18\x10 \x01(\t\x12\x11\n\tseries_id\x18\x11 \x01(\t\x12\x10\n\x08video_id\x18\x12 \x01(\t\x12\x19\n\x11parent_content_id\x18\x13 \x01(\t\x12\x18\n\x10\x64\x65tail_stay_time\x18\x14 \x01(\x05\x12\r\n\x05query\x18\x15 \x01(\t\x12\x0e\n\x06\x64\x65vice\x18\x16 \x01(\t\x12\x0f\n\x07os_type\x18\x17 \x01(\t\x12\x13\n\x0b\x61pp_version\x18\x18 \x01(\t\x12\x14\n\x0c\x64\x65vice_model\x18\x19 \x01(\t\x12\x14\n\x0c\x64\x65vice_brand\x18\x1a \x01(\t\x12\x12\n\nos_version\x18\x1b \x01(\t\x12\x14\n\x0c\x62rowser_type\x18\x1c \x01(\t\x12\x12\n\nuser_agent\x18\x1d \x01(\t\x12\x0f\n\x07network\x18\x1e \x01(\t\x12=\n\x05\x65xtra\x18\x64 \x03(\x0b\x32..bytedance.byteplus.media.UserEvent.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xcc\x01\n\x16WriteUserEventsRequest\x12\x38\n\x0buser_events\x18\x01 \x03(\x0b\x32#.bytedance.byteplus.media.UserEvent\x12J\n\x05\x65xtra\x18\x64 \x03(\x0b\x32;.bytedance.byteplus.media.WriteUserEventsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Z\n\x0eUserEventError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x37\n\nuser_event\x18\x02 \x01(\x0b\x32#.bytedance.byteplus.media.UserEvent\"\x86\x01\n\x17WriteUserEventsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x38\n\x06\x65rrors\x18\x02 \x03(\x0b\x32(.bytedance.byteplus.media.UserEventError2\xe9\x02\n\x14\x42ytePlusMediaService\x12g\n\nWriteUsers\x12+.bytedance.byteplus.media.WriteUsersRequest\x1a,.bytedance.byteplus.media.WriteUsersResponse\x12p\n\rWriteContents\x12..bytedance.byteplus.media.WriteContentsRequest\x1a/.bytedance.byteplus.media.WriteContentsResponse\x12v\n\x0fWriteUserEvents\x12\x30.bytedance.byteplus.media.WriteUserEventsRequest\x1a\x31.bytedance.byteplus.media.WriteUserEventsResponseBL\n\x1b\x62yteplus.sdk.media.protocolZ-github.com/byteplus-sdk/sdk-go/media/protocolb\x06proto3'
+  serialized_pb=b'\n\x14\x62yteplus_media.proto\x12\x18\x62ytedance.byteplus.media\x1a\x15\x62yteplus_common.proto\"\xb4\x03\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0e\n\x06gender\x18\x02 \x01(\t\x12\x0b\n\x03\x61ge\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x11\n\tdevice_id\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65vice_type\x18\x06 \x01(\t\x12\x17\n\x0fsubscriber_type\x18\x07 \x01(\t\x12\x10\n\x08language\x18\x08 \x01(\t\x12\x14\n\x0cview_history\x18\t \x03(\t\x12\x1a\n\x12\x61\x63tivation_channel\x18\n \x01(\t\x12\x18\n\x10membership_level\x18\x0b \x01(\t\x12\x1e\n\x16registration_timestamp\x18\x0c \x01(\x03\x12\x0f\n\x07\x63ountry\x18\r \x01(\t\x12\x0c\n\x04\x63ity\x18\x0e \x01(\t\x12\x18\n\x10\x64istrict_or_area\x18\x0f \x01(\t\x12\x10\n\x08postcode\x18\x10 \x01(\t\x12\x38\n\x05\x65xtra\x18\x64 \x03(\x0b\x32).bytedance.byteplus.media.User.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb7\x01\n\x11WriteUsersRequest\x12-\n\x05users\x18\x01 \x03(\x0b\x32\x1e.bytedance.byteplus.media.User\x12\x45\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x36.bytedance.byteplus.media.WriteUsersRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"J\n\tUserError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12,\n\x04user\x18\x02 \x01(\x0b\x32\x1e.bytedance.byteplus.media.User\"|\n\x12WriteUsersResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x33\n\x06\x65rrors\x18\x02 \x03(\x0b\x32#.bytedance.byteplus.media.UserError\"\x91\x08\n\x07\x43ontent\x12\x12\n\ncontent_id\x18\x01 \x01(\t\x12\x18\n\x10is_recommendable\x18\x02 \x01(\x05\x12\x12\n\ncategories\x18\x03 \x01(\t\x12\x15\n\rcontent_title\x18\x04 \x01(\t\x12\x14\n\x0c\x63ontent_type\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x15\n\rcontent_owner\x18\x07 \x01(\t\x12\x10\n\x08language\x18\x08 \x01(\t\x12\x0c\n\x04tags\x18\t \x03(\t\x12!\n\x19listing_page_display_tags\x18\n \x03(\t\x12 \n\x18\x64\x65tail_page_display_tags\x18\x0b \x03(\t\x12!\n\x19listing_page_display_type\x18\x0c \x01(\t\x12\x1c\n\x14\x63over_multimedia_url\x18\r \x01(\t\x12\x13\n\x0buser_rating\x18\x0e \x01(\x01\x12\x13\n\x0bviews_count\x18\x0f \x01(\x05\x12\x16\n\x0e\x63omments_count\x18\x10 \x01(\x05\x12\x13\n\x0blikes_count\x18\x11 \x01(\x05\x12\x14\n\x0cshares_count\x18\x12 \x01(\x05\x12\x17\n\x0fis_paid_content\x18\x13 \x01(\x05\x12\x14\n\x0corigin_price\x18\x14 \x01(\x03\x12\x15\n\rcurrent_price\x18\x15 \x01(\x03\x12\x16\n\x0epublish_region\x18\x16 \x01(\t\x12\x18\n\x10\x61vailable_region\x18\x17 \x03(\t\x12\x11\n\tentity_id\x18\x18 \x01(\t\x12\x13\n\x0b\x65ntity_name\x18\x19 \x01(\t\x12\x11\n\tseries_id\x18\x1a \x01(\t\x12\x14\n\x0cseries_index\x18\x1b \x01(\x05\x12\x13\n\x0bseries_name\x18\x1c \x01(\t\x12\x14\n\x0cseries_count\x18\x1d \x01(\x05\x12\x10\n\x08video_id\x18\x1e \x01(\t\x12\x13\n\x0bvideo_index\x18\x1f \x01(\x05\x12\x12\n\nvideo_name\x18  \x01(\t\x12\x13\n\x0bvideo_count\x18! \x01(\x05\x12\x12\n\nvideo_type\x18\" \x01(\t\x12\x16\n\x0evideo_duration\x18# \x01(\x03\x12\x19\n\x11publish_timestamp\x18$ \x01(\x03\x12!\n\x19\x63opyright_start_timestamp\x18% \x01(\x03\x12\x1f\n\x17\x63opyright_end_timestamp\x18& \x01(\x03\x12\x0e\n\x06\x61\x63tors\x18\' \x03(\t\x12\x0e\n\x06source\x18( \x01(\t\x12;\n\x05\x65xtra\x18\x64 \x03(\x0b\x32,.bytedance.byteplus.media.Content.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc3\x01\n\x14WriteContentsRequest\x12\x33\n\x08\x63ontents\x18\x01 \x03(\x0b\x32!.bytedance.byteplus.media.Content\x12H\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x39.bytedance.byteplus.media.WriteContentsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"S\n\x0c\x43ontentError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x32\n\x07\x63ontent\x18\x02 \x01(\x0b\x32!.bytedance.byteplus.media.Content\"\x82\x01\n\x15WriteContentsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x36\n\x06\x65rrors\x18\x02 \x03(\x0b\x32&.bytedance.byteplus.media.ContentError\"\xd9\x05\n\tUserEvent\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x12\n\nevent_type\x18\x02 \x01(\t\x12\x17\n\x0f\x65vent_timestamp\x18\x03 \x01(\x03\x12\x12\n\ncontent_id\x18\x04 \x01(\t\x12\x16\n\x0etraffic_source\x18\x05 \x01(\t\x12\x12\n\nrequest_id\x18\x06 \x01(\t\x12\x10\n\x08rec_info\x18\x07 \x01(\t\x12\x19\n\x11\x61ttribution_token\x18\x08 \x01(\t\x12\x12\n\nscene_name\x18\t \x01(\t\x12\x13\n\x0bpage_number\x18\n \x01(\x05\x12\x0e\n\x06offset\x18\x0b \x01(\x05\x12\x11\n\tplay_type\x18\x0c \x01(\t\x12\x15\n\rplay_duration\x18\r \x01(\x03\x12\x12\n\nstart_time\x18\x0e \x01(\x05\x12\x10\n\x08\x65nd_time\x18\x0f \x01(\x05\x12\x11\n\tentity_id\x18\x10 \x01(\t\x12\x11\n\tseries_id\x18\x11 \x01(\t\x12\x10\n\x08video_id\x18\x12 \x01(\t\x12\x19\n\x11parent_content_id\x18\x13 \x01(\t\x12\x18\n\x10\x64\x65tail_stay_time\x18\x14 \x01(\x05\x12\r\n\x05query\x18\x15 \x01(\t\x12\x0e\n\x06\x64\x65vice\x18\x16 \x01(\t\x12\x0f\n\x07os_type\x18\x17 \x01(\t\x12\x13\n\x0b\x61pp_version\x18\x18 \x01(\t\x12\x14\n\x0c\x64\x65vice_model\x18\x19 \x01(\t\x12\x14\n\x0c\x64\x65vice_brand\x18\x1a \x01(\t\x12\x12\n\nos_version\x18\x1b \x01(\t\x12\x14\n\x0c\x62rowser_type\x18\x1c \x01(\t\x12\x12\n\nuser_agent\x18\x1d \x01(\t\x12\x0f\n\x07network\x18\x1e \x01(\t\x12=\n\x05\x65xtra\x18\x64 \x03(\x0b\x32..bytedance.byteplus.media.UserEvent.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xcc\x01\n\x16WriteUserEventsRequest\x12\x38\n\x0buser_events\x18\x01 \x03(\x0b\x32#.bytedance.byteplus.media.UserEvent\x12J\n\x05\x65xtra\x18\x64 \x03(\x0b\x32;.bytedance.byteplus.media.WriteUserEventsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Z\n\x0eUserEventError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x37\n\nuser_event\x18\x02 \x01(\x0b\x32#.bytedance.byteplus.media.UserEvent\"\x86\x01\n\x17WriteUserEventsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x38\n\x06\x65rrors\x18\x02 \x03(\x0b\x32(.bytedance.byteplus.media.UserEventError\"\xfa\x04\n\x0ePredictRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04size\x18\x02 \x01(\x05\x12=\n\x05scene\x18\x03 \x01(\x0b\x32..bytedance.byteplus.media.PredictRequest.Scene\x12\x41\n\x07\x63ontext\x18\x04 \x01(\x0b\x32\x30.bytedance.byteplus.media.PredictRequest.Context\x12\x42\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x33.bytedance.byteplus.media.PredictRequest.ExtraEntry\x1a@\n\x05Scene\x12\x12\n\nscene_name\x18\x01 \x01(\t\x12\x13\n\x0bpage_number\x18\x02 \x01(\x05\x12\x0e\n\x06offset\x18\x03 \x01(\x05\x1a\x92\x02\n\x07\x43ontext\x12\x37\n\x0croot_content\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.media.Content\x12\x1d\n\x15\x63\x61ndidate_content_ids\x18\x03 \x03(\t\x12\x0e\n\x06\x64\x65vice\x18\x16 \x01(\t\x12\x0f\n\x07os_type\x18\x17 \x01(\t\x12\x13\n\x0b\x61pp_version\x18\x18 \x01(\t\x12\x14\n\x0c\x64\x65vice_model\x18\x19 \x01(\t\x12\x14\n\x0c\x64\x65vice_brand\x18\x1a \x01(\t\x12\x12\n\nos_version\x18\x1b \x01(\t\x12\x14\n\x0c\x62rowser_type\x18\x1c \x01(\t\x12\x12\n\nuser_agent\x18\x1d \x01(\t\x12\x0f\n\x07network\x18\x1e \x01(\t\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb9\x03\n\rPredictResult\x12R\n\x11response_contents\x18\x01 \x03(\x0b\x32\x37.bytedance.byteplus.media.PredictResult.ResponseContent\x12\x41\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x32.bytedance.byteplus.media.PredictResult.ExtraEntry\x1a\xe2\x01\n\x0fResponseContent\x12\x12\n\ncontent_id\x18\x01 \x01(\t\x12\x0c\n\x04rank\x18\x02 \x01(\x05\x12\x0c\n\x04pctr\x18\x03 \x01(\x01\x12\x0c\n\x04pcvr\x18\x04 \x01(\x01\x12\x10\n\x08rec_info\x18\x05 \x01(\t\x12Q\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x42.bytedance.byteplus.media.PredictResult.ResponseContent.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x90\x01\n\x0fPredictResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x12\n\nrequest_id\x18\x02 \x01(\t\x12\x36\n\x05value\x18\x03 \x01(\x0b\x32\'.bytedance.byteplus.media.PredictResult\"\xe5\x03\n\x1b\x41\x63kServerImpressionsRequest\x12\x1a\n\x12predict_request_id\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12\x16\n\x0etraffic_source\x18\x03 \x01(\t\x12=\n\x05scene\x18\x04 \x01(\x0b\x32..bytedance.byteplus.media.PredictRequest.Scene\x12^\n\x10\x61ltered_contents\x18\x05 \x03(\x0b\x32\x44.bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent\x12O\n\x05\x65xtra\x18\x64 \x03(\x0b\x32@.bytedance.byteplus.media.AckServerImpressionsRequest.ExtraEntry\x1a\x63\n\x0e\x41lteredContent\x12\x12\n\ncontent_id\x18\x01 \x01(\t\x12\x16\n\x0e\x61ltered_reason\x18\x02 \x01(\t\x12\x0c\n\x04rank\x18\x03 \x01(\x05\x12\x17\n\x0f\x63ontent_id_hash\x18\x64 \x01(\x03\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Q\n\x1c\x41\x63kServerImpressionsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status2\xd1\x04\n\x14\x42ytePlusMediaService\x12g\n\nWriteUsers\x12+.bytedance.byteplus.media.WriteUsersRequest\x1a,.bytedance.byteplus.media.WriteUsersResponse\x12p\n\rWriteContents\x12..bytedance.byteplus.media.WriteContentsRequest\x1a/.bytedance.byteplus.media.WriteContentsResponse\x12v\n\x0fWriteUserEvents\x12\x30.bytedance.byteplus.media.WriteUserEventsRequest\x1a\x31.bytedance.byteplus.media.WriteUserEventsResponse\x12^\n\x07Predict\x12(.bytedance.byteplus.media.PredictRequest\x1a).bytedance.byteplus.media.PredictResponse\x12\x85\x01\n\x14\x41\x63kServerImpressions\x12\x35.bytedance.byteplus.media.AckServerImpressionsRequest\x1a\x36.bytedance.byteplus.media.AckServerImpressionsResponseBL\n\x1b\x62yteplus.sdk.media.protocolZ-github.com/byteplus-sdk/sdk-go/media/protocolb\x06proto3'
   ,
   dependencies=[byteplus__common__pb2.DESCRIPTOR,])
 
@@ -1303,6 +1303,666 @@ _WRITEUSEREVENTSRESPONSE = _descriptor.Descriptor(
   serialized_end=3526,
 )
 
+
+_PREDICTREQUEST_SCENE = _descriptor.Descriptor(
+  name='Scene',
+  full_name='bytedance.byteplus.media.PredictRequest.Scene',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='scene_name', full_name='bytedance.byteplus.media.PredictRequest.Scene.scene_name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_number', full_name='bytedance.byteplus.media.PredictRequest.Scene.page_number', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='offset', full_name='bytedance.byteplus.media.PredictRequest.Scene.offset', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3776,
+  serialized_end=3840,
+)
+
+_PREDICTREQUEST_CONTEXT = _descriptor.Descriptor(
+  name='Context',
+  full_name='bytedance.byteplus.media.PredictRequest.Context',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='root_content', full_name='bytedance.byteplus.media.PredictRequest.Context.root_content', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='candidate_content_ids', full_name='bytedance.byteplus.media.PredictRequest.Context.candidate_content_ids', index=1,
+      number=3, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='device', full_name='bytedance.byteplus.media.PredictRequest.Context.device', index=2,
+      number=22, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='os_type', full_name='bytedance.byteplus.media.PredictRequest.Context.os_type', index=3,
+      number=23, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='app_version', full_name='bytedance.byteplus.media.PredictRequest.Context.app_version', index=4,
+      number=24, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='device_model', full_name='bytedance.byteplus.media.PredictRequest.Context.device_model', index=5,
+      number=25, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='device_brand', full_name='bytedance.byteplus.media.PredictRequest.Context.device_brand', index=6,
+      number=26, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='os_version', full_name='bytedance.byteplus.media.PredictRequest.Context.os_version', index=7,
+      number=27, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='browser_type', full_name='bytedance.byteplus.media.PredictRequest.Context.browser_type', index=8,
+      number=28, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user_agent', full_name='bytedance.byteplus.media.PredictRequest.Context.user_agent', index=9,
+      number=29, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='network', full_name='bytedance.byteplus.media.PredictRequest.Context.network', index=10,
+      number=30, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3843,
+  serialized_end=4117,
+)
+
+_PREDICTREQUEST_EXTRAENTRY = _descriptor.Descriptor(
+  name='ExtraEntry',
+  full_name='bytedance.byteplus.media.PredictRequest.ExtraEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.media.PredictRequest.ExtraEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.media.PredictRequest.ExtraEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=466,
+  serialized_end=510,
+)
+
+_PREDICTREQUEST = _descriptor.Descriptor(
+  name='PredictRequest',
+  full_name='bytedance.byteplus.media.PredictRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='bytedance.byteplus.media.PredictRequest.user_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='size', full_name='bytedance.byteplus.media.PredictRequest.size', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='scene', full_name='bytedance.byteplus.media.PredictRequest.scene', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='context', full_name='bytedance.byteplus.media.PredictRequest.context', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='extra', full_name='bytedance.byteplus.media.PredictRequest.extra', index=4,
+      number=100, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_PREDICTREQUEST_SCENE, _PREDICTREQUEST_CONTEXT, _PREDICTREQUEST_EXTRAENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3529,
+  serialized_end=4163,
+)
+
+
+_PREDICTRESULT_RESPONSECONTENT_EXTRAENTRY = _descriptor.Descriptor(
+  name='ExtraEntry',
+  full_name='bytedance.byteplus.media.PredictResult.ResponseContent.ExtraEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.media.PredictResult.ResponseContent.ExtraEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.media.PredictResult.ResponseContent.ExtraEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=466,
+  serialized_end=510,
+)
+
+_PREDICTRESULT_RESPONSECONTENT = _descriptor.Descriptor(
+  name='ResponseContent',
+  full_name='bytedance.byteplus.media.PredictResult.ResponseContent',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='content_id', full_name='bytedance.byteplus.media.PredictResult.ResponseContent.content_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='rank', full_name='bytedance.byteplus.media.PredictResult.ResponseContent.rank', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='pctr', full_name='bytedance.byteplus.media.PredictResult.ResponseContent.pctr', index=2,
+      number=3, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='pcvr', full_name='bytedance.byteplus.media.PredictResult.ResponseContent.pcvr', index=3,
+      number=4, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='rec_info', full_name='bytedance.byteplus.media.PredictResult.ResponseContent.rec_info', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='extra', full_name='bytedance.byteplus.media.PredictResult.ResponseContent.extra', index=5,
+      number=100, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_PREDICTRESULT_RESPONSECONTENT_EXTRAENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4335,
+  serialized_end=4561,
+)
+
+_PREDICTRESULT_EXTRAENTRY = _descriptor.Descriptor(
+  name='ExtraEntry',
+  full_name='bytedance.byteplus.media.PredictResult.ExtraEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.media.PredictResult.ExtraEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.media.PredictResult.ExtraEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=466,
+  serialized_end=510,
+)
+
+_PREDICTRESULT = _descriptor.Descriptor(
+  name='PredictResult',
+  full_name='bytedance.byteplus.media.PredictResult',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='response_contents', full_name='bytedance.byteplus.media.PredictResult.response_contents', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='extra', full_name='bytedance.byteplus.media.PredictResult.extra', index=1,
+      number=100, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_PREDICTRESULT_RESPONSECONTENT, _PREDICTRESULT_EXTRAENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4166,
+  serialized_end=4607,
+)
+
+
+_PREDICTRESPONSE = _descriptor.Descriptor(
+  name='PredictResponse',
+  full_name='bytedance.byteplus.media.PredictResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='bytedance.byteplus.media.PredictResponse.status', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='request_id', full_name='bytedance.byteplus.media.PredictResponse.request_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.media.PredictResponse.value', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4610,
+  serialized_end=4754,
+)
+
+
+_ACKSERVERIMPRESSIONSREQUEST_ALTEREDCONTENT = _descriptor.Descriptor(
+  name='AlteredContent',
+  full_name='bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='content_id', full_name='bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent.content_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='altered_reason', full_name='bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent.altered_reason', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='rank', full_name='bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent.rank', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='content_id_hash', full_name='bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent.content_id_hash', index=3,
+      number=100, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5097,
+  serialized_end=5196,
+)
+
+_ACKSERVERIMPRESSIONSREQUEST_EXTRAENTRY = _descriptor.Descriptor(
+  name='ExtraEntry',
+  full_name='bytedance.byteplus.media.AckServerImpressionsRequest.ExtraEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.media.AckServerImpressionsRequest.ExtraEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.media.AckServerImpressionsRequest.ExtraEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=466,
+  serialized_end=510,
+)
+
+_ACKSERVERIMPRESSIONSREQUEST = _descriptor.Descriptor(
+  name='AckServerImpressionsRequest',
+  full_name='bytedance.byteplus.media.AckServerImpressionsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='predict_request_id', full_name='bytedance.byteplus.media.AckServerImpressionsRequest.predict_request_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='bytedance.byteplus.media.AckServerImpressionsRequest.user_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='traffic_source', full_name='bytedance.byteplus.media.AckServerImpressionsRequest.traffic_source', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='scene', full_name='bytedance.byteplus.media.AckServerImpressionsRequest.scene', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='altered_contents', full_name='bytedance.byteplus.media.AckServerImpressionsRequest.altered_contents', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='extra', full_name='bytedance.byteplus.media.AckServerImpressionsRequest.extra', index=5,
+      number=100, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_ACKSERVERIMPRESSIONSREQUEST_ALTEREDCONTENT, _ACKSERVERIMPRESSIONSREQUEST_EXTRAENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4757,
+  serialized_end=5242,
+)
+
+
+_ACKSERVERIMPRESSIONSRESPONSE = _descriptor.Descriptor(
+  name='AckServerImpressionsResponse',
+  full_name='bytedance.byteplus.media.AckServerImpressionsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='bytedance.byteplus.media.AckServerImpressionsResponse.status', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5244,
+  serialized_end=5325,
+)
+
 _USER_EXTRAENTRY.containing_type = _USER
 _USER.fields_by_name['extra'].message_type = _USER_EXTRAENTRY
 _WRITEUSERSREQUEST_EXTRAENTRY.containing_type = _WRITEUSERSREQUEST
@@ -1327,6 +1987,27 @@ _WRITEUSEREVENTSREQUEST.fields_by_name['extra'].message_type = _WRITEUSEREVENTSR
 _USEREVENTERROR.fields_by_name['user_event'].message_type = _USEREVENT
 _WRITEUSEREVENTSRESPONSE.fields_by_name['status'].message_type = byteplus__common__pb2._STATUS
 _WRITEUSEREVENTSRESPONSE.fields_by_name['errors'].message_type = _USEREVENTERROR
+_PREDICTREQUEST_SCENE.containing_type = _PREDICTREQUEST
+_PREDICTREQUEST_CONTEXT.fields_by_name['root_content'].message_type = _CONTENT
+_PREDICTREQUEST_CONTEXT.containing_type = _PREDICTREQUEST
+_PREDICTREQUEST_EXTRAENTRY.containing_type = _PREDICTREQUEST
+_PREDICTREQUEST.fields_by_name['scene'].message_type = _PREDICTREQUEST_SCENE
+_PREDICTREQUEST.fields_by_name['context'].message_type = _PREDICTREQUEST_CONTEXT
+_PREDICTREQUEST.fields_by_name['extra'].message_type = _PREDICTREQUEST_EXTRAENTRY
+_PREDICTRESULT_RESPONSECONTENT_EXTRAENTRY.containing_type = _PREDICTRESULT_RESPONSECONTENT
+_PREDICTRESULT_RESPONSECONTENT.fields_by_name['extra'].message_type = _PREDICTRESULT_RESPONSECONTENT_EXTRAENTRY
+_PREDICTRESULT_RESPONSECONTENT.containing_type = _PREDICTRESULT
+_PREDICTRESULT_EXTRAENTRY.containing_type = _PREDICTRESULT
+_PREDICTRESULT.fields_by_name['response_contents'].message_type = _PREDICTRESULT_RESPONSECONTENT
+_PREDICTRESULT.fields_by_name['extra'].message_type = _PREDICTRESULT_EXTRAENTRY
+_PREDICTRESPONSE.fields_by_name['status'].message_type = byteplus__common__pb2._STATUS
+_PREDICTRESPONSE.fields_by_name['value'].message_type = _PREDICTRESULT
+_ACKSERVERIMPRESSIONSREQUEST_ALTEREDCONTENT.containing_type = _ACKSERVERIMPRESSIONSREQUEST
+_ACKSERVERIMPRESSIONSREQUEST_EXTRAENTRY.containing_type = _ACKSERVERIMPRESSIONSREQUEST
+_ACKSERVERIMPRESSIONSREQUEST.fields_by_name['scene'].message_type = _PREDICTREQUEST_SCENE
+_ACKSERVERIMPRESSIONSREQUEST.fields_by_name['altered_contents'].message_type = _ACKSERVERIMPRESSIONSREQUEST_ALTEREDCONTENT
+_ACKSERVERIMPRESSIONSREQUEST.fields_by_name['extra'].message_type = _ACKSERVERIMPRESSIONSREQUEST_EXTRAENTRY
+_ACKSERVERIMPRESSIONSRESPONSE.fields_by_name['status'].message_type = byteplus__common__pb2._STATUS
 DESCRIPTOR.message_types_by_name['User'] = _USER
 DESCRIPTOR.message_types_by_name['WriteUsersRequest'] = _WRITEUSERSREQUEST
 DESCRIPTOR.message_types_by_name['UserError'] = _USERERROR
@@ -1339,6 +2020,11 @@ DESCRIPTOR.message_types_by_name['UserEvent'] = _USEREVENT
 DESCRIPTOR.message_types_by_name['WriteUserEventsRequest'] = _WRITEUSEREVENTSREQUEST
 DESCRIPTOR.message_types_by_name['UserEventError'] = _USEREVENTERROR
 DESCRIPTOR.message_types_by_name['WriteUserEventsResponse'] = _WRITEUSEREVENTSRESPONSE
+DESCRIPTOR.message_types_by_name['PredictRequest'] = _PREDICTREQUEST
+DESCRIPTOR.message_types_by_name['PredictResult'] = _PREDICTRESULT
+DESCRIPTOR.message_types_by_name['PredictResponse'] = _PREDICTRESPONSE
+DESCRIPTOR.message_types_by_name['AckServerImpressionsRequest'] = _ACKSERVERIMPRESSIONSREQUEST
+DESCRIPTOR.message_types_by_name['AckServerImpressionsResponse'] = _ACKSERVERIMPRESSIONSRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), {
@@ -1473,6 +2159,105 @@ WriteUserEventsResponse = _reflection.GeneratedProtocolMessageType('WriteUserEve
   })
 _sym_db.RegisterMessage(WriteUserEventsResponse)
 
+PredictRequest = _reflection.GeneratedProtocolMessageType('PredictRequest', (_message.Message,), {
+
+  'Scene' : _reflection.GeneratedProtocolMessageType('Scene', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTREQUEST_SCENE,
+    '__module__' : 'byteplus_media_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.media.PredictRequest.Scene)
+    })
+  ,
+
+  'Context' : _reflection.GeneratedProtocolMessageType('Context', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTREQUEST_CONTEXT,
+    '__module__' : 'byteplus_media_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.media.PredictRequest.Context)
+    })
+  ,
+
+  'ExtraEntry' : _reflection.GeneratedProtocolMessageType('ExtraEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTREQUEST_EXTRAENTRY,
+    '__module__' : 'byteplus_media_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.media.PredictRequest.ExtraEntry)
+    })
+  ,
+  'DESCRIPTOR' : _PREDICTREQUEST,
+  '__module__' : 'byteplus_media_pb2'
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.media.PredictRequest)
+  })
+_sym_db.RegisterMessage(PredictRequest)
+_sym_db.RegisterMessage(PredictRequest.Scene)
+_sym_db.RegisterMessage(PredictRequest.Context)
+_sym_db.RegisterMessage(PredictRequest.ExtraEntry)
+
+PredictResult = _reflection.GeneratedProtocolMessageType('PredictResult', (_message.Message,), {
+
+  'ResponseContent' : _reflection.GeneratedProtocolMessageType('ResponseContent', (_message.Message,), {
+
+    'ExtraEntry' : _reflection.GeneratedProtocolMessageType('ExtraEntry', (_message.Message,), {
+      'DESCRIPTOR' : _PREDICTRESULT_RESPONSECONTENT_EXTRAENTRY,
+      '__module__' : 'byteplus_media_pb2'
+      # @@protoc_insertion_point(class_scope:bytedance.byteplus.media.PredictResult.ResponseContent.ExtraEntry)
+      })
+    ,
+    'DESCRIPTOR' : _PREDICTRESULT_RESPONSECONTENT,
+    '__module__' : 'byteplus_media_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.media.PredictResult.ResponseContent)
+    })
+  ,
+
+  'ExtraEntry' : _reflection.GeneratedProtocolMessageType('ExtraEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTRESULT_EXTRAENTRY,
+    '__module__' : 'byteplus_media_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.media.PredictResult.ExtraEntry)
+    })
+  ,
+  'DESCRIPTOR' : _PREDICTRESULT,
+  '__module__' : 'byteplus_media_pb2'
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.media.PredictResult)
+  })
+_sym_db.RegisterMessage(PredictResult)
+_sym_db.RegisterMessage(PredictResult.ResponseContent)
+_sym_db.RegisterMessage(PredictResult.ResponseContent.ExtraEntry)
+_sym_db.RegisterMessage(PredictResult.ExtraEntry)
+
+PredictResponse = _reflection.GeneratedProtocolMessageType('PredictResponse', (_message.Message,), {
+  'DESCRIPTOR' : _PREDICTRESPONSE,
+  '__module__' : 'byteplus_media_pb2'
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.media.PredictResponse)
+  })
+_sym_db.RegisterMessage(PredictResponse)
+
+AckServerImpressionsRequest = _reflection.GeneratedProtocolMessageType('AckServerImpressionsRequest', (_message.Message,), {
+
+  'AlteredContent' : _reflection.GeneratedProtocolMessageType('AlteredContent', (_message.Message,), {
+    'DESCRIPTOR' : _ACKSERVERIMPRESSIONSREQUEST_ALTEREDCONTENT,
+    '__module__' : 'byteplus_media_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.media.AckServerImpressionsRequest.AlteredContent)
+    })
+  ,
+
+  'ExtraEntry' : _reflection.GeneratedProtocolMessageType('ExtraEntry', (_message.Message,), {
+    'DESCRIPTOR' : _ACKSERVERIMPRESSIONSREQUEST_EXTRAENTRY,
+    '__module__' : 'byteplus_media_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.media.AckServerImpressionsRequest.ExtraEntry)
+    })
+  ,
+  'DESCRIPTOR' : _ACKSERVERIMPRESSIONSREQUEST,
+  '__module__' : 'byteplus_media_pb2'
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.media.AckServerImpressionsRequest)
+  })
+_sym_db.RegisterMessage(AckServerImpressionsRequest)
+_sym_db.RegisterMessage(AckServerImpressionsRequest.AlteredContent)
+_sym_db.RegisterMessage(AckServerImpressionsRequest.ExtraEntry)
+
+AckServerImpressionsResponse = _reflection.GeneratedProtocolMessageType('AckServerImpressionsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _ACKSERVERIMPRESSIONSRESPONSE,
+  '__module__' : 'byteplus_media_pb2'
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.media.AckServerImpressionsResponse)
+  })
+_sym_db.RegisterMessage(AckServerImpressionsResponse)
+
 
 DESCRIPTOR._options = None
 _USER_EXTRAENTRY._options = None
@@ -1481,6 +2266,10 @@ _CONTENT_EXTRAENTRY._options = None
 _WRITECONTENTSREQUEST_EXTRAENTRY._options = None
 _USEREVENT_EXTRAENTRY._options = None
 _WRITEUSEREVENTSREQUEST_EXTRAENTRY._options = None
+_PREDICTREQUEST_EXTRAENTRY._options = None
+_PREDICTRESULT_RESPONSECONTENT_EXTRAENTRY._options = None
+_PREDICTRESULT_EXTRAENTRY._options = None
+_ACKSERVERIMPRESSIONSREQUEST_EXTRAENTRY._options = None
 
 _BYTEPLUSMEDIASERVICE = _descriptor.ServiceDescriptor(
   name='BytePlusMediaService',
@@ -1489,8 +2278,8 @@ _BYTEPLUSMEDIASERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3529,
-  serialized_end=3890,
+  serialized_start=5328,
+  serialized_end=5921,
   methods=[
   _descriptor.MethodDescriptor(
     name='WriteUsers',
@@ -1519,6 +2308,26 @@ _BYTEPLUSMEDIASERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_WRITEUSEREVENTSREQUEST,
     output_type=_WRITEUSEREVENTSRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Predict',
+    full_name='bytedance.byteplus.media.BytePlusMediaService.Predict',
+    index=3,
+    containing_service=None,
+    input_type=_PREDICTREQUEST,
+    output_type=_PREDICTRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='AckServerImpressions',
+    full_name='bytedance.byteplus.media.BytePlusMediaService.AckServerImpressions',
+    index=4,
+    containing_service=None,
+    input_type=_ACKSERVERIMPRESSIONSREQUEST,
+    output_type=_ACKSERVERIMPRESSIONSRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

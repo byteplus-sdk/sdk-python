@@ -11,4 +11,9 @@ from .byteplus_media_pb2 import (
     WriteUserEventsRequest,
     UserEventError,
     WriteUserEventsResponse,
+    PredictRequest,
+    PredictResult,
+    PredictResponse,
+    AckServerImpressionsRequest,
+    AckServerImpressionsResponse,
 )
