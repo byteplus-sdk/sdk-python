@@ -99,7 +99,7 @@ class MetricValue(object):
 # As long as the init function is called, the metrics are enabled
 def init(metrics_opts: tuple):
     global metrics_cfg
-    MetricsCfg()
+    metrics_cfg = MetricsCfg()
     for opt in metrics_opts:
         opt.fill(metrics_cfg)
 
@@ -145,7 +145,7 @@ def _flushStore():
                 metrics_request.timestamp = int(time.time())
                 metrics_requests.append(metrics_request)
     if len(metrics_requests) > 0:
-        url = OTHER_URL_FORMAT.replace("{}", metrics_cfg.domain)
+        url = OTHER_URL_FORMAT.format(metrics_cfg.http_schema, metrics_cfg.domain)
         _send_metrics(metrics_requests, url)
 
 
@@ -173,7 +173,7 @@ def _flushCounter():
                     metric.flushed_value = 0.0
 
     if len(metrics_requests) > 0:
-        url = COUNTER_URL_FORMAT.replace("{}", metrics_cfg.domain)
+        url = COUNTER_URL_FORMAT.format(metrics_cfg.http_schema, metrics_cfg.domain)
         _send_metrics(metrics_requests, url)
 
 
@@ -191,7 +191,7 @@ def _flushTimer():
                 metrics_requests.extend(_build_stat_metrics(snapshot, name, tag_kvs))
 
     if len(metrics_requests) > 0:
-        url = OTHER_URL_FORMAT.replace("{}", metrics_cfg.domain)
+        url = OTHER_URL_FORMAT.format(metrics_cfg.http_schema, metrics_cfg.domain)
         _send_metrics(metrics_requests, url)
 
 
@@ -201,10 +201,12 @@ def _send_metrics(metrics_requests: list, url: str):
     try:
         _send(metric_message, url)
         if _enable_print_log():
-            log.debug("[BytePlusSDK][Metrics] send metrics success, url:{}, metrics_requests:{}".format(url, metrics_requests))
+            log.debug("[BytePlusSDK][Metrics] send metrics success, url:{}, metrics_requests:{}".format(url,
+                                                                                                        metrics_requests))
     except BaseException as e:
-            log.error("[BytePlusSDK][Metrics] send metrics exception, msg:{}, url:{}, metricsRequests:{}".format(str(e), url,
-                                                                                                  metrics_requests))
+        log.error(
+            "[BytePlusSDK][Metrics] send metrics exception, msg:{}, url:{}, metricsRequests:{}".format(str(e), url,
+                                                                                                       metrics_requests))
 
 
 def _build_stat_metrics(sample: SampleSnapshot, name: str, tag_kvs: map):

@@ -2,8 +2,9 @@ from enum import Enum, unique
 
 DEFAULT_METRICS_DOMAIN = "bot.snssdk.com"
 DEFAULT_METRICS_PREFIX = "byteplus.rec.sdk"
-COUNTER_URL_FORMAT = "https://{}/api/counter"
-OTHER_URL_FORMAT = "https://{}/api/put"
+DEFAULT_HTTP_SCHEMA = "https"
+COUNTER_URL_FORMAT = "{}://{}/api/counter"
+OTHER_URL_FORMAT = "{}://{}/api/put"
 DEFAULT_FLUSH_INTERVAL_MS: int = 15 * 1000
 DELIMITER = "+"
 RESERVOIR_SIZE: int = 65536
