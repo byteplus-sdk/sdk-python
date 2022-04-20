@@ -7,6 +7,7 @@ class MetricsCfg(object):
         self.enable_metrics: bool = True
         self.domain: str = DEFAULT_METRICS_DOMAIN
         self.prefix: str = DEFAULT_METRICS_PREFIX
+        self.http_schema: str = DEFAULT_HTTP_SCHEMA
         self.flush_interval_ms = DEFAULT_FLUSH_INTERVAL_MS
         self.print_log: bool = False
         self.http_timeout_ms = DEFAULT_HTTP_TIMEOUT_MS
@@ -32,6 +33,16 @@ class MetricsOption(object):
             def fill(self, cfg: MetricsCfg) -> None:
                 if prefix is not None and prefix != "":
                     cfg.prefix = prefix
+
+        return OptionImpl()
+
+    @staticmethod
+    def with_metrics_http_schema(schema: str):
+        class OptionImpl(MetricsOption):
+            def fill(self, cfg: MetricsCfg) -> None:
+                # only support "http" and "https"
+                if schema in ["http", "https"]:
+                    cfg.http_schema = schema
 
         return OptionImpl()
 
