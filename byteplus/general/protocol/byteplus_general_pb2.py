@@ -12,7 +12,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from byteplus.common.protocol import byteplus_common_pb2 as byteplus__common__pb2
+import byteplus_common_pb2 as byteplus__common__pb2
 from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
 
 
@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\035byteplus.sdk.general.protocolZ/github.com/byteplus-sdk/sdk-go/general/protocol',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x16\x62yteplus_general.proto\x12\x1a\x62ytedance.byteplus.general\x1a\x15\x62yteplus_common.proto\x1a\x19google/protobuf/any.proto\"*\n\tDataError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\t\"y\n\rWriteResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x35\n\x06\x65rrors\x18\x02 \x03(\x0b\x32%.bytedance.byteplus.general.DataError\"\x81\x01\n\x0eImportResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12<\n\rerror_samples\x18\x02 \x03(\x0b\x32%.bytedance.byteplus.general.DataError\"\xd9\x03\n\x0ePredictRequest\x12\x35\n\x04user\x18\x01 \x01(\x0b\x32\'.bytedance.byteplus.general.PredictUser\x12;\n\x07\x63ontext\x18\x02 \x01(\x0b\x32*.bytedance.byteplus.general.PredictContext\x12\x0c\n\x04size\x18\x03 \x01(\x05\x12H\n\x0e\x63\x61ndidateItems\x18\x04 \x03(\x0b\x32\x30.bytedance.byteplus.general.PredictCandidateItem\x12\x37\n\x05\x65xtra\x18\x05 \x01(\x0b\x32(.bytedance.byteplus.general.PredictExtra\x12\x43\n\x0brelatedItem\x18\x06 \x01(\x0b\x32..bytedance.byteplus.general.PredictRelatedItem\x12:\n\nsearchInfo\x18\x07 \x01(\x0b\x32&.bytedance.byteplus.general.SearchInfo\x12\x41\n\nparentItem\x18\x08 \x01(\x0b\x32-.bytedance.byteplus.general.PredictParentItem\"\xcc\x02\n\x0bPredictUser\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12\x39\n\x06\x64\x65vice\x18\x02 \x01(\x0b\x32).bytedance.byteplus.general.PredictDevice\x12\x0b\n\x03\x61ge\x18\x03 \x01(\t\x12\x0e\n\x06gender\x18\x04 \x01(\t\x12\x10\n\x08province\x18\x05 \x01(\t\x12\x0c\n\x04\x63ity\x18\x06 \x01(\t\x12\x10\n\x08\x64istrict\x18\x07 \x01(\t\x12\x11\n\tappMarket\x18\x08 \x01(\t\x12\x11\n\tloginMode\x18\t \x01(\t\x12\x0f\n\x07\x63ountry\x18\n \x01(\t\x12\x41\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x32.bytedance.byteplus.general.PredictUser.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc8\x01\n\rPredictDevice\x12\x10\n\x08\x64\x65viceId\x18\x01 \x01(\t\x12\x10\n\x08platform\x18\x02 \x01(\t\x12\x14\n\x0c\x64\x65viceVendor\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65viceModel\x18\x04 \x01(\t\x12\x18\n\x10\x64\x65viceResolution\x18\x05 \x01(\t\x12\x15\n\rclientVersion\x18\x06 \x01(\t\x12\x11\n\tosVersion\x18\x07 \x01(\t\x12\x13\n\x0bnetworkType\x18\x08 \x01(\t\x12\x0f\n\x07\x63\x61rrier\x18\t \x01(\t\"\xb5\x01\n\x0ePredictContext\x12\x0b\n\x03spm\x18\x01 \x01(\t\x12\"\n\x1a\x63losePersonalizedRecommend\x18\x02 \x01(\x08\x12\x44\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x35.bytedance.byteplus.general.PredictContext.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xce\x01\n\x14PredictCandidateItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x01\x12\r\n\x05price\x18\x03 \x01(\x01\x12\x12\n\nboost_coef\x18\x04 \x01(\x01\x12J\n\x05\x65xtra\x18\x64 \x03(\x0b\x32;.bytedance.byteplus.general.PredictCandidateItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x93\x01\n\x0cPredictExtra\x12\x11\n\tinnerTest\x18\x01 \x01(\x08\x12\x42\n\x05\x65xtra\x18\x65 \x03(\x0b\x32\x33.bytedance.byteplus.general.PredictExtra.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x98\x01\n\x12PredictRelatedItem\x12\n\n\x02id\x18\x01 \x01(\t\x12H\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x39.bytedance.byteplus.general.PredictRelatedItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xf3\x03\n\nSearchInfo\x12\r\n\x05start\x18\x01 \x01(\x05\x12\x12\n\nsearchType\x18\x02 \x01(\x05\x12\x10\n\x08sortMode\x18\x03 \x01(\x05\x12\x10\n\x08sortType\x18\x04 \x01(\x05\x12\x0f\n\x07\x63ontent\x18\x05 \x01(\t\x12\r\n\x05query\x18\x06 \x01(\t\x12\x44\n\x07\x66ilters\x18\x07 \x03(\x0b\x32\x33.bytedance.byteplus.general.SearchInfo.FiltersEntry\x12H\n\tfilterOut\x18\x08 \x03(\x0b\x32\x35.bytedance.byteplus.general.SearchInfo.FilterOutEntry\x12:\n\tgoodsList\x18\t \x03(\x0b\x32\'.bytedance.byteplus.general.SearchGoods\x1aW\n\x0c\x46iltersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.general.StringArray:\x02\x38\x01\x1aY\n\x0e\x46ilterOutEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.general.StringArray:\x02\x38\x01\"\x1d\n\x0bStringArray\x12\x0e\n\x06values\x18\x01 \x03(\t\"X\n\x0bSearchGoods\x12\x13\n\x07goodsId\x18\x01 \x01(\x03\x42\x02\x18\x01\x12\x12\n\ngoodsIdStr\x18\x02 \x01(\t\x12\r\n\x05price\x18\x03 \x01(\x02\x12\x11\n\tboostCeof\x18\x04 \x01(\x02\"\x96\x01\n\x11PredictParentItem\x12\n\n\x02id\x18\x01 \x01(\t\x12G\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x38.bytedance.byteplus.general.PredictParentItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x0fPredictResponse\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x38\n\x05value\x18\x03 \x01(\x0b\x32).bytedance.byteplus.general.PredictResult\x12\x12\n\nrequest_id\x18\x04 \x01(\t\"\xce\x01\n\rPredictResult\x12\x36\n\x05items\x18\x01 \x03(\x0b\x32\'.bytedance.byteplus.general.PredictItem\x12\x43\n\x05\x65xtra\x18\x02 \x03(\x0b\x32\x34.bytedance.byteplus.general.PredictResult.ExtraEntry\x12\x12\n\ntotalCount\x18\x03 \x01(\x05\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xab\x01\n\x0bPredictItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04rank\x18\x03 \x01(\x05\x12\x11\n\ttransData\x18\x04 \x01(\t\x12\x41\n\x05\x65xtra\x18\x05 \x03(\x0b\x32\x32.bytedance.byteplus.general.PredictItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb5\x02\n\x0f\x43\x61llbackRequest\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12\r\n\x05scene\x18\x02 \x01(\t\x12\x37\n\x05items\x18\x03 \x03(\x0b\x32(.bytedance.byteplus.general.CallbackItem\x12\x1a\n\x12predict_request_id\x18\x04 \x01(\t\x12<\n\x07\x63ontext\x18\x05 \x01(\x0b\x32+.bytedance.byteplus.general.CallbackContext\x12\x45\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x36.bytedance.byteplus.general.CallbackRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n\x0c\x43\x61llbackItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03pos\x18\x02 \x01(\t\x12\r\n\x05\x65xtra\x18\x03 \x01(\t\"\xd2\x01\n\x0f\x43\x61llbackContext\x12\x0b\n\x03spm\x18\x01 \x01(\t\x12=\n\x08req_type\x18\x02 \x01(\x0e\x32+.bytedance.byteplus.general.CallbackReqType\x12\x45\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x36.bytedance.byteplus.general.CallbackContext.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x10\x43\x61llbackResponse\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t*C\n\x0f\x43\x61llbackReqType\x12\x0e\n\nbyte_scene\x10\x00\x12\x12\n\x0enot_byte_scene\x10\x01\x12\x0c\n\x08\x62\x65havior\x10\x02\x32\xca\x03\n\x16\x42yteplusGeneralService\x12L\n\tWriteData\x12\x14.google.protobuf.Any\x1a).bytedance.byteplus.general.WriteResponse\x12P\n\nImportData\x12\x14.google.protobuf.Any\x1a,.bytedance.byteplus.common.OperationResponse\x12\x45\n\x04\x44one\x12\x14.google.protobuf.Any\x1a\'.bytedance.byteplus.common.DoneResponse\x12\x62\n\x07Predict\x12*.bytedance.byteplus.general.PredictRequest\x1a+.bytedance.byteplus.general.PredictResponse\x12\x65\n\x08\x43\x61llback\x12+.bytedance.byteplus.general.CallbackRequest\x1a,.bytedance.byteplus.general.CallbackResponseBP\n\x1d\x62yteplus.sdk.general.protocolZ/github.com/byteplus-sdk/sdk-go/general/protocolb\x06proto3'
+  serialized_pb=b'\n\x16\x62yteplus_general.proto\x12\x1a\x62ytedance.byteplus.general\x1a\x15\x62yteplus_common.proto\x1a\x19google/protobuf/any.proto\"*\n\tDataError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\t\"y\n\rWriteResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x35\n\x06\x65rrors\x18\x02 \x03(\x0b\x32%.bytedance.byteplus.general.DataError\"\x81\x01\n\x0eImportResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12<\n\rerror_samples\x18\x02 \x03(\x0b\x32%.bytedance.byteplus.general.DataError\"\x9d\x04\n\x0ePredictRequest\x12\x35\n\x04user\x18\x01 \x01(\x0b\x32\'.bytedance.byteplus.general.PredictUser\x12;\n\x07\x63ontext\x18\x02 \x01(\x0b\x32*.bytedance.byteplus.general.PredictContext\x12\x0c\n\x04size\x18\x03 \x01(\x05\x12H\n\x0e\x63\x61ndidateItems\x18\x04 \x03(\x0b\x32\x30.bytedance.byteplus.general.PredictCandidateItem\x12\x37\n\x05\x65xtra\x18\x05 \x01(\x0b\x32(.bytedance.byteplus.general.PredictExtra\x12\x43\n\x0brelatedItem\x18\x06 \x01(\x0b\x32..bytedance.byteplus.general.PredictRelatedItem\x12:\n\nsearchInfo\x18\x07 \x01(\x0b\x32&.bytedance.byteplus.general.SearchInfo\x12\x41\n\nparentItem\x18\x08 \x01(\x0b\x32-.bytedance.byteplus.general.PredictParentItem\x12\x42\n\x0b\x66ilterItems\x18\t \x03(\x0b\x32-.bytedance.byteplus.general.PredictFilterItem\"\xcc\x02\n\x0bPredictUser\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12\x39\n\x06\x64\x65vice\x18\x02 \x01(\x0b\x32).bytedance.byteplus.general.PredictDevice\x12\x0b\n\x03\x61ge\x18\x03 \x01(\t\x12\x0e\n\x06gender\x18\x04 \x01(\t\x12\x10\n\x08province\x18\x05 \x01(\t\x12\x0c\n\x04\x63ity\x18\x06 \x01(\t\x12\x10\n\x08\x64istrict\x18\x07 \x01(\t\x12\x11\n\tappMarket\x18\x08 \x01(\t\x12\x11\n\tloginMode\x18\t \x01(\t\x12\x0f\n\x07\x63ountry\x18\n \x01(\t\x12\x41\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x32.bytedance.byteplus.general.PredictUser.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc8\x01\n\rPredictDevice\x12\x10\n\x08\x64\x65viceId\x18\x01 \x01(\t\x12\x10\n\x08platform\x18\x02 \x01(\t\x12\x14\n\x0c\x64\x65viceVendor\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65viceModel\x18\x04 \x01(\t\x12\x18\n\x10\x64\x65viceResolution\x18\x05 \x01(\t\x12\x15\n\rclientVersion\x18\x06 \x01(\t\x12\x11\n\tosVersion\x18\x07 \x01(\t\x12\x13\n\x0bnetworkType\x18\x08 \x01(\t\x12\x0f\n\x07\x63\x61rrier\x18\t \x01(\t\"\xad\x02\n\x0ePredictContext\x12\x0b\n\x03spm\x18\x01 \x01(\t\x12\"\n\x1a\x63losePersonalizedRecommend\x18\x02 \x01(\x08\x12;\n\x07\x66\x65\x61ture\x18\x03 \x01(\x0b\x32*.bytedance.byteplus.general.PredictFeature\x12\x39\n\x06\x66ilter\x18\x04 \x01(\x0b\x32).bytedance.byteplus.general.PredictFilter\x12\x44\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x35.bytedance.byteplus.general.PredictContext.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb4\n\n\x0ePredictFeature\x12T\n\rstringFeature\x18\x01 \x03(\x0b\x32=.bytedance.byteplus.general.PredictFeature.StringFeatureEntry\x12N\n\nintFeature\x18\x02 \x03(\x0b\x32:.bytedance.byteplus.general.PredictFeature.IntFeatureEntry\x12R\n\x0c\x66loatFeature\x18\x03 \x03(\x0b\x32<.bytedance.byteplus.general.PredictFeature.FloatFeatureEntry\x12T\n\rdoubleFeature\x18\x04 \x03(\x0b\x32=.bytedance.byteplus.general.PredictFeature.DoubleFeatureEntry\x12^\n\x12stringArrayFeature\x18\x05 \x03(\x0b\x32\x42.bytedance.byteplus.general.PredictFeature.StringArrayFeatureEntry\x12X\n\x0fintArrayFeature\x18\x06 \x03(\x0b\x32?.bytedance.byteplus.general.PredictFeature.IntArrayFeatureEntry\x12\\\n\x11\x66loatArrayFeature\x18\x07 \x03(\x0b\x32\x41.bytedance.byteplus.general.PredictFeature.FloatArrayFeatureEntry\x12^\n\x12\x64oubleArrayFeature\x18\x08 \x03(\x0b\x32\x42.bytedance.byteplus.general.PredictFeature.DoubleArrayFeatureEntry\x1a\x34\n\x12StringFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x31\n\x0fIntFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x03:\x02\x38\x01\x1a\x33\n\x11\x46loatFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\x1a\x34\n\x12\x44oubleFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x01:\x02\x38\x01\x1a\x62\n\x17StringArrayFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.general.StringArray:\x02\x38\x01\x1a\\\n\x14IntArrayFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x33\n\x05value\x18\x02 \x01(\x0b\x32$.bytedance.byteplus.general.IntArray:\x02\x38\x01\x1a`\n\x16\x46loatArrayFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x35\n\x05value\x18\x02 \x01(\x0b\x32&.bytedance.byteplus.general.FloatArray:\x02\x38\x01\x1a\x62\n\x17\x44oubleArrayFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.general.DoubleArray:\x02\x38\x01\"\x93\n\n\rPredictFilter\x12Q\n\x0cstringFilter\x18\x01 \x03(\x0b\x32;.bytedance.byteplus.general.PredictFilter.StringFilterEntry\x12K\n\tintFilter\x18\x02 \x03(\x0b\x32\x38.bytedance.byteplus.general.PredictFilter.IntFilterEntry\x12O\n\x0b\x66loatFilter\x18\x03 \x03(\x0b\x32:.bytedance.byteplus.general.PredictFilter.FloatFilterEntry\x12Q\n\x0c\x64oubleFilter\x18\x04 \x03(\x0b\x32;.bytedance.byteplus.general.PredictFilter.DoubleFilterEntry\x12[\n\x11stringArrayFilter\x18\x05 \x03(\x0b\x32@.bytedance.byteplus.general.PredictFilter.StringArrayFilterEntry\x12U\n\x0eintArrayFilter\x18\x06 \x03(\x0b\x32=.bytedance.byteplus.general.PredictFilter.IntArrayFilterEntry\x12Y\n\x10\x66loatArrayFilter\x18\x07 \x03(\x0b\x32?.bytedance.byteplus.general.PredictFilter.FloatArrayFilterEntry\x12[\n\x11\x64oubleArrayFilter\x18\x08 \x03(\x0b\x32@.bytedance.byteplus.general.PredictFilter.DoubleArrayFilterEntry\x1a\x33\n\x11StringFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x30\n\x0eIntFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x03:\x02\x38\x01\x1a\x32\n\x10\x46loatFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\x1a\x33\n\x11\x44oubleFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x01:\x02\x38\x01\x1a\x61\n\x16StringArrayFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.general.StringArray:\x02\x38\x01\x1a[\n\x13IntArrayFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x33\n\x05value\x18\x02 \x01(\x0b\x32$.bytedance.byteplus.general.IntArray:\x02\x38\x01\x1a_\n\x15\x46loatArrayFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x35\n\x05value\x18\x02 \x01(\x0b\x32&.bytedance.byteplus.general.FloatArray:\x02\x38\x01\x1a\x61\n\x16\x44oubleArrayFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.general.DoubleArray:\x02\x38\x01\"\xce\x01\n\x14PredictCandidateItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x01\x12\r\n\x05price\x18\x03 \x01(\x01\x12\x12\n\nboost_coef\x18\x04 \x01(\x01\x12J\n\x05\x65xtra\x18\x64 \x03(\x0b\x32;.bytedance.byteplus.general.PredictCandidateItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x93\x01\n\x0cPredictExtra\x12\x11\n\tinnerTest\x18\x01 \x01(\x08\x12\x42\n\x05\x65xtra\x18\x65 \x03(\x0b\x32\x33.bytedance.byteplus.general.PredictExtra.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x98\x01\n\x12PredictRelatedItem\x12\n\n\x02id\x18\x01 \x01(\t\x12H\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x39.bytedance.byteplus.general.PredictRelatedItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xf3\x03\n\nSearchInfo\x12\r\n\x05start\x18\x01 \x01(\x05\x12\x12\n\nsearchType\x18\x02 \x01(\x05\x12\x10\n\x08sortMode\x18\x03 \x01(\x05\x12\x10\n\x08sortType\x18\x04 \x01(\x05\x12\x0f\n\x07\x63ontent\x18\x05 \x01(\t\x12\r\n\x05query\x18\x06 \x01(\t\x12\x44\n\x07\x66ilters\x18\x07 \x03(\x0b\x32\x33.bytedance.byteplus.general.SearchInfo.FiltersEntry\x12H\n\tfilterOut\x18\x08 \x03(\x0b\x32\x35.bytedance.byteplus.general.SearchInfo.FilterOutEntry\x12:\n\tgoodsList\x18\t \x03(\x0b\x32\'.bytedance.byteplus.general.SearchGoods\x1aW\n\x0c\x46iltersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.general.StringArray:\x02\x38\x01\x1aY\n\x0e\x46ilterOutEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.general.StringArray:\x02\x38\x01\"X\n\x0bSearchGoods\x12\x13\n\x07goodsId\x18\x01 \x01(\x03\x42\x02\x18\x01\x12\x12\n\ngoodsIdStr\x18\x02 \x01(\t\x12\r\n\x05price\x18\x03 \x01(\x02\x12\x11\n\tboostCeof\x18\x04 \x01(\x02\"\x96\x01\n\x11PredictParentItem\x12\n\n\x02id\x18\x01 \x01(\t\x12G\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x38.bytedance.byteplus.general.PredictParentItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x96\x01\n\x11PredictFilterItem\x12\n\n\x02id\x18\x01 \x01(\t\x12G\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x38.bytedance.byteplus.general.PredictFilterItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x0fPredictResponse\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x38\n\x05value\x18\x03 \x01(\x0b\x32).bytedance.byteplus.general.PredictResult\x12\x12\n\nrequest_id\x18\x04 \x01(\t\"\xce\x01\n\rPredictResult\x12\x36\n\x05items\x18\x01 \x03(\x0b\x32\'.bytedance.byteplus.general.PredictItem\x12\x43\n\x05\x65xtra\x18\x02 \x03(\x0b\x32\x34.bytedance.byteplus.general.PredictResult.ExtraEntry\x12\x12\n\ntotalCount\x18\x03 \x01(\x05\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xab\x01\n\x0bPredictItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04rank\x18\x03 \x01(\x05\x12\x11\n\ttransData\x18\x04 \x01(\t\x12\x41\n\x05\x65xtra\x18\x05 \x03(\x0b\x32\x32.bytedance.byteplus.general.PredictItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb5\x02\n\x0f\x43\x61llbackRequest\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12\r\n\x05scene\x18\x02 \x01(\t\x12\x37\n\x05items\x18\x03 \x03(\x0b\x32(.bytedance.byteplus.general.CallbackItem\x12\x1a\n\x12predict_request_id\x18\x04 \x01(\t\x12<\n\x07\x63ontext\x18\x05 \x01(\x0b\x32+.bytedance.byteplus.general.CallbackContext\x12\x45\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x36.bytedance.byteplus.general.CallbackRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n\x0c\x43\x61llbackItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03pos\x18\x02 \x01(\t\x12\r\n\x05\x65xtra\x18\x03 \x01(\t\"\xd2\x01\n\x0f\x43\x61llbackContext\x12\x0b\n\x03spm\x18\x01 \x01(\t\x12=\n\x08req_type\x18\x02 \x01(\x0e\x32+.bytedance.byteplus.general.CallbackReqType\x12\x45\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x36.bytedance.byteplus.general.CallbackContext.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x10\x43\x61llbackResponse\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x1d\n\x0bStringArray\x12\x0e\n\x06values\x18\x01 \x03(\t\"\x1a\n\x08IntArray\x12\x0e\n\x06values\x18\x01 \x03(\x03\"\x1c\n\nFloatArray\x12\x0e\n\x06values\x18\x01 \x03(\x02\"\x1d\n\x0b\x44oubleArray\x12\x0e\n\x06values\x18\x01 \x03(\x01*C\n\x0f\x43\x61llbackReqType\x12\x0e\n\nbyte_scene\x10\x00\x12\x12\n\x0enot_byte_scene\x10\x01\x12\x0c\n\x08\x62\x65havior\x10\x02\x32\xca\x03\n\x16\x42yteplusGeneralService\x12L\n\tWriteData\x12\x14.google.protobuf.Any\x1a).bytedance.byteplus.general.WriteResponse\x12P\n\nImportData\x12\x14.google.protobuf.Any\x1a,.bytedance.byteplus.common.OperationResponse\x12\x45\n\x04\x44one\x12\x14.google.protobuf.Any\x1a\'.bytedance.byteplus.common.DoneResponse\x12\x62\n\x07Predict\x12*.bytedance.byteplus.general.PredictRequest\x1a+.bytedance.byteplus.general.PredictResponse\x12\x65\n\x08\x43\x61llback\x12+.bytedance.byteplus.general.CallbackRequest\x1a,.bytedance.byteplus.general.CallbackResponseBP\n\x1d\x62yteplus.sdk.general.protocolZ/github.com/byteplus-sdk/sdk-go/general/protocolb\x06proto3'
   ,
   dependencies=[byteplus__common__pb2.DESCRIPTOR,google_dot_protobuf_dot_any__pb2.DESCRIPTOR,])
 
@@ -51,8 +51,8 @@ _CALLBACKREQTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4034,
-  serialized_end=4101,
+  serialized_start=7101,
+  serialized_end=7168,
 )
 _sym_db.RegisterEnumDescriptor(_CALLBACKREQTYPE)
 
@@ -244,6 +244,13 @@ _PREDICTREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='filterItems', full_name='bytedance.byteplus.general.PredictRequest.filterItems', index=8,
+      number=9, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -257,7 +264,7 @@ _PREDICTREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=404,
-  serialized_end=877,
+  serialized_end=945,
 )
 
 
@@ -295,8 +302,8 @@ _PREDICTUSER_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1168,
-  serialized_end=1212,
+  serialized_start=1236,
+  serialized_end=1280,
 )
 
 _PREDICTUSER = _descriptor.Descriptor(
@@ -396,8 +403,8 @@ _PREDICTUSER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=880,
-  serialized_end=1212,
+  serialized_start=948,
+  serialized_end=1280,
 )
 
 
@@ -484,8 +491,8 @@ _PREDICTDEVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1215,
-  serialized_end=1415,
+  serialized_start=1283,
+  serialized_end=1483,
 )
 
 
@@ -523,8 +530,8 @@ _PREDICTCONTEXT_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1168,
-  serialized_end=1212,
+  serialized_start=1236,
+  serialized_end=1280,
 )
 
 _PREDICTCONTEXT = _descriptor.Descriptor(
@@ -550,7 +557,21 @@ _PREDICTCONTEXT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='extra', full_name='bytedance.byteplus.general.PredictContext.extra', index=2,
+      name='feature', full_name='bytedance.byteplus.general.PredictContext.feature', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='filter', full_name='bytedance.byteplus.general.PredictContext.filter', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='extra', full_name='bytedance.byteplus.general.PredictContext.extra', index=4,
       number=100, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -568,8 +589,778 @@ _PREDICTCONTEXT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1418,
-  serialized_end=1599,
+  serialized_start=1486,
+  serialized_end=1787,
+)
+
+
+_PREDICTFEATURE_STRINGFEATUREENTRY = _descriptor.Descriptor(
+  name='StringFeatureEntry',
+  full_name='bytedance.byteplus.general.PredictFeature.StringFeatureEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.general.PredictFeature.StringFeatureEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.general.PredictFeature.StringFeatureEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2520,
+  serialized_end=2572,
+)
+
+_PREDICTFEATURE_INTFEATUREENTRY = _descriptor.Descriptor(
+  name='IntFeatureEntry',
+  full_name='bytedance.byteplus.general.PredictFeature.IntFeatureEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.general.PredictFeature.IntFeatureEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.general.PredictFeature.IntFeatureEntry.value', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2574,
+  serialized_end=2623,
+)
+
+_PREDICTFEATURE_FLOATFEATUREENTRY = _descriptor.Descriptor(
+  name='FloatFeatureEntry',
+  full_name='bytedance.byteplus.general.PredictFeature.FloatFeatureEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.general.PredictFeature.FloatFeatureEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.general.PredictFeature.FloatFeatureEntry.value', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2625,
+  serialized_end=2676,
+)
+
+_PREDICTFEATURE_DOUBLEFEATUREENTRY = _descriptor.Descriptor(
+  name='DoubleFeatureEntry',
+  full_name='bytedance.byteplus.general.PredictFeature.DoubleFeatureEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.general.PredictFeature.DoubleFeatureEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.general.PredictFeature.DoubleFeatureEntry.value', index=1,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2678,
+  serialized_end=2730,
+)
+
+_PREDICTFEATURE_STRINGARRAYFEATUREENTRY = _descriptor.Descriptor(
+  name='StringArrayFeatureEntry',
+  full_name='bytedance.byteplus.general.PredictFeature.StringArrayFeatureEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.general.PredictFeature.StringArrayFeatureEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.general.PredictFeature.StringArrayFeatureEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2732,
+  serialized_end=2830,
+)
+
+_PREDICTFEATURE_INTARRAYFEATUREENTRY = _descriptor.Descriptor(
+  name='IntArrayFeatureEntry',
+  full_name='bytedance.byteplus.general.PredictFeature.IntArrayFeatureEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.general.PredictFeature.IntArrayFeatureEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.general.PredictFeature.IntArrayFeatureEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2832,
+  serialized_end=2924,
+)
+
+_PREDICTFEATURE_FLOATARRAYFEATUREENTRY = _descriptor.Descriptor(
+  name='FloatArrayFeatureEntry',
+  full_name='bytedance.byteplus.general.PredictFeature.FloatArrayFeatureEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.general.PredictFeature.FloatArrayFeatureEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.general.PredictFeature.FloatArrayFeatureEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2926,
+  serialized_end=3022,
+)
+
+_PREDICTFEATURE_DOUBLEARRAYFEATUREENTRY = _descriptor.Descriptor(
+  name='DoubleArrayFeatureEntry',
+  full_name='bytedance.byteplus.general.PredictFeature.DoubleArrayFeatureEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.general.PredictFeature.DoubleArrayFeatureEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.general.PredictFeature.DoubleArrayFeatureEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3024,
+  serialized_end=3122,
+)
+
+_PREDICTFEATURE = _descriptor.Descriptor(
+  name='PredictFeature',
+  full_name='bytedance.byteplus.general.PredictFeature',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='stringFeature', full_name='bytedance.byteplus.general.PredictFeature.stringFeature', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='intFeature', full_name='bytedance.byteplus.general.PredictFeature.intFeature', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='floatFeature', full_name='bytedance.byteplus.general.PredictFeature.floatFeature', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='doubleFeature', full_name='bytedance.byteplus.general.PredictFeature.doubleFeature', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stringArrayFeature', full_name='bytedance.byteplus.general.PredictFeature.stringArrayFeature', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='intArrayFeature', full_name='bytedance.byteplus.general.PredictFeature.intArrayFeature', index=5,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='floatArrayFeature', full_name='bytedance.byteplus.general.PredictFeature.floatArrayFeature', index=6,
+      number=7, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='doubleArrayFeature', full_name='bytedance.byteplus.general.PredictFeature.doubleArrayFeature', index=7,
+      number=8, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_PREDICTFEATURE_STRINGFEATUREENTRY, _PREDICTFEATURE_INTFEATUREENTRY, _PREDICTFEATURE_FLOATFEATUREENTRY, _PREDICTFEATURE_DOUBLEFEATUREENTRY, _PREDICTFEATURE_STRINGARRAYFEATUREENTRY, _PREDICTFEATURE_INTARRAYFEATUREENTRY, _PREDICTFEATURE_FLOATARRAYFEATUREENTRY, _PREDICTFEATURE_DOUBLEARRAYFEATUREENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1790,
+  serialized_end=3122,
+)
+
+
+_PREDICTFILTER_STRINGFILTERENTRY = _descriptor.Descriptor(
+  name='StringFilterEntry',
+  full_name='bytedance.byteplus.general.PredictFilter.StringFilterEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.general.PredictFilter.StringFilterEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.general.PredictFilter.StringFilterEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3830,
+  serialized_end=3881,
+)
+
+_PREDICTFILTER_INTFILTERENTRY = _descriptor.Descriptor(
+  name='IntFilterEntry',
+  full_name='bytedance.byteplus.general.PredictFilter.IntFilterEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.general.PredictFilter.IntFilterEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.general.PredictFilter.IntFilterEntry.value', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3883,
+  serialized_end=3931,
+)
+
+_PREDICTFILTER_FLOATFILTERENTRY = _descriptor.Descriptor(
+  name='FloatFilterEntry',
+  full_name='bytedance.byteplus.general.PredictFilter.FloatFilterEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.general.PredictFilter.FloatFilterEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.general.PredictFilter.FloatFilterEntry.value', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3933,
+  serialized_end=3983,
+)
+
+_PREDICTFILTER_DOUBLEFILTERENTRY = _descriptor.Descriptor(
+  name='DoubleFilterEntry',
+  full_name='bytedance.byteplus.general.PredictFilter.DoubleFilterEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.general.PredictFilter.DoubleFilterEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.general.PredictFilter.DoubleFilterEntry.value', index=1,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3985,
+  serialized_end=4036,
+)
+
+_PREDICTFILTER_STRINGARRAYFILTERENTRY = _descriptor.Descriptor(
+  name='StringArrayFilterEntry',
+  full_name='bytedance.byteplus.general.PredictFilter.StringArrayFilterEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.general.PredictFilter.StringArrayFilterEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.general.PredictFilter.StringArrayFilterEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4038,
+  serialized_end=4135,
+)
+
+_PREDICTFILTER_INTARRAYFILTERENTRY = _descriptor.Descriptor(
+  name='IntArrayFilterEntry',
+  full_name='bytedance.byteplus.general.PredictFilter.IntArrayFilterEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.general.PredictFilter.IntArrayFilterEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.general.PredictFilter.IntArrayFilterEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4137,
+  serialized_end=4228,
+)
+
+_PREDICTFILTER_FLOATARRAYFILTERENTRY = _descriptor.Descriptor(
+  name='FloatArrayFilterEntry',
+  full_name='bytedance.byteplus.general.PredictFilter.FloatArrayFilterEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.general.PredictFilter.FloatArrayFilterEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.general.PredictFilter.FloatArrayFilterEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4230,
+  serialized_end=4325,
+)
+
+_PREDICTFILTER_DOUBLEARRAYFILTERENTRY = _descriptor.Descriptor(
+  name='DoubleArrayFilterEntry',
+  full_name='bytedance.byteplus.general.PredictFilter.DoubleArrayFilterEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.general.PredictFilter.DoubleArrayFilterEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.general.PredictFilter.DoubleArrayFilterEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4327,
+  serialized_end=4424,
+)
+
+_PREDICTFILTER = _descriptor.Descriptor(
+  name='PredictFilter',
+  full_name='bytedance.byteplus.general.PredictFilter',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='stringFilter', full_name='bytedance.byteplus.general.PredictFilter.stringFilter', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='intFilter', full_name='bytedance.byteplus.general.PredictFilter.intFilter', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='floatFilter', full_name='bytedance.byteplus.general.PredictFilter.floatFilter', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='doubleFilter', full_name='bytedance.byteplus.general.PredictFilter.doubleFilter', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stringArrayFilter', full_name='bytedance.byteplus.general.PredictFilter.stringArrayFilter', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='intArrayFilter', full_name='bytedance.byteplus.general.PredictFilter.intArrayFilter', index=5,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='floatArrayFilter', full_name='bytedance.byteplus.general.PredictFilter.floatArrayFilter', index=6,
+      number=7, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='doubleArrayFilter', full_name='bytedance.byteplus.general.PredictFilter.doubleArrayFilter', index=7,
+      number=8, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_PREDICTFILTER_STRINGFILTERENTRY, _PREDICTFILTER_INTFILTERENTRY, _PREDICTFILTER_FLOATFILTERENTRY, _PREDICTFILTER_DOUBLEFILTERENTRY, _PREDICTFILTER_STRINGARRAYFILTERENTRY, _PREDICTFILTER_INTARRAYFILTERENTRY, _PREDICTFILTER_FLOATARRAYFILTERENTRY, _PREDICTFILTER_DOUBLEARRAYFILTERENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3125,
+  serialized_end=4424,
 )
 
 
@@ -607,8 +1398,8 @@ _PREDICTCANDIDATEITEM_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1168,
-  serialized_end=1212,
+  serialized_start=1236,
+  serialized_end=1280,
 )
 
 _PREDICTCANDIDATEITEM = _descriptor.Descriptor(
@@ -666,8 +1457,8 @@ _PREDICTCANDIDATEITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1602,
-  serialized_end=1808,
+  serialized_start=4427,
+  serialized_end=4633,
 )
 
 
@@ -705,8 +1496,8 @@ _PREDICTEXTRA_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1168,
-  serialized_end=1212,
+  serialized_start=1236,
+  serialized_end=1280,
 )
 
 _PREDICTEXTRA = _descriptor.Descriptor(
@@ -743,8 +1534,8 @@ _PREDICTEXTRA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1811,
-  serialized_end=1958,
+  serialized_start=4636,
+  serialized_end=4783,
 )
 
 
@@ -782,8 +1573,8 @@ _PREDICTRELATEDITEM_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1168,
-  serialized_end=1212,
+  serialized_start=1236,
+  serialized_end=1280,
 )
 
 _PREDICTRELATEDITEM = _descriptor.Descriptor(
@@ -820,8 +1611,8 @@ _PREDICTRELATEDITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1961,
-  serialized_end=2113,
+  serialized_start=4786,
+  serialized_end=4938,
 )
 
 
@@ -859,8 +1650,8 @@ _SEARCHINFO_FILTERSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2437,
-  serialized_end=2524,
+  serialized_start=5262,
+  serialized_end=5349,
 )
 
 _SEARCHINFO_FILTEROUTENTRY = _descriptor.Descriptor(
@@ -897,8 +1688,8 @@ _SEARCHINFO_FILTEROUTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2526,
-  serialized_end=2615,
+  serialized_start=5351,
+  serialized_end=5440,
 )
 
 _SEARCHINFO = _descriptor.Descriptor(
@@ -984,40 +1775,8 @@ _SEARCHINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2116,
-  serialized_end=2615,
-)
-
-
-_STRINGARRAY = _descriptor.Descriptor(
-  name='StringArray',
-  full_name='bytedance.byteplus.general.StringArray',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='values', full_name='bytedance.byteplus.general.StringArray.values', index=0,
-      number=1, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2617,
-  serialized_end=2646,
+  serialized_start=4941,
+  serialized_end=5440,
 )
 
 
@@ -1069,8 +1828,8 @@ _SEARCHGOODS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2648,
-  serialized_end=2736,
+  serialized_start=5442,
+  serialized_end=5530,
 )
 
 
@@ -1108,8 +1867,8 @@ _PREDICTPARENTITEM_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1168,
-  serialized_end=1212,
+  serialized_start=1236,
+  serialized_end=1280,
 )
 
 _PREDICTPARENTITEM = _descriptor.Descriptor(
@@ -1146,8 +1905,85 @@ _PREDICTPARENTITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2739,
-  serialized_end=2889,
+  serialized_start=5533,
+  serialized_end=5683,
+)
+
+
+_PREDICTFILTERITEM_EXTRAENTRY = _descriptor.Descriptor(
+  name='ExtraEntry',
+  full_name='bytedance.byteplus.general.PredictFilterItem.ExtraEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='bytedance.byteplus.general.PredictFilterItem.ExtraEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='bytedance.byteplus.general.PredictFilterItem.ExtraEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1236,
+  serialized_end=1280,
+)
+
+_PREDICTFILTERITEM = _descriptor.Descriptor(
+  name='PredictFilterItem',
+  full_name='bytedance.byteplus.general.PredictFilterItem',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='bytedance.byteplus.general.PredictFilterItem.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='extra', full_name='bytedance.byteplus.general.PredictFilterItem.extra', index=1,
+      number=100, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_PREDICTFILTERITEM_EXTRAENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5686,
+  serialized_end=5836,
 )
 
 
@@ -1199,8 +2035,8 @@ _PREDICTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2891,
-  serialized_end=3017,
+  serialized_start=5838,
+  serialized_end=5964,
 )
 
 
@@ -1238,8 +2074,8 @@ _PREDICTRESULT_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1168,
-  serialized_end=1212,
+  serialized_start=1236,
+  serialized_end=1280,
 )
 
 _PREDICTRESULT = _descriptor.Descriptor(
@@ -1283,8 +2119,8 @@ _PREDICTRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3020,
-  serialized_end=3226,
+  serialized_start=5967,
+  serialized_end=6173,
 )
 
 
@@ -1322,8 +2158,8 @@ _PREDICTITEM_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1168,
-  serialized_end=1212,
+  serialized_start=1236,
+  serialized_end=1280,
 )
 
 _PREDICTITEM = _descriptor.Descriptor(
@@ -1374,8 +2210,8 @@ _PREDICTITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3229,
-  serialized_end=3400,
+  serialized_start=6176,
+  serialized_end=6347,
 )
 
 
@@ -1413,8 +2249,8 @@ _CALLBACKREQUEST_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1168,
-  serialized_end=1212,
+  serialized_start=1236,
+  serialized_end=1280,
 )
 
 _CALLBACKREQUEST = _descriptor.Descriptor(
@@ -1479,8 +2315,8 @@ _CALLBACKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3403,
-  serialized_end=3712,
+  serialized_start=6350,
+  serialized_end=6659,
 )
 
 
@@ -1525,8 +2361,8 @@ _CALLBACKITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3714,
-  serialized_end=3768,
+  serialized_start=6661,
+  serialized_end=6715,
 )
 
 
@@ -1564,8 +2400,8 @@ _CALLBACKCONTEXT_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1168,
-  serialized_end=1212,
+  serialized_start=1236,
+  serialized_end=1280,
 )
 
 _CALLBACKCONTEXT = _descriptor.Descriptor(
@@ -1609,8 +2445,8 @@ _CALLBACKCONTEXT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3771,
-  serialized_end=3981,
+  serialized_start=6718,
+  serialized_end=6928,
 )
 
 
@@ -1648,8 +2484,136 @@ _CALLBACKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3983,
-  serialized_end=4032,
+  serialized_start=6930,
+  serialized_end=6979,
+)
+
+
+_STRINGARRAY = _descriptor.Descriptor(
+  name='StringArray',
+  full_name='bytedance.byteplus.general.StringArray',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='values', full_name='bytedance.byteplus.general.StringArray.values', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6981,
+  serialized_end=7010,
+)
+
+
+_INTARRAY = _descriptor.Descriptor(
+  name='IntArray',
+  full_name='bytedance.byteplus.general.IntArray',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='values', full_name='bytedance.byteplus.general.IntArray.values', index=0,
+      number=1, type=3, cpp_type=2, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7012,
+  serialized_end=7038,
+)
+
+
+_FLOATARRAY = _descriptor.Descriptor(
+  name='FloatArray',
+  full_name='bytedance.byteplus.general.FloatArray',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='values', full_name='bytedance.byteplus.general.FloatArray.values', index=0,
+      number=1, type=2, cpp_type=6, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7040,
+  serialized_end=7068,
+)
+
+
+_DOUBLEARRAY = _descriptor.Descriptor(
+  name='DoubleArray',
+  full_name='bytedance.byteplus.general.DoubleArray',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='values', full_name='bytedance.byteplus.general.DoubleArray.values', index=0,
+      number=1, type=1, cpp_type=5, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7070,
+  serialized_end=7099,
 )
 
 _WRITERESPONSE.fields_by_name['status'].message_type = byteplus__common__pb2._STATUS
@@ -1663,11 +2627,54 @@ _PREDICTREQUEST.fields_by_name['extra'].message_type = _PREDICTEXTRA
 _PREDICTREQUEST.fields_by_name['relatedItem'].message_type = _PREDICTRELATEDITEM
 _PREDICTREQUEST.fields_by_name['searchInfo'].message_type = _SEARCHINFO
 _PREDICTREQUEST.fields_by_name['parentItem'].message_type = _PREDICTPARENTITEM
+_PREDICTREQUEST.fields_by_name['filterItems'].message_type = _PREDICTFILTERITEM
 _PREDICTUSER_EXTRAENTRY.containing_type = _PREDICTUSER
 _PREDICTUSER.fields_by_name['device'].message_type = _PREDICTDEVICE
 _PREDICTUSER.fields_by_name['extra'].message_type = _PREDICTUSER_EXTRAENTRY
 _PREDICTCONTEXT_EXTRAENTRY.containing_type = _PREDICTCONTEXT
+_PREDICTCONTEXT.fields_by_name['feature'].message_type = _PREDICTFEATURE
+_PREDICTCONTEXT.fields_by_name['filter'].message_type = _PREDICTFILTER
 _PREDICTCONTEXT.fields_by_name['extra'].message_type = _PREDICTCONTEXT_EXTRAENTRY
+_PREDICTFEATURE_STRINGFEATUREENTRY.containing_type = _PREDICTFEATURE
+_PREDICTFEATURE_INTFEATUREENTRY.containing_type = _PREDICTFEATURE
+_PREDICTFEATURE_FLOATFEATUREENTRY.containing_type = _PREDICTFEATURE
+_PREDICTFEATURE_DOUBLEFEATUREENTRY.containing_type = _PREDICTFEATURE
+_PREDICTFEATURE_STRINGARRAYFEATUREENTRY.fields_by_name['value'].message_type = _STRINGARRAY
+_PREDICTFEATURE_STRINGARRAYFEATUREENTRY.containing_type = _PREDICTFEATURE
+_PREDICTFEATURE_INTARRAYFEATUREENTRY.fields_by_name['value'].message_type = _INTARRAY
+_PREDICTFEATURE_INTARRAYFEATUREENTRY.containing_type = _PREDICTFEATURE
+_PREDICTFEATURE_FLOATARRAYFEATUREENTRY.fields_by_name['value'].message_type = _FLOATARRAY
+_PREDICTFEATURE_FLOATARRAYFEATUREENTRY.containing_type = _PREDICTFEATURE
+_PREDICTFEATURE_DOUBLEARRAYFEATUREENTRY.fields_by_name['value'].message_type = _DOUBLEARRAY
+_PREDICTFEATURE_DOUBLEARRAYFEATUREENTRY.containing_type = _PREDICTFEATURE
+_PREDICTFEATURE.fields_by_name['stringFeature'].message_type = _PREDICTFEATURE_STRINGFEATUREENTRY
+_PREDICTFEATURE.fields_by_name['intFeature'].message_type = _PREDICTFEATURE_INTFEATUREENTRY
+_PREDICTFEATURE.fields_by_name['floatFeature'].message_type = _PREDICTFEATURE_FLOATFEATUREENTRY
+_PREDICTFEATURE.fields_by_name['doubleFeature'].message_type = _PREDICTFEATURE_DOUBLEFEATUREENTRY
+_PREDICTFEATURE.fields_by_name['stringArrayFeature'].message_type = _PREDICTFEATURE_STRINGARRAYFEATUREENTRY
+_PREDICTFEATURE.fields_by_name['intArrayFeature'].message_type = _PREDICTFEATURE_INTARRAYFEATUREENTRY
+_PREDICTFEATURE.fields_by_name['floatArrayFeature'].message_type = _PREDICTFEATURE_FLOATARRAYFEATUREENTRY
+_PREDICTFEATURE.fields_by_name['doubleArrayFeature'].message_type = _PREDICTFEATURE_DOUBLEARRAYFEATUREENTRY
+_PREDICTFILTER_STRINGFILTERENTRY.containing_type = _PREDICTFILTER
+_PREDICTFILTER_INTFILTERENTRY.containing_type = _PREDICTFILTER
+_PREDICTFILTER_FLOATFILTERENTRY.containing_type = _PREDICTFILTER
+_PREDICTFILTER_DOUBLEFILTERENTRY.containing_type = _PREDICTFILTER
+_PREDICTFILTER_STRINGARRAYFILTERENTRY.fields_by_name['value'].message_type = _STRINGARRAY
+_PREDICTFILTER_STRINGARRAYFILTERENTRY.containing_type = _PREDICTFILTER
+_PREDICTFILTER_INTARRAYFILTERENTRY.fields_by_name['value'].message_type = _INTARRAY
+_PREDICTFILTER_INTARRAYFILTERENTRY.containing_type = _PREDICTFILTER
+_PREDICTFILTER_FLOATARRAYFILTERENTRY.fields_by_name['value'].message_type = _FLOATARRAY
+_PREDICTFILTER_FLOATARRAYFILTERENTRY.containing_type = _PREDICTFILTER
+_PREDICTFILTER_DOUBLEARRAYFILTERENTRY.fields_by_name['value'].message_type = _DOUBLEARRAY
+_PREDICTFILTER_DOUBLEARRAYFILTERENTRY.containing_type = _PREDICTFILTER
+_PREDICTFILTER.fields_by_name['stringFilter'].message_type = _PREDICTFILTER_STRINGFILTERENTRY
+_PREDICTFILTER.fields_by_name['intFilter'].message_type = _PREDICTFILTER_INTFILTERENTRY
+_PREDICTFILTER.fields_by_name['floatFilter'].message_type = _PREDICTFILTER_FLOATFILTERENTRY
+_PREDICTFILTER.fields_by_name['doubleFilter'].message_type = _PREDICTFILTER_DOUBLEFILTERENTRY
+_PREDICTFILTER.fields_by_name['stringArrayFilter'].message_type = _PREDICTFILTER_STRINGARRAYFILTERENTRY
+_PREDICTFILTER.fields_by_name['intArrayFilter'].message_type = _PREDICTFILTER_INTARRAYFILTERENTRY
+_PREDICTFILTER.fields_by_name['floatArrayFilter'].message_type = _PREDICTFILTER_FLOATARRAYFILTERENTRY
+_PREDICTFILTER.fields_by_name['doubleArrayFilter'].message_type = _PREDICTFILTER_DOUBLEARRAYFILTERENTRY
 _PREDICTCANDIDATEITEM_EXTRAENTRY.containing_type = _PREDICTCANDIDATEITEM
 _PREDICTCANDIDATEITEM.fields_by_name['extra'].message_type = _PREDICTCANDIDATEITEM_EXTRAENTRY
 _PREDICTEXTRA_EXTRAENTRY.containing_type = _PREDICTEXTRA
@@ -1683,6 +2690,8 @@ _SEARCHINFO.fields_by_name['filterOut'].message_type = _SEARCHINFO_FILTEROUTENTR
 _SEARCHINFO.fields_by_name['goodsList'].message_type = _SEARCHGOODS
 _PREDICTPARENTITEM_EXTRAENTRY.containing_type = _PREDICTPARENTITEM
 _PREDICTPARENTITEM.fields_by_name['extra'].message_type = _PREDICTPARENTITEM_EXTRAENTRY
+_PREDICTFILTERITEM_EXTRAENTRY.containing_type = _PREDICTFILTERITEM
+_PREDICTFILTERITEM.fields_by_name['extra'].message_type = _PREDICTFILTERITEM_EXTRAENTRY
 _PREDICTRESPONSE.fields_by_name['value'].message_type = _PREDICTRESULT
 _PREDICTRESULT_EXTRAENTRY.containing_type = _PREDICTRESULT
 _PREDICTRESULT.fields_by_name['items'].message_type = _PREDICTITEM
@@ -1703,13 +2712,15 @@ DESCRIPTOR.message_types_by_name['PredictRequest'] = _PREDICTREQUEST
 DESCRIPTOR.message_types_by_name['PredictUser'] = _PREDICTUSER
 DESCRIPTOR.message_types_by_name['PredictDevice'] = _PREDICTDEVICE
 DESCRIPTOR.message_types_by_name['PredictContext'] = _PREDICTCONTEXT
+DESCRIPTOR.message_types_by_name['PredictFeature'] = _PREDICTFEATURE
+DESCRIPTOR.message_types_by_name['PredictFilter'] = _PREDICTFILTER
 DESCRIPTOR.message_types_by_name['PredictCandidateItem'] = _PREDICTCANDIDATEITEM
 DESCRIPTOR.message_types_by_name['PredictExtra'] = _PREDICTEXTRA
 DESCRIPTOR.message_types_by_name['PredictRelatedItem'] = _PREDICTRELATEDITEM
 DESCRIPTOR.message_types_by_name['SearchInfo'] = _SEARCHINFO
-DESCRIPTOR.message_types_by_name['StringArray'] = _STRINGARRAY
 DESCRIPTOR.message_types_by_name['SearchGoods'] = _SEARCHGOODS
 DESCRIPTOR.message_types_by_name['PredictParentItem'] = _PREDICTPARENTITEM
+DESCRIPTOR.message_types_by_name['PredictFilterItem'] = _PREDICTFILTERITEM
 DESCRIPTOR.message_types_by_name['PredictResponse'] = _PREDICTRESPONSE
 DESCRIPTOR.message_types_by_name['PredictResult'] = _PREDICTRESULT
 DESCRIPTOR.message_types_by_name['PredictItem'] = _PREDICTITEM
@@ -1717,6 +2728,10 @@ DESCRIPTOR.message_types_by_name['CallbackRequest'] = _CALLBACKREQUEST
 DESCRIPTOR.message_types_by_name['CallbackItem'] = _CALLBACKITEM
 DESCRIPTOR.message_types_by_name['CallbackContext'] = _CALLBACKCONTEXT
 DESCRIPTOR.message_types_by_name['CallbackResponse'] = _CALLBACKRESPONSE
+DESCRIPTOR.message_types_by_name['StringArray'] = _STRINGARRAY
+DESCRIPTOR.message_types_by_name['IntArray'] = _INTARRAY
+DESCRIPTOR.message_types_by_name['FloatArray'] = _FLOATARRAY
+DESCRIPTOR.message_types_by_name['DoubleArray'] = _DOUBLEARRAY
 DESCRIPTOR.enum_types_by_name['CallbackReqType'] = _CALLBACKREQTYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -1784,6 +2799,148 @@ PredictContext = _reflection.GeneratedProtocolMessageType('PredictContext', (_me
   })
 _sym_db.RegisterMessage(PredictContext)
 _sym_db.RegisterMessage(PredictContext.ExtraEntry)
+
+PredictFeature = _reflection.GeneratedProtocolMessageType('PredictFeature', (_message.Message,), {
+
+  'StringFeatureEntry' : _reflection.GeneratedProtocolMessageType('StringFeatureEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTFEATURE_STRINGFEATUREENTRY,
+    '__module__' : 'byteplus_general_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFeature.StringFeatureEntry)
+    })
+  ,
+
+  'IntFeatureEntry' : _reflection.GeneratedProtocolMessageType('IntFeatureEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTFEATURE_INTFEATUREENTRY,
+    '__module__' : 'byteplus_general_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFeature.IntFeatureEntry)
+    })
+  ,
+
+  'FloatFeatureEntry' : _reflection.GeneratedProtocolMessageType('FloatFeatureEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTFEATURE_FLOATFEATUREENTRY,
+    '__module__' : 'byteplus_general_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFeature.FloatFeatureEntry)
+    })
+  ,
+
+  'DoubleFeatureEntry' : _reflection.GeneratedProtocolMessageType('DoubleFeatureEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTFEATURE_DOUBLEFEATUREENTRY,
+    '__module__' : 'byteplus_general_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFeature.DoubleFeatureEntry)
+    })
+  ,
+
+  'StringArrayFeatureEntry' : _reflection.GeneratedProtocolMessageType('StringArrayFeatureEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTFEATURE_STRINGARRAYFEATUREENTRY,
+    '__module__' : 'byteplus_general_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFeature.StringArrayFeatureEntry)
+    })
+  ,
+
+  'IntArrayFeatureEntry' : _reflection.GeneratedProtocolMessageType('IntArrayFeatureEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTFEATURE_INTARRAYFEATUREENTRY,
+    '__module__' : 'byteplus_general_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFeature.IntArrayFeatureEntry)
+    })
+  ,
+
+  'FloatArrayFeatureEntry' : _reflection.GeneratedProtocolMessageType('FloatArrayFeatureEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTFEATURE_FLOATARRAYFEATUREENTRY,
+    '__module__' : 'byteplus_general_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFeature.FloatArrayFeatureEntry)
+    })
+  ,
+
+  'DoubleArrayFeatureEntry' : _reflection.GeneratedProtocolMessageType('DoubleArrayFeatureEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTFEATURE_DOUBLEARRAYFEATUREENTRY,
+    '__module__' : 'byteplus_general_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFeature.DoubleArrayFeatureEntry)
+    })
+  ,
+  'DESCRIPTOR' : _PREDICTFEATURE,
+  '__module__' : 'byteplus_general_pb2'
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFeature)
+  })
+_sym_db.RegisterMessage(PredictFeature)
+_sym_db.RegisterMessage(PredictFeature.StringFeatureEntry)
+_sym_db.RegisterMessage(PredictFeature.IntFeatureEntry)
+_sym_db.RegisterMessage(PredictFeature.FloatFeatureEntry)
+_sym_db.RegisterMessage(PredictFeature.DoubleFeatureEntry)
+_sym_db.RegisterMessage(PredictFeature.StringArrayFeatureEntry)
+_sym_db.RegisterMessage(PredictFeature.IntArrayFeatureEntry)
+_sym_db.RegisterMessage(PredictFeature.FloatArrayFeatureEntry)
+_sym_db.RegisterMessage(PredictFeature.DoubleArrayFeatureEntry)
+
+PredictFilter = _reflection.GeneratedProtocolMessageType('PredictFilter', (_message.Message,), {
+
+  'StringFilterEntry' : _reflection.GeneratedProtocolMessageType('StringFilterEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTFILTER_STRINGFILTERENTRY,
+    '__module__' : 'byteplus_general_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFilter.StringFilterEntry)
+    })
+  ,
+
+  'IntFilterEntry' : _reflection.GeneratedProtocolMessageType('IntFilterEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTFILTER_INTFILTERENTRY,
+    '__module__' : 'byteplus_general_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFilter.IntFilterEntry)
+    })
+  ,
+
+  'FloatFilterEntry' : _reflection.GeneratedProtocolMessageType('FloatFilterEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTFILTER_FLOATFILTERENTRY,
+    '__module__' : 'byteplus_general_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFilter.FloatFilterEntry)
+    })
+  ,
+
+  'DoubleFilterEntry' : _reflection.GeneratedProtocolMessageType('DoubleFilterEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTFILTER_DOUBLEFILTERENTRY,
+    '__module__' : 'byteplus_general_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFilter.DoubleFilterEntry)
+    })
+  ,
+
+  'StringArrayFilterEntry' : _reflection.GeneratedProtocolMessageType('StringArrayFilterEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTFILTER_STRINGARRAYFILTERENTRY,
+    '__module__' : 'byteplus_general_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFilter.StringArrayFilterEntry)
+    })
+  ,
+
+  'IntArrayFilterEntry' : _reflection.GeneratedProtocolMessageType('IntArrayFilterEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTFILTER_INTARRAYFILTERENTRY,
+    '__module__' : 'byteplus_general_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFilter.IntArrayFilterEntry)
+    })
+  ,
+
+  'FloatArrayFilterEntry' : _reflection.GeneratedProtocolMessageType('FloatArrayFilterEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTFILTER_FLOATARRAYFILTERENTRY,
+    '__module__' : 'byteplus_general_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFilter.FloatArrayFilterEntry)
+    })
+  ,
+
+  'DoubleArrayFilterEntry' : _reflection.GeneratedProtocolMessageType('DoubleArrayFilterEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTFILTER_DOUBLEARRAYFILTERENTRY,
+    '__module__' : 'byteplus_general_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFilter.DoubleArrayFilterEntry)
+    })
+  ,
+  'DESCRIPTOR' : _PREDICTFILTER,
+  '__module__' : 'byteplus_general_pb2'
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFilter)
+  })
+_sym_db.RegisterMessage(PredictFilter)
+_sym_db.RegisterMessage(PredictFilter.StringFilterEntry)
+_sym_db.RegisterMessage(PredictFilter.IntFilterEntry)
+_sym_db.RegisterMessage(PredictFilter.FloatFilterEntry)
+_sym_db.RegisterMessage(PredictFilter.DoubleFilterEntry)
+_sym_db.RegisterMessage(PredictFilter.StringArrayFilterEntry)
+_sym_db.RegisterMessage(PredictFilter.IntArrayFilterEntry)
+_sym_db.RegisterMessage(PredictFilter.FloatArrayFilterEntry)
+_sym_db.RegisterMessage(PredictFilter.DoubleArrayFilterEntry)
 
 PredictCandidateItem = _reflection.GeneratedProtocolMessageType('PredictCandidateItem', (_message.Message,), {
 
@@ -1853,13 +3010,6 @@ _sym_db.RegisterMessage(SearchInfo)
 _sym_db.RegisterMessage(SearchInfo.FiltersEntry)
 _sym_db.RegisterMessage(SearchInfo.FilterOutEntry)
 
-StringArray = _reflection.GeneratedProtocolMessageType('StringArray', (_message.Message,), {
-  'DESCRIPTOR' : _STRINGARRAY,
-  '__module__' : 'byteplus_general_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.StringArray)
-  })
-_sym_db.RegisterMessage(StringArray)
-
 SearchGoods = _reflection.GeneratedProtocolMessageType('SearchGoods', (_message.Message,), {
   'DESCRIPTOR' : _SEARCHGOODS,
   '__module__' : 'byteplus_general_pb2'
@@ -1881,6 +3031,21 @@ PredictParentItem = _reflection.GeneratedProtocolMessageType('PredictParentItem'
   })
 _sym_db.RegisterMessage(PredictParentItem)
 _sym_db.RegisterMessage(PredictParentItem.ExtraEntry)
+
+PredictFilterItem = _reflection.GeneratedProtocolMessageType('PredictFilterItem', (_message.Message,), {
+
+  'ExtraEntry' : _reflection.GeneratedProtocolMessageType('ExtraEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PREDICTFILTERITEM_EXTRAENTRY,
+    '__module__' : 'byteplus_general_pb2'
+    # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFilterItem.ExtraEntry)
+    })
+  ,
+  'DESCRIPTOR' : _PREDICTFILTERITEM,
+  '__module__' : 'byteplus_general_pb2'
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.PredictFilterItem)
+  })
+_sym_db.RegisterMessage(PredictFilterItem)
+_sym_db.RegisterMessage(PredictFilterItem.ExtraEntry)
 
 PredictResponse = _reflection.GeneratedProtocolMessageType('PredictResponse', (_message.Message,), {
   'DESCRIPTOR' : _PREDICTRESPONSE,
@@ -1963,10 +3128,54 @@ CallbackResponse = _reflection.GeneratedProtocolMessageType('CallbackResponse', 
   })
 _sym_db.RegisterMessage(CallbackResponse)
 
+StringArray = _reflection.GeneratedProtocolMessageType('StringArray', (_message.Message,), {
+  'DESCRIPTOR' : _STRINGARRAY,
+  '__module__' : 'byteplus_general_pb2'
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.StringArray)
+  })
+_sym_db.RegisterMessage(StringArray)
+
+IntArray = _reflection.GeneratedProtocolMessageType('IntArray', (_message.Message,), {
+  'DESCRIPTOR' : _INTARRAY,
+  '__module__' : 'byteplus_general_pb2'
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.IntArray)
+  })
+_sym_db.RegisterMessage(IntArray)
+
+FloatArray = _reflection.GeneratedProtocolMessageType('FloatArray', (_message.Message,), {
+  'DESCRIPTOR' : _FLOATARRAY,
+  '__module__' : 'byteplus_general_pb2'
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.FloatArray)
+  })
+_sym_db.RegisterMessage(FloatArray)
+
+DoubleArray = _reflection.GeneratedProtocolMessageType('DoubleArray', (_message.Message,), {
+  'DESCRIPTOR' : _DOUBLEARRAY,
+  '__module__' : 'byteplus_general_pb2'
+  # @@protoc_insertion_point(class_scope:bytedance.byteplus.general.DoubleArray)
+  })
+_sym_db.RegisterMessage(DoubleArray)
+
 
 DESCRIPTOR._options = None
 _PREDICTUSER_EXTRAENTRY._options = None
 _PREDICTCONTEXT_EXTRAENTRY._options = None
+_PREDICTFEATURE_STRINGFEATUREENTRY._options = None
+_PREDICTFEATURE_INTFEATUREENTRY._options = None
+_PREDICTFEATURE_FLOATFEATUREENTRY._options = None
+_PREDICTFEATURE_DOUBLEFEATUREENTRY._options = None
+_PREDICTFEATURE_STRINGARRAYFEATUREENTRY._options = None
+_PREDICTFEATURE_INTARRAYFEATUREENTRY._options = None
+_PREDICTFEATURE_FLOATARRAYFEATUREENTRY._options = None
+_PREDICTFEATURE_DOUBLEARRAYFEATUREENTRY._options = None
+_PREDICTFILTER_STRINGFILTERENTRY._options = None
+_PREDICTFILTER_INTFILTERENTRY._options = None
+_PREDICTFILTER_FLOATFILTERENTRY._options = None
+_PREDICTFILTER_DOUBLEFILTERENTRY._options = None
+_PREDICTFILTER_STRINGARRAYFILTERENTRY._options = None
+_PREDICTFILTER_INTARRAYFILTERENTRY._options = None
+_PREDICTFILTER_FLOATARRAYFILTERENTRY._options = None
+_PREDICTFILTER_DOUBLEARRAYFILTERENTRY._options = None
 _PREDICTCANDIDATEITEM_EXTRAENTRY._options = None
 _PREDICTEXTRA_EXTRAENTRY._options = None
 _PREDICTRELATEDITEM_EXTRAENTRY._options = None
@@ -1974,6 +3183,7 @@ _SEARCHINFO_FILTERSENTRY._options = None
 _SEARCHINFO_FILTEROUTENTRY._options = None
 _SEARCHGOODS.fields_by_name['goodsId']._options = None
 _PREDICTPARENTITEM_EXTRAENTRY._options = None
+_PREDICTFILTERITEM_EXTRAENTRY._options = None
 _PREDICTRESULT_EXTRAENTRY._options = None
 _PREDICTITEM_EXTRAENTRY._options = None
 _CALLBACKREQUEST_EXTRAENTRY._options = None
@@ -1986,8 +3196,8 @@ _BYTEPLUSGENERALSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=4104,
-  serialized_end=4562,
+  serialized_start=7171,
+  serialized_end=7629,
   methods=[
   _descriptor.MethodDescriptor(
     name='WriteData',
