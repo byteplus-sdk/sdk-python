@@ -1,4 +1,6 @@
 from byteplus.core.constant import _CN_HOSTS, _SG_HOSTS, _US_HOSTS, _AIR_HOSTS, _SAAS_SG_HOSTS
+from byteplus.core.host_availabler_config import Config
+from byteplus.core.metrics.metrics_option import MetricsCfg
 from byteplus.core.region import Region
 
 
@@ -15,6 +17,8 @@ class Param(object):
         self.ak: str = ""
         self.sk: str = ""
         self.use_air_auth: bool = False
+        self.metrics_cfg: MetricsCfg = None
+        self.host_availabler_config: Config = None
 
 
 class Context(object):
@@ -28,6 +32,8 @@ class Context(object):
         self.use_air_auth: bool = param.use_air_auth
         self.hosts: list = []
         self.volc_auth_conf: VolcAuthConf = VolcAuthConf(param)
+        self.metrics_cfg: MetricsCfg = param.metrics_cfg
+        self.host_availabler_config = param.host_availabler_config
         self._adjust_hosts(param)
 
     @staticmethod

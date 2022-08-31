@@ -9,6 +9,7 @@ from byteplus.core import Option
 from byteplus.core.context import Param, Context
 from byteplus.core.host_availabler import HostAvailabler
 from byteplus.core.http_caller import HttpCaller
+from byteplus.core.metrics.metrics_collector import MetricsCollector
 from byteplus.core.url_center import URLCenter
 
 log = logging.getLogger(__name__)
@@ -21,6 +22,7 @@ class CommonClient(URLCenter):
         self._common_url: CommonURL = CommonURL(context)
         self._http_caller: HttpCaller = HttpCaller(context)
         self._host_availabler = HostAvailabler(self, context)
+        MetricsCollector.init(self._context.metrics_cfg, self._host_availabler)
 
     def refresh(self, host: str):
         self._common_url.refresh(host)

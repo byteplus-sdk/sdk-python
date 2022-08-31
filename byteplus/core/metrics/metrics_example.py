@@ -1,64 +1,75 @@
-import metrics_collector as mc
-from metrics_option import MetricsOption as mo
 import time
 import logging
-import threading
 
-send_times = 1000000
-
-
-def metrics_init():
-    # default log level is warning
-    logging.basicConfig(level=logging.DEBUG)
-    mc.init(
-        (mo.with_metrics_log(),
-         mo.with_flush_interval(10000))
-    )
+from byteplus.core.metrics.metrics import Metrics
+from byteplus.core.metrics.metrics_collector import MetricsCollector
+from byteplus.core.metrics.metrics_log import MetricsLog
+from byteplus.core.metrics.metrics_option import MetricsOption
 
 
-def store_report():
-    for i in range(send_times):
-        mc.store("request.store", 200, ["type:test_metrics1", "other_tag:xxx"])
-        mc.store("request.store", 100, ["type:test_metrics2", "other_tag:xxx"])
-        time.sleep(0.1)
-    print("stop store reporting")
+class MetricsExample(object):
+    times = 100
 
+    @classmethod
+    def metrics_init(cls):
+        # default log level is warning
+        logging.basicConfig(level=logging.DEBUG)
+        MetricsCollector.init_with_option(
+            MetricsOption.with_metrics_http_schema("http"),
+            MetricsOption.enable_metrics(),
+            MetricsOption.enable_metrics_log(),
+            MetricsOption.with_report_interval_seconds(5),
+            MetricsOption.with_metrics_prefix("test.byteplus.sdk"),
+            MetricsOption.with_metrics_timeout_seconds(1),
+            MetricsOption.with_metrics_domain("rec-b-ap-singapore-1.byteplusapi.com")
+        )
 
-def count_report():
-    for i in range(send_times):
-        mc.counter("request.counter", 200, ["type:test_metrics1", "other_tag:xxx"])
-        mc.counter("request.counter", 100, ["type:test_metrics2", "other_tag:xxx"])
-        time.sleep(0.2)
-    print("stop counter reporting")
+    # test demo for store report
+    @classmethod
+    def store_report(cls):
+        print("start store reporting...")
+        for i in range(cls.times):
+            Metrics.store(
+                "java.request.store", 200, "type:test_metrics1", "url:https://asfwe.sds.com/test?qu1=xxx&qu2=yyy")
+            Metrics.store(
+                "java.request.store", 100, "type:test_metrics2", "url:https://asfwe.sds.com/test?qu1=xxx&qu2=yyy")
+            Metrics.store(
+                "java.request.store", 200, "type:test_metrics3", "url:https://asfwe.sds.com/test?qu1=xxx&qu2=yyy")
+            Metrics.store(
+                "java.request.store", 100, "type:test_metrics4", "url:https://asfwe.sds.com/test?qu1<eq>xxx&qu2<eq>yyy")
+            # 20s
+            time.sleep(20)
+        print("stop store reporting")
 
+    # test demo for counter report
+    @classmethod
+    def counter_report(cls):
+        print("start counter reporting...")
+        for i in range(cls.times):
+            Metrics.counter("java.request.counter", 1, "type:test_counter1")
+            Metrics.counter("java.request.counter", 1, "type:test_counter2")
+            # 20s
+            time.sleep(20)
+        print("stop counter reporting")
 
-def timer_report():
-    for i in range(send_times):
-        begin = time.time_ns() / 1e6
-        time.sleep(0.1)
-        mc.latency("request.timer", begin, ["type:test_metrics1", "other_tag:xxx"])
-        begin = time.time_ns() / 1e6
-        time.sleep(0.2)
-        mc.latency("request.timer", begin, ["type:test_metrics2", "other_tag:xxx"])
-
-    print("stop timer reporting")
+    # test demo for timer report
+    @classmethod
+    def timer_report(cls):
+        print("start timer reporting...")
+        for i in range(cls.times):
+            Metrics.timer("java.request.timer", 140, "type:test_timer4")
+            Metrics.timer("java.request.timer", 160, "type:test_timer4")
+            # 30s
+            time.sleep(30)
+        print("stop timer reporting")
 
 
 if __name__ == '__main__':
-    metrics_init()
-    # store_report()
-    # count_report()
-    # timer_report()
+    MetricsExample.metrics_init()
+    # MetricsExample.store_report()
+    # MetricsExample.counter_report()
+    MetricsExample.timer_report()
+    # log_id = str(uuid.uuid4())
+    # print("log_id: {}".format(log_id))
+    # MetricsLog.info(log_id, "this is a test log: name:{}, value: {}", "demo", 1)
 
-    t1 = threading.Thread(target=store_report)
-    t2 = threading.Thread(target=count_report)
-    t3 = threading.Thread(target=timer_report)
-    t1.start()
-    t2.start()
-    t3.start()
-
-    print('start report')
-    t1.join()
-    t2.join()
-    t3.join()
-    print('end report')

@@ -10,6 +10,8 @@ from byteplus.core import BizException
 from byteplus.core import MAX_IMPORT_ITEM_COUNT
 from byteplus.core import Region
 from byteplus.core.context import Param
+from byteplus.core.host_availabler import Config
+from byteplus.core.metrics.metrics_option import MetricsCfg
 from byteplus.general.url import _GeneralURL
 from byteplus.general.protocol import *
 
@@ -83,6 +85,14 @@ class ClientBuilder(object):
 
     def region(self, region: Region):
         self._param.region = region
+        return self
+
+    def metrics_config(self, metrics_config: MetricsCfg):
+        self._param.metrics_cfg = metrics_config
+        return self
+
+    def host_availabler_config(self, host_availabler_config: Config):
+        self._param.host_availabler_config = host_availabler_config
         return self
 
     def build(self) -> Client:

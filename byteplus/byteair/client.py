@@ -12,6 +12,8 @@ from byteplus.core import Region
 from byteplus.core.context import Param
 from byteplus.byteair.url import _GeneralURL
 from byteplus.byteair.protocol import *
+from byteplus.core.host_availabler import Config
+from byteplus.core.metrics.metrics_option import MetricsCfg
 from byteplus.core.option import Option as CoreOption
 from byteplus.core.options import Options
 
@@ -109,6 +111,14 @@ class ClientBuilder(object):
 
     def use_air_auth(self):
         self._param.use_air_auth = True
+        return self
+
+    def metrics_config(self, metrics_config: MetricsCfg):
+        self._param.metrics_cfg = metrics_config
+        return self
+
+    def host_availabler_config(self, host_availabler_config: Config):
+        self._param.host_availabler_config = host_availabler_config
         return self
 
     def build(self) -> Client:

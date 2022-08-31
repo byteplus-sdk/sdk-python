@@ -1,16 +1,42 @@
 from enum import Enum, unique
 
-DEFAULT_METRICS_DOMAIN = "bot.snssdk.com"
-DEFAULT_METRICS_PREFIX = "byteplus.rec.sdk"
-DEFAULT_HTTP_SCHEMA = "https"
-COUNTER_URL_FORMAT = "{}://{}/api/counter"
-OTHER_URL_FORMAT = "{}://{}/api/put"
-DEFAULT_FLUSH_INTERVAL_MS: int = 15 * 1000
-DELIMITER = "+"
-RESERVOIR_SIZE: int = 65536
-DEFAULT_HTTP_TIMEOUT_MS: int = 800
-MAX_TRY_TIMES: int = 2
+# metrics default domain and prefix
+DEFAULT_METRICS_DOMAIN: str = "rec-api-sg1.recplusapi.com"
+DEFAULT_METRICS_PREFIX: str = "byteplus.rec.sdk"
+DEFAULT_HTTP_SCHEMA: str = "https"
+
+# monitor url format
+METRICS_URL_FORMAT: str = "{}://{}/predict/api/monitor/metrics"
+METRICS_LOG_URL_FORMAT: str = "{}://{}/predict/api/monitor/metrics/log"
+
+# domain path
+METRICS_PATH: str = "/monitor/metrics"
+METRICS_LOG_PATH: str = "/monitor/metrics/log"
+
+# metrics flush interval
+DEFAULT_REPORT_INTERVAL_SECONDS: float = 15
+DEFAULT_HTTP_TIMEOUT_SECONDS: float = 0.8
+MAX_TRY_TIMES: int = 3
+MAX_SPIN_TIMES: int = 5
 SUCCESS_HTTP_CODE: int = 200
+MAX_METRICS_SIZE: int = 10000
+MAX_METRICS_LOG_SIZE: int = 5000
+
+# metrics log level
+LOG_LEVEL_TRACE: str = "trace"
+LOG_LEVEL_DEBUG: str = "debug"
+LOG_LEVEL_INFO: str = "info"
+LOG_LEVEL_NOTICE: str = "notice"
+LOG_LEVEL_WARN: str = "warn"
+LOG_LEVEL_ERROR: str = "error"
+LOG_LEVEL_FATAL: str = "fatal"
+
+# metrics type
+METRICS_TYPE_COUNTER: str = "counter"
+METRICS_TYPE_STORE: str = "store"
+METRICS_TYPE_TIMER: str = "timer"
+METRICS_TYPE_RATE_COUNTER: str = "rate_counter"
+METRICS_TYPE_METER: str = "meter"
 
 
 @unique
