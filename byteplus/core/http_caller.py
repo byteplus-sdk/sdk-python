@@ -16,8 +16,8 @@ from requests import Response
 from requests.auth import AuthBase
 
 from byteplus.core import utils
-from byteplus.core.constant import VOLC_AUTH_SERVICE
-
+from byteplus.core.constant import VOLC_AUTH_SERVICE, METRICS_KEY_COMMON_ERROR,\
+    METRICS_KEY_REQUEST_TOTAL_COST, METRICS_KEY_REQUEST_COUNT
 from byteplus.core.context import Context
 from byteplus.core.exception import NetException, BizException
 from byteplus.core.metrics.metrics import Metrics
@@ -26,7 +26,6 @@ from byteplus.core.option import Option
 from byteplus.core.options import Options
 from byteplus.core.utils import rfc3339_format, milliseconds
 from byteplus.volcauth.volcauth import VolcAuth
-from byteplus.core.constant import METRICS_KEY_COMMON_ERROR, METRICS_KEY_REQUEST_TOTAL_COST
 
 try:
     from urllib.parse import urlparse, parse_qs, quote, unquote, unquote_plus
@@ -216,6 +215,7 @@ class HttpCaller(object):
                 "url:" + utils.escape_metrics_tag_value(url),
             ]
             Metrics.timer(METRICS_KEY_REQUEST_TOTAL_COST, cost, *metrics_tags)
+            Metrics.counter(METRICS_KEY_REQUEST_COUNT, 1, *metrics_tags)
             MetricsLog.info(self._get_req_id(), "[ByteplusSDK] http request, tenant:{}, url:{}, cost:{}ms",
                             self._context.tenant, url, cost)
             log.debug("[ByteplusSDK] http path:%s, cost:%dms", url, cost)

@@ -31,5 +31,6 @@ VOLC_AUTH_SERVICE = "air"
 # Metrics Key
 METRICS_KEY_COMMON_ERROR = "common.err"
 METRICS_KEY_REQUEST_TOTAL_COST = "request.total.cost"
+METRICS_KEY_REQUEST_COUNT = "request.count"
 
 
