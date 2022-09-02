@@ -12,7 +12,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import byteplus_common_pb2 as byteplus__common__pb2
+from byteplus.common.protocol import byteplus_common_pb2 as byteplus__common__pb2
 from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
 
 
@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\035byteplus.sdk.byteair.protocolZ/github.com/byteplus-sdk/sdk-go/byteair/protocol',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x16\x62yteplus_byteair.proto\x12\x1a\x62ytedance.byteplus.byteair\x1a\x15\x62yteplus_common.proto\x1a\x19google/protobuf/any.proto\"*\n\tDataError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\t\"y\n\rWriteResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x35\n\x06\x65rrors\x18\x02 \x03(\x0b\x32%.bytedance.byteplus.byteair.DataError\"\x81\x01\n\x0eImportResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12<\n\rerror_samples\x18\x02 \x03(\x0b\x32%.bytedance.byteplus.byteair.DataError\"\x9d\x04\n\x0ePredictRequest\x12\x35\n\x04user\x18\x01 \x01(\x0b\x32\'.bytedance.byteplus.byteair.PredictUser\x12;\n\x07\x63ontext\x18\x02 \x01(\x0b\x32*.bytedance.byteplus.byteair.PredictContext\x12\x0c\n\x04size\x18\x03 \x01(\x05\x12H\n\x0e\x63\x61ndidateItems\x18\x04 \x03(\x0b\x32\x30.bytedance.byteplus.byteair.PredictCandidateItem\x12\x37\n\x05\x65xtra\x18\x05 \x01(\x0b\x32(.bytedance.byteplus.byteair.PredictExtra\x12\x43\n\x0brelatedItem\x18\x06 \x01(\x0b\x32..bytedance.byteplus.byteair.PredictRelatedItem\x12:\n\nsearchInfo\x18\x07 \x01(\x0b\x32&.bytedance.byteplus.byteair.SearchInfo\x12\x41\n\nparentItem\x18\x08 \x01(\x0b\x32-.bytedance.byteplus.byteair.PredictParentItem\x12\x42\n\x0b\x66ilterItems\x18\t \x03(\x0b\x32-.bytedance.byteplus.byteair.PredictFilterItem\"\xcc\x02\n\x0bPredictUser\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12\x39\n\x06\x64\x65vice\x18\x02 \x01(\x0b\x32).bytedance.byteplus.byteair.PredictDevice\x12\x0b\n\x03\x61ge\x18\x03 \x01(\t\x12\x0e\n\x06gender\x18\x04 \x01(\t\x12\x10\n\x08province\x18\x05 \x01(\t\x12\x0c\n\x04\x63ity\x18\x06 \x01(\t\x12\x10\n\x08\x64istrict\x18\x07 \x01(\t\x12\x11\n\tappMarket\x18\x08 \x01(\t\x12\x11\n\tloginMode\x18\t \x01(\t\x12\x0f\n\x07\x63ountry\x18\n \x01(\t\x12\x41\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x32.bytedance.byteplus.byteair.PredictUser.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc8\x01\n\rPredictDevice\x12\x10\n\x08\x64\x65viceId\x18\x01 \x01(\t\x12\x10\n\x08platform\x18\x02 \x01(\t\x12\x14\n\x0c\x64\x65viceVendor\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65viceModel\x18\x04 \x01(\t\x12\x18\n\x10\x64\x65viceResolution\x18\x05 \x01(\t\x12\x15\n\rclientVersion\x18\x06 \x01(\t\x12\x11\n\tosVersion\x18\x07 \x01(\t\x12\x13\n\x0bnetworkType\x18\x08 \x01(\t\x12\x0f\n\x07\x63\x61rrier\x18\t \x01(\t\"\xad\x02\n\x0ePredictContext\x12\x0b\n\x03spm\x18\x01 \x01(\t\x12\"\n\x1a\x63losePersonalizedRecommend\x18\x02 \x01(\x08\x12;\n\x07\x66\x65\x61ture\x18\x03 \x01(\x0b\x32*.bytedance.byteplus.byteair.PredictFeature\x12\x39\n\x06\x66ilter\x18\x04 \x01(\x0b\x32).bytedance.byteplus.byteair.PredictFilter\x12\x44\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x35.bytedance.byteplus.byteair.PredictContext.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb4\n\n\x0ePredictFeature\x12T\n\rstringFeature\x18\x01 \x03(\x0b\x32=.bytedance.byteplus.byteair.PredictFeature.StringFeatureEntry\x12N\n\nintFeature\x18\x02 \x03(\x0b\x32:.bytedance.byteplus.byteair.PredictFeature.IntFeatureEntry\x12R\n\x0c\x66loatFeature\x18\x03 \x03(\x0b\x32<.bytedance.byteplus.byteair.PredictFeature.FloatFeatureEntry\x12T\n\rdoubleFeature\x18\x04 \x03(\x0b\x32=.bytedance.byteplus.byteair.PredictFeature.DoubleFeatureEntry\x12^\n\x12stringArrayFeature\x18\x05 \x03(\x0b\x32\x42.bytedance.byteplus.byteair.PredictFeature.StringArrayFeatureEntry\x12X\n\x0fintArrayFeature\x18\x06 \x03(\x0b\x32?.bytedance.byteplus.byteair.PredictFeature.IntArrayFeatureEntry\x12\\\n\x11\x66loatArrayFeature\x18\x07 \x03(\x0b\x32\x41.bytedance.byteplus.byteair.PredictFeature.FloatArrayFeatureEntry\x12^\n\x12\x64oubleArrayFeature\x18\x08 \x03(\x0b\x32\x42.bytedance.byteplus.byteair.PredictFeature.DoubleArrayFeatureEntry\x1a\x34\n\x12StringFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x31\n\x0fIntFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x03:\x02\x38\x01\x1a\x33\n\x11\x46loatFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\x1a\x34\n\x12\x44oubleFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x01:\x02\x38\x01\x1a\x62\n\x17StringArrayFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.byteair.StringArray:\x02\x38\x01\x1a\\\n\x14IntArrayFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x33\n\x05value\x18\x02 \x01(\x0b\x32$.bytedance.byteplus.byteair.IntArray:\x02\x38\x01\x1a`\n\x16\x46loatArrayFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x35\n\x05value\x18\x02 \x01(\x0b\x32&.bytedance.byteplus.byteair.FloatArray:\x02\x38\x01\x1a\x62\n\x17\x44oubleArrayFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.byteair.DoubleArray:\x02\x38\x01\"\x93\n\n\rPredictFilter\x12Q\n\x0cstringFilter\x18\x01 \x03(\x0b\x32;.bytedance.byteplus.byteair.PredictFilter.StringFilterEntry\x12K\n\tintFilter\x18\x02 \x03(\x0b\x32\x38.bytedance.byteplus.byteair.PredictFilter.IntFilterEntry\x12O\n\x0b\x66loatFilter\x18\x03 \x03(\x0b\x32:.bytedance.byteplus.byteair.PredictFilter.FloatFilterEntry\x12Q\n\x0c\x64oubleFilter\x18\x04 \x03(\x0b\x32;.bytedance.byteplus.byteair.PredictFilter.DoubleFilterEntry\x12[\n\x11stringArrayFilter\x18\x05 \x03(\x0b\x32@.bytedance.byteplus.byteair.PredictFilter.StringArrayFilterEntry\x12U\n\x0eintArrayFilter\x18\x06 \x03(\x0b\x32=.bytedance.byteplus.byteair.PredictFilter.IntArrayFilterEntry\x12Y\n\x10\x66loatArrayFilter\x18\x07 \x03(\x0b\x32?.bytedance.byteplus.byteair.PredictFilter.FloatArrayFilterEntry\x12[\n\x11\x64oubleArrayFilter\x18\x08 \x03(\x0b\x32@.bytedance.byteplus.byteair.PredictFilter.DoubleArrayFilterEntry\x1a\x33\n\x11StringFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x30\n\x0eIntFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x03:\x02\x38\x01\x1a\x32\n\x10\x46loatFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\x1a\x33\n\x11\x44oubleFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x01:\x02\x38\x01\x1a\x61\n\x16StringArrayFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.byteair.StringArray:\x02\x38\x01\x1a[\n\x13IntArrayFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x33\n\x05value\x18\x02 \x01(\x0b\x32$.bytedance.byteplus.byteair.IntArray:\x02\x38\x01\x1a_\n\x15\x46loatArrayFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x35\n\x05value\x18\x02 \x01(\x0b\x32&.bytedance.byteplus.byteair.FloatArray:\x02\x38\x01\x1a\x61\n\x16\x44oubleArrayFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.byteair.DoubleArray:\x02\x38\x01\"\xce\x01\n\x14PredictCandidateItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x01\x12\r\n\x05price\x18\x03 \x01(\x01\x12\x12\n\nboost_coef\x18\x04 \x01(\x01\x12J\n\x05\x65xtra\x18\x64 \x03(\x0b\x32;.bytedance.byteplus.byteair.PredictCandidateItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x93\x01\n\x0cPredictExtra\x12\x11\n\tinnerTest\x18\x01 \x01(\x08\x12\x42\n\x05\x65xtra\x18\x65 \x03(\x0b\x32\x33.bytedance.byteplus.byteair.PredictExtra.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x98\x01\n\x12PredictRelatedItem\x12\n\n\x02id\x18\x01 \x01(\t\x12H\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x39.bytedance.byteplus.byteair.PredictRelatedItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xf3\x03\n\nSearchInfo\x12\r\n\x05start\x18\x01 \x01(\x05\x12\x12\n\nsearchType\x18\x02 \x01(\x05\x12\x10\n\x08sortMode\x18\x03 \x01(\x05\x12\x10\n\x08sortType\x18\x04 \x01(\x05\x12\x0f\n\x07\x63ontent\x18\x05 \x01(\t\x12\r\n\x05query\x18\x06 \x01(\t\x12\x44\n\x07\x66ilters\x18\x07 \x03(\x0b\x32\x33.bytedance.byteplus.byteair.SearchInfo.FiltersEntry\x12H\n\tfilterOut\x18\x08 \x03(\x0b\x32\x35.bytedance.byteplus.byteair.SearchInfo.FilterOutEntry\x12:\n\tgoodsList\x18\t \x03(\x0b\x32\'.bytedance.byteplus.byteair.SearchGoods\x1aW\n\x0c\x46iltersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.byteair.StringArray:\x02\x38\x01\x1aY\n\x0e\x46ilterOutEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.byteair.StringArray:\x02\x38\x01\"X\n\x0bSearchGoods\x12\x13\n\x07goodsId\x18\x01 \x01(\x03\x42\x02\x18\x01\x12\x12\n\ngoodsIdStr\x18\x02 \x01(\t\x12\r\n\x05price\x18\x03 \x01(\x02\x12\x11\n\tboostCeof\x18\x04 \x01(\x02\"\x96\x01\n\x11PredictParentItem\x12\n\n\x02id\x18\x01 \x01(\t\x12G\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x38.bytedance.byteplus.byteair.PredictParentItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x96\x01\n\x11PredictFilterItem\x12\n\n\x02id\x18\x01 \x01(\t\x12G\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x38.bytedance.byteplus.byteair.PredictFilterItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x0fPredictResponse\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x38\n\x05value\x18\x03 \x01(\x0b\x32).bytedance.byteplus.byteair.PredictResult\x12\x12\n\nrequest_id\x18\x04 \x01(\t\"\xce\x01\n\rPredictResult\x12\x36\n\x05items\x18\x01 \x03(\x0b\x32\'.bytedance.byteplus.byteair.PredictItem\x12\x43\n\x05\x65xtra\x18\x02 \x03(\x0b\x32\x34.bytedance.byteplus.byteair.PredictResult.ExtraEntry\x12\x12\n\ntotalCount\x18\x03 \x01(\x05\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xab\x01\n\x0bPredictItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04rank\x18\x03 \x01(\x05\x12\x11\n\ttransData\x18\x04 \x01(\t\x12\x41\n\x05\x65xtra\x18\x05 \x03(\x0b\x32\x32.bytedance.byteplus.byteair.PredictItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb5\x02\n\x0f\x43\x61llbackRequest\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12\r\n\x05scene\x18\x02 \x01(\t\x12\x37\n\x05items\x18\x03 \x03(\x0b\x32(.bytedance.byteplus.byteair.CallbackItem\x12\x1a\n\x12predict_request_id\x18\x04 \x01(\t\x12<\n\x07\x63ontext\x18\x05 \x01(\x0b\x32+.bytedance.byteplus.byteair.CallbackContext\x12\x45\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x36.bytedance.byteplus.byteair.CallbackRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n\x0c\x43\x61llbackItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03pos\x18\x02 \x01(\t\x12\r\n\x05\x65xtra\x18\x03 \x01(\t\"\xd2\x01\n\x0f\x43\x61llbackContext\x12\x0b\n\x03spm\x18\x01 \x01(\t\x12=\n\x08req_type\x18\x02 \x01(\x0e\x32+.bytedance.byteplus.byteair.CallbackReqType\x12\x45\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x36.bytedance.byteplus.byteair.CallbackContext.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x10\x43\x61llbackResponse\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x1d\n\x0bStringArray\x12\x0e\n\x06values\x18\x01 \x03(\t\"\x1a\n\x08IntArray\x12\x0e\n\x06values\x18\x01 \x03(\x03\"\x1c\n\nFloatArray\x12\x0e\n\x06values\x18\x01 \x03(\x02\"\x1d\n\x0b\x44oubleArray\x12\x0e\n\x06values\x18\x01 \x03(\x01*C\n\x0f\x43\x61llbackReqType\x12\x0e\n\nbyte_scene\x10\x00\x12\x12\n\x0enot_byte_scene\x10\x01\x12\x0c\n\x08\x62\x65havior\x10\x02\x32\x83\x03\n\x16\x42yteplusGeneralService\x12L\n\tWriteData\x12\x14.google.protobuf.Any\x1a).bytedance.byteplus.byteair.WriteResponse\x12P\n\nImportData\x12\x14.google.protobuf.Any\x1a,.bytedance.byteplus.common.OperationResponse\x12\x62\n\x07Predict\x12*.bytedance.byteplus.byteair.PredictRequest\x1a+.bytedance.byteplus.byteair.PredictResponse\x12\x65\n\x08\x43\x61llback\x12+.bytedance.byteplus.byteair.CallbackRequest\x1a,.bytedance.byteplus.byteair.CallbackResponseBP\n\x1d\x62yteplus.sdk.byteair.protocolZ/github.com/byteplus-sdk/sdk-go/byteair/protocolb\x06proto3'
+  serialized_pb=b'\n\x16\x62yteplus_byteair.proto\x12\x1a\x62ytedance.byteplus.byteair\x1a\x15\x62yteplus_common.proto\x1a\x19google/protobuf/any.proto\"*\n\tDataError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\t\"y\n\rWriteResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12\x35\n\x06\x65rrors\x18\x02 \x03(\x0b\x32%.bytedance.byteplus.byteair.DataError\"\x81\x01\n\x0eImportResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.common.Status\x12<\n\rerror_samples\x18\x02 \x03(\x0b\x32%.bytedance.byteplus.byteair.DataError\"\x9d\x04\n\x0ePredictRequest\x12\x35\n\x04user\x18\x01 \x01(\x0b\x32\'.bytedance.byteplus.byteair.PredictUser\x12;\n\x07\x63ontext\x18\x02 \x01(\x0b\x32*.bytedance.byteplus.byteair.PredictContext\x12\x0c\n\x04size\x18\x03 \x01(\x05\x12H\n\x0e\x63\x61ndidateItems\x18\x04 \x03(\x0b\x32\x30.bytedance.byteplus.byteair.PredictCandidateItem\x12\x37\n\x05\x65xtra\x18\x05 \x01(\x0b\x32(.bytedance.byteplus.byteair.PredictExtra\x12\x43\n\x0brelatedItem\x18\x06 \x01(\x0b\x32..bytedance.byteplus.byteair.PredictRelatedItem\x12:\n\nsearchInfo\x18\x07 \x01(\x0b\x32&.bytedance.byteplus.byteair.SearchInfo\x12\x41\n\nparentItem\x18\x08 \x01(\x0b\x32-.bytedance.byteplus.byteair.PredictParentItem\x12\x42\n\x0b\x66ilterItems\x18\t \x03(\x0b\x32-.bytedance.byteplus.byteair.PredictFilterItem\"\xcc\x02\n\x0bPredictUser\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12\x39\n\x06\x64\x65vice\x18\x02 \x01(\x0b\x32).bytedance.byteplus.byteair.PredictDevice\x12\x0b\n\x03\x61ge\x18\x03 \x01(\t\x12\x0e\n\x06gender\x18\x04 \x01(\t\x12\x10\n\x08province\x18\x05 \x01(\t\x12\x0c\n\x04\x63ity\x18\x06 \x01(\t\x12\x10\n\x08\x64istrict\x18\x07 \x01(\t\x12\x11\n\tappMarket\x18\x08 \x01(\t\x12\x11\n\tloginMode\x18\t \x01(\t\x12\x0f\n\x07\x63ountry\x18\n \x01(\t\x12\x41\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x32.bytedance.byteplus.byteair.PredictUser.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd9\x01\n\rPredictDevice\x12\x10\n\x08\x64\x65viceId\x18\x01 \x01(\t\x12\x10\n\x08platform\x18\x02 \x01(\t\x12\x14\n\x0c\x64\x65viceVendor\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65viceModel\x18\x04 \x01(\t\x12\x18\n\x10\x64\x65viceResolution\x18\x05 \x01(\t\x12\x15\n\rclientVersion\x18\x06 \x01(\t\x12\x11\n\tosVersion\x18\x07 \x01(\t\x12\x13\n\x0bnetworkType\x18\x08 \x01(\t\x12\x0f\n\x07\x63\x61rrier\x18\t \x01(\t\x12\x0f\n\x07os_type\x18\n \x01(\t\"\xad\x02\n\x0ePredictContext\x12\x0b\n\x03spm\x18\x01 \x01(\t\x12\"\n\x1a\x63losePersonalizedRecommend\x18\x02 \x01(\x08\x12;\n\x07\x66\x65\x61ture\x18\x03 \x01(\x0b\x32*.bytedance.byteplus.byteair.PredictFeature\x12\x39\n\x06\x66ilter\x18\x04 \x01(\x0b\x32).bytedance.byteplus.byteair.PredictFilter\x12\x44\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x35.bytedance.byteplus.byteair.PredictContext.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb4\n\n\x0ePredictFeature\x12T\n\rstringFeature\x18\x01 \x03(\x0b\x32=.bytedance.byteplus.byteair.PredictFeature.StringFeatureEntry\x12N\n\nintFeature\x18\x02 \x03(\x0b\x32:.bytedance.byteplus.byteair.PredictFeature.IntFeatureEntry\x12R\n\x0c\x66loatFeature\x18\x03 \x03(\x0b\x32<.bytedance.byteplus.byteair.PredictFeature.FloatFeatureEntry\x12T\n\rdoubleFeature\x18\x04 \x03(\x0b\x32=.bytedance.byteplus.byteair.PredictFeature.DoubleFeatureEntry\x12^\n\x12stringArrayFeature\x18\x05 \x03(\x0b\x32\x42.bytedance.byteplus.byteair.PredictFeature.StringArrayFeatureEntry\x12X\n\x0fintArrayFeature\x18\x06 \x03(\x0b\x32?.bytedance.byteplus.byteair.PredictFeature.IntArrayFeatureEntry\x12\\\n\x11\x66loatArrayFeature\x18\x07 \x03(\x0b\x32\x41.bytedance.byteplus.byteair.PredictFeature.FloatArrayFeatureEntry\x12^\n\x12\x64oubleArrayFeature\x18\x08 \x03(\x0b\x32\x42.bytedance.byteplus.byteair.PredictFeature.DoubleArrayFeatureEntry\x1a\x34\n\x12StringFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x31\n\x0fIntFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x03:\x02\x38\x01\x1a\x33\n\x11\x46loatFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\x1a\x34\n\x12\x44oubleFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x01:\x02\x38\x01\x1a\x62\n\x17StringArrayFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.byteair.StringArray:\x02\x38\x01\x1a\\\n\x14IntArrayFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x33\n\x05value\x18\x02 \x01(\x0b\x32$.bytedance.byteplus.byteair.IntArray:\x02\x38\x01\x1a`\n\x16\x46loatArrayFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x35\n\x05value\x18\x02 \x01(\x0b\x32&.bytedance.byteplus.byteair.FloatArray:\x02\x38\x01\x1a\x62\n\x17\x44oubleArrayFeatureEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.byteair.DoubleArray:\x02\x38\x01\"\x93\n\n\rPredictFilter\x12Q\n\x0cstringFilter\x18\x01 \x03(\x0b\x32;.bytedance.byteplus.byteair.PredictFilter.StringFilterEntry\x12K\n\tintFilter\x18\x02 \x03(\x0b\x32\x38.bytedance.byteplus.byteair.PredictFilter.IntFilterEntry\x12O\n\x0b\x66loatFilter\x18\x03 \x03(\x0b\x32:.bytedance.byteplus.byteair.PredictFilter.FloatFilterEntry\x12Q\n\x0c\x64oubleFilter\x18\x04 \x03(\x0b\x32;.bytedance.byteplus.byteair.PredictFilter.DoubleFilterEntry\x12[\n\x11stringArrayFilter\x18\x05 \x03(\x0b\x32@.bytedance.byteplus.byteair.PredictFilter.StringArrayFilterEntry\x12U\n\x0eintArrayFilter\x18\x06 \x03(\x0b\x32=.bytedance.byteplus.byteair.PredictFilter.IntArrayFilterEntry\x12Y\n\x10\x66loatArrayFilter\x18\x07 \x03(\x0b\x32?.bytedance.byteplus.byteair.PredictFilter.FloatArrayFilterEntry\x12[\n\x11\x64oubleArrayFilter\x18\x08 \x03(\x0b\x32@.bytedance.byteplus.byteair.PredictFilter.DoubleArrayFilterEntry\x1a\x33\n\x11StringFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x30\n\x0eIntFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x03:\x02\x38\x01\x1a\x32\n\x10\x46loatFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\x1a\x33\n\x11\x44oubleFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x01:\x02\x38\x01\x1a\x61\n\x16StringArrayFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.byteair.StringArray:\x02\x38\x01\x1a[\n\x13IntArrayFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x33\n\x05value\x18\x02 \x01(\x0b\x32$.bytedance.byteplus.byteair.IntArray:\x02\x38\x01\x1a_\n\x15\x46loatArrayFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x35\n\x05value\x18\x02 \x01(\x0b\x32&.bytedance.byteplus.byteair.FloatArray:\x02\x38\x01\x1a\x61\n\x16\x44oubleArrayFilterEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.byteair.DoubleArray:\x02\x38\x01\"\xce\x01\n\x14PredictCandidateItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x01\x12\r\n\x05price\x18\x03 \x01(\x01\x12\x12\n\nboost_coef\x18\x04 \x01(\x01\x12J\n\x05\x65xtra\x18\x64 \x03(\x0b\x32;.bytedance.byteplus.byteair.PredictCandidateItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x93\x01\n\x0cPredictExtra\x12\x11\n\tinnerTest\x18\x01 \x01(\x08\x12\x42\n\x05\x65xtra\x18\x65 \x03(\x0b\x32\x33.bytedance.byteplus.byteair.PredictExtra.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x98\x01\n\x12PredictRelatedItem\x12\n\n\x02id\x18\x01 \x01(\t\x12H\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x39.bytedance.byteplus.byteair.PredictRelatedItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xf3\x03\n\nSearchInfo\x12\r\n\x05start\x18\x01 \x01(\x05\x12\x12\n\nsearchType\x18\x02 \x01(\x05\x12\x10\n\x08sortMode\x18\x03 \x01(\x05\x12\x10\n\x08sortType\x18\x04 \x01(\x05\x12\x0f\n\x07\x63ontent\x18\x05 \x01(\t\x12\r\n\x05query\x18\x06 \x01(\t\x12\x44\n\x07\x66ilters\x18\x07 \x03(\x0b\x32\x33.bytedance.byteplus.byteair.SearchInfo.FiltersEntry\x12H\n\tfilterOut\x18\x08 \x03(\x0b\x32\x35.bytedance.byteplus.byteair.SearchInfo.FilterOutEntry\x12:\n\tgoodsList\x18\t \x03(\x0b\x32\'.bytedance.byteplus.byteair.SearchGoods\x1aW\n\x0c\x46iltersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.byteair.StringArray:\x02\x38\x01\x1aY\n\x0e\x46ilterOutEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x36\n\x05value\x18\x02 \x01(\x0b\x32\'.bytedance.byteplus.byteair.StringArray:\x02\x38\x01\"X\n\x0bSearchGoods\x12\x13\n\x07goodsId\x18\x01 \x01(\x03\x42\x02\x18\x01\x12\x12\n\ngoodsIdStr\x18\x02 \x01(\t\x12\r\n\x05price\x18\x03 \x01(\x02\x12\x11\n\tboostCeof\x18\x04 \x01(\x02\"\x96\x01\n\x11PredictParentItem\x12\n\n\x02id\x18\x01 \x01(\t\x12G\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x38.bytedance.byteplus.byteair.PredictParentItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x96\x01\n\x11PredictFilterItem\x12\n\n\x02id\x18\x01 \x01(\t\x12G\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x38.bytedance.byteplus.byteair.PredictFilterItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x0fPredictResponse\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x38\n\x05value\x18\x03 \x01(\x0b\x32).bytedance.byteplus.byteair.PredictResult\x12\x12\n\nrequest_id\x18\x04 \x01(\t\"\xce\x01\n\rPredictResult\x12\x36\n\x05items\x18\x01 \x03(\x0b\x32\'.bytedance.byteplus.byteair.PredictItem\x12\x43\n\x05\x65xtra\x18\x02 \x03(\x0b\x32\x34.bytedance.byteplus.byteair.PredictResult.ExtraEntry\x12\x12\n\ntotalCount\x18\x03 \x01(\x05\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xab\x01\n\x0bPredictItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04rank\x18\x03 \x01(\x05\x12\x11\n\ttransData\x18\x04 \x01(\t\x12\x41\n\x05\x65xtra\x18\x05 \x03(\x0b\x32\x32.bytedance.byteplus.byteair.PredictItem.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb5\x02\n\x0f\x43\x61llbackRequest\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12\r\n\x05scene\x18\x02 \x01(\t\x12\x37\n\x05items\x18\x03 \x03(\x0b\x32(.bytedance.byteplus.byteair.CallbackItem\x12\x1a\n\x12predict_request_id\x18\x04 \x01(\t\x12<\n\x07\x63ontext\x18\x05 \x01(\x0b\x32+.bytedance.byteplus.byteair.CallbackContext\x12\x45\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x36.bytedance.byteplus.byteair.CallbackRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n\x0c\x43\x61llbackItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03pos\x18\x02 \x01(\t\x12\r\n\x05\x65xtra\x18\x03 \x01(\t\"\xd2\x01\n\x0f\x43\x61llbackContext\x12\x0b\n\x03spm\x18\x01 \x01(\t\x12=\n\x08req_type\x18\x02 \x01(\x0e\x32+.bytedance.byteplus.byteair.CallbackReqType\x12\x45\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x36.bytedance.byteplus.byteair.CallbackContext.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x10\x43\x61llbackResponse\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x1d\n\x0bStringArray\x12\x0e\n\x06values\x18\x01 \x03(\t\"\x1a\n\x08IntArray\x12\x0e\n\x06values\x18\x01 \x03(\x03\"\x1c\n\nFloatArray\x12\x0e\n\x06values\x18\x01 \x03(\x02\"\x1d\n\x0b\x44oubleArray\x12\x0e\n\x06values\x18\x01 \x03(\x01*C\n\x0f\x43\x61llbackReqType\x12\x0e\n\nbyte_scene\x10\x00\x12\x12\n\x0enot_byte_scene\x10\x01\x12\x0c\n\x08\x62\x65havior\x10\x02\x32\x83\x03\n\x16\x42yteplusGeneralService\x12L\n\tWriteData\x12\x14.google.protobuf.Any\x1a).bytedance.byteplus.byteair.WriteResponse\x12P\n\nImportData\x12\x14.google.protobuf.Any\x1a,.bytedance.byteplus.common.OperationResponse\x12\x62\n\x07Predict\x12*.bytedance.byteplus.byteair.PredictRequest\x1a+.bytedance.byteplus.byteair.PredictResponse\x12\x65\n\x08\x43\x61llback\x12+.bytedance.byteplus.byteair.CallbackRequest\x1a,.bytedance.byteplus.byteair.CallbackResponseBP\n\x1d\x62yteplus.sdk.byteair.protocolZ/github.com/byteplus-sdk/sdk-go/byteair/protocolb\x06proto3'
   ,
   dependencies=[byteplus__common__pb2.DESCRIPTOR,google_dot_protobuf_dot_any__pb2.DESCRIPTOR,])
 
@@ -51,8 +51,8 @@ _CALLBACKREQTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=7101,
-  serialized_end=7168,
+  serialized_start=7118,
+  serialized_end=7185,
 )
 _sym_db.RegisterEnumDescriptor(_CALLBACKREQTYPE)
 
@@ -479,6 +479,13 @@ _PREDICTDEVICE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='os_type', full_name='bytedance.byteplus.byteair.PredictDevice.os_type', index=9,
+      number=10, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -492,7 +499,7 @@ _PREDICTDEVICE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1283,
-  serialized_end=1483,
+  serialized_end=1500,
 )
 
 
@@ -589,8 +596,8 @@ _PREDICTCONTEXT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1486,
-  serialized_end=1787,
+  serialized_start=1503,
+  serialized_end=1804,
 )
 
 
@@ -628,8 +635,8 @@ _PREDICTFEATURE_STRINGFEATUREENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2520,
-  serialized_end=2572,
+  serialized_start=2537,
+  serialized_end=2589,
 )
 
 _PREDICTFEATURE_INTFEATUREENTRY = _descriptor.Descriptor(
@@ -666,8 +673,8 @@ _PREDICTFEATURE_INTFEATUREENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2574,
-  serialized_end=2623,
+  serialized_start=2591,
+  serialized_end=2640,
 )
 
 _PREDICTFEATURE_FLOATFEATUREENTRY = _descriptor.Descriptor(
@@ -704,8 +711,8 @@ _PREDICTFEATURE_FLOATFEATUREENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2625,
-  serialized_end=2676,
+  serialized_start=2642,
+  serialized_end=2693,
 )
 
 _PREDICTFEATURE_DOUBLEFEATUREENTRY = _descriptor.Descriptor(
@@ -742,8 +749,8 @@ _PREDICTFEATURE_DOUBLEFEATUREENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2678,
-  serialized_end=2730,
+  serialized_start=2695,
+  serialized_end=2747,
 )
 
 _PREDICTFEATURE_STRINGARRAYFEATUREENTRY = _descriptor.Descriptor(
@@ -780,8 +787,8 @@ _PREDICTFEATURE_STRINGARRAYFEATUREENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2732,
-  serialized_end=2830,
+  serialized_start=2749,
+  serialized_end=2847,
 )
 
 _PREDICTFEATURE_INTARRAYFEATUREENTRY = _descriptor.Descriptor(
@@ -818,8 +825,8 @@ _PREDICTFEATURE_INTARRAYFEATUREENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2832,
-  serialized_end=2924,
+  serialized_start=2849,
+  serialized_end=2941,
 )
 
 _PREDICTFEATURE_FLOATARRAYFEATUREENTRY = _descriptor.Descriptor(
@@ -856,8 +863,8 @@ _PREDICTFEATURE_FLOATARRAYFEATUREENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2926,
-  serialized_end=3022,
+  serialized_start=2943,
+  serialized_end=3039,
 )
 
 _PREDICTFEATURE_DOUBLEARRAYFEATUREENTRY = _descriptor.Descriptor(
@@ -894,8 +901,8 @@ _PREDICTFEATURE_DOUBLEARRAYFEATUREENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3024,
-  serialized_end=3122,
+  serialized_start=3041,
+  serialized_end=3139,
 )
 
 _PREDICTFEATURE = _descriptor.Descriptor(
@@ -974,8 +981,8 @@ _PREDICTFEATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1790,
-  serialized_end=3122,
+  serialized_start=1807,
+  serialized_end=3139,
 )
 
 
@@ -1013,8 +1020,8 @@ _PREDICTFILTER_STRINGFILTERENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3830,
-  serialized_end=3881,
+  serialized_start=3847,
+  serialized_end=3898,
 )
 
 _PREDICTFILTER_INTFILTERENTRY = _descriptor.Descriptor(
@@ -1051,8 +1058,8 @@ _PREDICTFILTER_INTFILTERENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3883,
-  serialized_end=3931,
+  serialized_start=3900,
+  serialized_end=3948,
 )
 
 _PREDICTFILTER_FLOATFILTERENTRY = _descriptor.Descriptor(
@@ -1089,8 +1096,8 @@ _PREDICTFILTER_FLOATFILTERENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3933,
-  serialized_end=3983,
+  serialized_start=3950,
+  serialized_end=4000,
 )
 
 _PREDICTFILTER_DOUBLEFILTERENTRY = _descriptor.Descriptor(
@@ -1127,8 +1134,8 @@ _PREDICTFILTER_DOUBLEFILTERENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3985,
-  serialized_end=4036,
+  serialized_start=4002,
+  serialized_end=4053,
 )
 
 _PREDICTFILTER_STRINGARRAYFILTERENTRY = _descriptor.Descriptor(
@@ -1165,8 +1172,8 @@ _PREDICTFILTER_STRINGARRAYFILTERENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4038,
-  serialized_end=4135,
+  serialized_start=4055,
+  serialized_end=4152,
 )
 
 _PREDICTFILTER_INTARRAYFILTERENTRY = _descriptor.Descriptor(
@@ -1203,8 +1210,8 @@ _PREDICTFILTER_INTARRAYFILTERENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4137,
-  serialized_end=4228,
+  serialized_start=4154,
+  serialized_end=4245,
 )
 
 _PREDICTFILTER_FLOATARRAYFILTERENTRY = _descriptor.Descriptor(
@@ -1241,8 +1248,8 @@ _PREDICTFILTER_FLOATARRAYFILTERENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4230,
-  serialized_end=4325,
+  serialized_start=4247,
+  serialized_end=4342,
 )
 
 _PREDICTFILTER_DOUBLEARRAYFILTERENTRY = _descriptor.Descriptor(
@@ -1279,8 +1286,8 @@ _PREDICTFILTER_DOUBLEARRAYFILTERENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4327,
-  serialized_end=4424,
+  serialized_start=4344,
+  serialized_end=4441,
 )
 
 _PREDICTFILTER = _descriptor.Descriptor(
@@ -1359,8 +1366,8 @@ _PREDICTFILTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3125,
-  serialized_end=4424,
+  serialized_start=3142,
+  serialized_end=4441,
 )
 
 
@@ -1457,8 +1464,8 @@ _PREDICTCANDIDATEITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4427,
-  serialized_end=4633,
+  serialized_start=4444,
+  serialized_end=4650,
 )
 
 
@@ -1534,8 +1541,8 @@ _PREDICTEXTRA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4636,
-  serialized_end=4783,
+  serialized_start=4653,
+  serialized_end=4800,
 )
 
 
@@ -1611,8 +1618,8 @@ _PREDICTRELATEDITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4786,
-  serialized_end=4938,
+  serialized_start=4803,
+  serialized_end=4955,
 )
 
 
@@ -1650,8 +1657,8 @@ _SEARCHINFO_FILTERSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5262,
-  serialized_end=5349,
+  serialized_start=5279,
+  serialized_end=5366,
 )
 
 _SEARCHINFO_FILTEROUTENTRY = _descriptor.Descriptor(
@@ -1688,8 +1695,8 @@ _SEARCHINFO_FILTEROUTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5351,
-  serialized_end=5440,
+  serialized_start=5368,
+  serialized_end=5457,
 )
 
 _SEARCHINFO = _descriptor.Descriptor(
@@ -1775,8 +1782,8 @@ _SEARCHINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4941,
-  serialized_end=5440,
+  serialized_start=4958,
+  serialized_end=5457,
 )
 
 
@@ -1828,8 +1835,8 @@ _SEARCHGOODS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5442,
-  serialized_end=5530,
+  serialized_start=5459,
+  serialized_end=5547,
 )
 
 
@@ -1905,8 +1912,8 @@ _PREDICTPARENTITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5533,
-  serialized_end=5683,
+  serialized_start=5550,
+  serialized_end=5700,
 )
 
 
@@ -1982,8 +1989,8 @@ _PREDICTFILTERITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5686,
-  serialized_end=5836,
+  serialized_start=5703,
+  serialized_end=5853,
 )
 
 
@@ -2035,8 +2042,8 @@ _PREDICTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5838,
-  serialized_end=5964,
+  serialized_start=5855,
+  serialized_end=5981,
 )
 
 
@@ -2119,8 +2126,8 @@ _PREDICTRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5967,
-  serialized_end=6173,
+  serialized_start=5984,
+  serialized_end=6190,
 )
 
 
@@ -2210,8 +2217,8 @@ _PREDICTITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6176,
-  serialized_end=6347,
+  serialized_start=6193,
+  serialized_end=6364,
 )
 
 
@@ -2315,8 +2322,8 @@ _CALLBACKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6350,
-  serialized_end=6659,
+  serialized_start=6367,
+  serialized_end=6676,
 )
 
 
@@ -2361,8 +2368,8 @@ _CALLBACKITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6661,
-  serialized_end=6715,
+  serialized_start=6678,
+  serialized_end=6732,
 )
 
 
@@ -2445,8 +2452,8 @@ _CALLBACKCONTEXT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6718,
-  serialized_end=6928,
+  serialized_start=6735,
+  serialized_end=6945,
 )
 
 
@@ -2484,8 +2491,8 @@ _CALLBACKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6930,
-  serialized_end=6979,
+  serialized_start=6947,
+  serialized_end=6996,
 )
 
 
@@ -2516,8 +2523,8 @@ _STRINGARRAY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6981,
-  serialized_end=7010,
+  serialized_start=6998,
+  serialized_end=7027,
 )
 
 
@@ -2548,8 +2555,8 @@ _INTARRAY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7012,
-  serialized_end=7038,
+  serialized_start=7029,
+  serialized_end=7055,
 )
 
 
@@ -2580,8 +2587,8 @@ _FLOATARRAY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7040,
-  serialized_end=7068,
+  serialized_start=7057,
+  serialized_end=7085,
 )
 
 
@@ -2612,8 +2619,8 @@ _DOUBLEARRAY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7070,
-  serialized_end=7099,
+  serialized_start=7087,
+  serialized_end=7116,
 )
 
 _WRITERESPONSE.fields_by_name['status'].message_type = byteplus__common__pb2._STATUS
@@ -3196,8 +3203,8 @@ _BYTEPLUSGENERALSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=7171,
-  serialized_end=7558,
+  serialized_start=7188,
+  serialized_end=7575,
   methods=[
   _descriptor.MethodDescriptor(
     name='WriteData',
