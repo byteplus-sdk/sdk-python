@@ -1,31 +1,31 @@
 import logging
 import threading
 import time
+import uuid
 
 import requests
 from requests import Response
 
 from byteplus.core.context import Context
+from byteplus.core.host_availabler_config import Config
+from byteplus.core.metrics.metrics_log import MetricsLog
 from byteplus.core.url_center import URLCenter
-from byteplus.core.metrics_helper import report_request_success, report_request_error, report_request_exception
-from byteplus.core.constant import METRICS_KEY_PING_ERROR, METRICS_KEY_PING_SUCCESS
 
 log = logging.getLogger(__name__)
 
-_CHECK_INTERVAL_SECONDS: int = 1
-_WINDOW_SIZE: int = 60
 _FAILURE_RATE_THRESHOLD: float = 0.1
-_PING_URL_FORMAT: str = "#://{}/predict/api/ping"
-_PING_TIMEOUT_SECONDS: float = 0.3
 _PING_SUCCESS_HTTP_CODE = 200
 
 
 class HostAvailabler(object):
-
     def __init__(self, url_center: URLCenter, context: Context):
+        config: Config = context.host_availabler_config
+        if config is None:
+            config = Config()
+        self._config: Config = config
         self._url_center: URLCenter = url_center
         self._context: Context = context
-        self._ping_url_format = _PING_URL_FORMAT.replace("#", context.schema)
+        self._ping_url_format = self._config.ping_url_format.replace("#", context.schema)
         self._available_hosts: list = context.hosts
         self._current_host: str = context.hosts[0]
         self._host_window_map: dict = {}
@@ -33,9 +33,12 @@ class HostAvailabler(object):
         if len(context.hosts) <= 1:
             return
         for host in context.hosts:
-            self._host_window_map[host] = _Window(_WINDOW_SIZE)
+            self._host_window_map[host] = _Window(self._config.window_size)
         threading.Thread(target=self._start_schedule).start()
         return
+
+    def get_host(self) -> str:
+        return self._current_host
 
     def shutdown(self):
         self._abort = True
@@ -46,7 +49,7 @@ class HostAvailabler(object):
         # log.debug("[ByteplusSDK] http")
         self._check_host()
         # a timer only execute once after spec duration
-        timer = threading.Timer(_CHECK_INTERVAL_SECONDS, self._start_schedule)
+        timer = threading.Timer(self._config.ping_interval_seconds, self._start_schedule)
         timer.start()
         return
 
@@ -69,21 +72,30 @@ class HostAvailabler(object):
     def _ping(self, host) -> bool:
         url: str = self._ping_url_format.format(host)
         headers = self._context.customer_headers
+        req_id: str = "ping_" + str(uuid.uuid1())
+        headers = headers.update({
+            "Request-Id": req_id,
+            "Tenant": self._context.tenant,
+        })
         start = time.time()
         try:
-            rsp: Response = requests.get(url, headers=headers, timeout=_PING_TIMEOUT_SECONDS)
+            rsp: Response = requests.get(url, headers=headers, timeout=self._config.ping_timeout_seconds)
+            cost = int((time.time() - start) * 1000)
+            if rsp.status_code != _PING_SUCCESS_HTTP_CODE:
+                MetricsLog.warn(req_id, "[ByteplusSDK] ping fail, tenant:{}, host:{}, cost:{}ms, status:{}",
+                                self._context.tenant, host, cost, rsp.status_code)
+            else:
+                MetricsLog.info(req_id, "[ByteplusSDK] ping success, tenant:{}, host:{}, cost:{}ms",
+                                self._context.tenant, host, cost)
         except BaseException as e:
-            report_request_exception(METRICS_KEY_PING_ERROR, url, start * 1000, e)
+            cost = int((time.time() - start) * 1000)
+            MetricsLog.warn(req_id, "[ByteplusSDK] ping find err, tenant:{}, host:{}, cost:{}ms, err:{}",
+                            self._context.tenant, host, cost, e)
             log.warning("[ByteplusSDK] ping find err, host:'%s' err:'%s'", host, e)
             return False
         finally:
             cost = int((time.time() - start) * 1000)
             log.debug("[ByteplusSDK] http path:%s, cost:%dms", url, cost)
-
-        if rsp.status_code != _PING_SUCCESS_HTTP_CODE:
-            report_request_error(METRICS_KEY_PING_ERROR, url, start * 1000, rsp.status_code, "ping-fail")
-        else:
-            report_request_success(METRICS_KEY_PING_SUCCESS, url, start * 1000)
         return rsp.status_code == _PING_SUCCESS_HTTP_CODE
 
     def _switch_host(self) -> None:

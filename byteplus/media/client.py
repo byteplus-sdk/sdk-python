@@ -3,6 +3,8 @@ import logging
 from byteplus.common.client import CommonClient
 from byteplus.core import Region, Option, MAX_WRITE_ITEM_COUNT, BizException
 from byteplus.core.context import Param
+from byteplus.core.host_availabler import Config
+from byteplus.core.metrics.metrics_option import MetricsCfg
 from byteplus.media.protocol import WriteUsersRequest, WriteUsersResponse, WriteContentsRequest, WriteContentsResponse, \
     WriteUserEventsRequest, WriteUserEventsResponse, PredictRequest, PredictResponse, AckServerImpressionsRequest, \
     AckServerImpressionsResponse
@@ -96,6 +98,14 @@ class ClientBuilder(object):
 
     def region(self, region: Region):
         self._param.region = region
+        return self
+
+    def metrics_config(self, metrics_config: MetricsCfg):
+        self._param.metrics_cfg = metrics_config
+        return self
+
+    def host_availabler_config(self, host_availabler_config: Config):
+        self._param.host_availabler_config = host_availabler_config
         return self
 
     def build(self) -> Client:

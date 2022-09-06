@@ -28,8 +28,9 @@ STATUS_CODE_TOO_MANY_REQUEST: int = 429
 
 VOLC_AUTH_SERVICE = "air"
 
-# metric name for  byteplus sdk
-METRICS_KEY_INVOKE_SUCCESS = "invoke.success";
-METRICS_KEY_INVOKE_ERROR = "invoke.error";
-METRICS_KEY_PING_SUCCESS = "ping.success";
-METRICS_KEY_PING_ERROR = "ping.error";
+# Metrics Key
+METRICS_KEY_COMMON_ERROR = "common.err"
+METRICS_KEY_REQUEST_TOTAL_COST = "request.total.cost"
+METRICS_KEY_REQUEST_COUNT = "request.count"
+
+
