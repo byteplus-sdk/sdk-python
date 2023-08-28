@@ -6,5 +6,3 @@ class Region(Enum):
     CN = 1
     US = 2
     SG = 3
-    AIR = 4
-    SAAS_SG = 5
