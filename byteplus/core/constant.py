@@ -2,15 +2,11 @@ MAX_WRITE_ITEM_COUNT: int = 2000
 
 MAX_IMPORT_ITEM_COUNT: int = 10000
 
-_CN_HOSTS: list = ["rec-b.volcengineapi.com", "rec.volcengineapi.com"]
+_CN_HOSTS: list = ["rec.volcengineapi.com", "rec-b.volcengineapi.com"]
 
-_SG_HOSTS: list = ["rec-ap-singapore-1.byteplusapi.com"]
+_SG_HOSTS: list = ["rec-ap-singapore-1.byteplusapi.com", "rec-b-ap-singapore-1.byteplusapi.com"]
 
-_US_HOSTS: list = ["rec-us-east-1.byteplusapi.com"]
-
-_AIR_HOSTS: list = ["byteair-api-cn1.snssdk.com"]
-
-_SAAS_SG_HOSTS: list = ["byteair-api-sg1.recplusapi.com"]
+_US_HOSTS: list = ["rec-us-east-1.byteplusapi.com", "rec-b-us-east-1.byteplusapi.com"]
 
 # All requests will have a XXXResponse corresponding to them,
 # and a‘ll XXXResponses will contain a 'Status' field.
@@ -32,5 +28,3 @@ VOLC_AUTH_SERVICE = "air"
 METRICS_KEY_COMMON_ERROR = "common.err"
 METRICS_KEY_REQUEST_TOTAL_COST = "request.total.cost"
 METRICS_KEY_REQUEST_COUNT = "request.count"
-
-
