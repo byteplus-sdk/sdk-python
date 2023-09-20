@@ -1,5 +1,5 @@
 gen_sdk_metrics:
-	protoc --python_out=byteplus/core/metrics/protocol -I=docs docs/sdk_metrics.proto
+	protoc --python_out=byteplus/core/metrics/protocol -I=docs docs/byteplus_sdk_metrics.proto
 
 gen_byteair:
 	protoc --python_out=byteplus/byteair/protocol -I=docs docs/byteplus_byteair.proto

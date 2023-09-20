@@ -185,7 +185,7 @@ class HttpCaller(object):
                 raise BizException("code:{} msg:{}".format(rsp.status_code, rsp.reason))
         except BaseException as e:
             cost = int((time.time() - start) * 1000)
-            if self._is_timeout_exception(e):
+            if utils.is_timeout_exception(e):
                 metrics_tags = [
                     "type:request_timeout"
                     "tenant:" + self._context.tenant,
@@ -227,13 +227,6 @@ class HttpCaller(object):
         if host.split(":")[-1] == "80":
             host = host[0]
         headers['Host'] = host
-
-    @staticmethod
-    def _is_timeout_exception(e):
-        lower_err_msg = str(e).lower()
-        if "time" in lower_err_msg and "out" in lower_err_msg:
-            return True
-        return False
 
     def _log_rsp(self, url: str, rsp: Response) -> None:
         metrics_tags = [

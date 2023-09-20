@@ -1,5 +1,5 @@
 syntax = "proto3";
-package metric;
+package byteplus.sdk.metric;
 
 option go_package = "github.com/byteplus-sdk/sdk-go/core/metrics/protocol";
 option java_package = "byteplus.sdk.core.metrics.protocol";

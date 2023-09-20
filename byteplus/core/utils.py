@@ -42,3 +42,10 @@ def escape_metrics_tag_value(value: str) -> str:
     value = value.replace("&", "-and-", -1)
     value = value.replace("=", "-eq-", -1)
     return value
+
+
+def is_timeout_exception(e):
+    lower_err_msg = str(e).lower()
+    if "time" in lower_err_msg and "out" in lower_err_msg:
+        return True
+    return False
