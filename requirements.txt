@@ -1,4 +1,4 @@
-requests
-protobuf
-six
-numpy
+requests==2.27.1
+protobuf==3.19.3
+six==1.16.0
+numpy==1.22.3
